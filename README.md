@@ -1,0 +1,1 @@
+This is a repo containing UbuntuBox ( South Africa in a box ) E-commerce Platform, where we have stored our Frontend ( ASP.NET Application ) and our Backend ( WCF Services Application ). This repo contains all the features of UbuntuBox, and all Software Engineering Concepts for Scalable and optimized software were followed during Development.
