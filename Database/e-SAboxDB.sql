@@ -1,6 +1,8 @@
 Use ESAboxDB;
 
-Create Table [User](
+--1. Authentication --
+
+CREATE TABLE [User](
 
     --creating the user table for the authentication feature--
  
