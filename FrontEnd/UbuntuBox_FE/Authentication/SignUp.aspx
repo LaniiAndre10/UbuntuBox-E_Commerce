@@ -99,7 +99,7 @@
 
             <hr>
 
-            <p class="login-link">Already have an account?<a href="LoginPage.html">&nbsp;Login</a></p>
+            <p class="login-link">Already have an account?<a href="Login.aspx">&nbsp;Login</a></p>
 
         </div>
 

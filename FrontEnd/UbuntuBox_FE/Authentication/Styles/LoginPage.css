@@ -6,8 +6,11 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("images/elephant-watering-hole-86010971-5c7946cb46e0fb00011bf2c9.jpg");
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.637), rgba(0, 0, 0, 0.658)), url("./images/pexels-ed-peeters-photography-4556928.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,19 +24,20 @@ body {
     width: 900px;
     min-height: 550px;
     display: flex;
-    background: rgba(18, 73, 19, 0.65);
-    border: 1px solid #DECC9E;
+    background: rgba(0, 49, 1, 0.65);
+    border: 0.5px solid #ffb700a2;
     border-radius: 15px;
 
     box-shadow:
-        inset 0 0 8px rgba(254, 225, 87, 0.8),
-        inset 0 0 20px rgba(254, 225, 87, 0.35);
+        inset 0 0 8px rgba(255, 213, 0, 0.781),
+        inset 0 0 20px rgba(129, 108, 0, 0.425);
 
     overflow: hidden;
 }
 
 .login-image {
-    width: 50%;
+    width: 40%;
+    height: auto;
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -134,11 +138,12 @@ a {
     text-decoration: none;
 }
 
-button {
+#login {
     cursor: pointer;
 }
 
-form button {
+#login {
+
     width: 100%;
     padding: 12px;
     margin-top: 20px;
@@ -147,6 +152,7 @@ form button {
     border-radius: 5px;
     font-weight: bold;
     color: #124913;
+    
 }
 
 .social-login {
@@ -160,6 +166,17 @@ form button {
     background: white;
     border: 1px solid #ccc;
     border-radius: 5px;
+    transition: 0.25s;
+}
+
+.social-login button:hover {
+    padding: 10px 14px;
+    margin: 3px;
+    background: rgba(255, 217, 0, 0.801);
+    color: #002901;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: 0.25s;
 }
 
 .social-login p {

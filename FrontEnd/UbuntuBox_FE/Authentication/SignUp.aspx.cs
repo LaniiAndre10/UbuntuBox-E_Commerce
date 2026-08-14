@@ -6,6 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UbuntuBox_FE.ServiceReference1;
 
+
+/*
+ * @author: LaniiAndre10.
+ * @version: 1.0.
+ */
+
 namespace UbuntuBox_FE.Authentication
 {
     public partial class SignUp : System.Web.UI.Page
@@ -19,6 +25,7 @@ namespace UbuntuBox_FE.Authentication
 
         protected void CreateAcc_Click(object sender, EventArgs e)
         {
+
             //here we will create the endpoint logic for handling the Create account event//
 
             //1. Collect the data from the user//
@@ -35,7 +42,7 @@ namespace UbuntuBox_FE.Authentication
 
             }
 
-            //2. Check if the entered password and the Confirm password are matching or what.
+            //2. Check if the entered password and the Confirm password are matching.
 
             if (!Userpass.Equals(UserCpass)){
 
@@ -45,7 +52,7 @@ namespace UbuntuBox_FE.Authentication
                 int tempCpasslenght = confirm.Value.Length;
                 confirm.Value.Remove(0, tempCpasslenght);
 
-                ServerResponse.Text = "The entered password and the confirm password do not match, Try entering them again";
+                ServerResponse.Text = "The entered password and the confirm password do not match, Try again";
 
                 return; //End the progress//
 
@@ -61,14 +68,17 @@ namespace UbuntuBox_FE.Authentication
 
                 //push the data into the database to check for email visibility//
                 string results = service.RegisterUser(Username, User_Email, User_Phone, Userpass, IsAdmin);
-                //return a string in the service for an error and display it on the serverresponse//
+                //return a string from the service and display it on the serverresponse//
 
-                //else delay and redirect to sign up page//
                 ServerResponse.Text = results;
 
-                //call the service function to add the user into the database//
+                if (results.Equals("Success"))
+                {
+                    Response.Redirect("Login.aspx");
 
+                }
 
+                //Sign up feature completed//
 
             }
 
