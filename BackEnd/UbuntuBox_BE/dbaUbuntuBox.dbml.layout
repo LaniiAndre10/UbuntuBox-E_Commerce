@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dbaUbuntuBox">
+  <DataContextMoniker Name="/dbaUbuntuBoxDataContext" />
+  <nestedChildShapes>
+    <classShape Id="45315ec0-425a-4468-9406-93e2ef20701a" absoluteBounds="4.625, 1.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/dbaUbuntuBoxDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ccc14de4-3ae3-4584-a12c-cd98b19d6563" absoluteBounds="4.64, 2.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
