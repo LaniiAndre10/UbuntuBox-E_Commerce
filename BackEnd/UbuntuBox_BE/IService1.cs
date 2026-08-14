@@ -21,6 +21,10 @@ namespace UbuntuBox_BE
         //add the Register function//
         [OperationContract]
         public string RegisterUser(string Usernames, string UserEmail, string UserPhone, string UserPass, bool IsAdmin);
+
+
+        [OperationContract]
+        public bool LoginUser(string email, string password);
     }
 
 
