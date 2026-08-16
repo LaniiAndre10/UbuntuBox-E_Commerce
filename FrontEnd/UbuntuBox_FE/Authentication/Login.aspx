@@ -54,7 +54,8 @@
             <a href="#"><span>Forgot Password?</span></a>
           </div>
 
-          <asp:Button ID="login" CssClass="button" runat="server" Text="Login" />
+          <asp:Button ID="login" CssClass="button" runat="server" Text="Login" OnClick="login_Click" />
+            <asp:Label CssClass="Status-Message" ID="lblMessage" runat="server" Text="Login Status"></asp:Label>
            
         </form>
           

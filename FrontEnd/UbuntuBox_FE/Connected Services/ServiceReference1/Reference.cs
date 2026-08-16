@@ -26,6 +26,12 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterUser", ReplyAction="http://tempuri.org/IService1/RegisterUserResponse")]
         System.Threading.Tasks.Task<string> RegisterUserAsync(string Usernames, string UserEmail, string UserPhone, string UserPass, bool IsAdmin);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoginUser", ReplyAction="http://tempuri.org/IService1/LoginUserResponse")]
+        bool LoginUser(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoginUser", ReplyAction="http://tempuri.org/IService1/LoginUserResponse")]
+        System.Threading.Tasks.Task<bool> LoginUserAsync(string email, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +75,14 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> RegisterUserAsync(string Usernames, string UserEmail, string UserPhone, string UserPass, bool IsAdmin) {
             return base.Channel.RegisterUserAsync(Usernames, UserEmail, UserPhone, UserPass, IsAdmin);
+        }
+        
+        public bool LoginUser(string email, string password) {
+            return base.Channel.LoginUser(email, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> LoginUserAsync(string email, string password) {
+            return base.Channel.LoginUserAsync(email, password);
         }
     }
 }

@@ -85,6 +85,29 @@ namespace UbuntuBox_BE
             return ProcessResult;
 
         }
-        
+
+        public bool LoginUser(string email, string password)
+        {
+            using (SHA1 algorithm = SHA1.Create())
+            {
+
+                byte[] byteArray = Encoding.Default.GetBytes(password);
+                byte[] hashBytes = algorithm.ComputeHash(byteArray);
+
+                string hashedPassword = Convert.ToBase64String(hashBytes);
+
+                var checkInput = (from m in dbaUbuntuBox.Users where m.Email.Equals(email) && m.PasswordHash.Equals(password) select m).SingleOrDefault();
+
+                if (checkInput != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }   
+        }
+
     }
 }
