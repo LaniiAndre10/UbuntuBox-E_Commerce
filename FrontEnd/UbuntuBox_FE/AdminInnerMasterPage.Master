@@ -44,7 +44,7 @@
 
             <div class="otherlinks">
 
-                <a class="Logout" href="../Authentication/Login.aspx">Logout</a>
+                <a class="Logout" href="../../Authentication/Login.aspx">Logout</a>
 
             </div>
 
