@@ -52,6 +52,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -107,8 +108,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AdminFolder\AddAdmin.aspx" />
+    <Content Include="Admin\AdminFolder\DeleteAdmin.aspx" />
+    <Content Include="Admin\AdminFolder\UpdateAdmin.aspx" />
+    <Content Include="Admin\AdminLanding.aspx" />
+    <Content Include="Admin\AdminControl.aspx" />
+    <Content Include="Admin\CustomerFolder\BlockCustomer.aspx" />
+    <Content Include="Admin\CustomerFolder\RewardCustomer.aspx" />
+    <Content Include="Admin\CustomerFolder\SearchCustomer.aspx" />
+    <Content Include="Admin\CustomerManagement.aspx" />
+    <Content Include="Admin\OrderControl.aspx" />
+    <Content Include="Admin\OrderFolder\CancelledOrders.aspx" />
+    <Content Include="Admin\OrderFolder\CompleteOrders.aspx" />
+    <Content Include="Admin\OrderFolder\LoggedReturns.aspx" />
+    <Content Include="Admin\ProductFolder\AddProduct.aspx" />
+    <Content Include="Admin\ProductFolder\DeleteProduct.aspx" />
+    <Content Include="Admin\ProductFolder\UpdateProduct.aspx" />
+    <Content Include="Admin\ProductManagement.aspx" />
     <Content Include="Authentication\Login.aspx" />
     <Content Include="Authentication\SignUp.aspx" />
+    <Content Include="AdminMaster.Master" />
+    <Content Include="AdminInnerMasterPage.Master" />
     <None Include="Connected Services\ServiceReference1\Service1.disco" />
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
@@ -175,6 +195,139 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminInnerMasterPage.Master.cs">
+      <DependentUpon>AdminInnerMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminInnerMasterPage.Master.designer.cs">
+      <DependentUpon>AdminInnerMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminFolder\AddAdmin.aspx.cs">
+      <DependentUpon>AddAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminFolder\AddAdmin.aspx.designer.cs">
+      <DependentUpon>AddAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminFolder\DeleteAdmin.aspx.cs">
+      <DependentUpon>DeleteAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminFolder\DeleteAdmin.aspx.designer.cs">
+      <DependentUpon>DeleteAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminFolder\UpdateAdmin.aspx.cs">
+      <DependentUpon>UpdateAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminFolder\UpdateAdmin.aspx.designer.cs">
+      <DependentUpon>UpdateAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminLanding.aspx.cs">
+      <DependentUpon>AdminLanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminLanding.aspx.designer.cs">
+      <DependentUpon>AdminLanding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminControl.aspx.cs">
+      <DependentUpon>AdminControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminControl.aspx.designer.cs">
+      <DependentUpon>AdminControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CustomerFolder\BlockCustomer.aspx.cs">
+      <DependentUpon>BlockCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CustomerFolder\BlockCustomer.aspx.designer.cs">
+      <DependentUpon>BlockCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CustomerFolder\RewardCustomer.aspx.cs">
+      <DependentUpon>RewardCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CustomerFolder\RewardCustomer.aspx.designer.cs">
+      <DependentUpon>RewardCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CustomerFolder\SearchCustomer.aspx.cs">
+      <DependentUpon>SearchCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CustomerFolder\SearchCustomer.aspx.designer.cs">
+      <DependentUpon>SearchCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CustomerManagement.aspx.cs">
+      <DependentUpon>CustomerManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CustomerManagement.aspx.designer.cs">
+      <DependentUpon>CustomerManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderControl.aspx.cs">
+      <DependentUpon>OrderControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderControl.aspx.designer.cs">
+      <DependentUpon>OrderControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderFolder\CancelledOrders.aspx.cs">
+      <DependentUpon>CancelledOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderFolder\CancelledOrders.aspx.designer.cs">
+      <DependentUpon>CancelledOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderFolder\CompleteOrders.aspx.cs">
+      <DependentUpon>CompleteOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderFolder\CompleteOrders.aspx.designer.cs">
+      <DependentUpon>CompleteOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderFolder\LoggedReturns.aspx.cs">
+      <DependentUpon>LoggedReturns.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderFolder\LoggedReturns.aspx.designer.cs">
+      <DependentUpon>LoggedReturns.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductFolder\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductFolder\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductFolder\DeleteProduct.aspx.cs">
+      <DependentUpon>DeleteProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductFolder\DeleteProduct.aspx.designer.cs">
+      <DependentUpon>DeleteProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductFolder\UpdateProduct.aspx.cs">
+      <DependentUpon>UpdateProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductFolder\UpdateProduct.aspx.designer.cs">
+      <DependentUpon>UpdateProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductManagement.aspx.cs">
+      <DependentUpon>ProductManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductManagement.aspx.designer.cs">
+      <DependentUpon>ProductManagement.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Authentication\Login.aspx.cs">
@@ -216,6 +369,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Admin\AnalyticsFolder\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

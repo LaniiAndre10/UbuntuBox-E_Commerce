@@ -18,15 +18,23 @@ namespace UbuntuBox_FE.Authentication
 
         protected void login_Click(object sender, EventArgs e)
         {
-            bool userInfo = client.LoginUser(Emailbox.Value.Trim(), passbox.Value.Trim());
+            int userInfo = client.LoginUser(Emailbox.Value.Trim(), passbox.Value.Trim());
 
-            if (userInfo)
+            if (userInfo==1)
             {
-                Response.Redirect("SignUp.aspx");
+                //User is type admin//
+                Response.Redirect("../Admin/AdminLanding.aspx");
+
+            }
+            if (userInfo ==2)
+            {
+                //User is type Buyer//
+                Response.Redirect("./Store/ProductLanding.aspx");
+
             }
             else
             {
-                lblMessage.Text = "Incorrect Email and Password, Please try again";
+                lblMessage.Text = "Incorrect Login Credentials, Please try again";
             }
         }
 

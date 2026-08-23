@@ -1,0 +1,116 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminInnerMasterPage.Master" AutoEventWireup="true" CodeBehind="UpdateProduct.aspx.cs" Inherits="UbuntuBox_FE.Admin.ProductFolder.UpdateProduct" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <div class="pagecontent">
+        <h2>🎁Product Management: Update Product.📦</h2>
+    </div>
+
+    <div class="AnalyticsGrid">
+
+        <div class="Controls">
+
+            <div class="buttons">
+
+                <h3>Product Controls.</h3>
+
+                <div class="AnalyticControl">
+
+                    <a href="../ProductManagement.aspx">
+                    <img  Id="View Products" src="../Product Management/Icons/icons8-look-48.png" alt="Sales Logo" width="40px">
+                    <span>View Active Products.</span>
+                    </a>
+                    
+                </div>
+
+                <div class="AnalyticControl">
+
+                    <a href="./AddProduct.aspx">
+                    <img  Id="P_Orders" src="../Product Management/Icons/icons8-add-product-32.png" alt="Sales Logo" width="40px">
+                    <span>Add Product.</span>
+                    </a>
+                    
+                </div>
+
+                <div class="AnalyticControl">
+
+                    <a href="#">
+                    <img  Id="BestSeller" src="../Product Management/Icons/icons8-update-product-32.png" alt="Sales Logo" width="40px">
+                    <span>Update Product.</span>
+                    </a>
+                    
+                </div>
+
+                <div id="Errors" class="AnalyticControl">
+
+                    <a href="./DeleteProduct.aspx">
+                    <img  Id="Errors" src="../Product Management/Icons/icons8-delete-48.png" alt="Sales Logo" width="40px">
+                    <span>Delete Product.</span>
+                    </a>
+                    
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="background">
+
+
+            <div class="form1">
+                <img src="https://www.vhv.rs/dpng/d/476-4764937_insert-image-here-icon-hd-png-download.png" alt="ProductImg">
+            </div>
+
+            <div class="form1">
+
+                <div class="input1">
+                <label for="ProductLink">Product ID:</label>
+                <input id="ProductLink" type="url" placeholder=" Enter Product Id">
+                <button type="submit">Search Product</button>
+                </div>
+                
+                <div class="input1">
+                <label for="ProductLink1">Update Product Image 1 Link:</label>
+                <input id="ProductLink1" type="url" placeholder=" Search Product to retrieve product Image Link">
+                </div>
+
+                <div class="input1">
+                <label for="ProductLink2">Update Product Image 2 Link:</label>
+                <input id="ProductLink2" type="url" placeholder=" Search Product to retrieve product Image Link">
+                </div>
+
+                <div class="input1">
+                <label for="ProductName">Update Product Name:</label>
+                <input id="ProductName" type="text" placeholder="Search Product to retrieve product Name">
+                </div>
+
+                <div class="input1">
+                <label for="ProductCategory">Update Product Category:</label>
+                <input id="ProductCategory" type="text" placeholder="Search Product to retrieve product Category">
+                </div>
+
+            </div>
+
+            <div class="form1">
+
+                <div class="input1">
+                <label for="ProductPrice">Update Product Price:</label>
+                <input id="ProductPrice" type="number" placeholder="Search Product to retrieve product Price">
+                </div>
+
+                <div class="input1">
+                <label for="ProductDescription">Update Product Description:</label>
+                <textarea name="ProductDescContainer" id="ProductDescription" placeholder="Search Product to retrieve product Description." wrap="soft" rows="10" cols="10"></textarea>
+                </div>
+
+                <a href="#">
+                    <button class="Update" type="submit">Update Product.</button>
+                </a>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+</asp:Content>

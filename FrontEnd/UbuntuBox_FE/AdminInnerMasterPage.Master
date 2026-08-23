@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminInnerMasterPage.master.cs" Inherits="UbuntuBox_FE.AdminInnerMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UbuntuBox | Admin.</title>
+    <link rel="stylesheet" href="Admin/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap" rel="stylesheet">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="absheader">
+            <p>📦You Have Logged In As Product Administrator.📦</p>
+        </div>
+
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="../Logo/text_logo_1.png" alt="UbuntuBox text logo">
+            </div>
+
+            <div class="links">
+
+                <ul>
+                    <li><a href="../AdminLanding.aspx">Analytics</a></li>
+                    <li><a href="../ProductManagement.aspx">Product Management</a></li>
+                    <li><a class="sale" href="../OrderControl.aspx">Orders</a></li>
+                    <li><a href="../AdminControl.aspx">Admin Management</a></li>
+                    <li><a href="../CustomerManagement.aspx">Customers</a></li>
+                </ul>
+
+            </div>
+
+            <div class="otherlinks">
+
+                <a class="Logout" href="../Authentication/Login.aspx">Logout</a>
+
+            </div>
+
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

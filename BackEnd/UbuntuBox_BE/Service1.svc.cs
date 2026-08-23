@@ -22,15 +22,14 @@ namespace UbuntuBox_BE
         //create a hashing function to hash the passwords into the database//
         public static string HashPassword(string password)
         {
-            SHA1 algorithm = SHA1.Create();
-            byte[] byteArray = null;
-            byteArray = algorithm.ComputeHash(Encoding.Default.GetBytes(password));
-            string hashedPassword = "";
-            for (int i = 0; i < byteArray.Length - 1; i++)
+            using (MD5 md5 = MD5.Create())
             {
-                hashedPassword += byteArray[i].ToString("x2");
+                byte[] bytes = Encoding.UTF8.GetBytes(password);
+                byte[] hash = md5.ComputeHash(bytes);
+
+                return BitConverter.ToString(hash).Replace("-", "");
             }
-            return hashedPassword;
+
         }
 
 
@@ -86,27 +85,23 @@ namespace UbuntuBox_BE
 
         }
 
-        public bool LoginUser(string email, string password)
+        public int LoginUser(string email, string password)
         {
-            using (SHA1 algorithm = SHA1.Create())
-            {
+                var checkInput = (from m in dbaUbuntuBox.Users where m.Email.Equals(email) && m.PasswordHash.Equals(HashPassword(password)) select m).SingleOrDefault();
 
-                byte[] byteArray = Encoding.Default.GetBytes(password);
-                byte[] hashBytes = algorithm.ComputeHash(byteArray);
-
-                string hashedPassword = Convert.ToBase64String(hashBytes);
-
-                var checkInput = (from m in dbaUbuntuBox.Users where m.Email.Equals(email) && m.PasswordHash.Equals(password) select m).SingleOrDefault();
-
-                if (checkInput != null)
+                if (checkInput != null && checkInput.IsAdmin==true)
                 {
-                    return true;
+                    return 1;
+                }
+                else if(checkInput != null && checkInput.IsAdmin == false)
+                {
+                    return 2;
                 }
                 else
                 {
-                    return false;
+                    return 0;
                 }
-            }   
+              
         }
 
     }

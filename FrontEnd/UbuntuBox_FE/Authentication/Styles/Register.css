@@ -225,18 +225,18 @@ form {
 @keyframes neon-pulse {
   0% {
     text-shadow: 
-      0 0 5px #ff0000,
-      0 0 10px #ff0000,
-      0 0 20px #ff000062,
+      0 0 5px #ffea00,
+      0 0 10px #8b8000,
+      0 0 20px #5e5600,
       0 0 40px #1a00004b,
       0 0 80px #ff4d4d00;
   }
   100% {
     text-shadow: 
-      0 0 2px #ff0000,
-      0 0 6px #880000,
-      0 0 12px #300000,
-      0 0 24px #220000,
+      0 0 2px #ffea00,
+      0 0 6px #8b8000,
+      0 0 12px #5e5600,
+      0 0 24px #221f00,
       0 0 48px #0000006c;
       font-weight: bold;
       
@@ -246,7 +246,7 @@ form {
 #ServerResponse {
 
     margin-top: 8px;
-    color: #ff0000; 
+    color:gold; 
     animation: neon-pulse 1.5s ease-in-out infinite alternate;
 
 }

@@ -24,7 +24,7 @@ namespace UbuntuBox_BE
 
 
         [OperationContract]
-        public bool LoginUser(string email, string password);
+        public int LoginUser(string email, string password);
     }
 
 
