@@ -48,7 +48,6 @@ Rating int Not Null,
 ReviewText Varchar(500) Not null,
 
 ReviewDate DateTime DEFAULT GETDATE(),-- Records when the review was submitted Helps us know when a review was posted.
-
 Primary key(ReviewID),
 foreign key(ProductID) References [Product](ProductID),
 foreign key(UserID) References[User](UserID),
@@ -57,4 +56,41 @@ Check(Rating BETWEEN 1 AND 5) -- Ensures that the rating can only be between 1 a
 
 
 
+);
+
+---basic whishlist Table 
+
+CREATE TABLE Wishlist(
+    WishlistID INT IDENTITY(1,1) UNIQUE NOT NULL,
+    UserID INT NOT NULL,
+    ProductID INT NOT NULL,
+    PRIMARY KEY(WishlistID),
+    FOREIGN KEY(UserID) REFERENCES [User](UserID),
+    FOREIGN KEY(ProductID) REFERENCES [Product](ProductID),
+
+  
+);
+
+---shopping carts 
+
+CREATE TABLE Cart(
+    CartID INT Identity(1,1) UNIQUE NOT NULL,
+    UserID INT NOT NULL,
+    CartDate DATETIME DEFAULT GETDATE(),
+    PRIMARY KEY(CartID),
+    FOREIGN KEY(UserID) REFERENCES [User](UserID)
+);
+
+
+
+
+CREATE TABLE CartItem(
+    CartItemID INT Identity(1,1) UNIQUE NOT NULL,
+    CartID INT NOT NULL,
+    ProductID int NOT NULL,
+    Quantity INT NOT NULL DEFAULT 1,
+    PRIMARY KEY(CartItemID),
+    FOREIGN KEY(CartID) REFERENCES Cart(CartID),
+    FOREIGN KEY(ProductID) REFERENCES [Product](ProductID),
+    CHECK(Quantity > 0)
 );
