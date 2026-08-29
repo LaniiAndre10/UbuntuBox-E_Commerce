@@ -109,7 +109,7 @@
 
                 
        
-                <asp:Button CssClass="Update" ID="UpdateProductbtn" runat="server" Text="Update Product." />
+                <asp:Button CssClass="Update" ID="UpdateProductbtn" runat="server" Text="Update Product." OnClick="UpdateProductbtn_Click" />
 
                
 

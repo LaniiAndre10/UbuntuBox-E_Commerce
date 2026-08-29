@@ -28,7 +28,7 @@ namespace UbuntuBox_FE.Admin.ProductFolder
             //then populate the Textboxes with the data of that product//
 
             txtProductName.Value = ReqProduct.ProductName;
-            txtProductPrice.Value = ReqProduct.Price.ToString();
+            txtProductPrice.Value = ReqProduct.Price.ToString(System.Globalization.CultureInfo.InvariantCulture);
             txtProductCategory.Value = ReqProduct.BoxCategory;
             txtProductDescription.Value = ReqProduct.Description;
 
@@ -36,6 +36,7 @@ namespace UbuntuBox_FE.Admin.ProductFolder
 
             //retrieve data for the images//
             try { 
+
                 txtProductLink1.Value = ReqproductImages[0].ImageURL;
                 txtProductLink2.Value = ReqproductImages[1].ImageURL;
 
@@ -45,12 +46,51 @@ namespace UbuntuBox_FE.Admin.ProductFolder
             }
             catch
             {
-                //do nothing, this is just for robustness of the platform//
+                //if it reaches this stage it means that the product image was not found, display the 404 picture//
+                ImageHolder.ImageUrl = "https://support.heberjahiz.com/hc/article_attachments/21013076295570";
 
             }
 
-            //then call the update function so that it can take any changes made to the text and push them to the database//
+            //finally make the productID box readonly so they cannot change the productID//
+            txtProductID.Disabled = true;
         }
 
+        protected void UpdateProductbtn_Click(object sender, EventArgs e)
+        {
+
+            //then call the update function so that it can take any changes made to the text and push them to the database//
+            var UpdatedProductName = txtProductName.Value;
+            var UpdatedProductPrice = double.Parse(txtProductPrice.Value, System.Globalization.CultureInfo.InvariantCulture);
+            var UpdatedProductCategory = txtProductCategory.Value;
+            var UpdatedProductDescription = txtProductDescription.Value;
+
+            var UpdatedProductImagelink1 = txtProductLink1.Value;
+            var UpdatedProductImagelink2 = txtProductLink2.Value;
+
+            bool Isupdated = false;
+
+            try
+            {
+                DataClient.UpdateProduct(txtProductID.Value, UpdatedProductImagelink1, UpdatedProductImagelink2, UpdatedProductName, UpdatedProductCategory, UpdatedProductDescription, UpdatedProductPrice);
+                Isupdated = true;
+
+            }
+            catch
+            {
+                //Do nothing//
+            }
+
+            if (Isupdated)
+            {
+                lblSubmitstatus.Text = "Successfully Updated Product.";
+            }
+            else
+            {
+                lblSubmitstatus.Text = "Failed to Update Product.";
+            }
+
+            txtProductID.Disabled = false; //they can not temper with the product ID post update//
+
+        }
     }
 }

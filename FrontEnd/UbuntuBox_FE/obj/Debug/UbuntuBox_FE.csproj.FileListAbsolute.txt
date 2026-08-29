@@ -145,3 +145,4 @@ C:\Users\andre\Documents\WorkSpace\UbuntuBox\UbuntuBox-E_Commerce\FrontEnd\Ubunt
 C:\Users\andre\Documents\WorkSpace\UbuntuBox\UbuntuBox-E_Commerce\FrontEnd\UbuntuBox_FE\obj\Debug\UbuntuBox_FE.csproj.CopyComplete
 C:\Users\andre\Documents\WorkSpace\UbuntuBox\UbuntuBox-E_Commerce\FrontEnd\UbuntuBox_FE\obj\Debug\UbuntuBox_FE.dll
 C:\Users\andre\Documents\WorkSpace\UbuntuBox\UbuntuBox-E_Commerce\FrontEnd\UbuntuBox_FE\obj\Debug\UbuntuBox_FE.pdb
+C:\Users\andre\Documents\WorkSpace\UbuntuBox\UbuntuBox-E_Commerce\FrontEnd\UbuntuBox_FE\obj\Debug\UbuntuBox_FE.csproj.AssemblyReference.cache

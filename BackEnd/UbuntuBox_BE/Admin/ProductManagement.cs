@@ -118,57 +118,54 @@ namespace UbuntuBox_BE.Admin
         //1.3: Update Product function//
         public bool UpdateProduct(string productID, string imglink1, string imglink2, string ProductName, String ProductCategory, double ProductPrice, string ProductDescription)
         {
-
             bool isUpdated = false;
 
             /*the key here is to return a desired item found by the ProductID, then... display the data to the gui controls in the FE, then set the variables we take as params as data,
             that is in that controls, and push an update to the database regardless of the change state, this will update the data in the database*/
 
-            //1.3.1: First return the desired Item; by helper//
-            var DesiredProduct = ReturnSearchedProduct(productID);
+            try
+            {
+                //1.3.1: First return the desired Item; by helper//
+                int parsedId = int.Parse(productID); //convert productID string to int for comparison
 
-            try { 
+                var DesiredProduct = (from u in Ubuntuboxdatabase.Products
+                                      where u.ProductID == parsedId
+                                      select u).SingleOrDefault();
+
+                if (DesiredProduct == null) return false;
 
                 // then push the text in the gui controls which is from the database into the params, and push params to function//
                 //if the text changed, it will update it, if not, it will push the same text into the object, making no difference.//
-
                 DesiredProduct.ProductName = ProductName;
                 DesiredProduct.BoxCategory = ProductCategory;
-                DesiredProduct.Price = (decimal)ProductPrice;
+                DesiredProduct.Price = (decimal)ProductPrice; //use decimal for money values
                 DesiredProduct.Description = ProductDescription;
 
                 //there are 2 images at max for a single product, find a list of all of them//
-                List<ProductImage> DesiredProductImages = new List<ProductImage>();
-
-                foreach(var Productwithimages in Ubuntuboxdatabase.ProductImages)
-                {
-                    if (Productwithimages.ProductID.Equals(productID))
-                    {
-                        DesiredProductImages.Add(Productwithimages);
-
-                    }
-                }
+                List<ProductImage> DesiredProductImages = (from img in Ubuntuboxdatabase.ProductImages
+                                                           where img.ProductID == parsedId
+                                                           select img).ToList();
 
                 //logical, at max, there must be 2 items in the list, so go through each index and update the productimages//
-                DesiredProductImages[0].ImageURL = imglink1;
-                DesiredProductImages[1].ImageURL = imglink2;
+                if (DesiredProductImages.Count > 0)
+                    DesiredProductImages[0].ImageURL = imglink1;
 
-                Ubuntuboxdatabase.SubmitChanges();
+                if (DesiredProductImages.Count > 1)
+                    DesiredProductImages[1].ImageURL = imglink2;
+
+                Ubuntuboxdatabase.SubmitChanges(); //commit changes to database
 
                 isUpdated = true;
-
             }
             catch
             {
-
                 //the update process failed//
                 isUpdated = false;
-
             }
 
             return isUpdated;
-
         }
+
 
         //1.4: Add the delete product function//
         public bool DeleteProduct(string ProductID)
@@ -180,8 +177,24 @@ namespace UbuntuBox_BE.Admin
             //then here you will delete the product with the give IP upon the delete product click//
             try
             {
-                var UnwantedProduct = (from u in Ubuntuboxdatabase.Products where u.ProductID.Equals(ProductID) select u).SingleOrDefault();
+                //1.4.1: Delete the Product//
+                //first parse the String ProductID to integer for proper DB search//
+                int ParsedID = int.Parse(ProductID);
+
+                var UnwantedProduct = (from u in Ubuntuboxdatabase.Products where u.ProductID == ParsedID select u).SingleOrDefault();
                 Ubuntuboxdatabase.Products.DeleteOnSubmit(UnwantedProduct);
+
+                //1.4.2: Delete the Product Pictures//
+                var Productimgs = (from u in Ubuntuboxdatabase.ProductImages where u.ProductID == ParsedID select u).ToList();
+
+                //then loop through the list and delete each Image index//
+                for( int i = 0; i < Productimgs.Count; i++)
+                {
+
+                    Ubuntuboxdatabase.ProductImages.DeleteOnSubmit(Productimgs[i]);
+
+                }
+
 
                 Ubuntuboxdatabase.SubmitChanges();
 
