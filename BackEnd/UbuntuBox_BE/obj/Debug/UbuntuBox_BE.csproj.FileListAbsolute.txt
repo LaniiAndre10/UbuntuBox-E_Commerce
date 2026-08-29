@@ -1,9 +1,3 @@
-C:\Users\andre\Documents\WorkSpace\UbuntuBox\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\bin\UbuntuBox_BE.dll.config
-C:\Users\andre\Documents\WorkSpace\UbuntuBox\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\bin\UbuntuBox_BE.dll
-C:\Users\andre\Documents\WorkSpace\UbuntuBox\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\bin\UbuntuBox_BE.pdb
-C:\Users\andre\Documents\WorkSpace\UbuntuBox\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\obj\Debug\UbuntuBox_BE.csproj.CoreCompileInputs.cache
-C:\Users\andre\Documents\WorkSpace\UbuntuBox\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\obj\Debug\UbuntuBox_BE.dll
-C:\Users\andre\Documents\WorkSpace\UbuntuBox\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\obj\Debug\UbuntuBox_BE.pdb
 T:\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\bin\UbuntuBox_BE.dll.config
 T:\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\bin\UbuntuBox_BE.dll
 T:\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\bin\UbuntuBox_BE.pdb
@@ -11,4 +5,3 @@ T:\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\obj\Debug\UbuntuBox_BE.csproj.Assem
 T:\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\obj\Debug\UbuntuBox_BE.csproj.CoreCompileInputs.cache
 T:\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\obj\Debug\UbuntuBox_BE.dll
 T:\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\obj\Debug\UbuntuBox_BE.pdb
-C:\Users\andre\Documents\WorkSpace\UbuntuBox\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\obj\Debug\UbuntuBox_BE.csproj.AssemblyReference.cache
