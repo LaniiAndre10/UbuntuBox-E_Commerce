@@ -65,43 +65,24 @@
     </div>
 
     <div class="Rowcontainer">
-        <div class="ProductRow">
-            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJm0C-TyiqL5ytdVgFdPdewTiVikanc0yh2vvxTAgUpg&s=10" width="100"></div>
-            <div>01</div>
-            <div>African Gourd</div>
-            <div>Standard Box</div>
-            <div>2026-06-05</div>
-            <div>Active</div>
-        </div>
 
-        <div class="ProductRow">
-            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDYx-UowMbTFJy6QFTGe8Uye_XVbtxy2Tl5XqYEvBlKg&s=10" width="100"></div>
-            <div>02</div>
-            <div>Golden Rhino</div>
-            <div>Premium Box</div>
-            <div>2026-08-21</div>
-            <div>Unactive.</div>
-        </div>
+        <asp:Repeater ID="RowRepeater" runat="server">
+            <ItemTemplate>
+                <div class="ProductRow">
 
-        <div class="ProductRow">
-            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzNEm3AJYgNc9WkUCdWmtrxfzxbLDZocGoJFGBYXrWig&s=10" width="100"></div>
-             <div>03</div>
-            <div>Rural Fish Sculpture</div>
-            <div>Standard Box</div>
-            <div>2026-08-31</div>
-            <div>Active</div>
-        </div>
+                    <div><img src='<%# Eval("ImageUrls[0]") %>' width="80" /></div>
+                    <div><asp:Label ID="lblProductID" runat="server" Text=<%# Eval("ProductID") %>></asp:Label></div>
+                    <div><asp:Label ID="lblProductName" runat="server" Text=<%# Eval("ProductName") %>></asp:Label></div>
+                    <div><asp:Label ID="lblProductCategory" runat="server" Text=<%# Eval("BoxCategory") %>></asp:Label></div>
+                    <div><asp:Label ID="lblDateAdded" runat="server" Text=<%# Eval("DateAdded") %>></asp:Label></div>
+                    <div><asp:Label ID="lblStatus" runat="server" Text=<%# Eval("ProductStatus") %>></asp:Label></div>
 
-        <div class="ProductRow">
-            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGd6trSjyv4sWadtz_KBasklrZpck-bgQ9wC4YszXzUQ&s=10" width="100"></div>
-             <div>04</div>
-            <div>San Cave Artwork</div>
-            <div>Premium box</div>
-            <div>2026-04-21</div>
-            <div>Active</div>
-        </div>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+
     </div>
-</div>
+    </div>
 
 
     </div>

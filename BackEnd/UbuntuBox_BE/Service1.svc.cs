@@ -7,31 +7,17 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
+
 namespace UbuntuBox_BE
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
+    //External Classes used: 1. Secrecy.cs for Password Hashing.//
+
     public class Service1 : IService1
     {
-        dbaUbuntuBoxDataContext dbaUbuntuBox = new dbaUbuntuBoxDataContext();
-        public string GetData(int value)
-        {
-            return string.Format("You entered: {0}", value);
-        }
+        //1. For password Encryption, Secrecy method is static, meaning that it can be called without creation on obj: @LaniiAndre10.//
 
-        //create a hashing function to hash the passwords into the database//
-        public static string HashPassword(string password)
-        {
-            using (MD5 md5 = MD5.Create())
-            {
-                byte[] bytes = Encoding.UTF8.GetBytes(password);
-                byte[] hash = md5.ComputeHash(bytes);
-
-                return BitConverter.ToString(hash).Replace("-", "");
-            }
-
-        }
-
+        //2. Create the ORM of the database.//
+        dbaUbuntuBoxDataContext dbaUbuntuBox = new dbaUbuntuBoxDataContext(); //Gets database ORM//
 
         public string RegisterUser(string Usernames, string UserEmail, string UserPhone, string UserPass, bool IsAdmin)
         {
@@ -71,7 +57,7 @@ namespace UbuntuBox_BE
                 Usernames = Usernames,
                 Email = UserEmail,
                 PhoneNum = UserPhone,
-                PasswordHash = HashPassword(UserPass), //Hashed//
+                PasswordHash = UbuntuBox_BE.Secrecy.Secrecy.HashPassword(UserPass), //Hashed//
                 IsAdmin = IsAdmin
 
             };
@@ -87,7 +73,7 @@ namespace UbuntuBox_BE
 
         public int LoginUser(string email, string password)
         {
-                var checkInput = (from m in dbaUbuntuBox.Users where m.Email.Equals(email) && m.PasswordHash.Equals(HashPassword(password)) select m).SingleOrDefault();
+                var checkInput = (from m in dbaUbuntuBox.Users where m.Email.Equals(email) && m.PasswordHash.Equals(UbuntuBox_BE.Secrecy.Secrecy.HashPassword(password)) select m).SingleOrDefault();
 
                 if (checkInput != null && checkInput.IsAdmin==true)
                 {
@@ -102,6 +88,71 @@ namespace UbuntuBox_BE
                     return 0;
                 }
               
+        }
+
+        public List<ProductWithImages> viewProducts()
+        {
+            //The goal is to return active products: @laniiAndre10//
+
+            UbuntuBox_BE.Admin.ProductManagement productManagement = new Admin.ProductManagement();
+            List<ProductWithImages> products = new List<ProductWithImages>();
+
+            products = productManagement.ViewActiveProducts();
+
+            return products;
+            
+        }
+
+        public bool AddProduct(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice)
+        {
+            //The goal is to add a new product into the system: @LaniiAndre10//
+            bool isSuccess = false;
+
+            UbuntuBox_BE.Admin.ProductManagement productManagement = new Admin.ProductManagement();
+
+            isSuccess = productManagement.AddProduct(imglink, imglink2, ProductName, ProductPrice, productDescription, ProductCategory);
+
+            return isSuccess;
+
+        }
+
+        public bool UpdateProduct(string ProductID, string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice)
+        {
+            //The goal is to Update an existing Product: @LaniiAndre10//
+
+            bool IsUpdated = false;
+
+            Admin.ProductManagement productManagement = new Admin.ProductManagement();
+
+            IsUpdated = productManagement.UpdateProduct(ProductID, imglink, imglink2, ProductName, ProductCategory, ProductPrice, productDescription);
+
+            return IsUpdated;
+        }
+
+        public Product RetrieveSearchProduct(string ProductID)
+        {
+
+            //The goal here is to retrieve the product that is desired: @laniiAndre10. //
+
+            Admin.ProductManagement productManagement = new Admin.ProductManagement();
+            var Product = productManagement.ReturnSearchedProduct(ProductID);
+
+            return Product;
+            
+        }
+
+        public bool DeleteUnwantedProduct(string ProductID)
+        {
+            //The goal here is to delete the unwanted Product: @LaniiAndre10. //
+
+            bool IsDeleted;
+
+            Admin.ProductManagement productManagement = new Admin.ProductManagement();
+
+            IsDeleted = productManagement.DeleteProduct(ProductID);
+
+            return IsDeleted;
+
         }
 
     }

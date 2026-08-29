@@ -9,17 +9,420 @@
 //------------------------------------------------------------------------------
 
 namespace UbuntuBox_FE.ServiceReference1 {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductWithImages", Namespace="http://schemas.datacontract.org/2004/07/UbuntuBox_BE")]
+    [System.SerializableAttribute()]
+    public partial class ProductWithImages : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BoxCategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateAddedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string[] ImageUrlsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal ProductPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ProductStatusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BoxCategory {
+            get {
+                return this.BoxCategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BoxCategoryField, value) != true)) {
+                    this.BoxCategoryField = value;
+                    this.RaisePropertyChanged("BoxCategory");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DateAdded {
+            get {
+                return this.DateAddedField;
+            }
+            set {
+                if ((this.DateAddedField.Equals(value) != true)) {
+                    this.DateAddedField = value;
+                    this.RaisePropertyChanged("DateAdded");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] ImageUrls {
+            get {
+                return this.ImageUrlsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageUrlsField, value) != true)) {
+                    this.ImageUrlsField = value;
+                    this.RaisePropertyChanged("ImageUrls");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductDescription {
+            get {
+                return this.ProductDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductDescriptionField, value) != true)) {
+                    this.ProductDescriptionField = value;
+                    this.RaisePropertyChanged("ProductDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((this.ProductIDField.Equals(value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductName {
+            get {
+                return this.ProductNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductNameField, value) != true)) {
+                    this.ProductNameField = value;
+                    this.RaisePropertyChanged("ProductName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal ProductPrice {
+            get {
+                return this.ProductPriceField;
+            }
+            set {
+                if ((this.ProductPriceField.Equals(value) != true)) {
+                    this.ProductPriceField = value;
+                    this.RaisePropertyChanged("ProductPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ProductStatus {
+            get {
+                return this.ProductStatusField;
+            }
+            set {
+                if ((this.ProductStatusField.Equals(value) != true)) {
+                    this.ProductStatusField = value;
+                    this.RaisePropertyChanged("ProductStatus");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/UbuntuBox_BE")]
+    [System.SerializableAttribute()]
+    public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BoxCategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ProductDateAddedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UbuntuBox_FE.ServiceReference1.ProductImage[] ProductImagesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ProductStatusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BoxCategory {
+            get {
+                return this.BoxCategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BoxCategoryField, value) != true)) {
+                    this.BoxCategoryField = value;
+                    this.RaisePropertyChanged("BoxCategory");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ProductDateAdded {
+            get {
+                return this.ProductDateAddedField;
+            }
+            set {
+                if ((this.ProductDateAddedField.Equals(value) != true)) {
+                    this.ProductDateAddedField = value;
+                    this.RaisePropertyChanged("ProductDateAdded");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((this.ProductIDField.Equals(value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UbuntuBox_FE.ServiceReference1.ProductImage[] ProductImages {
+            get {
+                return this.ProductImagesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductImagesField, value) != true)) {
+                    this.ProductImagesField = value;
+                    this.RaisePropertyChanged("ProductImages");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductName {
+            get {
+                return this.ProductNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductNameField, value) != true)) {
+                    this.ProductNameField = value;
+                    this.RaisePropertyChanged("ProductName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ProductStatus {
+            get {
+                return this.ProductStatusField;
+            }
+            set {
+                if ((this.ProductStatusField.Equals(value) != true)) {
+                    this.ProductStatusField = value;
+                    this.RaisePropertyChanged("ProductStatus");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductImage", Namespace="http://schemas.datacontract.org/2004/07/UbuntuBox_BE")]
+    [System.SerializableAttribute()]
+    public partial class ProductImage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ImageIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ImageURLField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UbuntuBox_FE.ServiceReference1.Product ProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ImageID {
+            get {
+                return this.ImageIDField;
+            }
+            set {
+                if ((this.ImageIDField.Equals(value) != true)) {
+                    this.ImageIDField = value;
+                    this.RaisePropertyChanged("ImageID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ImageURL {
+            get {
+                return this.ImageURLField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageURLField, value) != true)) {
+                    this.ImageURLField = value;
+                    this.RaisePropertyChanged("ImageURL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UbuntuBox_FE.ServiceReference1.Product Product {
+            get {
+                return this.ProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((this.ProductIDField.Equals(value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        string GetData(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterUser", ReplyAction="http://tempuri.org/IService1/RegisterUserResponse")]
         string RegisterUser(string Usernames, string UserEmail, string UserPhone, string UserPass, bool IsAdmin);
@@ -32,6 +435,36 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoginUser", ReplyAction="http://tempuri.org/IService1/LoginUserResponse")]
         System.Threading.Tasks.Task<int> LoginUserAsync(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/viewProducts", ReplyAction="http://tempuri.org/IService1/viewProductsResponse")]
+        UbuntuBox_FE.ServiceReference1.ProductWithImages[] viewProducts();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/viewProducts", ReplyAction="http://tempuri.org/IService1/viewProductsResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> viewProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
+        bool AddProduct(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
+        System.Threading.Tasks.Task<bool> AddProductAsync(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProduct", ReplyAction="http://tempuri.org/IService1/UpdateProductResponse")]
+        bool UpdateProduct(string ProductID, string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProduct", ReplyAction="http://tempuri.org/IService1/UpdateProductResponse")]
+        System.Threading.Tasks.Task<bool> UpdateProductAsync(string ProductID, string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RetrieveSearchProduct", ReplyAction="http://tempuri.org/IService1/RetrieveSearchProductResponse")]
+        UbuntuBox_FE.ServiceReference1.Product RetrieveSearchProduct(string ProductID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RetrieveSearchProduct", ReplyAction="http://tempuri.org/IService1/RetrieveSearchProductResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.Product> RetrieveSearchProductAsync(string ProductID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUnwantedProduct", ReplyAction="http://tempuri.org/IService1/DeleteUnwantedProductResponse")]
+        bool DeleteUnwantedProduct(string ProductID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUnwantedProduct", ReplyAction="http://tempuri.org/IService1/DeleteUnwantedProductResponse")]
+        System.Threading.Tasks.Task<bool> DeleteUnwantedProductAsync(string ProductID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -61,14 +494,6 @@ namespace UbuntuBox_FE.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
-        }
-        
         public string RegisterUser(string Usernames, string UserEmail, string UserPhone, string UserPass, bool IsAdmin) {
             return base.Channel.RegisterUser(Usernames, UserEmail, UserPhone, UserPass, IsAdmin);
         }
@@ -83,6 +508,46 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         public System.Threading.Tasks.Task<int> LoginUserAsync(string email, string password) {
             return base.Channel.LoginUserAsync(email, password);
+        }
+        
+        public UbuntuBox_FE.ServiceReference1.ProductWithImages[] viewProducts() {
+            return base.Channel.viewProducts();
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> viewProductsAsync() {
+            return base.Channel.viewProductsAsync();
+        }
+        
+        public bool AddProduct(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice) {
+            return base.Channel.AddProduct(imglink, imglink2, ProductName, ProductCategory, productDescription, ProductPrice);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddProductAsync(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice) {
+            return base.Channel.AddProductAsync(imglink, imglink2, ProductName, ProductCategory, productDescription, ProductPrice);
+        }
+        
+        public bool UpdateProduct(string ProductID, string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice) {
+            return base.Channel.UpdateProduct(ProductID, imglink, imglink2, ProductName, ProductCategory, productDescription, ProductPrice);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateProductAsync(string ProductID, string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice) {
+            return base.Channel.UpdateProductAsync(ProductID, imglink, imglink2, ProductName, ProductCategory, productDescription, ProductPrice);
+        }
+        
+        public UbuntuBox_FE.ServiceReference1.Product RetrieveSearchProduct(string ProductID) {
+            return base.Channel.RetrieveSearchProduct(ProductID);
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.Product> RetrieveSearchProductAsync(string ProductID) {
+            return base.Channel.RetrieveSearchProductAsync(ProductID);
+        }
+        
+        public bool DeleteUnwantedProduct(string ProductID) {
+            return base.Channel.DeleteUnwantedProduct(ProductID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteUnwantedProductAsync(string ProductID) {
+            return base.Channel.DeleteUnwantedProductAsync(ProductID);
         }
     }
 }

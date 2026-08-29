@@ -17,25 +17,31 @@ CREATE TABLE [User](
 
 );
 
----Products informtion
+-- Creating the products page --
 Create Table [Product](
-ProductID INt Identity(1,1) Unique Not NUll,
-ProductName varchar(100) Not null,
-Description Varchar(500) Not Null,
-Price Decimal(10,2) Not Null,
-BoxType varchar(20) Not Null,
-Primary Key(ProductID)
+
+	ProductID INT IDENTITY(1,1) UNIQUE NOT NULL,
+	ProductName VARCHAR(100) NOT NULL,
+	Description TEXT NOT NULL,
+	Price DECIMAL(10,2) NOT NULL,
+	BoxCategory VARCHAR(20) NOT NULL,
+	ProductStatus BIT DEFAULT(0) NOT NULL,
+	ProductDateAdded DATE DEFAULT GETDATE() NOT NULL,
+	
+	Primary Key(ProductID)
 
 );
 
+--@admin copied up to here--
 
 Create Table ProductImage(
-ImageID Int Identity(1,1) Unique Not Null,
-ProductID int Not Null,
-ImageURL Varchar(max) Not NUll,
-Primary Key(ImageID),
-Foreign key(ProductID) References [Product](ProductID)
 
+	ImageID INT IDENTITY(1,1) UNIQUE NOT NULL,
+	ProductID INT NOT NULL,
+	ImageURL Varchar(max) NOT NUll,
+	
+	Primary Key(ImageID),
+	Foreign key(ProductID) REFERENCES [Product](ProductID)
 
 );
 
@@ -94,3 +100,4 @@ CREATE TABLE CartItem(
     FOREIGN KEY(ProductID) REFERENCES [Product](ProductID),
     CHECK(Quantity > 0)
 );
+

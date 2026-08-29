@@ -1,0 +1,32 @@
+@LaniiAndre10.
+WCF SocketException / WCF Communication Exception:
+
+In WCF, a CommunicationException (often showing as a socket error) happens when the service tries to serialize and send data that the client didn’t explicitly request or can’t handle. This usually occurs when:
+
+>You expose raw ORM entities with foreign key navigation properties.
+
+>The frontend binds to a property that isn’t in the returned object, forcing WCF to chase relationships.
+
+>Lazy loading or circular references cause the serializer to fail, aborting the HTTP response.
+
+✅ How to Solve It:
+
+1. DataContract / DTO Route (Best Practice)
+
+Create a DTO class that contains exactly the fields you want (e.g., Product + ImageURLs).
+
+In your service, project into that DTO and return it.
+
+The client binds directly to the DTO, avoiding navigation properties and serialization issues.
+
+2. Nested Repeater Route (Alternative)
+
+Keep viewProducts() returning only Products.
+
+Add a second function viewProductImages(productId) returning images.
+
+In the frontend, bind Products to an outer repeater, and inside each row bind a nested repeater to that product’s images.
+
+This way you separate concerns but still display both sets of data.
+	
+___________________________________________________________________

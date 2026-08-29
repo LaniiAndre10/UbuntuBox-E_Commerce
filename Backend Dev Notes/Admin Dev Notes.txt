@@ -1,0 +1,70 @@
+-- The list of functions that we are supposed to add in the admin tab, and the needed parameters...--
+
+1. Analytics - Void for now.
+					2. Product Management:
+
+	1: View Active Products: Returns a list of all the active products in the database...( shows: Productimg, ProductID, ProductName, Product Category, date created and the 		status. )
+
+	2: Add Product: Add a product into the product database...( Params:
+String imglink, string Imglink2, String ProductName, int Product Price, String ProductDescription, and a checked radiobox value for category : Make the radiobox in a way that only one radio box of the available 3 can be checked at once... ) 
+
+	3: Update Product: This method needs to function in a way that we you enter a search ID, then after that you reach an item, then it retrieves the item data in the boxes, then you can input data onto the available data  then uppon clicking Update Product it will update the data in the database.
+
+	params: - Product Img ( int for search ).
+		- Productimg1 and 2 links str.
+		- Product Name. ( Str text box update. )
+		- product Category ( str text box update ).
+		- Product Price ( Int. )
+		- Product Description - Text.
+		
+	and that Update product button.
+
+	4. Delete Product: The function will have need to take in the productID, then retrieve the productID, name,category, price and date added, then display them to the user before the delete button is clicked and will delete the product from the database.
+	
+					3. Order Management Tab.
+					
+> The functions in this tab are view only, meaning that they are void, and just returning lists of data, and we won't need any params..//
+
+1: View Pending orders.
+
+> Will retrieve a list of orders where the order status is either: Shipped, Pending, and logged.
+
+2: View Completed Orders.
+
+> Will retrieve a list of orders where the order status is set to: complete.
+
+3: View Logged Returns.
+
+> Will retrieve a list of orders where the order status is set to: Return.
+
+4: view Cancelled Orders.
+
+> Will return a list of all the orders where the order status is set to cancelled.
+
+						4. Admin Management.
+
+
+1: View Active admins: This will be a void function returning a list of all the admins with the status being set to active.
+
+2: Add admin: This is a function which will add an admin into a database. The params include:
+
+	Param: Profile Image link.
+		 : Administrator name.
+		 : Admin WOrkEmail address.
+		 : Admin Temporary password.
+		 : The admin privilages. ( with the radioboxes. ).
+		 
+3: Update admin: Here we need to search the admin first by Email address, and then in the control components, display the admin data, then when they change the data in the textboxes and click the update button, we can then update the state of the database on that certain admin.  
+
+4: Delete admin: This will first search an admin with the required adminworkEmail address and then return them. Then it will display their admin Id, Names, Privilages, status and the date added, and then from there we can press the delete button which will delete the admin with the selected button.
+
+
+					5. Customer Managament tab.
+					
+1: The view active customers tab: Here you are returning the customer lists with the customer status that is set to active.
+
+2: Search Customer: Here you will input a customer ID, then the function will return a certain record in the database, where we can get the information about the customer.
+
+3: Reward customer: This function incorporates the search customer by ID function and then also allows us to Enter the Percentage off Next Purchase for that particular  customer...
+
+4: Block Customer functionality: here you will input a customer Id whom you can search, and then return them, and if you click the block customer button on this tab, then you will set the customer status to blocked, and this will need catered for in the login, meaning that if the user status is set to blocked, they then cannot login anymore.

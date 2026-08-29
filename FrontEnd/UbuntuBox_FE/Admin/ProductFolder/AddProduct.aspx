@@ -60,17 +60,17 @@
 
                 <div class="input">
                 <label for="ProductLink">Product Image Link:</label>
-                <input id="ProductLink" type="url" placeholder=" Enter Product Image Link">
+                <input id="lblProductLink" runat="server" type="url" required="required" placeholder=" Enter Product Image Link">
                 </div>
                 
                 <div class="input">
                 <label for="ProductLink2">Product Image 2 Link:</label>
-                <input id="ProductLink2" type="url" placeholder=" Enter Product Image Link">
+                <input id="lblProductLink2" runat="server" required="required" type="url" placeholder=" Enter Product Image Link">
                 </div>
 
                 <div class="input">
                 <label for="ProductName">Product Name:</label>
-                <input id="ProductName" type="text" placeholder="Enter Product Name">
+                <input id="lblProductName" runat="server" required="required" type="text" placeholder="Enter Product Name">
                 </div>
 
                 <h4>Product Category:</h4>
@@ -80,17 +80,17 @@
                     
                     <div class="boxtype">
                         <label for="Standard">Standard Box:</label>
-                        <input type="radio" name="StandardBox" id="Standard">
+                        <input id="Standardcheck" type="radio" runat="server" name="StandardBox">
                     </div>
 
                     <div class="boxtype">
                         <label for="Standard">Premium Box:</label>
-                        <input type="radio" name="Premium" id="Premium">
+                        <input id="PremiumCheck" type="radio" runat="server" name="Premium">
                     </div>
 
                     <div class="boxtype">
                         <label for="Standard">Mystery Box:</label>
-                        <input type="radio" name="Mystery" id="Mystery">
+                        <input id="MysteryCheck" type="radio" runat="server" name="Mystery">
                     </div>
 
                 </div>
@@ -101,16 +101,18 @@
 
                 <div class="input">
                 <label for="ProductPrice">Product Price:</label>
-                <input id="ProductPrice" type="number" placeholder="Enter Product Price">
+                <input id="lblProductPrice" runat="server" required="required"  type="number" step="0.01" placeholder="Enter Product Price">
                 </div>
 
                 <div class="input">
                 <label for="ProductDescription">Product Description:</label>
-                <textarea name="ProductDescContainer" id="ProductDescription" placeholder="Enter Product Description Here." wrap="soft" rows="10" cols="10"></textarea>
+                <textarea name="ProductDescContainer" runat="server" required="required" id="lblProductDescription" placeholder="Enter Product Description Here." wrap="soft" rows="10" cols="10"></textarea>
                 </div>
 
+                <asp:Label CssClass="submitform" ID="lblSubmitstatus" runat="server" Text="Submission Status"></asp:Label>
+
                 <a href="#">
-                    <button type="submit">Add Product To Sale Inventory.</button>
+                    <asp:Button  CssClass="submitchange" ID="Button1" runat="server" Text="Add Product To Sale Inventory." OnClick="Button1_Click" />
                 </a>
 
             </div>
