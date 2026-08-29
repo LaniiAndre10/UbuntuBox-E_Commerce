@@ -460,6 +460,12 @@ namespace UbuntuBox_FE.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RetrieveSearchProduct", ReplyAction="http://tempuri.org/IService1/RetrieveSearchProductResponse")]
         System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.Product> RetrieveSearchProductAsync(string ProductID);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RetrieveSearchProductimgs", ReplyAction="http://tempuri.org/IService1/RetrieveSearchProductimgsResponse")]
+        UbuntuBox_FE.ServiceReference1.ProductImage[] RetrieveSearchProductimgs(string ProductID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RetrieveSearchProductimgs", ReplyAction="http://tempuri.org/IService1/RetrieveSearchProductimgsResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductImage[]> RetrieveSearchProductimgsAsync(string ProductID);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUnwantedProduct", ReplyAction="http://tempuri.org/IService1/DeleteUnwantedProductResponse")]
         bool DeleteUnwantedProduct(string ProductID);
         
@@ -540,6 +546,14 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.Product> RetrieveSearchProductAsync(string ProductID) {
             return base.Channel.RetrieveSearchProductAsync(ProductID);
+        }
+        
+        public UbuntuBox_FE.ServiceReference1.ProductImage[] RetrieveSearchProductimgs(string ProductID) {
+            return base.Channel.RetrieveSearchProductimgs(ProductID);
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductImage[]> RetrieveSearchProductimgsAsync(string ProductID) {
+            return base.Channel.RetrieveSearchProductimgsAsync(ProductID);
         }
         
         public bool DeleteUnwantedProduct(string ProductID) {

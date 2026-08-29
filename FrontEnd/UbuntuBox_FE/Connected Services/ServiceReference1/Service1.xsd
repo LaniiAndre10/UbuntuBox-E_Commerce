@@ -99,6 +99,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="RetrieveSearchProductimgs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveSearchProductimgsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/UbuntuBox_BE" minOccurs="0" name="RetrieveSearchProductimgsResult" nillable="true" type="q3:ArrayOfProductImage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="DeleteUnwantedProduct">
     <xs:complexType>
       <xs:sequence>

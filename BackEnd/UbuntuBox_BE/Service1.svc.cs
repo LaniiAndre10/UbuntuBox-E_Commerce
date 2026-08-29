@@ -155,5 +155,15 @@ namespace UbuntuBox_BE
 
         }
 
+        public List<ProductImage> RetrieveSearchProductimgs(string ProductID)
+        {
+
+            Admin.ProductManagement productManagement = new Admin.ProductManagement();
+
+            var ImageList = productManagement.ReturnProductImage(ProductID);
+
+            return ImageList;
+
+        }
     }
 }

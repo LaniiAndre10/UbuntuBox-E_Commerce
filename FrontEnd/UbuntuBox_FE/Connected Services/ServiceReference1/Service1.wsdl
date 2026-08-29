@@ -44,6 +44,12 @@
   <wsdl:message name="IService1_RetrieveSearchProduct_OutputMessage">
     <wsdl:part name="parameters" element="tns:RetrieveSearchProductResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_RetrieveSearchProductimgs_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveSearchProductimgs" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RetrieveSearchProductimgs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveSearchProductimgsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_DeleteUnwantedProduct_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteUnwantedProduct" />
   </wsdl:message>
@@ -74,6 +80,10 @@
     <wsdl:operation name="RetrieveSearchProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RetrieveSearchProduct" message="tns:IService1_RetrieveSearchProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/RetrieveSearchProductResponse" message="tns:IService1_RetrieveSearchProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSearchProductimgs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RetrieveSearchProductimgs" message="tns:IService1_RetrieveSearchProductimgs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RetrieveSearchProductimgsResponse" message="tns:IService1_RetrieveSearchProductimgs_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteUnwantedProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteUnwantedProduct" message="tns:IService1_DeleteUnwantedProduct_InputMessage" />
@@ -129,6 +139,15 @@
     </wsdl:operation>
     <wsdl:operation name="RetrieveSearchProduct">
       <soap:operation soapAction="http://tempuri.org/IService1/RetrieveSearchProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSearchProductimgs">
+      <soap:operation soapAction="http://tempuri.org/IService1/RetrieveSearchProductimgs" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

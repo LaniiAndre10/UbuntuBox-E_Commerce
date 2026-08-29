@@ -58,37 +58,37 @@
 
 
             <div class="form1">
-                <img src="https://www.vhv.rs/dpng/d/476-4764937_insert-image-here-icon-hd-png-download.png" alt="ProductImg">
+                <asp:Image ID="ImageHolder" runat="server" AlternateText="ProductImg" />
             </div>
 
             <div class="form1">
 
                 <div class="input1">
                 <label for="ProductLink">Product ID:</label>
-                <input id="lblProductLink" runat="server" type="url" placeholder=" Enter Product Id">
+                <input id="txtProductID" runat="server" type="Number" placeholder=" Enter Product Id">
        
-                 <asp:Button ID="SearchProduct" CssClass="ClickSubmit" runat="server" Text="Search Product." />
+                 <asp:Button ID="SearchProduct" CssClass="ClickSubmit" runat="server" Text="Search Product." OnClick="SearchProduct_Click" />
 
                 </div>
                 
                 <div class="input1">
                 <label for="ProductLink1">Update Product Image 1 Link:</label>
-                <input id="lblProductLink1" runat="server" type="url" placeholder=" Search Product to retrieve product Image Link">
+                <input id="txtProductLink1" runat="server" type="url" placeholder=" Search Product to retrieve product Image Link">
                 </div>
 
                 <div class="input1">
                 <label for="ProductLink2">Update Product Image 2 Link:</label>
-                <input id="lblProductLink2" runat="server" type="url" placeholder=" Search Product to retrieve product Image Link">
+                <input id="txtProductLink2" runat="server" type="url" placeholder=" Search Product to retrieve product Image Link">
                 </div>
 
                 <div class="input1">
                 <label for="ProductName">Update Product Name:</label>
-                <input id="lblProductName" runat="server" type="text" placeholder="Search Product to retrieve product Name">
+                <input id="txtProductName" runat="server" type="text" placeholder="Search Product to retrieve product Name">
                 </div>
 
                 <div class="input1">
                 <label for="ProductCategory">Update Product Category:</label>
-                <input id="lblProductCategory" runat="server" type="text" placeholder="Search Product to retrieve product Category">
+                <input id="txtProductCategory" runat="server" type="text" placeholder="Search Product to retrieve product Category">
                 </div>
 
             </div>
@@ -97,12 +97,12 @@
 
                 <div class="input1">
                 <label for="ProductPrice">Update Product Price:</label>
-                <input id="lblProductPrice" runat="server" type="number" placeholder="Search Product to retrieve product Price">
+                <input id="txtProductPrice" runat="server" type="number" placeholder="Search Product to retrieve product Price">
                 </div>
 
                 <div class="input1">
                 <label for="ProductDescription">Update Product Description:</label>
-                <textarea name="ProductDescContainer" id="ProductDescription" placeholder="Search Product to retrieve product Description." wrap="soft" rows="10" cols="10"></textarea>
+                <textarea name="ProductDescContainer" runat="server" id="txtProductDescription" placeholder="Search Product to retrieve product Description." wrap="soft" rows="10" cols="10"></textarea>
                 </div>
 
                 <asp:Label CssClass="submitform" ID="lblSubmitstatus" runat="server" Text="Update Status."></asp:Label>

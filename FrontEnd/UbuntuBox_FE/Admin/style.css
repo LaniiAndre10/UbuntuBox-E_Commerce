@@ -504,28 +504,6 @@ html{
     
 }
 
-.ClickSubmit{
-
-    padding: 10px;
-    color: white;
-    background-color: rgb(0, 29, 0);
-    border-radius: 6px;
-    margin-top: 10px;
-    border: none;
-    transition: 0.25s;
-    width:91%;
-
-}
-
-.ClickSubmit:hover{
-
-    color: gold;
-    background-color: rgb(0, 66, 0);
-    padding: 10px;
-    transition: 0.25s;
-    
-}
-
 .input1 input{
 
     width: 90%;
@@ -782,6 +760,28 @@ html{
     color: rgb(0, 83, 0);
     font-style: italic;
 
+}
+
+.ClickSubmit {
+
+    padding: 10px;
+    color: white !important;
+    background-color:  rgb(0, 29, 0) !important;
+    border-radius: 6px;
+    margin-top: 10px;
+    border: none;
+    transition: 0.25s;
+    width:91%;
+
+}
+
+.ClickSubmit:hover {
+
+    color: gold !important;
+    background-color: rgb(0, 66, 0) !important;
+    padding: 10px;
+    transition: 0.25s;
+    
 }
 
 

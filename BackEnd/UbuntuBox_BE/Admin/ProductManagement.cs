@@ -94,6 +94,8 @@ namespace UbuntuBox_BE.Admin
         public Product ReturnSearchedProduct(String ProductID)
         {
 
+            Ubuntuboxdatabase.DeferredLoadingEnabled = false;
+
             var Productreq = (from u in Ubuntuboxdatabase.Products where u.ProductID.Equals(ProductID) select u).SingleOrDefault();
 
             return Productreq;
@@ -101,10 +103,13 @@ namespace UbuntuBox_BE.Admin
         }
 
         //Utility function forced by the SocketException, meant to return a ProductImage object//
-        public List<ProductImage> ReturnProductImage()
+        public List<ProductImage> ReturnProductImage(String ProductID)
         {
+
+            Ubuntuboxdatabase.DeferredLoadingEnabled = false;
+
             //The challenge here may be that we have 2 images of the same productID//
-            var DesiredImage = (from u in Ubuntuboxdatabase.ProductImages select u).ToList();
+            var DesiredImage = (from u in Ubuntuboxdatabase.ProductImages where u.ProductID.Equals(ProductID) select u).ToList();
 
             return DesiredImage;
 

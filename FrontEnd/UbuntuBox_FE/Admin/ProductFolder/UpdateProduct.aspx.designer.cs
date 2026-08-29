@@ -15,13 +15,22 @@ namespace UbuntuBox_FE.Admin.ProductFolder
     {
 
         /// <summary>
-        /// lblProductLink control.
+        /// ImageHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl lblProductLink;
+        protected global::System.Web.UI.WebControls.Image ImageHolder;
+
+        /// <summary>
+        /// txtProductID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtProductID;
 
         /// <summary>
         /// SearchProduct control.
@@ -33,49 +42,58 @@ namespace UbuntuBox_FE.Admin.ProductFolder
         protected global::System.Web.UI.WebControls.Button SearchProduct;
 
         /// <summary>
-        /// lblProductLink1 control.
+        /// txtProductLink1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl lblProductLink1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtProductLink1;
 
         /// <summary>
-        /// lblProductLink2 control.
+        /// txtProductLink2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl lblProductLink2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtProductLink2;
 
         /// <summary>
-        /// lblProductName control.
+        /// txtProductName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText lblProductName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtProductName;
 
         /// <summary>
-        /// lblProductCategory control.
+        /// txtProductCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText lblProductCategory;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtProductCategory;
 
         /// <summary>
-        /// lblProductPrice control.
+        /// txtProductPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl lblProductPrice;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtProductPrice;
+
+        /// <summary>
+        /// txtProductDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtProductDescription;
 
         /// <summary>
         /// lblSubmitstatus control.

@@ -38,6 +38,10 @@ namespace UbuntuBox_BE
         [OperationContract]
         public Product RetrieveSearchProduct(string ProductID);
 
+        //Admin - Product Management --> Retrieve Search Product Images: @LaniiAndre10. //
+        [OperationContract]
+        public List<ProductImage> RetrieveSearchProductimgs(String ProductID);
+
         //Admin - Product Management --> Delete Product: @LaniiAndre10. //
         [OperationContract]
         public bool DeleteUnwantedProduct(string ProductID);
