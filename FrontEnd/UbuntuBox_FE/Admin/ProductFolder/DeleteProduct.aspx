@@ -58,28 +58,29 @@
 
 
             <div class="form2">
-                <img src="https://www.vhv.rs/dpng/d/476-4764937_insert-image-here-icon-hd-png-download.png" alt="ProductImg">
+                <asp:Image ID="ImageHolder" runat="server" AlternateText="Product Image." />
             </div>
 
             <div class="form2">
 
                 <div class="input2">
                 <label for="ProductLink">Product ID:</label>
-                <input id="ProductLink" type="url" placeholder=" Enter Product Id">
-                <button type="submit">Search Product</button>
+                <input id="txtProductID" runat="server" type="Number" placeholder=" Enter Product Id">
+                <asp:Button CssClass="ClickSubmit" ID="BtnSearchProduct" runat="server" Text="Search Product" OnClick="BtnSearchProduct_Click" />
                 </div>
 
                 <div class="input2">
-                    <label>Product ID:</label>
-                    <label>Product Name:</label>
-                    <label>Product Category:</label>
-                    <label>Product Price:</label>
-                    <label>Date Added:</label>
+                    <label>Product ID:  <asp:Label ID="lblProductID" runat="server" Text=""></asp:Label></label>
+                    <label>Product Name:  <asp:Label ID="lblProductName" runat="server" Text=""></asp:Label></label>
+                    <label>Product Category:  <asp:Label ID="lblProductCategory" runat="server" Text=""></asp:Label></label>
+                    <label>Product Price: R <asp:Label ID="lblProductPrice" runat="server" Text=""></asp:Label></label>
+                    <label>Date Added:  <asp:Label ID="lblDateAdded" runat="server" Text=""></asp:Label></label>
                 </div>
 
-                <a href="#">
-                    <button class="Delete" type="submit">Delete Product.</button>
-                </a>
+                <asp:Label CssClass="submitform" ID="lblDeleteStatus" runat="server" Text="Deletion Status."></asp:Label>
+
+                    <asp:Button CssClass="Delete" ID="btnDeleteProduct" runat="server" Text="Delete Product." OnClick="btnDeleteProduct_Click" />
+      
 
             </div>
             
