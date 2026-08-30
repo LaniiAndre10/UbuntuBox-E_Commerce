@@ -650,6 +650,12 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetActiveAdmins", ReplyAction="http://tempuri.org/IService1/GetActiveAdminsResponse")]
         System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.User[]> GetActiveAdminsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddAdmin", ReplyAction="http://tempuri.org/IService1/AddAdminResponse")]
+        bool AddAdmin(string ImageUrl, string PhoneNumber, string Usernames, string UserEmail, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddAdmin", ReplyAction="http://tempuri.org/IService1/AddAdminResponse")]
+        System.Threading.Tasks.Task<bool> AddAdminAsync(string ImageUrl, string PhoneNumber, string Usernames, string UserEmail, string Password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -749,6 +755,14 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.User[]> GetActiveAdminsAsync() {
             return base.Channel.GetActiveAdminsAsync();
+        }
+        
+        public bool AddAdmin(string ImageUrl, string PhoneNumber, string Usernames, string UserEmail, string Password) {
+            return base.Channel.AddAdmin(ImageUrl, PhoneNumber, Usernames, UserEmail, Password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddAdminAsync(string ImageUrl, string PhoneNumber, string Usernames, string UserEmail, string Password) {
+            return base.Channel.AddAdminAsync(ImageUrl, PhoneNumber, Usernames, UserEmail, Password);
         }
     }
 }

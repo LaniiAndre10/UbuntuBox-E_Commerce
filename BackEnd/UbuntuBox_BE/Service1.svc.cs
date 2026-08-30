@@ -178,5 +178,18 @@ namespace UbuntuBox_BE
             return ActiveAdmins;
 
         }
+
+        public bool AddAdmin(string ImageUrl, string PhoneNumber, string Usernames, string UserEmail, string Password)
+        {
+
+            bool ISUpdated = false;
+
+            Admin.AdminManagement adminManagement = new Admin.AdminManagement();
+
+            ISUpdated = adminManagement.AddAdmin(ImageUrl, PhoneNumber, Usernames, UserEmail, Password);
+
+            return ISUpdated;
+
+        }
     }
 }

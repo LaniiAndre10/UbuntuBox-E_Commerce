@@ -50,6 +50,10 @@ namespace UbuntuBox_BE
         [OperationContract]
         public List<User> GetActiveAdmins();
 
+        //Admin - Admin Management --> Add New Admin: @LaniiAndre10. //
+        [OperationContract]
+        public bool AddAdmin(string ImageUrl, string PhoneNumber, string Usernames, string UserEmail, string Password);
+
     }
 
     //Add a datacontract for Product + ProductImages to tackle the Socket/Communication Exception issue//
