@@ -17,6 +17,32 @@ CREATE TABLE [User](
 
 );
 
+
+
+--Order Items
+create table [Order](
+ OrderID int Identity(1,1) Unique NOT NULL,
+ UserID INT NOT NULL,
+ OrderStatus VARCHAR(30) NOT NULL DEFAULT 'Pending',
+ OrderDate DATETIME DEFAULT GETDATE(),
+ primary key(OrderID),
+ foreign key(UserID) REFERENCES [User](UserID)
+
+);
+
+create table OrderItems(
+  ItemID INT Identity(1,1) Unique  Not null,
+  OrderID INT NOT nulL,
+  ProductID INT NOT NULL,
+  Quantity INT NOT null DEFAULT 1,
+  primary key(ItemID),
+  foreign key(OrderID) REFERENCES [Order](OrderID),
+  foreign key(ProductID) references [Product](ProductID),
+    CHECK(Quantity > 0)
+
+);
+
+
 ---Products informtion
 Create Table [Product](
 ProductID INt Identity(1,1) Unique Not NUll,
@@ -24,6 +50,7 @@ ProductName varchar(100) Not null,
 Description Varchar(500) Not Null,
 Price Decimal(10,2) Not Null,
 BoxType varchar(20) Not Null,
+Stock INT NOT NULL DEFAULT 0,
 Primary Key(ProductID)
 
 );
@@ -71,6 +98,7 @@ CREATE TABLE Wishlist(
   
 );
 
+ 
 ---shopping carts 
 
 CREATE TABLE Cart(
@@ -94,3 +122,5 @@ CREATE TABLE CartItem(
     FOREIGN KEY(ProductID) REFERENCES [Product](ProductID),
     CHECK(Quantity > 0)
 );
+
+
