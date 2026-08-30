@@ -46,6 +46,10 @@ namespace UbuntuBox_BE
         [OperationContract]
         public bool DeleteUnwantedProduct(string ProductID);
 
+        //Admin - Admin Management --> View Active Admins: @LaniiAndre10. //
+        [OperationContract]
+        public List<User> GetActiveAdmins();
+
     }
 
     //Add a datacontract for Product + ProductImages to tackle the Socket/Communication Exception issue//

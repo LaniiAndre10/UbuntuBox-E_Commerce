@@ -48,4 +48,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProductImage" nillable="true" type="tns:ProductImage" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsAdmin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PasswordHash" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfileImgURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserDateAdded" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usernames" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
 </xs:schema>

@@ -175,6 +175,9 @@
     <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.ProductImage.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

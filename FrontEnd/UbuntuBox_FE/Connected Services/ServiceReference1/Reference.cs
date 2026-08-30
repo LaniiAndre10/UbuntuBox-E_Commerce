@@ -420,6 +420,179 @@ namespace UbuntuBox_FE.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/UbuntuBox_BE")]
+    [System.SerializableAttribute()]
+    public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsAdminField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordHashField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProfileImgURLField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime UserDateAddedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernamesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsAdmin {
+            get {
+                return this.IsAdminField;
+            }
+            set {
+                if ((this.IsAdminField.Equals(value) != true)) {
+                    this.IsAdminField = value;
+                    this.RaisePropertyChanged("IsAdmin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PasswordHash {
+            get {
+                return this.PasswordHashField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordHashField, value) != true)) {
+                    this.PasswordHashField = value;
+                    this.RaisePropertyChanged("PasswordHash");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PhoneNum {
+            get {
+                return this.PhoneNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneNumField, value) != true)) {
+                    this.PhoneNumField = value;
+                    this.RaisePropertyChanged("PhoneNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProfileImgURL {
+            get {
+                return this.ProfileImgURLField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProfileImgURLField, value) != true)) {
+                    this.ProfileImgURLField = value;
+                    this.RaisePropertyChanged("ProfileImgURL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime UserDateAdded {
+            get {
+                return this.UserDateAddedField;
+            }
+            set {
+                if ((this.UserDateAddedField.Equals(value) != true)) {
+                    this.UserDateAddedField = value;
+                    this.RaisePropertyChanged("UserDateAdded");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserID {
+            get {
+                return this.UserIDField;
+            }
+            set {
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserStatus {
+            get {
+                return this.UserStatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserStatusField, value) != true)) {
+                    this.UserStatusField = value;
+                    this.RaisePropertyChanged("UserStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Usernames {
+            get {
+                return this.UsernamesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsernamesField, value) != true)) {
+                    this.UsernamesField = value;
+                    this.RaisePropertyChanged("Usernames");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
@@ -471,6 +644,12 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUnwantedProduct", ReplyAction="http://tempuri.org/IService1/DeleteUnwantedProductResponse")]
         System.Threading.Tasks.Task<bool> DeleteUnwantedProductAsync(string ProductID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetActiveAdmins", ReplyAction="http://tempuri.org/IService1/GetActiveAdminsResponse")]
+        UbuntuBox_FE.ServiceReference1.User[] GetActiveAdmins();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetActiveAdmins", ReplyAction="http://tempuri.org/IService1/GetActiveAdminsResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.User[]> GetActiveAdminsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -562,6 +741,14 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> DeleteUnwantedProductAsync(string ProductID) {
             return base.Channel.DeleteUnwantedProductAsync(ProductID);
+        }
+        
+        public UbuntuBox_FE.ServiceReference1.User[] GetActiveAdmins() {
+            return base.Channel.GetActiveAdmins();
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.User[]> GetActiveAdminsAsync() {
+            return base.Channel.GetActiveAdminsAsync();
         }
     }
 }

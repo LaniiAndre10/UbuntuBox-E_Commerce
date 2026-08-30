@@ -56,24 +56,41 @@
         
         <div class="cover">
     <div class="TopHeader">
+
         <div>Order ID</div>
         <div>Product ID</div>
         <div>Product Name</div>
         <div>Num Items In Stock</div>
         <div>Date Ordered</div>
         <div>Status</div>
+        <div> Update Status.</div>
+        <div> Update Status.</div>
+
     </div>
 
     <div class="Rowcontainer">
 
-        <div class="ProductRow">
-            <div>41</div>
-            <div>042</div>
-            <div>Ndebele Pattern Necklace</div>
-            <div>120</div>
-            <div>2026-05-27</div>
-            <div>Shipped</div>
-        </div>
+        <asp:Repeater ID="Repeater1" runat="server">
+
+            <ItemTemplate>
+
+                <div class="ProductRow">
+
+                    <div>41</div>
+                    <div>042</div>
+                    <div>Ndebele Pattern Necklace</div>
+                    <div>120</div>
+                    <div>2026-05-27</div>
+                    <div>Shipped</div>
+                    <div><asp:Button CssClass="shippedbutton" ID="BtnShipped" runat="server" Text="Shipped." /></div>
+                    <div><asp:Button CssClass="ordercomplete" ID="BtnComplete" runat="server" Text="Delivered." /></div>
+
+                </div>
+
+            </ItemTemplate>
+
+        </asp:Repeater>
+
         <div class="ProductRow">
             <div>42</div>
             <div>043</div>
@@ -81,6 +98,8 @@
             <div>85</div>
             <div>2026-05-28</div>
             <div>Pending</div>
+            <div><button class="shippedbutton" >Shipped.</button></div>
+            <div><button class="ordercomplete" >Delivered.</button></div>
         </div>
         <div class="ProductRow">
             <div>43</div>
@@ -89,6 +108,8 @@
             <div>60</div>
             <div>2026-05-29</div>
             <div>Logged</div>
+            <div><button class="shippedbutton" >Shipped.</button></div>
+            <div><button class="ordercomplete" >Delivered.</button></div>
         </div>
         <div class="ProductRow">
             <div>44</div>
@@ -97,6 +118,8 @@
             <div>40</div>
             <div>2026-05-30</div>
             <div>Shipped</div>
+            <div><button class="shippedbutton" >Shipped.</button></div>
+            <div><button class="ordercomplete" >Delivered.</button></div>
         </div>
         <div class="ProductRow">
             <div>45</div>
@@ -105,6 +128,8 @@
             <div>25</div>
             <div>2026-05-31</div>
             <div>Pending</div>
+            <div><button class="shippedbutton" >Shipped.</button></div>
+            <div><button class="ordercomplete" >Delivered.</button></div>
         </div>
         <div class="ProductRow">
             <div>46</div>
@@ -113,6 +138,8 @@
             <div>50</div>
             <div>2026-06-01</div>
             <div>Logged</div>
+            <div><button class="shippedbutton" >Shipped.</button></div>
+            <div><button class="ordercomplete" >Delivered.</button></div>
         </div>
         <div class="ProductRow">
             <div>47</div>
@@ -121,6 +148,8 @@
             <div>200</div>
             <div>2026-06-02</div>
             <div>Shipped</div>
+            <div><button class="shippedbutton" >Shipped.</button></div>
+            <div><button class="ordercomplete" >Delivered.</button></div>
         </div>
         <div class="ProductRow">
             <div>48</div>
@@ -129,6 +158,8 @@
             <div>15</div>
             <div>2026-06-03</div>
             <div>Pending</div>
+            <div><button class="shippedbutton" >Shipped.</button></div>
+            <div><button class="ordercomplete" >Delivered.</button></div>
         </div>
         <div class="ProductRow">
             <div>49</div>
@@ -137,6 +168,8 @@
             <div>75</div>
             <div>2026-06-04</div>
             <div>Logged</div>
+            <div><button class="shippedbutton" >Shipped.</button></div>
+            <div><button class="ordercomplete" >Delivered.</button></div>
         </div>
         <div class="ProductRow">
             <div>50</div>
@@ -145,6 +178,8 @@
             <div>30</div>
             <div>2026-06-05</div>
             <div>Shipped</div>
+            <div><button class="shippedbutton" >Shipped.</button></div>
+            <div><button class="ordercomplete" >Delivered.</button></div>
         </div>
 
 

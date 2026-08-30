@@ -127,4 +127,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetActiveAdmins">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveAdminsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/UbuntuBox_BE" minOccurs="0" name="GetActiveAdminsResult" nillable="true" type="q4:ArrayOfUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

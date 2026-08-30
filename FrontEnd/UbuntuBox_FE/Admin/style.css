@@ -401,10 +401,58 @@ html{
 
 .TopHeader, .ProductRow {
     display: grid;
-    grid-template-columns: 200px 200px 300px 200px 200px 150px;
+    grid-template-columns: 200px 200px 300px 200px 200px 100px 80px 80px;
     align-items: center;
     padding: 10px 20px;
     color: white;
+}
+
+.shippedbutton{
+
+    background-color: #459da1;
+    color: white;                
+    border: none;                
+    border-radius: 6px;          
+    padding: 4px 6px;           
+    font-weight: bold;
+    cursor: pointer;             
+    transition: 0.2s;
+
+}
+
+.shippedbutton:hover{
+
+    padding: 6px;
+    background-color: #275a5c; 
+    color: white;
+    border-radius: 6px; 
+    cursor: pointer;
+    transition: 0.2s;
+
+}
+
+.ordercomplete{
+
+    background-color: #45a154;
+    color: white;                
+    border: none;                
+    border-radius: 6px;          
+    padding: 4px 6px;           
+    font-weight: bold;
+    cursor: pointer;             
+    transition: 0.3s;
+
+}
+
+.ordercomplete:hover{
+
+    padding: 6px;
+    background-color: #275c34; 
+    color: white;
+    border-radius: 6px; 
+    cursor: pointer;
+    transition: 0.2s;
+
 }
 
 .TopHeader {

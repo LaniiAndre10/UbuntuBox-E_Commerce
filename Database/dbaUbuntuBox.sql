@@ -12,6 +12,9 @@ CREATE TABLE [User](
 	PhoneNum VARCHAR(15) NOT NULL UNIQUE,
     PasswordHash VARCHAR(255) NOT NULL,
     IsAdmin BIT NOT NULL DEFAULT 0,
+	ProfileImgURL VARCHAR(MAX) DEFAULT('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJEs6KUm8wBS5u9j-vhLf0i8PvNllnRI7Q9nfeHXoWFQ&s=10'), --Can be Null--
+	UserStatus VARCHAR(30) DEFAULT('Active') NOT NULL,
+	UserDateAdded DATE DEFAULT GETDATE() NOT NULL
 
     PRIMARY KEY(UserID)
 
@@ -32,8 +35,6 @@ Create Table [Product](
 
 );
 
---@admin copied up to here--
-
 Create Table ProductImage(
 
 	ImageID INT IDENTITY(1,1) UNIQUE NOT NULL,
@@ -45,6 +46,8 @@ Create Table ProductImage(
 
 );
 
+--@admin done with Product Management: @LaniiAndre10 --
+--@admin: Order Management--
 
 Create table ProductReview(
 ReviewID int Identity(1,1) Unique Not Null,
