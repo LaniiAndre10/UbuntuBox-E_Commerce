@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #fcfaf5;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.mobile-menu {
+    display: none;
+    border: none;
+    background: transparent;
+    font-size: 25px;
+    color: #d9a441;
+    cursor: pointer;
+}
+
+.shop-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 30px 60px;
+}
+
+.shop-container {
+    display: flex;
+    gap: 35px;
+    align-items: flex-start;
+}
+
+.shop-sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    top: 130px;
+}
+
+.category-box {
+    background-color: #0a1a15;
+    border-radius: 12px;
+    padding: 22px 20px;
+    border: 1px solid rgba(212, 168, 71, 0.1);
+}
+
+.category-box h3 {
+    color: #d9a441;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.category-box h3 i {
+    color: #d9a441;
+}
+
+.category-dropdown {
+    margin-bottom: 10px;
+}
+
+.dropdown-btn {
+    width: 100%;
+    padding: 11px 14px;
+    background-color: #12231d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.25s;
+}
+
+.dropdown-btn:hover {
+    background-color: #172c24;
+}
+
+.dropdown-btn span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdown-btn span i {
+    color: #d9a441;
+    font-size: 14px;
+}
+
+.dropdown-btn i.fa-chevron-down {
+    color: #d9a441;
+    font-size: 12px;
+}
+
+.dropdown-menu {
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    transition: max-height 0.35s ease, opacity 0.35s ease, margin 0.35s ease;
+}
+
+.category-dropdown:hover .dropdown-menu {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 6px;
+}
+
+.category-dropdown:hover .dropdown-btn i.fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(212, 168, 71, 0.1);
+    color: #e8c76a;
+}
+
+.dropdown-menu a i {
+    width: 18px;
+    text-align: center;
+    color: #d9a441;
+}
+
+.box-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.box-card {
+    background-color: #0a1a15;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 168, 71, 0.08);
+    transition: 0.3s;
+}
+
+.box-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    border-color: rgba(212, 168, 71, 0.3);
+}
+
+.box-card-image {
+    width: 100%;
+    height: 220px;
+    background-color: #06120e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.box-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.box-card-content {
+    padding: 22px 24px 26px;
+}
+
+.box-card-content h2 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 6px;
+}
+
+.box-card-content .price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d9a441;
+    margin-bottom: 10px;
+}
+
+.box-card-content .price span {
+    font-size: 14px;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.35);
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+
+.box-card-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.box-card-content .features-preview {
+    list-style: none;
+    margin-bottom: 18px;
+}
+
+.box-card-content .features-preview li {
+    padding: 4px 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-select {
+    display: block;
+    width: 100%;
+    padding: 12px 28px;
+    background-color: #d9a441;
+    color: #0a1a15;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    transition: 0.25s;
+}
+
+.btn-select:hover {
+    color: #0a1a15;
+    box-shadow: 0 8px 25px rgba(212, 168, 71, 0.3);
+}
+
+@media (max-width: 1100px) {
+    .box-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 968px) {
+    .shop-container {
+        flex-direction: column;
+    }
+
+    .shop-sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    .box-grid {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 10px 18px;
+    }
+
+    .links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 20px 30px;
+        background-color: #0d1f1a;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .links.show {
+        display: flex;
+    }
+
+    .links ul {
+        flex-direction: column;
+        gap: 10px;
+        list-style: none;
+    }
+
+    .otherlinks {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .shop-section {
+        padding: 30px 15px;
+    }
+
+    .box-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .box-card-image {
+        height: 200px;
+    }
+
+    .shop-sidebar {
+        position: static;
+    }
+}
+
+@media (max-width: 480px) {
+    .absheader {
+        font-size: 8px;
+        letter-spacing: 1.2px;
+        padding: 4px 0;
+    }
+
+    .box-card-content {
+        padding: 18px 16px 20px;
+    }
+
+    .box-card-content h2 {
+        font-size: 20px;
+    }
+
+    .box-card-content .price {
+        font-size: 18px;
+    }
+
+    .dropdown-btn {
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+}
