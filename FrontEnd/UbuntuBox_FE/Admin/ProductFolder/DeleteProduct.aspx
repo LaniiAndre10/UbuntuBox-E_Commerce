@@ -77,7 +77,7 @@
                     <label>Date Added:  <asp:Label ID="lblDateAdded" runat="server" Text=""></asp:Label></label>
                 </div>
 
-                <asp:Label CssClass="submitform" ID="lblDeleteStatus" runat="server" Text="Deletion Status."></asp:Label>
+                <asp:Label CssClass="submitform" ID="lblDeleteStatus" runat="server" Text=""></asp:Label>
 
                     <asp:Button CssClass="Delete" ID="btnDeleteProduct" runat="server" Text="Delete Product." OnClick="btnDeleteProduct_Click" />
       

@@ -56,6 +56,18 @@
   <wsdl:message name="IService1_DeleteUnwantedProduct_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteUnwantedProductResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetActiveAdmins_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveAdmins" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetActiveAdmins_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveAdminsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAdminResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegisterUser" message="tns:IService1_RegisterUser_InputMessage" />
@@ -88,6 +100,14 @@
     <wsdl:operation name="DeleteUnwantedProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteUnwantedProduct" message="tns:IService1_DeleteUnwantedProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteUnwantedProductResponse" message="tns:IService1_DeleteUnwantedProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveAdmins">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetActiveAdmins" message="tns:IService1_GetActiveAdmins_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetActiveAdminsResponse" message="tns:IService1_GetActiveAdmins_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddAdmin" message="tns:IService1_AddAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddAdminResponse" message="tns:IService1_AddAdmin_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -157,6 +177,24 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteUnwantedProduct">
       <soap:operation soapAction="http://tempuri.org/IService1/DeleteUnwantedProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveAdmins">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetActiveAdmins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAdmin">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddAdmin" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

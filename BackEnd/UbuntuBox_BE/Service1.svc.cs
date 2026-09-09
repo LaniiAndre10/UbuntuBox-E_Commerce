@@ -157,12 +157,38 @@ namespace UbuntuBox_BE
 
         public List<ProductImage> RetrieveSearchProductimgs(string ProductID)
         {
+            //The goal is to return the list of SearchProduct: @LaniiAndre10.//
 
             Admin.ProductManagement productManagement = new Admin.ProductManagement();
 
             var ImageList = productManagement.ReturnProductImage(ProductID);
 
             return ImageList;
+
+        }
+
+        public List<User> GetActiveAdmins()
+        {
+            //The goal is to return the list of all the active admins: @LaniiAndre10//
+
+            Admin.AdminManagement adminManagement = new Admin.AdminManagement();
+
+            List<User> ActiveAdmins = adminManagement.GetActiveAdmins();
+
+            return ActiveAdmins;
+
+        }
+
+        public bool AddAdmin(string ImageUrl, string PhoneNumber, string Usernames, string UserEmail, string Password)
+        {
+
+            bool ISUpdated = false;
+
+            Admin.AdminManagement adminManagement = new Admin.AdminManagement();
+
+            ISUpdated = adminManagement.AddAdmin(ImageUrl, PhoneNumber, Usernames, UserEmail, Password);
+
+            return ISUpdated;
 
         }
     }

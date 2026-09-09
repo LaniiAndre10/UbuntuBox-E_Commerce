@@ -109,7 +109,7 @@
                 <textarea name="ProductDescContainer" runat="server" required="required" id="lblProductDescription" placeholder="Enter Product Description Here." wrap="soft" rows="10" cols="10"></textarea>
                 </div>
 
-                <asp:Label CssClass="submitform" ID="lblSubmitstatus" runat="server" Text="Submission Status"></asp:Label>
+                <asp:Label CssClass="submitform" ID="lblSubmitstatus" runat="server" Text=""></asp:Label>
 
                 <a href="#">
                     <asp:Button  CssClass="submitchange" ID="Button1" runat="server" Text="Add Product To Sale Inventory." OnClick="Button1_Click" />

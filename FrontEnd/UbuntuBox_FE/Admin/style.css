@@ -1,10 +1,12 @@
 body{
 
-    background-image: linear-gradient( to bottom,rgb(255, 248, 151),white,rgb(255, 255, 218));
-
-    height: 100%;
-    margin: 0%;
-    padding: 0%;
+    background: linear-gradient(to bottom, rgb(255, 248, 151), white, rgb(255, 255, 218));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 
     font-family: "Nunito", sans-serif;
     font-optical-sizing: auto;
@@ -15,9 +17,10 @@ body{
 
 html{
 
-    height: 100%;
-    margin: 0%;
-    padding: 0%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, rgb(255, 248, 151), white, rgb(255, 255, 218));
 
 }
 
@@ -48,7 +51,8 @@ html{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:space-around;
+    justify-content: space-between;
+    gap: 20px;
     background-color: rgb(0, 66, 0);
     width: 100%;
     padding: 10px 20px;
@@ -77,17 +81,24 @@ html{
 }
 
 .links {
-    margin-right: 60px;
+    margin-right: 0;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .links ul{
 
     list-style: none;
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     gap: 30px;
+    margin: 0;
+    padding: 0;
 
 }
 
@@ -193,7 +204,7 @@ html{
     border-radius: 6px;            
     font-weight: bold;
     transition: 0.25s;
-    width:200px;
+    width: 250px;
     margin-bottom: 20px;
 
 }
@@ -358,28 +369,6 @@ html{
 
 }
 
-.submitchange {
-
-    padding: 20px;
-    background-color: rgb(0, 29, 0);
-    color: rgb(250, 250, 248);
-    border-radius: 15px;
-    font-weight: bold;
-    border: 1px solid #ccc;
-    transition: 0.25s;
-
-}
-
-.submitchange:hover{
-
-    background-color: rgb(0, 66, 0);
-    color: gold;
-    cursor: pointer;
-    border: 1px solid gold;
-    padding: 19px;
-
-}
-
 .cover {
 
     background-color: rgba(0, 46, 0, 0.26);
@@ -399,9 +388,15 @@ html{
 
 }
 
+@media (min-width: 1626px) {
+    .cover {
+        overflow-x: auto;
+    }
+}
+
 .TopHeader, .ProductRow {
     display: grid;
-    grid-template-columns: 200px 200px 300px 200px 200px 150px;
+    grid-template-columns: 200px 200px 300px 200px 200px 100px 80px 80px;
     align-items: center;
     padding: 10px 20px;
     color: white;
@@ -424,6 +419,55 @@ html{
     font-weight: 600;
 
 }
+
+.shippedbutton{
+
+    background-color: #459da1;
+    color: white;                
+    border: none;                
+    border-radius: 6px;          
+    padding: 4px 6px;           
+    font-weight: bold;
+    cursor: pointer;             
+    transition: 0.2s;
+
+}
+
+.shippedbutton:hover{
+
+    padding: 6px;
+    background-color: #275a5c; 
+    color: white;
+    border-radius: 6px; 
+    cursor: pointer;
+    transition: 0.2s;
+
+}
+
+.ordercomplete{
+
+    background-color: #45a154;
+    color: white;                
+    border: none;                
+    border-radius: 6px;          
+    padding: 4px 6px;           
+    font-weight: bold;
+    cursor: pointer;             
+    transition: 0.3s;
+
+}
+
+.ordercomplete:hover{
+
+    padding: 6px;
+    background-color: #275c34; 
+    color: white;
+    border-radius: 6px; 
+    cursor: pointer;
+    transition: 0.2s;
+
+}
+
 
 .Rowcontainer {
 
@@ -754,42 +798,269 @@ html{
 
 }
 
-/*A label for showing the user the status of the buttons submit*/
-.submitform{
-
-    color: rgb(0, 83, 0);
-    font-style: italic;
-
+* {
+    box-sizing: border-box;
 }
 
-.ClickSubmit {
-
-    padding: 10px;
-    color: white !important;
-    background-color:  rgb(0, 29, 0) !important;
-    border-radius: 6px;
-    margin-top: 10px;
-    border: none;
-    transition: 0.25s;
-    width:91%;
-
+img {
+    max-width: 100%;
+    display: block;
 }
 
-.ClickSubmit:hover {
+/* Media Query*/
 
-    color: gold !important;
-    background-color: rgb(0, 66, 0) !important;
-    padding: 10px;
-    transition: 0.25s;
-    
+@media (max-width: 1200px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .links {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .links ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .AnalyticsGrid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Controls,
+    .charts,
+    .cover,
+    .background {
+        width: min(100%, 1200px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .charts {
+        height: auto;
+        min-height: 250px;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+
+    .statgraph {
+        width: min(100%, 300px);
+    }
 }
 
+@media (min-width: 641px) and (max-width: 1625px) {
+    .navbar {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
+    .links {
+        width: 100%;
+    }
 
+    .links ul {
+        flex-wrap: wrap;
+    }
 
+    .AnalyticsGrid {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .cover,
+    .background {
+        width: calc(100% - 20px);
+        max-width: 100%;
+        margin: 30px 10px;
+        overflow-x: hidden;
+    }
 
+    .TopHeader,
+    .ProductRow {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 15px;
+        width: 100%;
+    }
 
+    .TopHeader > div,
+    .ProductRow > div {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .Rowcontainer {
+        overflow-x: hidden;
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .absheader p {
+        margin-left: 0;
+        padding: 0 12px;
+    }
+
+    .logo img {
+        width: 180px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .links {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .links ul {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 12px 18px;
+        padding-left: 0;
+        flex-wrap: wrap;
+    }
+
+    .links ul li a {
+        font-size: 0.95rem;
+    }
+
+    .pagecontent {
+        margin-top: 30px;
+        padding: 0 15px;
+    }
+
+    .Controls {
+        width: min(100%, 420px);
+        margin: 30px auto;
+    }
+
+    .AnalyticControl a {
+        width: min(100%, 250px);
+        gap: 16px;
+    }
+
+    .TopHeader {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .TopHeader {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    .background {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form1,
+    .form2,
+    .form3 {
+        width: 100%;
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        justify-content: center;
+        padding: 12px 10px;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .links ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .otherlinks {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .pagecontent h2 {
+        font-size: 1.5rem;
+    }
+
+    .Controls,
+    .charts,
+    .cover,
+    .background {
+        width: calc(100% - 18px);
+        max-width: 100%;
+        margin-left: 9px;
+        margin-right: 9px;
+    }
+
+    .cover {
+        overflow-x: hidden;
+    }
+
+    .AnalyticControl a {
+        width: 100%;
+    }
+
+    .form,
+    .form1,
+    .form2,
+    .form3 {
+        padding: 20px 15px;
+        margin: 15px 0;
+    }
+
+    .Category {
+        flex-direction: column;
+    }
+
+    .input,
+    .input1,
+    .input2,
+    .input3 {
+        width: 100%;
+    }
+
+    .ProductRow {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .ProductRow > div {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .ProductRow img {
+        width: 100%;
+        max-width: 140px;
+    }
+
+    .TopHeader {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}
 
 
 

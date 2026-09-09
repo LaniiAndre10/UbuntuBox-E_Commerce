@@ -105,7 +105,7 @@
                 <textarea name="ProductDescContainer" runat="server" id="txtProductDescription" placeholder="Search Product to retrieve product Description." wrap="soft" rows="10" cols="10"></textarea>
                 </div>
 
-                <asp:Label CssClass="submitform" ID="lblSubmitstatus" runat="server" Text="Update Status."></asp:Label>
+                <asp:Label CssClass="submitform" ID="lblSubmitstatus" runat="server" Text=""></asp:Label>
 
                 
        
