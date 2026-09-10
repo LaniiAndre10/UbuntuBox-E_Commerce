@@ -20,10 +20,24 @@ CREATE TABLE [User](
 
 );
 
+
+
+-- Creating the Attractions table
+CREATE TABLE Attraction(
+    AttractionID INT IDENTITY(1,1) UNIQUE NOT NULL,
+    AttractionName VARCHAR(150) NOT NULL,
+    Province VARCHAR(100) NOT NULL,
+    AttractionDescription VARCHAR(500) NOT NULL,
+
+    PRIMARY KEY(AttractionID)
+);
+
+
 -- Creating the products page --
 Create Table [Product](
 
 	ProductID INT IDENTITY(1,1) UNIQUE NOT NULL,
+	AttractionID INT NOT NULL,
 	ProductName VARCHAR(100) NOT NULL,
 	Description TEXT NOT NULL,
 	Price DECIMAL(10,2) NOT NULL,
@@ -31,8 +45,8 @@ Create Table [Product](
 	ProductStatus BIT DEFAULT(0) NOT NULL,
 	ProductDateAdded DATE DEFAULT GETDATE() NOT NULL,
 	
-	Primary Key(ProductID)
-
+	Primary Key(ProductID),
+     FOREIGN KEY(AttractionID)REFERENCES Attraction(AttractionID)
 );
 
 Create Table ProductImage(
