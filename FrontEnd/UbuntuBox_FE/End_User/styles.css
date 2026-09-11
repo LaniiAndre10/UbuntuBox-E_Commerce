@@ -1,0 +1,647 @@
+body {
+
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right,rgb(255, 253, 229),rgba(255, 255, 255, 0.993),rgb(255, 252, 229));
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.top-bar {
+    background-color: #d9a441;
+    color: #0a1a15;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 8px 0;
+    letter-spacing: 2px;
+}
+
+.top-bar .diamond {
+    margin: 0 8px;
+}
+
+.header {
+    background-color: #0a1a15;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(217, 164, 65, 0.15);
+}
+
+.logo img {
+    height: 55px;
+    width: auto;
+}
+
+.nav-links a {
+    margin-left: 25px;
+    font-size: 14px;
+    color: #b0b0b0;
+    font-weight: 700;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #f6d77a;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.header-icons a {
+    font-size: 14px;
+    color: #b0b0b0;
+    font-weight: 700;
+}
+
+.header-icons a:hover {
+    color: #f6d77a;
+}
+
+.header-icons i {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.cart-box {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #d9a441;
+    color: #0a1a15;
+    font-size: 10px;
+    border-radius: 50%;
+    padding: 2px 6px;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 50px;
+    background-image: linear-gradient(to right,rgb(0,0,0,0.8),rgba(0, 0, 0, 0)), url(Logo/pexels-cj-a-2161073258-37903770.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-text {
+    width: 45%;
+}
+
+.hero-text h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.hero-text h1 span {
+    color: #d9a441;
+}
+
+.hero-line {
+    border-top: 2px solid #d9a441;
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 17px;
+    color: white;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.btn-gold {
+    background-color: #d9a441;
+    color: #0a1a15;
+    font-weight: 900;
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.btn-gold:hover {
+    background-color: #f6d77a;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #d9a441;
+    border: 2px solid #d9a441;
+    font-weight: 900;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-outline:hover {
+    background-color: #d9a441;
+    color: #0a1a15;
+}
+
+.btn-outline i {
+    margin-right: 8px;
+}
+
+.hero-image {
+    width: 50%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Features Section */
+.features-section {
+    background-color: #0a1a15;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.feature-box {
+    display: flex;
+    align-items: center;
+    width: 23%;
+}
+
+.feature-box i {
+    font-size: 35px;
+    color: #d9a441;
+    margin-right: 15px;
+}
+
+.feature-box h4 {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+}
+
+.feature-box p {
+    margin: 2px 0 0 0;
+    font-size: 12px;
+    color: #8aa89a;
+}
+
+/* Section Headings */
+.section-title {
+    font-size: 35px;
+    color: #0a1a15;
+}
+
+.section-title span {
+    color: #d9a441;
+}
+
+.view-all {
+    float: right;
+    color: #d9a441;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* Category Cards */
+.categories-section {
+    padding: 80px 50px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.category-card {
+    background-color: #0a1a15;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.category-card:hover {
+    border-color: #d9a441;
+}
+
+.category-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.card-info h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.card-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+.card-info i {
+    color: #d9a441;
+    font-size: 20px;
+}
+
+/* Attractions Section */
+.attractions-section {
+    padding: 0 50px 80px 50px;
+}
+
+.attraction-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.attraction-card {
+    background-color: #0a1a15;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.attraction-card:hover {
+    border-color: #d9a441;
+}
+
+.attraction-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+}
+
+.attr-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.attr-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color: white;
+}
+
+.attr-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+.attr-info i {
+    color: #d9a441;
+    font-size: 20px;
+}
+
+/* DISCOVER SECTION */
+.discover-section {
+    padding: 80px 50px;
+    background: #0a1a15;
+}
+
+.discover-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.discover-content {
+    flex: 1;
+}
+
+.discover-content h2 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.discover-content h2 span {
+    color: #d9a441;
+}
+
+.discover-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.discover-features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.discover-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.discover-feature i {
+    color: #d9a441;
+    font-size: 24px;
+    margin-top: 4px;
+}
+
+.discover-feature h4 {
+    color: #fff;
+    font-size: 16px;
+    margin: 0 0 4px 0;
+}
+
+.discover-feature p {
+    color: #b0b0b0;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* FAQ SECTION */
+.faq-section {
+    padding: 80px 50px;
+    background: #fcfaf5;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 30px auto 0;
+}
+
+.faq-item {
+    background: #fff;
+    border: 1px solid #e8e0d4;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.faq-question:hover {
+    background: #f5f0e8;
+}
+
+.faq-question h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #0a1a15;
+}
+
+.faq-question i {
+    color: #d9a441;
+    font-size: 16px;
+    transition: .3s;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 24px 18px;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* FOOTER */
+.footer {
+    background: #06120e;
+    padding: 60px 50px 20px;
+    border-top: 1px solid rgba(217, 164, 65, 0.08);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-logo img {
+    height: 45px;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    margin: 0;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.5);
+    transition: .25s;
+}
+
+.footer-social a:hover {
+    background: #d9a441;
+    color: #0a1a15;
+}
+
+.footer-section h4 {
+    color: #fff;
+    font-size: 14px;
+    margin: 0 0 15px 0;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    transition: .2s;
+}
+
+.footer-section ul li a:hover {
+    color: #d9a441;
+}
+
+.footer-section ul li i {
+    color: #d9a441;
+    width: 20px;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 12px;
+    margin: 0;
+}
+
+@media (max-width: 968px) {
+    .discover-container {
+        flex-direction: column;
+    }
+
+    .careers-container {
+        flex-direction: column;
+    }
+
+    .careers-values {
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .discover-content h2 {
+        font-size: 32px;
+    }
+
+    .quote-container blockquote {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .discover-section {
+        padding: 50px 20px;
+    }
+
+    .faq-section {
+        padding: 50px 20px;
+    }
+
+    .careers-section {
+        padding: 50px 20px;
+    }
+
+    .quote-section {
+        padding: 40px 20px;
+    }
+
+    .footer {
+        padding: 40px 20px 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .careers-values {
+        grid-template-columns: 1fr;
+    }
+
+    .discover-content h2 {
+        font-size: 28px;
+    }
+
+    .quote-container blockquote {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .discover-content h2 {
+        font-size: 24px;
+    }
+
+    .quote-container blockquote {
+        font-size: 18px;
+    }
+
+    .faq-question h4 {
+        font-size: 14px;
+    }
+}

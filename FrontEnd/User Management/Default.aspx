@@ -7,8 +7,8 @@
         <h1>Gifts with a <span>South African Story</span></h1>
         <div class="hero-line"></div>
         <p>Discover mystery and meaning in every box. Curated gifts from iconic South African places, packed with culture, crafted with love.</p>
-        <button class="btn-gold">Shop Mystery Boxes <i class="fa-solid fa-arrow-right"></i></button>
-        <button class="btn-outline"><i class="fa-solid fa-play"></i> How it Works</button>
+        <button class="btn-gold">Shop UbuntuBoxes <i class="fa-solid fa-arrow-right"></i></button>
+        <button class="btn-outline"><i class="fa-solid fa-play"></i>About UbuntuBox.</button>
     </div>
 </section>
 
@@ -43,61 +43,12 @@
     </div>
 </div>
 
-<section class="categories-section">
-    <h2 class="section-title">Shop by <span>Category</span></h2>
-    
-    <div class="category-grid">
-        <div class="category-card">
-            <img src="Logo/Mock Mystery.png" alt="Mystery Boxes">
-            <div class="card-info">
-                <div>
-                    <h4>Mystery Boxes</h4>
-                    <p>A surprise in every box</p>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </div>
-        </div>
-
-        <div class="category-card">
-            <img src="Logo/attraction.jpg" alt="By Attraction">
-            <div class="card-info">
-                <div>
-                    <h4>By Attraction</h4>
-                    <p>Gifts from iconic places</p>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </div>
-        </div>
-
-        <div class="category-card">
-            <img src="Logo/province.jpg" alt="By Province">
-            <div class="card-info">
-                <div>
-                    <h4>By Province</h4>
-                    <p>Discover local treasures</p>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </div>
-        </div>
-
-        <div class="category-card">
-            <img src="Logo/Mock Mystery.png" alt="Premium Boxes">
-            <div class="card-info">
-                <div>
-                    <h4>Premium Boxes</h4>
-                    <p>Curated luxury gifts</p>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </div>
-        </div>
-    </div>
-    <a href="shop.html" class="view-all">View all categories <i class="fa-solid fa-arrow-right"></i></a>
-</section>
-
 <section class="attractions-section" id="attractions">
-    <h2 class="section-title">Featured <span>Attractions</span></h2>
+    
+    <h2 class="section-title">Shop By Featured <span>Attractions</span></h2>
 
     <div class="attraction-grid">
+
         <div class="attraction-card">
             <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
             <div class="attr-info">
@@ -141,8 +92,64 @@
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
         </div>
+
+        <div class="attraction-card">
+            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
+            <div class="attr-info">
+                <div>
+                    <h3>Table Mountain</h3>
+                    <p>Cape Town</p>
+                </div>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+
+        <div class="attraction-card">
+            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
+            <div class="attr-info">
+                <div>
+                    <h3>Table Mountain</h3>
+                    <p>Cape Town</p>
+                </div>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+
+        <div class="attraction-card">
+            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
+            <div class="attr-info">
+                <div>
+                    <h3>Table Mountain</h3>
+                    <p>Cape Town</p>
+                </div>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+
+        <div class="attraction-card">
+            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
+            <div class="attr-info">
+                <div>
+                    <h3>Table Mountain</h3>
+                    <p>Cape Town</p>
+                </div>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+
+        <div class="attraction-card">
+            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
+            <div class="attr-info">
+                <div>
+                    <h3>Table Mountain</h3>
+                    <p>Cape Town</p>
+                </div>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+
     </div>
-    <a href="#" class="view-all">View all attractions <i class="fa-solid fa-arrow-right"></i></a>
+
 </section>
 
 <section class="discover-section" id="about">
@@ -173,7 +180,7 @@
                     </div>
                 </div>
             </div>
-            <a href="Products.html" class="btn-gold">Explore Our Boxes <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="Products.html" class="btn-gold">Visit Our Blog Site. <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </div>
 </section>
