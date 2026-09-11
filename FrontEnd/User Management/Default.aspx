@@ -7,8 +7,8 @@
         <h1>Gifts with a <span>South African Story</span></h1>
         <div class="hero-line"></div>
         <p>Discover mystery and meaning in every box. Curated gifts from iconic South African places, packed with culture, crafted with love.</p>
-        <button class="btn-gold">Shop UbuntuBoxes <i class="fa-solid fa-arrow-right"></i></button>
-        <button class="btn-outline"><i class="fa-solid fa-play"></i>About UbuntuBox.</button>
+        <button class="btn-gold">Shop Mystery Boxes <i class="fa-solid fa-arrow-right"></i></button>
+        <button class="btn-outline"><i class="fa-solid fa-play"></i> How it Works</button>
     </div>
 </section>
 
@@ -44,11 +44,9 @@
 </div>
 
 <section class="attractions-section" id="attractions">
-    
-    <h2 class="section-title">Shop By Featured <span>Attractions</span></h2>
+    <h2 class="section-title">Featured <span>Attractions</span></h2>
 
     <div class="attraction-grid">
-
         <div class="attraction-card">
             <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
             <div class="attr-info">
@@ -94,62 +92,50 @@
         </div>
 
         <div class="attraction-card">
-            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
+            <img src="Logo/palace-homepage-hero.jpg" alt="Sunset Coast">
             <div class="attr-info">
                 <div>
-                    <h3>Table Mountain</h3>
-                    <p>Cape Town</p>
+                    <h3>Sun City Resort</h3>
+                    <p>North West</p>
                 </div>
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
         </div>
 
         <div class="attraction-card">
-            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
+            <img src="Logo/images.jpg" alt="Sunset Coast">
             <div class="attr-info">
                 <div>
-                    <h3>Table Mountain</h3>
-                    <p>Cape Town</p>
+                    <h3>uShaka Marine World</h3>
+                    <p>KwaZulu-Natal</p>
                 </div>
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
         </div>
 
         <div class="attraction-card">
-            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
+            <img src="Logo/images 2.jpg" alt="Sunset Coast">
             <div class="attr-info">
                 <div>
-                    <h3>Table Mountain</h3>
-                    <p>Cape Town</p>
+                    <h3>Soweto</h3>
+                    <p>Gauteng</p>
                 </div>
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
         </div>
 
         <div class="attraction-card">
-            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
+            <img src="Logo/images 3.jpg" alt="Sunset Coast">
             <div class="attr-info">
                 <div>
-                    <h3>Table Mountain</h3>
-                    <p>Cape Town</p>
+                    <h3>Augrabies Falls National Park</h3>
+                    <p>Northern Cape</p>
                 </div>
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
         </div>
-
-        <div class="attraction-card">
-            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
-            <div class="attr-info">
-                <div>
-                    <h3>Table Mountain</h3>
-                    <p>Cape Town</p>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </div>
-        </div>
-
     </div>
-
+    <a href="#" class="view-all">View all attractions <i class="fa-solid fa-arrow-right"></i></a>
 </section>
 
 <section class="discover-section" id="about">
@@ -180,7 +166,7 @@
                     </div>
                 </div>
             </div>
-            <a href="Products.html" class="btn-gold">Visit Our Blog Site. <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="Products.html" class="btn-gold">Explore Our Boxes <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </div>
 </section>
