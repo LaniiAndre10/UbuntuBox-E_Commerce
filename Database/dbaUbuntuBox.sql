@@ -12,6 +12,9 @@ CREATE TABLE [User](
 	PhoneNum VARCHAR(15) NOT NULL UNIQUE,
     PasswordHash VARCHAR(255) NOT NULL,
     IsAdmin BIT NOT NULL DEFAULT 0,
+	ProfileImgURL VARCHAR(MAX) DEFAULT('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJEs6KUm8wBS5u9j-vhLf0i8PvNllnRI7Q9nfeHXoWFQ&s=10'), --Can be Null--
+	UserStatus VARCHAR(30) DEFAULT('Active') NOT NULL,
+	UserDateAdded DATE DEFAULT GETDATE() NOT NULL
 
     PRIMARY KEY(UserID)
 
@@ -19,53 +22,47 @@ CREATE TABLE [User](
 
 
 
---Order Items
-create table [Order](
- OrderID int Identity(1,1) Unique NOT NULL,
- UserID INT NOT NULL,
- OrderStatus VARCHAR(30) NOT NULL DEFAULT 'Pending',
- OrderDate DATETIME DEFAULT GETDATE(),
- primary key(OrderID),
- foreign key(UserID) REFERENCES [User](UserID)
+-- Creating the Attractions table
+CREATE TABLE Attraction(
+    AttractionID INT IDENTITY(1,1) UNIQUE NOT NULL,
+    AttractionName VARCHAR(150) NOT NULL,
+    Province VARCHAR(100) NOT NULL,
+    AttractionDescription VARCHAR(500) NOT NULL,
+	AttractionImageURL VARCHAR(MAX) NOT NULL,
 
-);
-
-create table OrderItems(
-  ItemID INT Identity(1,1) Unique  Not null,
-  OrderID INT NOT nulL,
-  ProductID INT NOT NULL,
-  Quantity INT NOT null DEFAULT 1,
-  primary key(ItemID),
-  foreign key(OrderID) REFERENCES [Order](OrderID),
-  foreign key(ProductID) references [Product](ProductID),
-    CHECK(Quantity > 0)
-
+    PRIMARY KEY(AttractionID)
 );
 
 
----Products informtion
+-- Creating the products page --
 Create Table [Product](
-ProductID INt Identity(1,1) Unique Not NUll,
-ProductName varchar(100) Not null,
-Description Varchar(500) Not Null,
-Price Decimal(10,2) Not Null,
-BoxType varchar(20) Not Null,
-Stock INT NOT NULL DEFAULT 0,
-Primary Key(ProductID)
 
+	ProductID INT IDENTITY(1,1) UNIQUE NOT NULL,
+	AttractionID INT NOT NULL,
+	ProductName VARCHAR(100) NOT NULL,
+	Description TEXT NOT NULL,
+	Price DECIMAL(10,2) NOT NULL,
+	BoxCategory VARCHAR(20) NOT NULL,
+	ProductStatus BIT DEFAULT(0) NOT NULL,
+	ProductDateAdded DATE DEFAULT GETDATE() NOT NULL,
+	
+	Primary Key(ProductID),
+     FOREIGN KEY(AttractionID)REFERENCES Attraction(AttractionID)
 );
-
 
 Create Table ProductImage(
-ImageID Int Identity(1,1) Unique Not Null,
-ProductID int Not Null,
-ImageURL Varchar(max) Not NUll,
-Primary Key(ImageID),
-Foreign key(ProductID) References [Product](ProductID)
 
+	ImageID INT IDENTITY(1,1) UNIQUE NOT NULL,
+	ProductID INT NOT NULL,
+	ImageURL Varchar(max) NOT NUll,
+	
+	Primary Key(ImageID),
+	Foreign key(ProductID) REFERENCES [Product](ProductID)
 
 );
 
+--@admin done with Product Management: @LaniiAndre10 --
+--@admin: Order Management--
 
 Create table ProductReview(
 ReviewID int Identity(1,1) Unique Not Null,
@@ -98,7 +95,6 @@ CREATE TABLE Wishlist(
   
 );
 
- 
 ---shopping carts 
 
 CREATE TABLE Cart(
@@ -122,5 +118,4 @@ CREATE TABLE CartItem(
     FOREIGN KEY(ProductID) REFERENCES [Product](ProductID),
     CHECK(Quantity > 0)
 );
-
 
