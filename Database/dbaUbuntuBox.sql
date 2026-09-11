@@ -28,6 +28,7 @@ CREATE TABLE Attraction(
     AttractionName VARCHAR(150) NOT NULL,
     Province VARCHAR(100) NOT NULL,
     AttractionDescription VARCHAR(500) NOT NULL,
+	AttractionImageURL VARCHAR(MAX) NOT NULL,
 
     PRIMARY KEY(AttractionID)
 );
