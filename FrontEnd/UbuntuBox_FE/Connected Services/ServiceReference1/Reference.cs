@@ -674,6 +674,24 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveAdmin", ReplyAction="http://tempuri.org/IService1/RemoveAdminResponse")]
         System.Threading.Tasks.Task<bool> RemoveAdminAsync(string WorkEmail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ReturnCustomers", ReplyAction="http://tempuri.org/IService1/ReturnCustomersResponse")]
+        UbuntuBox_FE.ServiceReference1.User[] ReturnCustomers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ReturnCustomers", ReplyAction="http://tempuri.org/IService1/ReturnCustomersResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.User[]> ReturnCustomersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchCustomer", ReplyAction="http://tempuri.org/IService1/SearchCustomerResponse")]
+        UbuntuBox_FE.ServiceReference1.User SearchCustomer(string CustomerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchCustomer", ReplyAction="http://tempuri.org/IService1/SearchCustomerResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.User> SearchCustomerAsync(string CustomerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/BlockUser", ReplyAction="http://tempuri.org/IService1/BlockUserResponse")]
+        bool BlockUser(string CustomerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/BlockUser", ReplyAction="http://tempuri.org/IService1/BlockUserResponse")]
+        System.Threading.Tasks.Task<bool> BlockUserAsync(string CustomerID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -805,6 +823,30 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> RemoveAdminAsync(string WorkEmail) {
             return base.Channel.RemoveAdminAsync(WorkEmail);
+        }
+        
+        public UbuntuBox_FE.ServiceReference1.User[] ReturnCustomers() {
+            return base.Channel.ReturnCustomers();
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.User[]> ReturnCustomersAsync() {
+            return base.Channel.ReturnCustomersAsync();
+        }
+        
+        public UbuntuBox_FE.ServiceReference1.User SearchCustomer(string CustomerID) {
+            return base.Channel.SearchCustomer(CustomerID);
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.User> SearchCustomerAsync(string CustomerID) {
+            return base.Channel.SearchCustomerAsync(CustomerID);
+        }
+        
+        public bool BlockUser(string CustomerID) {
+            return base.Channel.BlockUser(CustomerID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> BlockUserAsync(string CustomerID) {
+            return base.Channel.BlockUserAsync(CustomerID);
         }
     }
 }

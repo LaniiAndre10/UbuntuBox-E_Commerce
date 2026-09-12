@@ -84,7 +84,7 @@
 
                     <div class="input2">
                 <label for="ProductLink">Percent Off Next Purchase:</label>
-                <input id="ProductLink" type="number" placeholder=" Enter Percentage Off Next Sale.">
+                <input id="ProductLink" type="number" max="100" min="1" placeholder=" Enter Percentage Off Next Sale.">
                 <button type="submit">Grant Reward.</button>
                 </div>
 

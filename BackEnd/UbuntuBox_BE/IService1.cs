@@ -66,6 +66,17 @@ namespace UbuntuBox_BE
         [OperationContract]
         public bool RemoveAdmin(String WorkEmail);
 
+        //Admin - Customer Management --> Show A list of Customers using the platform: @LaniiAndre10.  //
+        [OperationContract]
+        public List<User> ReturnCustomers();
+
+        //Admin - Customer Management --> Retrieve A customer by ID: @LaniiAndre10. //
+        [OperationContract]
+        public User SearchCustomer(String CustomerID);
+
+        //Admin - Customer Management --> Block User: @LaniiAndre10.//
+        [OperationContract]
+        public bool BlockUser(String CustomerID);
     }
 
     //Add a datacontract for Product + ProductImages to tackle the Socket/Communication Exception issue//

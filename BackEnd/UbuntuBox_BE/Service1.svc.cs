@@ -231,5 +231,41 @@ namespace UbuntuBox_BE
             return IsDeleted;
             
         }
+
+        public List<User> ReturnCustomers()
+        {
+
+            //The goal is to return a list of customers from the database: @LaniiAndre10. //
+
+            Admin.CustomerManagement customerManagement = new Admin.CustomerManagement();
+
+            var Customers = customerManagement.ReturnCustomers();
+
+            return Customers;
+
+        }
+
+        public User SearchCustomer(string CustomerID)
+        {
+            //The goal is to retrieve a customer searched by ID: @LaniiAndre10. //
+
+            Admin.CustomerManagement customerManagement = new Admin.CustomerManagement();
+
+            var Customer = customerManagement.SearchCustomer(CustomerID);
+
+            return Customer;
+
+        }
+
+        public bool BlockUser(string CustomerID)
+        {
+            bool IsBlocked = false;
+            Admin.CustomerManagement customerManagement = new Admin.CustomerManagement();
+
+            IsBlocked = customerManagement.BlockUser(CustomerID);
+
+            return IsBlocked;
+            
+        }
     }
 }
