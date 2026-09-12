@@ -58,28 +58,30 @@
 
 
             <div class="form2">
-                <img src="https://www.vhv.rs/dpng/d/476-4764937_insert-image-here-icon-hd-png-download.png" alt="ProductImg">
+                <asp:Image ID="ImgContainer" runat="server" />
             </div>
 
             <div class="form2">
 
                 <div class="input2">
-                <label for="ProductLink">Admin Work Email Address:</label>
-                <input id="ProductLink" type="email" placeholder=" Enter Admin Work Email Address">
-                <button type="submit">Search Admin.</button>
-                </div>
+                <label for="AdminEmail">Admin Work Email Address:</label>
+                <input id="AdminEmail" runat="server" required="required" type="email" placeholder=" Enter Admin Work Email Address">
+              
+                <asp:Button ID="btnSearch" runat="server" CssClass="Updated" Text="Search Admin." OnClick="btnSearch_Click" />
+
+            </div>
 
                 <div class="input2">
-                    <label>Administrator ID:</label>
-                    <label>Administrator Names:</label>
-                    <label>Administrator Privilages:</label>
-                    <label>Administrator Status:</label>
-                    <label>Date Added:</label>
+                    <label>Administrator ID: <asp:Label ID="AdminID" runat="server" Text=""></asp:Label></label>
+                    <label>Administrator Names: <asp:Label ID="AdminNames" runat="server" Text=""></asp:Label></label>
+                    <label>Administrator Privilages: <asp:Label ID="AdminPrivilages" runat="server" Text=""></asp:Label></label>
+                    <label>Administrator Status: <asp:Label ID="AdminStatus" runat="server" Text=""></asp:Label></label>
+                    <label>Date Added: <asp:Label ID="AdminDateAdded" runat="server" Text=""></asp:Label></label>
                 </div>
 
-                <a href="#">
-                    <button class="Delete" type="submit">Delete Admin.</button>
-                </a>
+                <asp:Label ID="StatusUpdate" runat="server" CssClass="Submitform" Text=""></asp:Label>
+
+                <asp:Button ID="BtnDelete" runat="server" CssClass="Delete" Text="Delete Admin." OnClick="BtnDelete_Click" />
 
             </div>
             

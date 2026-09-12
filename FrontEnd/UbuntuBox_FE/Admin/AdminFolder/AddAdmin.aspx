@@ -96,7 +96,7 @@
 
                 <asp:Label ID="lblAddStatus" CssClass="submitform" runat="server" Text=""></asp:Label>
 
-                <asp:Button ID="BtnAddAdmin" runat="server" CssClass="submitchange" Text="Add Admin Account." OnClick="BtnAddAdmin_Click" />
+                <asp:Button ID="BtnAddAdmin" CssClass="Update" runat="server" Text="Add Admin Account." OnClick="BtnAddAdmin_Click" />
 
             </div>
             

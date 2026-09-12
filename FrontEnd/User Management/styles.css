@@ -1,10 +1,11 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> AdminCodingbranch
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     font-family: sans-serif;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     color: #ffffff;
 }
 
@@ -15,8 +16,8 @@ a {
 
 ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 /* Header */
@@ -35,12 +36,14 @@ ul {
     }
 
 .header {
+
     background-color: #0a1a15;
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(217, 164, 65, 0.15);
+
 }
 
 .logo img {
@@ -97,18 +100,27 @@ ul {
 }
 
 .hero-section {
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 80px 50px;
+    margin: 0px;
+    width:100%;
     background-image: url(Logo/pexels-cj-a-2161073258-37903770.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
 }
 
 .hero-text {
+<<<<<<< HEAD
     width: 45%;
+=======
+    width: 100%;
+    color: white;
+>>>>>>> AdminCodingbranch
 }
 
     .hero-text h1 {
@@ -138,7 +150,7 @@ ul {
 .btn-gold {
     background-color: #d9a441;
     color: #0a1a15;
-    font-weight: 900;
+    font-weight: 800;
     padding: 15px 30px;
     border-radius: 8px;
     border: none;
@@ -155,7 +167,7 @@ ul {
     background-color: transparent;
     color: #d9a441;
     border: 2px solid #d9a441;
-    font-weight: 900;
+    font-weight: 800;
     padding: 15px 30px;
     border-radius: 8px;
     cursor: pointer;
@@ -172,7 +184,7 @@ ul {
     }
 
 .hero-image {
-    width: 50%;
+    width: 100%;
 }
 
     .hero-image img {

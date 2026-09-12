@@ -605,6 +605,29 @@ html{
     
 }
 
+.Updated{
+
+   
+    padding: 8px !important; 
+    height: auto !important;
+    color: rgb(253, 253, 253) !important;
+    background-color: rgb(0, 29, 0) !important;
+    border-radius: 7px !important;
+    margin-top: 10px !important;
+    justify-content: center !important;
+    transition: 0.25s !important;
+
+}
+
+.Updated:hover{
+
+    color:gold !important;
+    background-color: rgb(0, 66, 0) !important;
+    padding: 9px !important;
+    transition: 0.25s !important;
+    
+}
+
 /*Code for DeleteProduct.html*/
 
 .Delete{
