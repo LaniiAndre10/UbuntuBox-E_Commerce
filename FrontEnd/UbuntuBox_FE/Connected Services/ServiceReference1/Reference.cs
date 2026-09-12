@@ -656,6 +656,24 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddAdmin", ReplyAction="http://tempuri.org/IService1/AddAdminResponse")]
         System.Threading.Tasks.Task<bool> AddAdminAsync(string ImageUrl, string PhoneNumber, string Usernames, string UserEmail, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchAdmin", ReplyAction="http://tempuri.org/IService1/SearchAdminResponse")]
+        UbuntuBox_FE.ServiceReference1.User SearchAdmin(string WorkEmailAddress);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchAdmin", ReplyAction="http://tempuri.org/IService1/SearchAdminResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.User> SearchAdminAsync(string WorkEmailAddress);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateAdmin", ReplyAction="http://tempuri.org/IService1/UpdateAdminResponse")]
+        bool UpdateAdmin(string WorkEmail, string AdminImgUrl, string AdminName, string NewNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateAdmin", ReplyAction="http://tempuri.org/IService1/UpdateAdminResponse")]
+        System.Threading.Tasks.Task<bool> UpdateAdminAsync(string WorkEmail, string AdminImgUrl, string AdminName, string NewNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveAdmin", ReplyAction="http://tempuri.org/IService1/RemoveAdminResponse")]
+        bool RemoveAdmin(string WorkEmail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveAdmin", ReplyAction="http://tempuri.org/IService1/RemoveAdminResponse")]
+        System.Threading.Tasks.Task<bool> RemoveAdminAsync(string WorkEmail);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -763,6 +781,30 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> AddAdminAsync(string ImageUrl, string PhoneNumber, string Usernames, string UserEmail, string Password) {
             return base.Channel.AddAdminAsync(ImageUrl, PhoneNumber, Usernames, UserEmail, Password);
+        }
+        
+        public UbuntuBox_FE.ServiceReference1.User SearchAdmin(string WorkEmailAddress) {
+            return base.Channel.SearchAdmin(WorkEmailAddress);
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.User> SearchAdminAsync(string WorkEmailAddress) {
+            return base.Channel.SearchAdminAsync(WorkEmailAddress);
+        }
+        
+        public bool UpdateAdmin(string WorkEmail, string AdminImgUrl, string AdminName, string NewNumber) {
+            return base.Channel.UpdateAdmin(WorkEmail, AdminImgUrl, AdminName, NewNumber);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateAdminAsync(string WorkEmail, string AdminImgUrl, string AdminName, string NewNumber) {
+            return base.Channel.UpdateAdminAsync(WorkEmail, AdminImgUrl, AdminName, NewNumber);
+        }
+        
+        public bool RemoveAdmin(string WorkEmail) {
+            return base.Channel.RemoveAdmin(WorkEmail);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RemoveAdminAsync(string WorkEmail) {
+            return base.Channel.RemoveAdminAsync(WorkEmail);
         }
     }
 }
