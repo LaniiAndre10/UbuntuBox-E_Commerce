@@ -1,7 +1,0 @@
-T:\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\bin\UbuntuBox_BE.dll.config
-T:\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\bin\UbuntuBox_BE.dll
-T:\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\bin\UbuntuBox_BE.pdb
-T:\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\obj\Debug\UbuntuBox_BE.csproj.AssemblyReference.cache
-T:\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\obj\Debug\UbuntuBox_BE.csproj.CoreCompileInputs.cache
-T:\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\obj\Debug\UbuntuBox_BE.dll
-T:\UbuntuBox-E_Commerce\BackEnd\UbuntuBox_BE\obj\Debug\UbuntuBox_BE.pdb

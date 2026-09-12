@@ -68,6 +68,7 @@
   <wsdl:message name="IService1_AddAdmin_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddAdminResponse" />
   </wsdl:message>
+
   <wsdl:message name="IService1_SearchAdmin_InputMessage">
     <wsdl:part name="parameters" element="tns:SearchAdmin" />
   </wsdl:message>
@@ -85,6 +86,13 @@
   </wsdl:message>
   <wsdl:message name="IService1_RemoveAdmin_OutputMessage">
     <wsdl:part name="parameters" element="tns:RemoveAdminResponse" />
+
+  <wsdl:message name="IService1_getAttractionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAttractionList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAttractionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAttractionListResponse" />
+
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="RegisterUser">
@@ -127,6 +135,7 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddAdmin" message="tns:IService1_AddAdmin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddAdminResponse" message="tns:IService1_AddAdmin_OutputMessage" />
     </wsdl:operation>
+
     <wsdl:operation name="SearchAdmin">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SearchAdmin" message="tns:IService1_SearchAdmin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/SearchAdminResponse" message="tns:IService1_SearchAdmin_OutputMessage" />
@@ -138,6 +147,11 @@
     <wsdl:operation name="RemoveAdmin">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RemoveAdmin" message="tns:IService1_RemoveAdmin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/RemoveAdminResponse" message="tns:IService1_RemoveAdmin_OutputMessage" />
+
+    <wsdl:operation name="getAttractionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAttractionList" message="tns:IService1_getAttractionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAttractionListResponse" message="tns:IService1_getAttractionList_OutputMessage" />
+
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -232,6 +246,7 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+
     <wsdl:operation name="SearchAdmin">
       <soap:operation soapAction="http://tempuri.org/IService1/SearchAdmin" style="document" />
       <wsdl:input>
@@ -252,6 +267,10 @@
     </wsdl:operation>
     <wsdl:operation name="RemoveAdmin">
       <soap:operation soapAction="http://tempuri.org/IService1/RemoveAdmin" style="document" />
+
+    <wsdl:operation name="getAttractionList">
+      <soap:operation soapAction="http://tempuri.org/IService1/getAttractionList" style="document" />
+
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

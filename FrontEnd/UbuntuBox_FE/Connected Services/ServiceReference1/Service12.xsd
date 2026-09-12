@@ -68,4 +68,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfAttraction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Attraction" nillable="true" type="tns:Attraction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttraction" nillable="true" type="tns:ArrayOfAttraction" />
+  <xs:complexType name="Attraction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttractionDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttractionID" type="xs:int" />
+      <xs:element minOccurs="0" name="AttractionImageURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttractionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Attraction" nillable="true" type="tns:Attraction" />
 </xs:schema>

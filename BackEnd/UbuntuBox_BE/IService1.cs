@@ -66,6 +66,10 @@ namespace UbuntuBox_BE
         [OperationContract]
         public bool RemoveAdmin(String WorkEmail);
 
+        //Landing-Page - Population Management --> Populate Attractions from Database: @TLethabo. //
+        [OperationContract]
+        public List<Attraction> getAttractionList();
+
     }
 
     //Add a datacontract for Product + ProductImages to tackle the Socket/Communication Exception issue//

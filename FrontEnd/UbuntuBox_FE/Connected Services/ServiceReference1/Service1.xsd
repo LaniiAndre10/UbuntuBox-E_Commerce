@@ -157,6 +157,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="SearchAdmin">
     <xs:complexType>
       <xs:sequence>
@@ -199,6 +200,17 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="RemoveAdminResult" type="xs:boolean" />
+
+  <xs:element name="getAttractionList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAttractionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/UbuntuBox_BE" minOccurs="0" name="getAttractionListResult" nillable="true" type="q5:ArrayOfAttraction" />
+
       </xs:sequence>
     </xs:complexType>
   </xs:element>
