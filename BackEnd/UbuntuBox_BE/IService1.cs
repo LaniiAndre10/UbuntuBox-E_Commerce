@@ -54,6 +54,11 @@ namespace UbuntuBox_BE
         [OperationContract]
         public bool AddAdmin(string ImageUrl, string PhoneNumber, string Usernames, string UserEmail, string Password);
 
+        //Landing-Page - Population Management --> Populate Attractions from Database: @TLethabo. //
+        [OperationContract]
+        public List<Attraction> getAttractionList();
+
+
     }
 
     //Add a datacontract for Product + ProductImages to tackle the Socket/Communication Exception issue//

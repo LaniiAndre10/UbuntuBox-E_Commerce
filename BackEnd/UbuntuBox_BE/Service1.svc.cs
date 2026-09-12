@@ -191,5 +191,15 @@ namespace UbuntuBox_BE
             return ISUpdated;
 
         }
+
+        public List<Attraction> getAttractionList()
+        {
+            LandingPage.PopulationManagement populationManagement = new LandingPage.PopulationManagement();
+
+            List<Attraction> attractions = populationManagement.getAttractionList();
+
+            return attractions;
+
+        }
     }
 }

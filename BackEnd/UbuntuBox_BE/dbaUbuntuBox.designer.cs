@@ -39,6 +39,9 @@ namespace UbuntuBox_BE
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
+    partial void InsertAttraction(Attraction instance);
+    partial void UpdateAttraction(Attraction instance);
+    partial void DeleteAttraction(Attraction instance);
     #endregion
 		
 		public dbaUbuntuBoxDataContext() : 
@@ -92,6 +95,14 @@ namespace UbuntuBox_BE
 			get
 			{
 				return this.GetTable<User>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Attraction> Attractions
+		{
+			get
+			{
+				return this.GetTable<Attraction>();
 			}
 		}
 	}
@@ -710,6 +721,164 @@ namespace UbuntuBox_BE
 					this._UserDateAdded = value;
 					this.SendPropertyChanged("UserDateAdded");
 					this.OnUserDateAddedChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Attraction")]
+	public partial class Attraction : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _AttractionID;
+		
+		private string _AttractionName;
+		
+		private string _Province;
+		
+		private string _AttractionDescription;
+		
+		private string _AttractionImageURL;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAttractionIDChanging(int value);
+    partial void OnAttractionIDChanged();
+    partial void OnAttractionNameChanging(string value);
+    partial void OnAttractionNameChanged();
+    partial void OnProvinceChanging(string value);
+    partial void OnProvinceChanged();
+    partial void OnAttractionDescriptionChanging(string value);
+    partial void OnAttractionDescriptionChanged();
+    partial void OnAttractionImageURLChanging(string value);
+    partial void OnAttractionImageURLChanged();
+    #endregion
+		
+		public Attraction()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttractionID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int AttractionID
+		{
+			get
+			{
+				return this._AttractionID;
+			}
+			set
+			{
+				if ((this._AttractionID != value))
+				{
+					this.OnAttractionIDChanging(value);
+					this.SendPropertyChanging();
+					this._AttractionID = value;
+					this.SendPropertyChanged("AttractionID");
+					this.OnAttractionIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttractionName", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string AttractionName
+		{
+			get
+			{
+				return this._AttractionName;
+			}
+			set
+			{
+				if ((this._AttractionName != value))
+				{
+					this.OnAttractionNameChanging(value);
+					this.SendPropertyChanging();
+					this._AttractionName = value;
+					this.SendPropertyChanged("AttractionName");
+					this.OnAttractionNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Province", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Province
+		{
+			get
+			{
+				return this._Province;
+			}
+			set
+			{
+				if ((this._Province != value))
+				{
+					this.OnProvinceChanging(value);
+					this.SendPropertyChanging();
+					this._Province = value;
+					this.SendPropertyChanged("Province");
+					this.OnProvinceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttractionDescription", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string AttractionDescription
+		{
+			get
+			{
+				return this._AttractionDescription;
+			}
+			set
+			{
+				if ((this._AttractionDescription != value))
+				{
+					this.OnAttractionDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._AttractionDescription = value;
+					this.SendPropertyChanged("AttractionDescription");
+					this.OnAttractionDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttractionImageURL", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string AttractionImageURL
+		{
+			get
+			{
+				return this._AttractionImageURL;
+			}
+			set
+			{
+				if ((this._AttractionImageURL != value))
+				{
+					this.OnAttractionImageURLChanging(value);
+					this.SendPropertyChanging();
+					this._AttractionImageURL = value;
+					this.SendPropertyChanged("AttractionImageURL");
+					this.OnAttractionImageURLChanged();
 				}
 			}
 		}

@@ -68,6 +68,12 @@
   <wsdl:message name="IService1_AddAdmin_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddAdminResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getAttractionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAttractionList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAttractionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAttractionListResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegisterUser" message="tns:IService1_RegisterUser_InputMessage" />
@@ -108,6 +114,10 @@
     <wsdl:operation name="AddAdmin">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddAdmin" message="tns:IService1_AddAdmin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddAdminResponse" message="tns:IService1_AddAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAttractionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAttractionList" message="tns:IService1_getAttractionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAttractionListResponse" message="tns:IService1_getAttractionList_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -195,6 +205,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddAdmin">
       <soap:operation soapAction="http://tempuri.org/IService1/AddAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAttractionList">
+      <soap:operation soapAction="http://tempuri.org/IService1/getAttractionList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
