@@ -54,6 +54,8 @@ Create Table ProductImage(
 
 	ImageID INT IDENTITY(1,1) UNIQUE NOT NULL,
 	ProductID INT NOT NULL,
+	ItemName VARCHAR(150) NOT NULL,
+	ItemDescription Varchar(MAX) NOT NULL,
 	ImageURL Varchar(max) NOT NUll,
 	
 	Primary Key(ImageID),
