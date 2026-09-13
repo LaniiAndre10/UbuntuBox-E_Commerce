@@ -40,116 +40,161 @@ VALUES
 INSERT INTO [Product]
     (AttractionID, ProductName, Description, Price, BoxCategory)
 VALUES
+	--Standard Box
     (1,
      'Table Mountain StanBox','A Standard Box inspired by Table Mountain containing Rooibos Tea, Local Craft Chocolate and Cape Town Handmade Candles.',
      1899.99,'Standard'),
-
+ --Premium Box
     (1,
      'Table Mountain PremBox','A Premium Box inspired by Table Mountain containing a Karoo Nougat Gift Set and Garden Route Handmade Bow Tie.',
      3499.99,'Premium');
+ --Mystery Box
+    (1,
+     'Table Mountain Mystery Box','A surprise inspired by the Cape. Open the box to discover a hidden selection of locally inspired treasures chosen to bring the spirit, creativity and flavours of the Table Mountain experience to you.',
+      2799.99,'Mystery');
 
 
 -- Vilakazi Street
 INSERT INTO [Product]
     (AttractionID, ProductName, Description, Price, BoxCategory)
 VALUES
+
+	--Standard Box
     (2,
      'Vilakazi Street StanBox','A Standard Box inspired by Soweto containing a Soweto-themed T-Shirt, Ndebele Beaded Bracelet and Township Wire Sculpture.',1999.99,'Standard'),
-
+   --Premium Box
     (2,
      'Vilakazi Street PremBox','A Premium Box inspired by Soweto containing a Beaded Ndebele Necklace and African Fine Art Painting.',3999.99,
      'Premium');
+    --Mystery Box
+     (2,
+     'Vilakazi Street Mystery Box','A hidden piece of Soweto is waiting inside. This mystery box celebrates the colour, creativity and powerful cultural story of Vilakazi Street through a surprise selection chosen especially for the experience.',
+     2799.99,'Mystery');
 
 
 -- uShaka Marine World
 INSERT INTO [Product]
     (AttractionID, ProductName, Description, Price, BoxCategory)
 VALUES
+	--Standard Box
     (3,
      'uShaka StanBox','A Standard Box containing Zulu Beaded Earrings, Zulu Beaded Bracelet and Polished Stone Decor.',
      1799.99,'Standard'),
-
+   --Premium Box
     (3,
      'uShaka PremBox','A Premium Box containing a Handmade Zulu Hat and Woven Ilala Palm Basket.',
      3799.99,'Premium');
 
+ --Mystery Box
+    (3,
+	'uShaka Mystery Box','Inspired by the energy of Durban and the rich craft heritage of KwaZulu-Natal, this mystery box keeps its contents secret until the moment you open it. Expect a surprise connected to the culture and character of the region.',
+     2799.99,'Mystery');
 
 -- Blyde River Canyon
 INSERT INTO [Product]
     (AttractionID, ProductName, Description, Price, BoxCategory)
 VALUES
+	--Standard Box
     (4,
      'Blyde Canyon StanBox','A Standard Box containing a Recycled-Glass Bead Bracelet, Recycled Glass Bead Necklace and Wildlife Keychain.',
      1699.99,'Standard'),
-
+    --Premium Box
     (4,
      'Blyde Canyon PremBox','A Premium Box containing a Hand-Carved Wooden Wildlife Statue and Hand Painted Wildlife Tablecloth.',
      3599.99,'Premium');
-
-
+   --Mystery Box
+    (4,
+     'Blyde Canyon Mystery Box','Let the Panorama Route surprise you. This mystery box hides a carefully selected collection inspired by the wildlife, craft and dramatic landscapes surrounding Blyde River Canyon.',
+     2799.99,'Mystery');
 -- Kruger National Park
 INSERT INTO [Product]
     (AttractionID, ProductName, Description, Price, BoxCategory)
 VALUES
+	--Standard Box
     (5,
      'Kruger National StanBox', 'A Standard Box containing Venda Clay Beads or Pot, Venda Copper Style Bracelet and Traditional Beaded Necklace.',
      1849.99,'Standard'),
-
+   --Premium Box
     (5,
      'Kruger National PremBox','A Premium Box containing a Venda Silver-Wire Bracelet and Venda Wooden Carving.',
      3699.99,'Premium');
-
+ -- Mystery Box 
+      (5,
+     'Kruger Mystery Box','The wild side of Limpopo comes with a surprise. Hidden inside this box is a selection inspired by the craft, culture and unforgettable wildlife experience surrounding Kruger National Park. What you receive remains part of the adventure.',
+      2799.99,'Mystery');
 
 -- Addo Elephant National Park
 INSERT INTO [Product]
     (AttractionID, ProductName, Description, Price, BoxCategory)
 VALUES
+	--Standard Box
     (6,
      'Addo Elephant StanBox','A Standard Box containing Xhosa Beadwork Jewellery, a Wire and Bead Animal and Handmade Cape Ceramic.',
      1749.99,'Standard'),
-
+   --Premium Box
     (6,
      'Addo Elephant PremBox','A Premium Box containing a Telephone Wire Woven Basket and Leather Accessory.',
      3899.99,'Premium');
+  --Mystery Box
+     (6,
+       'Addo Elephant Mystery Box','Discover the Eastern Cape without knowing what comes next. This mystery box contains a surprise inspired by local craft, wildlife and the cultural character surrounding Addo Elephant National Park.',
+        2799.99,'Mystery');
+
 
 
 -- Pilanesberg National Park
 INSERT INTO [Product]
     (AttractionID, ProductName, Description, Price, BoxCategory)
 VALUES
+	--Standard Box
     (7,
      'Pilanesberg StanBox','A Standard Box containing a Setswana Beaded Bracelet, Setswana Beaded Necklace and Curiosity Figurine.',
      1649.99,'Standard'),
-
+   --Premium Box 
     (7,
      'Pilanesberg PremBox','A Premium Box containing Handcrafted Wildlife Fine Art and a Master Woven Basket.',
      3499.99,'Premium');
+  --Mystery Box
+   (7,
+     'Pilanesberg Mystery Box','A surprise from the heart of the North West. Inspired by Pilanesberg, this box hides a selection connected to local craft and wildlife, making every unboxing part of the safari experience.',
+        2799.99,'Mystery');
+
 
 
 -- Golden Gate Highlands National Park
 INSERT INTO [Product]
     (AttractionID, ProductName, Description, Price, BoxCategory)
 VALUES
+	--Standard Box
     (8,
      'Golden Gate StanBox','A Standard Box containing a Basotho Beaded Bag, Basotho Beaded Tie and Traditional Basotho Clay Dish.',
      1899.99,'Standard'),
-
+   --Premium Box
     (8,
      'Golden Gate PremBox','A Premium Box containing a Traditional Mokorotlo Hat and Mohair or Karakul Wool Throw.',
      4199.99,'Premium');
+  -- Mystery Box
+   (8,
+    'Golden Gate Mystery Box','Behind the golden mountains is a surprise waiting to be discovered. This mystery box celebrates Basotho-inspired craft and the character of the Free State while keeping its contents hidden until you open it.',
+     2799.99,'Mystery');
 
 
 -- Kgalagadi Transfrontier Park
 INSERT INTO [Product]
     (AttractionID, ProductName, Description, Price, BoxCategory)
 VALUES
+	--Standard Box
     (9,
      'Kgalagadi StanBox','A Standard Box containing Ostrich Shell Jewellery, Nama Inspired Beadwork and a Desert Themed Souvenir.',
      1599.99,'Standard'),
-
+    --Premium Box
     (9,
      'Kgalagadi PremBox','A Premium Box containing an Ostrich Shell Carved Ornament and Kalahari Desert Fine Art Print.',
      3399.99,'Premium');
+-- Mystery Box
+   (9,
+     'Kgalagadi Mystery Box','Inspired by the red dunes and open landscapes of the Kalahari, this mystery box hides a selection of desert-inspired treasures. The contents stay secret, making the discovery part of the Kgalagadi journey.',
+     2799.99, 'Mystery');
 
 *******************************************************************************************************************************************
 
