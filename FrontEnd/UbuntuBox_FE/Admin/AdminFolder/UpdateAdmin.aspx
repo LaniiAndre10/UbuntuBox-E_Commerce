@@ -58,25 +58,27 @@
 
 
             <div class="form1">
-                <img src="https://www.vhv.rs/dpng/d/476-4764937_insert-image-here-icon-hd-png-download.png" alt="ProductImg">
+                <asp:Image ID="Adminimg" runat="server" />
             </div>
 
             <div class="form1">
 
                 <div class="input1">
-                <label for="ProductLink">Admin Work Email Address:</label>
-                <input id="ProductLink" type="email" placeholder=" Enter Admin Work Email Address">
-                <button type="submit">Search Admin.</button>
-                </div>
+                <label for="Adminemail">Admin Work Email Address:</label>
+                <input id="Adminemail" runat="server" required="required" type="email" placeholder=" Enter Admin Work Email Address">
+     
+                <asp:Button ID="BtnSearchAdmin" runat="server" CssClass="Updated" Text="Search Admin." OnClick="BtnSearchAdmin_Click" />
+
+           </div>
                 
                 <div class="input1">
-                <label for="ProductLink1">Update Admin Profile Image Link:</label>
-                <input id="ProductLink1" type="url" placeholder=" Search Admin to retrieve Admin Profile Image Link">
+                <label for="AdminImg">Update Admin Profile Image Link:</label>
+                <input id="AdminImage" runat="server" type="url" placeholder=" Search Admin to retrieve Admin Profile Image Link">
                 </div>
 
                 <div class="input1">
-                <label for="ProductLink2">Update Admin Name:</label>
-                <input id="ProductLink2" type="url" placeholder=" Search Admin to retrieve Admin Name">
+                <label for="Adminname">Update Admin Name:</label>
+                <input id="Adminname" runat="server" type="text" placeholder=" Search Admin to retrieve Admin Name">
                 </div>
 
 
@@ -85,18 +87,18 @@
             <div class="form1">
 
                 <div class="input1">
-                <label for="ProductName">Update Admin Password:</label>
-                <input id="ProductName" type="password" placeholder="Enter New Password">
+                <label for="Adminphone">Update Admin Phone Number:</label>
+                <input id="Adminphone" runat="server" type="text" placeholder="Search Admin to retrieve Admin Current Phone Number">
                 </div>
 
                 <div class="input1">
-                <label for="ProductCategory">Confirm New Password :</label>
-                <input id="ProductCategory" type="password" placeholder="Confirm New Password">
+                <label for="ProductCategory">Update Admin Password:</label>
+                <input id="ProductCategory" runat="server" disabled="disabled" type="password" placeholder="Update Admin Password">
                 </div>
 
-                <a href="#">
-                    <button class="Update" type="submit">Update Admin Details.</button>
-                </a>
+                <asp:Label ID="StatusUpdate" CssClass="Submitform" runat="server" Text=""></asp:Label>
+
+                <asp:Button ID="btnpushUpdate" runat="server" CssClass="Update" Text="Update Admin Details." OnClick="btnpushUpdate_Click" />
 
             </div>
             

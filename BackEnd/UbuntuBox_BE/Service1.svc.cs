@@ -182,6 +182,8 @@ namespace UbuntuBox_BE
         public bool AddAdmin(string ImageUrl, string PhoneNumber, string Usernames, string UserEmail, string Password)
         {
 
+            //The goal is to add this admin to the database of available admins: @LaniiAndre10//
+
             bool ISUpdated = false;
 
             Admin.AdminManagement adminManagement = new Admin.AdminManagement();
@@ -189,6 +191,54 @@ namespace UbuntuBox_BE
             ISUpdated = adminManagement.AddAdmin(ImageUrl, PhoneNumber, Usernames, UserEmail, Password);
 
             return ISUpdated;
+
+        }
+
+        public User SearchAdmin(string WorkEmailAddress)
+        {
+            //The goal is to retrieve this admin using their EmailAddress : @LaniiAndre10//
+
+            Admin.AdminManagement adminManagement = new Admin.AdminManagement();
+
+            User ReqUser = adminManagement.SearchAdmin(WorkEmailAddress);
+
+            return ReqUser;
+
+        }
+
+        public bool UpdateAdmin(string WorkEmail, string AdminImgUrl, string AdminName, string NewNumber)
+        {
+            //The goal is to update the data of a certain admin: @LaniiAndre10.//
+
+            bool Isupdated;
+            Admin.AdminManagement management = new Admin.AdminManagement();
+
+           
+            Isupdated = management.UpdateAdmin(WorkEmail, AdminImgUrl, AdminName, NewNumber);
+
+            return Isupdated;
+
+        }
+
+        public bool RemoveAdmin(string WorkEmail)
+        {
+            //The goal is to remove an admin from the database: @LaniiAndre10.//
+
+            Admin.AdminManagement adminManagement = new Admin.AdminManagement();
+
+            bool IsDeleted = adminManagement.RemoveAdmin(WorkEmail);
+
+            return IsDeleted;
+            
+        }
+
+        public List<Attraction> getAttractionList()
+        {
+            LandingPage.PopulationManagement populationManagement = new LandingPage.PopulationManagement();
+
+            List<Attraction> attractions = populationManagement.getAttractionList();
+
+            return attractions;
 
         }
     }

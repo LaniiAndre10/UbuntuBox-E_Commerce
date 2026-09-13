@@ -55,7 +55,28 @@
 
     <div class="attraction-grid">
 
+         <asp:Repeater ID="rptAttractions" runat="server">
+          <ItemTemplate>
         <a href="#">
+        <div class="attraction-card">
+            <!--<img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">-->
+            <img src= <%# Eval("AttractionImageURL") %> alt="Table Mountain">
+            <div class="attr-info">
+                <div>
+                    <!--<h3>Table Mountain</h3>-->
+                    <h3><%# Eval("AttractionName") %></h3>
+                    <!--<p>Cape Town</p>-->
+                    <p><%# Eval("Province") %></p>
+                </div>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+        </a>
+          </ItemTemplate>
+      </asp:Repeater>
+
+
+        <!--<a href="#">
         <div class="attraction-card">
             <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
             <div class="attr-info">
@@ -93,19 +114,7 @@
             </div>
         </div>
         </a>
-
-        <a href="#">
-        <div class="attraction-card">
-            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
-            <div class="attr-info">
-                <div>
-                    <h3>Table Mountain</h3>
-                    <p>Cape Town</p>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </div>
-        </div>
-        </a>
+        -->
 
     </div>
 

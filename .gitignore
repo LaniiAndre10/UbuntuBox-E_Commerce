@@ -1,1 +1,11 @@
 -e ".vs/\nbin/\nobj/\n*.dll\n*.pdb\n*.cache\n"  
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.cache
+
+# Build outputs
+[Bb]in/
+[Oo]bj/

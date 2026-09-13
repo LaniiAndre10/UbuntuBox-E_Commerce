@@ -54,6 +54,22 @@ namespace UbuntuBox_BE
         [OperationContract]
         public bool AddAdmin(string ImageUrl, string PhoneNumber, string Usernames, string UserEmail, string Password);
 
+        //Admin - Admin Managament --> Search Admin: @LaniiAndre10. //
+        [OperationContract]
+        public User SearchAdmin(String WorkEmailAddress);
+
+        //Admin - Admin Management --> Update Admin Details: @LaniiAndre10. //
+        [OperationContract]
+        public bool UpdateAdmin(String WorkEmail, String AdminImgUrl, String AdminName, String NewNumber);
+
+        //Admin - Admin Management --> Delete Admin from the Database: @LaniiAndre10. //
+        [OperationContract]
+        public bool RemoveAdmin(String WorkEmail);
+
+        //Landing-Page - Population Management --> Populate Attractions from Database: @TLethabo. //
+        [OperationContract]
+        public List<Attraction> getAttractionList();
+
     }
 
     //Add a datacontract for Product + ProductImages to tackle the Socket/Communication Exception issue//

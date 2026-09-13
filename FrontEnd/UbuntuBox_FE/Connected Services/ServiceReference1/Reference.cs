@@ -593,6 +593,115 @@ namespace UbuntuBox_FE.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Attraction", Namespace="http://schemas.datacontract.org/2004/07/UbuntuBox_BE")]
+    [System.SerializableAttribute()]
+    public partial class Attraction : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AttractionDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AttractionIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AttractionImageURLField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AttractionNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProvinceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AttractionDescription {
+            get {
+                return this.AttractionDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AttractionDescriptionField, value) != true)) {
+                    this.AttractionDescriptionField = value;
+                    this.RaisePropertyChanged("AttractionDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AttractionID {
+            get {
+                return this.AttractionIDField;
+            }
+            set {
+                if ((this.AttractionIDField.Equals(value) != true)) {
+                    this.AttractionIDField = value;
+                    this.RaisePropertyChanged("AttractionID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AttractionImageURL {
+            get {
+                return this.AttractionImageURLField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AttractionImageURLField, value) != true)) {
+                    this.AttractionImageURLField = value;
+                    this.RaisePropertyChanged("AttractionImageURL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AttractionName {
+            get {
+                return this.AttractionNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AttractionNameField, value) != true)) {
+                    this.AttractionNameField = value;
+                    this.RaisePropertyChanged("AttractionName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Province {
+            get {
+                return this.ProvinceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProvinceField, value) != true)) {
+                    this.ProvinceField = value;
+                    this.RaisePropertyChanged("Province");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
@@ -656,6 +765,31 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddAdmin", ReplyAction="http://tempuri.org/IService1/AddAdminResponse")]
         System.Threading.Tasks.Task<bool> AddAdminAsync(string ImageUrl, string PhoneNumber, string Usernames, string UserEmail, string Password);
+        
+
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchAdmin", ReplyAction="http://tempuri.org/IService1/SearchAdminResponse")]
+        UbuntuBox_FE.ServiceReference1.User SearchAdmin(string WorkEmailAddress);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchAdmin", ReplyAction="http://tempuri.org/IService1/SearchAdminResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.User> SearchAdminAsync(string WorkEmailAddress);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateAdmin", ReplyAction="http://tempuri.org/IService1/UpdateAdminResponse")]
+        bool UpdateAdmin(string WorkEmail, string AdminImgUrl, string AdminName, string NewNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateAdmin", ReplyAction="http://tempuri.org/IService1/UpdateAdminResponse")]
+        System.Threading.Tasks.Task<bool> UpdateAdminAsync(string WorkEmail, string AdminImgUrl, string AdminName, string NewNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveAdmin", ReplyAction="http://tempuri.org/IService1/RemoveAdminResponse")]
+        bool RemoveAdmin(string WorkEmail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveAdmin", ReplyAction="http://tempuri.org/IService1/RemoveAdminResponse")]
+        System.Threading.Tasks.Task<bool> RemoveAdminAsync(string WorkEmail);
+
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getAttractionList", ReplyAction="http://tempuri.org/IService1/getAttractionListResponse")]
+        UbuntuBox_FE.ServiceReference1.Attraction[] getAttractionList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getAttractionList", ReplyAction="http://tempuri.org/IService1/getAttractionListResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.Attraction[]> getAttractionListAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -763,6 +897,37 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> AddAdminAsync(string ImageUrl, string PhoneNumber, string Usernames, string UserEmail, string Password) {
             return base.Channel.AddAdminAsync(ImageUrl, PhoneNumber, Usernames, UserEmail, Password);
+        }
+        
+        public UbuntuBox_FE.ServiceReference1.User SearchAdmin(string WorkEmailAddress) {
+            return base.Channel.SearchAdmin(WorkEmailAddress);
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.User> SearchAdminAsync(string WorkEmailAddress) {
+            return base.Channel.SearchAdminAsync(WorkEmailAddress);
+        }
+        
+        public bool UpdateAdmin(string WorkEmail, string AdminImgUrl, string AdminName, string NewNumber) {
+            return base.Channel.UpdateAdmin(WorkEmail, AdminImgUrl, AdminName, NewNumber);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateAdminAsync(string WorkEmail, string AdminImgUrl, string AdminName, string NewNumber) {
+            return base.Channel.UpdateAdminAsync(WorkEmail, AdminImgUrl, AdminName, NewNumber);
+        }
+        
+        public bool RemoveAdmin(string WorkEmail) {
+            return base.Channel.RemoveAdmin(WorkEmail);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RemoveAdminAsync(string WorkEmail) {
+            return base.Channel.RemoveAdminAsync(WorkEmail);
+
+        public UbuntuBox_FE.ServiceReference1.Attraction[] getAttractionList() {
+            return base.Channel.getAttractionList();
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.Attraction[]> getAttractionListAsync() {
+            return base.Channel.getAttractionListAsync();
         }
     }
 }

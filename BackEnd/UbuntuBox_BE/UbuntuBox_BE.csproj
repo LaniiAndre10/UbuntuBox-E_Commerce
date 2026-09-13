@@ -74,6 +74,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbaUbuntuBox.dbml</DependentUpon>
     </Compile>
+    <Compile Include="LandingPage\PopulationManagement.cs" />
     <Compile Include="Secrecy\Secrecy.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
