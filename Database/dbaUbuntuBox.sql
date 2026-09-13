@@ -121,3 +121,29 @@ CREATE TABLE CartItem(
     CHECK(Quantity > 0)
 );
 
+--Order Management 
+
+-- ORDER TABLE
+CREATE TABLE [Order](
+    OrderID INT IDENTITY(1,1) UNIQUE NOT NULL,
+    UserID INT NOT NULL,
+    OrderStatus VARCHAR(30) not null DEFAULT 'Pending',
+    OrderDate DATETIME NOT NULL DEFAULT GETDATE(),
+    PRIMARY KEY(OrderID),
+    FOREIGN KEY(UserID)references[User](UserID)
+);
+
+--Order Items
+CREATE TABLE OrderItems(
+    ItemID INT identity(1,1) UNIQUE NOT NULL,
+    OrderID INT NOT NULL,
+    ProductID INT NOT NULL,
+    Quantity INT NOT NULL DEFAULT 1,
+    -- Price of the box when the customer bought it
+    UnitPrice DECIMAL(10,2) NOT NULL,
+    PRIMARY KEY(ItemID),
+    FOREIGN KEY(OrderID) references [Order](OrderID),
+    FOREIGN KEY(ProductID)references [Product](ProductID),
+    CHECK(Quantity > 0)
+);
+
