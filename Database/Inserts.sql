@@ -51,7 +51,7 @@ VALUES
  --Mystery Box
     (1,
      'Table Mountain Mystery Box','A surprise inspired by the Cape. Open the box to discover a hidden selection of locally inspired treasures chosen to bring the spirit, creativity and flavours of the Table Mountain experience to you.',
-      2799.99,'Mystery');
+      2699.99,'Mystery');
 
 
 -- Vilakazi Street
@@ -69,7 +69,7 @@ VALUES
     --Mystery Box
      (2,
      'Vilakazi Street Mystery Box','A hidden piece of Soweto is waiting inside. This mystery box celebrates the colour, creativity and powerful cultural story of Vilakazi Street through a surprise selection chosen especially for the experience.',
-     2799.99,'Mystery');
+     2899.99,'Mystery');
 
 
 -- uShaka Marine World
@@ -88,7 +88,7 @@ VALUES
  --Mystery Box
     (3,
 	'uShaka Mystery Box','Inspired by the energy of Durban and the rich craft heritage of KwaZulu-Natal, this mystery box keeps its contents secret until the moment you open it. Expect a surprise connected to the culture and character of the region.',
-     2799.99,'Mystery');
+     2699.99,'Mystery');
 
 -- Blyde River Canyon
 INSERT INTO [Product]
@@ -101,7 +101,7 @@ VALUES
     --Premium Box
     (4,
      'Blyde Canyon PremBox','A Premium Box containing a Hand-Carved Wooden Wildlife Statue and Hand Painted Wildlife Tablecloth.',
-     3599.99,'Premium');
+     2599.99,'Premium');
    --Mystery Box
     (4,
      'Blyde Canyon Mystery Box','Let the Panorama Route surprise you. This mystery box hides a carefully selected collection inspired by the wildlife, craft and dramatic landscapes surrounding Blyde River Canyon.',
@@ -138,7 +138,7 @@ VALUES
   --Mystery Box
      (6,
        'Addo Elephant Mystery Box','Discover the Eastern Cape without knowing what comes next. This mystery box contains a surprise inspired by local craft, wildlife and the cultural character surrounding Addo Elephant National Park.',
-        2799.99,'Mystery');
+        2599.99,'Mystery');
 
 
 
@@ -157,7 +157,7 @@ VALUES
   --Mystery Box
    (7,
      'Pilanesberg Mystery Box','A surprise from the heart of the North West. Inspired by Pilanesberg, this box hides a selection connected to local craft and wildlife, making every unboxing part of the safari experience.',
-        2799.99,'Mystery');
+        2999.99,'Mystery');
 
 
 
@@ -176,7 +176,7 @@ VALUES
   -- Mystery Box
    (8,
     'Golden Gate Mystery Box','Behind the golden mountains is a surprise waiting to be discovered. This mystery box celebrates Basotho-inspired craft and the character of the Free State while keeping its contents hidden until you open it.',
-     2799.99,'Mystery');
+     2499.99,'Mystery');
 
 
 -- Kgalagadi Transfrontier Park
