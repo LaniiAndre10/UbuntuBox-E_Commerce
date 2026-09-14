@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dbaUbuntuBox">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.875, 8.5" name="dbaUbuntuBox">
   <DataContextMoniker Name="/dbaUbuntuBoxDataContext" />
   <nestedChildShapes>
     <classShape Id="e43bd665-61d3-4429-ad8c-7f17838f003b" absoluteBounds="6.75, 1.5, 2, 2.1554996744791666">
@@ -14,7 +14,7 @@
         <elementListCompartment Id="63d16503-cab3-4f0f-bd7c-1ef8220c203a" absoluteBounds="6.765, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.96875 : 3.65549967447917); (7.96875 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.96875 : 3.65549967447917); (7.96875 : 4.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Product/Product_ProductImage" />
       <nodes>
         <classShapeMoniker Id="e43bd665-61d3-4429-ad8c-7f17838f003b" />
@@ -27,5 +27,64 @@
         <elementListCompartment Id="2bbb6173-cbd2-4fc8-bc41-146875435f00" absoluteBounds="3.7649999999999997, 2.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="857ef192-8e17-4209-9d95-ec8ae6cece86" absoluteBounds="3.75, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbaUbuntuBoxDataContext/Order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73db5d54-f143-495e-a87a-d37c93a01d77" absoluteBounds="3.765, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.75 : 2.25); (4.75 : 2.07859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbaUbuntuBoxDataContext/User/User_Order" />
+      <nodes>
+        <classShapeMoniker Id="1b64dee9-803f-4c33-94a1-d2bfb4967fd9" />
+        <classShapeMoniker Id="857ef192-8e17-4209-9d95-ec8ae6cece86" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d5fa7412-595f-4abe-8345-bbbe29b3ed5b" absoluteBounds="10.625, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbaUbuntuBoxDataContext/OrderCancellation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e76f85d7-1846-4b85-9df5-37032af74a58" absoluteBounds="10.64, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.75 : 0.96875); (10.625 : 0.96875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Order/Order_OrderCancellation" />
+      <nodes>
+        <classShapeMoniker Id="857ef192-8e17-4209-9d95-ec8ae6cece86" />
+        <classShapeMoniker Id="d5fa7412-595f-4abe-8345-bbbe29b3ed5b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d099145d-6dbd-43f5-8ae8-efc4f02227cb" absoluteBounds="0.5, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/dbaUbuntuBoxDataContext/OrderReturn" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aa8029fc-06a6-4f84-bd49-c75fc313fe82" absoluteBounds="0.51500000000000057, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.75 : 1.28929768880208); (2.5 : 1.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Order/Order_OrderReturn" />
+      <nodes>
+        <classShapeMoniker Id="857ef192-8e17-4209-9d95-ec8ae6cece86" />
+        <classShapeMoniker Id="d099145d-6dbd-43f5-8ae8-efc4f02227cb" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="16df4da6-1aec-4d24-a9ae-eb0f041256fe" absoluteBounds="1.25, 4.375, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/dbaUbuntuBoxDataContext/OrderItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df3faf91-a5ed-4829-b5b5-69b729e8a48b" absoluteBounds="1.2650000000000001, 4.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.75 : 1.71519853320312); (2.75 : 1.71519853320312); (2.75 : 2.52089680989583); (2.25 : 2.52089680989583); (2.25 : 4.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Order/Order_OrderItem" />
+      <nodes>
+        <classShapeMoniker Id="857ef192-8e17-4209-9d95-ec8ae6cece86" />
+        <classShapeMoniker Id="16df4da6-1aec-4d24-a9ae-eb0f041256fe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.75 : 3.65549967447917); (6.375 : 4.03049967447917); (6.375 : 5.49924917447917); (3.25 : 5.49924917447917)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Product/Product_OrderItem" />
+      <nodes>
+        <classShapeMoniker Id="e43bd665-61d3-4429-ad8c-7f17838f003b" />
+        <classShapeMoniker Id="16df4da6-1aec-4d24-a9ae-eb0f041256fe" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -66,87 +66,22 @@
 
     <div class="Rowcontainer">
 
-        <div class="ProductRow">
-            <div>71</div>
-            <div>C021</div>
-            <div>Ndebele Pattern Necklace</div>
-            <div>072</div>
-            <div>2026-06-26</div>
-            <div>Out of stock</div>
-        </div>
-        <div class="ProductRow">
-            <div>72</div>
-            <div>C022</div>
-            <div>Zulu Beaded Earrings</div>
-            <div>073</div>
-            <div>2026-06-27</div>
-            <div>Customer request</div>
-        </div>
-        <div class="ProductRow">
-            <div>73</div>
-            <div>C023</div>
-            <div>Xhosa Traditional Shawl</div>
-            <div>074</div>
-            <div>2026-06-28</div>
-            <div>Payment failure</div>
-        </div>
-        <div class="ProductRow">
-            <div>74</div>
-            <div>C024</div>
-            <div>Tsonga Handwoven Basket</div>
-            <div>075</div>
-            <div>2026-06-29</div>
-            <div>Fraud check</div>
-        </div>
-        <div class="ProductRow">
-            <div>75</div>
-            <div>C025</div>
-            <div>Sotho Wool Blanket</div>
-            <div>076</div>
-            <div>2026-06-30</div>
-            <div>Duplicate order</div>
-        </div>
-        <div class="ProductRow">
-            <div>76</div>
-            <div>C026</div>
-            <div>Swazi Clay Pot</div>
-            <div>077</div>
-            <div>2026-07-01</div>
-            <div>Supplier delay</div>
-        </div>
-        <div class="ProductRow">
-            <div>77</div>
-            <div>C027</div>
-            <div>Venda Drum Keychain</div>
-            <div>078</div>
-            <div>2026-07-02</div>
-            <div>Customer cancelled before shipping</div>
-        </div>
-        <div class="ProductRow">
-            <div>78</div>
-            <div>C028</div>
-            <div>Zulu Shield Wall Art</div>
-            <div>079</div>
-            <div>2026-07-03</div>
-            <div>Incorrect address</div>
-        </div>
-        <div class="ProductRow">
-            <div>79</div>
-            <div>C029</div>
-            <div>Xhosa Headwrap</div>
-            <div>080</div>
-            <div>2026-07-04</div>
-            <div>Customer dissatisfaction</div>
-        </div>
-        <div class="ProductRow">
-            <div>80</div>
-            <div>C030</div>
-            <div>Tswana Leather Sandals</div>
-            <div>081</div>
-            <div>2026-07-05</div>
-            <div>Stock miscount</div>
-        </div>
+        <asp:Repeater ID="Repeater1" runat="server">
 
+            <ItemTemplate>
+
+                <div class="ProductRow">
+                    <div><%# Eval("OrderID") %></div>
+                    <div><%# Eval("CustomerID") %></div>
+                    <div><%# Eval("ProductName") %></div>
+                    <div><%# Eval("ProductID") %></div>
+                    <div><%# Eval("CancellationDate") %></div>
+                    <div><%# Eval("CancellationReason") %></div>
+                </div>
+
+            </ItemTemplate>
+
+        </asp:Repeater>
 
 
     </div>

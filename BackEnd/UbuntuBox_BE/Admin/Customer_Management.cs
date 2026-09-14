@@ -27,8 +27,12 @@ namespace UbuntuBox_BE.Admin
         //2. Create a function to return a customer searched by ID//
         public User SearchCustomer(String CustomerID)
         {
+            //turn off deferredloading to avoid that socketException error.//
+            UbuntuBoxDatabase.DeferredLoadingEnabled = false;
 
-            var Customer = (from U in UbuntuBoxDatabase.Users where U.IsAdmin == false && U.UserID.Equals(CustomerID) select U).SingleOrDefault();
+            int CustomID = int.Parse(CustomerID);
+
+            var Customer = (from U in UbuntuBoxDatabase.Users where U.IsAdmin == false && U.UserID == CustomID select U).SingleOrDefault();
 
             return Customer;
 
@@ -37,6 +41,8 @@ namespace UbuntuBox_BE.Admin
         //3. Create a function to get a customer by Id, and set their status to blocked//
         public bool BlockUser(String CustomerID)
         {
+            //turn off deferredloading to avoid that socketException error.//
+            UbuntuBoxDatabase.DeferredLoadingEnabled = false;
 
             bool isBlocked = false;
 

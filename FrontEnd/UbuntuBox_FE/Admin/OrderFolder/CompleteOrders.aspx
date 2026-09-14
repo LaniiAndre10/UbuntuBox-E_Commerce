@@ -66,86 +66,22 @@
 
     <div class="Rowcontainer">
 
-        <div class="ProductRow">
-            <div>21</div>
-            <div>C011</div>
-            <div>022</div>
-            <div>R175.00</div>
-            <div>2026-05-02</div>
-            <div>2026-05-05</div>
-        </div>
-        <div class="ProductRow">
-            <div>22</div>
-            <div>C012</div>
-            <div>023</div>
-            <div>R90.00</div>
-            <div>2026-05-03</div>
-            <div>2026-05-06</div>
-        </div>
-        <div class="ProductRow">
-            <div>23</div>
-            <div>C013</div>
-            <div>024</div>
-            <div>R210.00</div>
-            <div>2026-05-04</div>
-            <div>2026-05-08</div>
-        </div>
-        <div class="ProductRow">
-            <div>24</div>
-            <div>C014</div>
-            <div>025</div>
-            <div>R260.00</div>
-            <div>2026-05-05</div>
-            <div>2026-05-09</div>
-        </div>
-        <div class="ProductRow">
-            <div>25</div>
-            <div>C015</div>
-            <div>026</div>
-            <div>R320.00</div>
-            <div>2026-05-06</div>
-            <div>2026-05-10</div>
-        </div>
-        <div class="ProductRow">
-            <div>26</div>
-            <div>C016</div>
-            <div>027</div>
-            <div>R185.00</div>
-            <div>2026-05-07</div>
-            <div>2026-05-11</div>
-        </div>
-        <div class="ProductRow">
-            <div>27</div>
-            <div>C017</div>
-            <div>028</div>
-            <div>R75.00</div>
-            <div>2026-05-08</div>
-            <div>2026-05-12</div>
-        </div>
-        <div class="ProductRow">
-            <div>28</div>
-            <div>C018</div>
-            <div>029</div>
-            <div>R420.00</div>
-            <div>2026-05-09</div>
-            <div>2026-05-14</div>
-        </div>
-        <div class="ProductRow">
-            <div>29</div>
-            <div>C019</div>
-            <div>030</div>
-            <div>R135.00</div>
-            <div>2026-05-10</div>
-            <div>2026-05-15</div>
-        </div>
-        <div class="ProductRow">
-            <div>30</div>
-            <div>C020</div>
-            <div>031</div>
-            <div>R240.00</div>
-            <div>2026-05-11</div>
-            <div>2026-05-16</div>
-        </div>
+        <asp:Repeater ID="Repeater1" runat="server">
+
+            <ItemTemplate>
+
+                <div class="ProductRow">
+                    <div><%# Eval("OrderID") %></div>
+                    <div><%# Eval("UserID") %></div>
+                    <div><%# Eval("ProductID") %></div>
+                    <div>R<%# Eval("ProductPrice") %></div>
+                    <div><%# Eval("OrderDate") %></div>
+                    <div>-</div>
+                </div>
+
+            </ItemTemplate>
+
+        </asp:Repeater>
 
 
     </div>

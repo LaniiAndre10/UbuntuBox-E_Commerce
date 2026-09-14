@@ -66,86 +66,24 @@
 
     <div class="Rowcontainer">
 
-        <div class="ProductRow">
-            <div>51</div>
-            <div>052</div>
-            <div>Ndebele Pattern Necklace</div>
-            <div>2026-06-06</div>
-            <div>Approved</div>
-            <div>Damaged on delivery</div>
-        </div>
-        <div class="ProductRow">
-            <div>52</div>
-            <div>053</div>
-            <div>Zulu Beaded Earrings</div>
-            <div>2026-06-07</div>
-            <div>Pending</div>
-            <div>Wrong size</div>
-        </div>
-        <div class="ProductRow">
-            <div>53</div>
-            <div>054</div>
-            <div>Xhosa Traditional Shawl</div>
-            <div>2026-06-08</div>
-            <div>Rejected</div>
-            <div>No defect found</div>
-        </div>
-        <div class="ProductRow">
-            <div>54</div>
-            <div>055</div>
-            <div>Tsonga Handwoven Basket</div>
-            <div>2026-06-09</div>
-            <div>Approved</div>
-            <div>Broken handle</div>
-        </div>
-        <div class="ProductRow">
-            <div>55</div>
-            <div>056</div>
-            <div>Sotho Wool Blanket</div>
-            <div>2026-06-10</div>
-            <div>Pending</div>
-            <div>Customer dissatisfaction</div>
-        </div>
-        <div class="ProductRow">
-            <div>56</div>
-            <div>057</div>
-            <div>Swazi Clay Pot</div>
-            <div>2026-06-11</div>
-            <div>Approved</div>
-            <div>Cracked during shipping</div>
-        </div>
-        <div class="ProductRow">
-            <div>57</div>
-            <div>058</div>
-            <div>Venda Drum Keychain</div>
-            <div>2026-06-12</div>
-            <div>Pending</div>
-            <div>Wrong item sent</div>
-        </div>
-        <div class="ProductRow">
-            <div>58</div>
-            <div>059</div>
-            <div>Zulu Shield Wall Art</div>
-            <div>2026-06-13</div>
-            <div>Rejected</div>
-            <div>Return window expired</div>
-        </div>
-        <div class="ProductRow">
-            <div>59</div>
-            <div>060</div>
-            <div>Xhosa Headwrap</div>
-            <div>2026-06-14</div>
-            <div>Approved</div>
-            <div>Color mismatch</div>
-        </div>
-        <div class="ProductRow">
-            <div>60</div>
-            <div>061</div>
-            <div>Tswana Leather Sandals</div>
-            <div>2026-06-15</div>
-            <div>Pending</div>
-            <div>Size too small</div>
-        </div>
+        <asp:Repeater ID="Repeater1" runat="server">
+
+            <ItemTemplate>
+
+                <div class="ProductRow">
+
+                    <div><%# Eval("OrderID") %></div>
+                    <div><%# Eval("ProductID") %></div>
+                    <div><%# Eval("ProductName") %></div>
+                    <div><%# Eval("ReturnDateLog") %></div>
+                    <div><%# Eval("Status") %></div>
+                    <div><%# Eval("ReturnReason") %></div>
+
+                </div>
+
+            </ItemTemplate>
+
+        </asp:Repeater>
 
 
     </div>

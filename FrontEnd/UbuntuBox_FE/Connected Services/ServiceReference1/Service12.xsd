@@ -24,6 +24,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="BoxCategory" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderItems" nillable="true" type="tns:ArrayOfOrderItem" />
       <xs:element minOccurs="0" name="Price" type="xs:decimal" />
       <xs:element minOccurs="0" name="ProductDateAdded" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ProductID" type="xs:int" />
@@ -33,6 +34,91 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ArrayOfOrderItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderItem" nillable="true" type="tns:OrderItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderItem" nillable="true" type="tns:ArrayOfOrderItem" />
+  <xs:complexType name="OrderItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Order" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderItem" nillable="true" type="tns:OrderItem" />
+  <xs:complexType name="Order">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OrderCancellations" nillable="true" type="tns:ArrayOfOrderCancellation" />
+      <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderItems" nillable="true" type="tns:ArrayOfOrderItem" />
+      <xs:element minOccurs="0" name="OrderReturns" nillable="true" type="tns:ArrayOfOrderReturn" />
+      <xs:element minOccurs="0" name="OrderStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Order" nillable="true" type="tns:Order" />
+  <xs:complexType name="ArrayOfOrderCancellation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderCancellation" nillable="true" type="tns:OrderCancellation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderCancellation" nillable="true" type="tns:ArrayOfOrderCancellation" />
+  <xs:complexType name="OrderCancellation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CancellationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CancellationReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Order" />
+      <xs:element minOccurs="0" name="OrderCancellationID" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderCancellation" nillable="true" type="tns:OrderCancellation" />
+  <xs:complexType name="ArrayOfOrderReturn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderReturn" nillable="true" type="tns:OrderReturn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderReturn" nillable="true" type="tns:ArrayOfOrderReturn" />
+  <xs:complexType name="OrderReturn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Order" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="ReturnID" type="xs:int" />
+      <xs:element minOccurs="0" name="ReturnLogDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReturnReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnStatus" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderReturn" nillable="true" type="tns:OrderReturn" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsAdmin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Orders" nillable="true" type="tns:ArrayOfOrder" />
+      <xs:element minOccurs="0" name="PasswordHash" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfileImgURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserDateAdded" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usernames" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrder" nillable="true" type="tns:ArrayOfOrder" />
   <xs:complexType name="ArrayOfProductImage">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductImage" nillable="true" type="tns:ProductImage" />
@@ -54,18 +140,56 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
-  <xs:complexType name="User">
+  <xs:complexType name="ArrayOfOrderDetails">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IsAdmin" type="xs:boolean" />
-      <xs:element minOccurs="0" name="PasswordHash" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PhoneNum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ProfileImgURL" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UserDateAdded" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="UserID" type="xs:int" />
-      <xs:element minOccurs="0" name="UserStatus" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Usernames" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderDetails" nillable="true" type="tns:OrderDetails" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:element name="ArrayOfOrderDetails" nillable="true" type="tns:ArrayOfOrderDetails" />
+  <xs:complexType name="OrderDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderDetails" nillable="true" type="tns:OrderDetails" />
+  <xs:complexType name="ArrayOfOrderReturns">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderReturns" nillable="true" type="tns:OrderReturns" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderReturns" nillable="true" type="tns:ArrayOfOrderReturns" />
+  <xs:complexType name="OrderReturns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnDateLog" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReturnReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderReturns" nillable="true" type="tns:OrderReturns" />
+  <xs:complexType name="ArrayOfCancelledOrders">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CancelledOrders" nillable="true" type="tns:CancelledOrders" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCancelledOrders" nillable="true" type="tns:ArrayOfCancelledOrders" />
+  <xs:complexType name="CancelledOrders">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CancellationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CancellationReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CancelledOrders" nillable="true" type="tns:CancelledOrders" />
 </xs:schema>

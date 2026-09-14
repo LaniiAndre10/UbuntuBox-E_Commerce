@@ -259,6 +259,8 @@ namespace UbuntuBox_BE
 
         public bool BlockUser(string CustomerID)
         {
+            //The goal here is to change the user status from Active to blocked!: @LaniiAndre10. //
+
             bool IsBlocked = false;
             Admin.CustomerManagement customerManagement = new Admin.CustomerManagement();
 
@@ -266,6 +268,66 @@ namespace UbuntuBox_BE
 
             return IsBlocked;
             
+        }
+
+        public List<OrderDetails> ReturnPendingOrders()
+        {
+
+            //The goal here is to return all the orders that are pending: @LaniiAndre10. //
+
+            Admin.OrderManagement orderManagement = new Admin.OrderManagement();
+
+            List<OrderDetails> Orders = orderManagement.ReturnPendingOrders();
+
+            return Orders;
+
+        }
+
+        public bool CompleteOrder(string OrderID)
+        {
+
+            //The goal here is to change the status of a pending order to complete: @LaniiAndre10. //
+
+            bool IsUpdated = false;
+            Admin.OrderManagement orderManagement = new Admin.OrderManagement();
+
+            IsUpdated = orderManagement.CompleteOrder(OrderID);
+
+            return IsUpdated;
+            
+        }
+
+        public List<OrderDetails> ReturnCompleteOrders()
+        {
+            //The goal here is to return all the orders that are Completed: @LaniiAndre10. //
+
+            Admin.OrderManagement orderManagement = new Admin.OrderManagement();
+
+            List<OrderDetails> Orders = orderManagement.ReturnCompleteOrders();
+
+            return Orders;
+
+        }
+
+        public List<OrderReturns> ReturnOrdersWithReturns()
+        {
+            Admin.OrderManagement orderManagement = new Admin.OrderManagement();
+
+            List<OrderReturns> LoggedReturns = orderManagement.ReturnOrdersWithReturns();
+
+
+            return LoggedReturns;
+
+        }
+
+        public List<CancelledOrders> ReturnCancelledOrders()
+        {
+            Admin.OrderManagement orderManagement = new Admin.OrderManagement();
+
+            var CancelledOrders = orderManagement.ReturnCancelledOrders();
+
+            return CancelledOrders;
+
         }
     }
 }

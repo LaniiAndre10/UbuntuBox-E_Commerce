@@ -67,7 +67,7 @@
                 <label for="ProductLink">Product ID:</label>
                 <input id="txtProductID" runat="server" type="Number" placeholder=" Enter Product Id">
        
-                 <asp:Button ID="SearchProduct" CssClass="ClickSubmit" runat="server" Text="Search Product." OnClick="SearchProduct_Click" />
+                 <asp:Button ID="SearchProduct" CssClass="Updated" runat="server" Text="Search Product." OnClick="SearchProduct_Click" />
 
                 </div>
                 

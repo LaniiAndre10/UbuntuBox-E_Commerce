@@ -102,5 +102,60 @@ CREATE TABLE CartItem(
     FOREIGN KEY(CartID) REFERENCES Cart(CartID),
     FOREIGN KEY(ProductID) REFERENCES [Product](ProductID),
     CHECK(Quantity > 0)
+	
+);
+
+--Order Management: Added Required Data Tables --
+
+CREATE TABLE [Order](
+
+    OrderID INT IDENTITY(1,1) UNIQUE NOT NULL,
+    UserID INT NOT NULL,
+    OrderStatus VARCHAR(30) not null DEFAULT 'Pending',
+    OrderDate DATETIME NOT NULL DEFAULT GETDATE(),
+    PRIMARY KEY(OrderID),
+    FOREIGN KEY(UserID)references[User](UserID)
+
+);
+
+CREATE TABLE OrderReturn(
+    
+    ReturnID INTEGER IDENTITY(1,1) NOT NULL UNIQUE,
+    OrderID INTEGER NOT NULL UNIQUE,
+    ReturnLogDate DATE NOT NULL DEFAULT GETDATE(),
+    ReturnStatus VARCHAR(20) NOT NULL DEFAULT 'Pending',
+    ReturnReason TEXT NOT NULL,
+
+    PRIMARY KEY(ReturnID),
+    FOREIGN KEY(OrderID) REFERENCES [Order](OrderID),
+
+);
+
+CREATE TABLE OrderCancellation(
+
+    OrderCancellationID INTEGER IDENTITY(1,1) NOT NULL UNIQUE,
+    OrderID INTEGER NOT NULL UNIQUE,
+    CancellationDate DATE NOT NULL DEFAULT GETDATE(),
+    CancellationReason TEXT NOT NULL,
+
+    PRIMARY KEY(OrderCancellationID),
+    FOREIGN KEY(OrderID) REFERENCES [Order](OrderID)
+
+);
+
+--Order Items
+CREATE TABLE OrderItems(
+
+    ItemID INT identity(1,1) UNIQUE NOT NULL,
+    OrderID INT NOT NULL,
+    ProductID INT NOT NULL,
+    Quantity INT NOT NULL DEFAULT 1,
+    -- Price of the box when the customer bought it
+    UnitPrice DECIMAL(10,2) NOT NULL,
+    PRIMARY KEY(ItemID),
+    FOREIGN KEY(OrderID) references [Order](OrderID),
+    FOREIGN KEY(ProductID)references [Product](ProductID),
+    CHECK(Quantity > 0)
+	
 );
 

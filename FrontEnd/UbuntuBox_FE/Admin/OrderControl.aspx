@@ -60,11 +60,9 @@
         <div>Order ID</div>
         <div>Product ID</div>
         <div>Product Name</div>
-        <div>Num Items In Stock</div>
+        <div>Customer ID</div>
         <div>Date Ordered</div>
         <div>Status</div>
-        <div> Update Status.</div>
-        <div> Update Status.</div>
 
     </div>
 
@@ -76,14 +74,12 @@
 
                 <div class="ProductRow">
 
-                    <div>41</div>
-                    <div>042</div>
-                    <div>Ndebele Pattern Necklace</div>
-                    <div>120</div>
-                    <div>2026-05-27</div>
-                    <div>Shipped</div>
-                    <div><asp:Button CssClass="shippedbutton" ID="BtnShipped" runat="server" Text="Shipped." /></div>
-                    <div><asp:Button CssClass="ordercomplete" ID="BtnComplete" runat="server" Text="Delivered." /></div>
+                    <div><%# Eval("OrderID") %></div>
+                    <div><%# Eval("ProductID") %></div>
+                    <div><%# Eval("ProductName") %></div>
+                    <div><%# Eval("UserID") %></div>
+                    <div><%# Eval("OrderDate") %></div>
+                    <div><%# Eval("OrderStatus") %></div>
 
                 </div>
 
@@ -91,102 +87,24 @@
 
         </asp:Repeater>
 
-        <div class="ProductRow">
-            <div>42</div>
-            <div>043</div>
-            <div>Zulu Beaded Earrings</div>
-            <div>85</div>
-            <div>2026-05-28</div>
-            <div>Pending</div>
-            <div><button class="shippedbutton" >Shipped.</button></div>
-            <div><button class="ordercomplete" >Delivered.</button></div>
-        </div>
-        <div class="ProductRow">
-            <div>43</div>
-            <div>044</div>
-            <div>Xhosa Traditional Shawl</div>
-            <div>60</div>
-            <div>2026-05-29</div>
-            <div>Logged</div>
-            <div><button class="shippedbutton" >Shipped.</button></div>
-            <div><button class="ordercomplete" >Delivered.</button></div>
-        </div>
-        <div class="ProductRow">
-            <div>44</div>
-            <div>045</div>
-            <div>Tsonga Handwoven Basket</div>
-            <div>40</div>
-            <div>2026-05-30</div>
-            <div>Shipped</div>
-            <div><button class="shippedbutton" >Shipped.</button></div>
-            <div><button class="ordercomplete" >Delivered.</button></div>
-        </div>
-        <div class="ProductRow">
-            <div>45</div>
-            <div>046</div>
-            <div>Sotho Wool Blanket</div>
-            <div>25</div>
-            <div>2026-05-31</div>
-            <div>Pending</div>
-            <div><button class="shippedbutton" >Shipped.</button></div>
-            <div><button class="ordercomplete" >Delivered.</button></div>
-        </div>
-        <div class="ProductRow">
-            <div>46</div>
-            <div>047</div>
-            <div>Swazi Clay Pot</div>
-            <div>50</div>
-            <div>2026-06-01</div>
-            <div>Logged</div>
-            <div><button class="shippedbutton" >Shipped.</button></div>
-            <div><button class="ordercomplete" >Delivered.</button></div>
-        </div>
-        <div class="ProductRow">
-            <div>47</div>
-            <div>048</div>
-            <div>Venda Drum Keychain</div>
-            <div>200</div>
-            <div>2026-06-02</div>
-            <div>Shipped</div>
-            <div><button class="shippedbutton" >Shipped.</button></div>
-            <div><button class="ordercomplete" >Delivered.</button></div>
-        </div>
-        <div class="ProductRow">
-            <div>48</div>
-            <div>049</div>
-            <div>Zulu Shield Wall Art</div>
-            <div>15</div>
-            <div>2026-06-03</div>
-            <div>Pending</div>
-            <div><button class="shippedbutton" >Shipped.</button></div>
-            <div><button class="ordercomplete" >Delivered.</button></div>
-        </div>
-        <div class="ProductRow">
-            <div>49</div>
-            <div>050</div>
-            <div>Xhosa Headwrap</div>
-            <div>75</div>
-            <div>2026-06-04</div>
-            <div>Logged</div>
-            <div><button class="shippedbutton" >Shipped.</button></div>
-            <div><button class="ordercomplete" >Delivered.</button></div>
-        </div>
-        <div class="ProductRow">
-            <div>50</div>
-            <div>051</div>
-            <div>Tswana Leather Sandals</div>
-            <div>30</div>
-            <div>2026-06-05</div>
-            <div>Shipped</div>
-            <div><button class="shippedbutton" >Shipped.</button></div>
-            <div><button class="ordercomplete" >Delivered.</button></div>
-        </div>
-
-
-
     </div>
 </div>
 
+
+    </div>
+
+    <div class="Functionality">
+
+
+        <h4>Complete An Order.</h4>
+
+        
+        <label for="OrderContainer">Enter Order Number</label>
+        <input required="required" runat="server" id="OrderContainer" min="0" type="number" placeholder="Enter the Order ID">
+
+        <Label>Update Status: <asp:Label ID="LblUpdate" runat="server" Text=""></asp:Label></Label>
+
+        <asp:Button ID="BtnCompleteOrder" CssClass="OrderClosed" runat="server" Text="Complete Order." OnClick="BtnCompleteOrder_Click" />
 
     </div>
 

@@ -112,7 +112,7 @@
                 <asp:Label CssClass="submitform" ID="lblSubmitstatus" runat="server" Text=""></asp:Label>
 
                 <a href="#">
-                    <asp:Button  CssClass="submitchange" ID="Button1" runat="server" Text="Add Product To Sale Inventory." OnClick="Button1_Click" />
+                    <asp:Button  CssClass="Update" ID="Button1" runat="server" Text="Add Product To Sale Inventory." OnClick="Button1_Click" />
                 </a>
 
             </div>
