@@ -100,6 +100,7 @@
   <xs:element name="OrderReturn" nillable="true" type="tns:OrderReturn" />
   <xs:complexType name="User">
     <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerStats" nillable="true" type="tns:ArrayOfCustomerStat" />
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IsAdmin" type="xs:boolean" />
       <xs:element minOccurs="0" name="Orders" nillable="true" type="tns:ArrayOfOrder" />
@@ -113,6 +114,27 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfCustomerStat">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerStat" nillable="true" type="tns:CustomerStat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerStat" nillable="true" type="tns:ArrayOfCustomerStat" />
+  <xs:complexType name="CustomerStat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerStatsID" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NextOffReward" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TimesRewarded" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalMoneySpent" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalOrdersCancelled" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalOrdersReturned" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalProductsBought" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerStat" nillable="true" type="tns:CustomerStat" />
   <xs:complexType name="ArrayOfOrder">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />

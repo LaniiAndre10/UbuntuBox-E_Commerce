@@ -51,6 +51,9 @@ namespace UbuntuBox_BE
     partial void InsertOrderItem(OrderItem instance);
     partial void UpdateOrderItem(OrderItem instance);
     partial void DeleteOrderItem(OrderItem instance);
+    partial void InsertCustomerStat(CustomerStat instance);
+    partial void UpdateCustomerStat(CustomerStat instance);
+    partial void DeleteCustomerStat(CustomerStat instance);
     #endregion
 		
 		public dbaUbuntuBoxDataContext() : 
@@ -136,6 +139,14 @@ namespace UbuntuBox_BE
 			get
 			{
 				return this.GetTable<OrderItem>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CustomerStat> CustomerStats
+		{
+			get
+			{
+				return this.GetTable<CustomerStat>();
 			}
 		}
 	}
@@ -579,6 +590,8 @@ namespace UbuntuBox_BE
 		
 		private EntitySet<Order> _Orders;
 		
+		private EntitySet<CustomerStat> _CustomerStats;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -606,6 +619,7 @@ namespace UbuntuBox_BE
 		public User()
 		{
 			this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
+			this._CustomerStats = new EntitySet<CustomerStat>(new Action<CustomerStat>(this.attach_CustomerStats), new Action<CustomerStat>(this.detach_CustomerStats));
 			OnCreated();
 		}
 		
@@ -802,6 +816,19 @@ namespace UbuntuBox_BE
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_CustomerStat", Storage="_CustomerStats", ThisKey="UserID", OtherKey="UserID")]
+		public EntitySet<CustomerStat> CustomerStats
+		{
+			get
+			{
+				return this._CustomerStats;
+			}
+			set
+			{
+				this._CustomerStats.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -829,6 +856,18 @@ namespace UbuntuBox_BE
 		}
 		
 		private void detach_Orders(Order entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_CustomerStats(CustomerStat entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_CustomerStats(CustomerStat entity)
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
@@ -1683,6 +1722,301 @@ namespace UbuntuBox_BE
 						this._ProductID = default(int);
 					}
 					this.SendPropertyChanged("Product");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CustomerStats")]
+	public partial class CustomerStat : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CustomerStatsID;
+		
+		private int _UserID;
+		
+		private System.Nullable<decimal> _NextOffReward;
+		
+		private string _CustomerType;
+		
+		private System.Nullable<int> _TotalProductsBought;
+		
+		private System.Nullable<int> _TotalOrdersCancelled;
+		
+		private System.Nullable<int> _TotalOrdersReturned;
+		
+		private System.Nullable<decimal> _TotalMoneySpent;
+		
+		private System.Nullable<int> _TimesRewarded;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCustomerStatsIDChanging(int value);
+    partial void OnCustomerStatsIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnNextOffRewardChanging(System.Nullable<decimal> value);
+    partial void OnNextOffRewardChanged();
+    partial void OnCustomerTypeChanging(string value);
+    partial void OnCustomerTypeChanged();
+    partial void OnTotalProductsBoughtChanging(System.Nullable<int> value);
+    partial void OnTotalProductsBoughtChanged();
+    partial void OnTotalOrdersCancelledChanging(System.Nullable<int> value);
+    partial void OnTotalOrdersCancelledChanged();
+    partial void OnTotalOrdersReturnedChanging(System.Nullable<int> value);
+    partial void OnTotalOrdersReturnedChanged();
+    partial void OnTotalMoneySpentChanging(System.Nullable<decimal> value);
+    partial void OnTotalMoneySpentChanged();
+    partial void OnTimesRewardedChanging(System.Nullable<int> value);
+    partial void OnTimesRewardedChanged();
+    #endregion
+		
+		public CustomerStat()
+		{
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerStatsID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CustomerStatsID
+		{
+			get
+			{
+				return this._CustomerStatsID;
+			}
+			set
+			{
+				if ((this._CustomerStatsID != value))
+				{
+					this.OnCustomerStatsIDChanging(value);
+					this.SendPropertyChanging();
+					this._CustomerStatsID = value;
+					this.SendPropertyChanged("CustomerStatsID");
+					this.OnCustomerStatsIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NextOffReward", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> NextOffReward
+		{
+			get
+			{
+				return this._NextOffReward;
+			}
+			set
+			{
+				if ((this._NextOffReward != value))
+				{
+					this.OnNextOffRewardChanging(value);
+					this.SendPropertyChanging();
+					this._NextOffReward = value;
+					this.SendPropertyChanged("NextOffReward");
+					this.OnNextOffRewardChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerType", DbType="VarChar(50)")]
+		public string CustomerType
+		{
+			get
+			{
+				return this._CustomerType;
+			}
+			set
+			{
+				if ((this._CustomerType != value))
+				{
+					this.OnCustomerTypeChanging(value);
+					this.SendPropertyChanging();
+					this._CustomerType = value;
+					this.SendPropertyChanged("CustomerType");
+					this.OnCustomerTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalProductsBought", DbType="Int")]
+		public System.Nullable<int> TotalProductsBought
+		{
+			get
+			{
+				return this._TotalProductsBought;
+			}
+			set
+			{
+				if ((this._TotalProductsBought != value))
+				{
+					this.OnTotalProductsBoughtChanging(value);
+					this.SendPropertyChanging();
+					this._TotalProductsBought = value;
+					this.SendPropertyChanged("TotalProductsBought");
+					this.OnTotalProductsBoughtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalOrdersCancelled", DbType="Int")]
+		public System.Nullable<int> TotalOrdersCancelled
+		{
+			get
+			{
+				return this._TotalOrdersCancelled;
+			}
+			set
+			{
+				if ((this._TotalOrdersCancelled != value))
+				{
+					this.OnTotalOrdersCancelledChanging(value);
+					this.SendPropertyChanging();
+					this._TotalOrdersCancelled = value;
+					this.SendPropertyChanged("TotalOrdersCancelled");
+					this.OnTotalOrdersCancelledChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalOrdersReturned", DbType="Int")]
+		public System.Nullable<int> TotalOrdersReturned
+		{
+			get
+			{
+				return this._TotalOrdersReturned;
+			}
+			set
+			{
+				if ((this._TotalOrdersReturned != value))
+				{
+					this.OnTotalOrdersReturnedChanging(value);
+					this.SendPropertyChanging();
+					this._TotalOrdersReturned = value;
+					this.SendPropertyChanged("TotalOrdersReturned");
+					this.OnTotalOrdersReturnedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalMoneySpent", DbType="Decimal(12,2)")]
+		public System.Nullable<decimal> TotalMoneySpent
+		{
+			get
+			{
+				return this._TotalMoneySpent;
+			}
+			set
+			{
+				if ((this._TotalMoneySpent != value))
+				{
+					this.OnTotalMoneySpentChanging(value);
+					this.SendPropertyChanging();
+					this._TotalMoneySpent = value;
+					this.SendPropertyChanged("TotalMoneySpent");
+					this.OnTotalMoneySpentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimesRewarded", DbType="Int")]
+		public System.Nullable<int> TimesRewarded
+		{
+			get
+			{
+				return this._TimesRewarded;
+			}
+			set
+			{
+				if ((this._TimesRewarded != value))
+				{
+					this.OnTimesRewardedChanging(value);
+					this.SendPropertyChanging();
+					this._TimesRewarded = value;
+					this.SendPropertyChanged("TimesRewarded");
+					this.OnTimesRewardedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_CustomerStat", Storage="_User", ThisKey="UserID", OtherKey="UserID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.CustomerStats.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.CustomerStats.Add(this);
+						this._UserID = value.UserID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
 				}
 			}
 		}

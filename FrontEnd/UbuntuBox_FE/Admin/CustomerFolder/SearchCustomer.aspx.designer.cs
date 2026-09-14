@@ -69,6 +69,15 @@ namespace UbuntuBox_FE.Admin.CustomerFolder
         protected global::System.Web.UI.WebControls.Label Lblnames;
 
         /// <summary>
+        /// lblCustomerType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCustomerType;
+
+        /// <summary>
         /// CustomerStatus control.
         /// </summary>
         /// <remarks>
@@ -78,6 +87,42 @@ namespace UbuntuBox_FE.Admin.CustomerFolder
         protected global::System.Web.UI.WebControls.Label CustomerStatus;
 
         /// <summary>
+        /// lblProdsBought control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblProdsBought;
+
+        /// <summary>
+        /// lblOrdersCancelled control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOrdersCancelled;
+
+        /// <summary>
+        /// lblordersRet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblordersRet;
+
+        /// <summary>
+        /// lblTotalSpent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalSpent;
+
+        /// <summary>
         /// lblDateJoined control.
         /// </summary>
         /// <remarks>
@@ -85,5 +130,14 @@ namespace UbuntuBox_FE.Admin.CustomerFolder
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDateJoined;
+
+        /// <summary>
+        /// lblTimesRewarded control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTimesRewarded;
     }
 }

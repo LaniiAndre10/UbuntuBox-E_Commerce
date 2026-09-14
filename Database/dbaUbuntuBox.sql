@@ -159,3 +159,23 @@ CREATE TABLE OrderItems(
 	
 );
 
+--Create a table to add Customer Additional Info--
+
+CREATE TABLE CustomerStats (
+
+    CustomerStatsID INT IDENTITY(1,1) NOT NULL UNIQUE,
+    UserID INT NOT NULL UNIQUE,
+    NextOffReward DECIMAL(5,2) DEFAULT 0,   -- e.g., % discount or amount
+    CustomerType VARCHAR(50) DEFAULT 'Regular',
+    TotalProductsBought INT DEFAULT 0,
+    TotalOrdersCancelled INT DEFAULT 0,
+    TotalOrdersReturned INT DEFAULT 0,
+    TotalMoneySpent DECIMAL(12,2) DEFAULT 0,
+    TimesRewarded INT DEFAULT 0,
+	
+	PRIMARY KEY(CustomerStatsID),
+    FOREIGN KEY(UserID) REFERENCES [User](UserID)
+	
+);
+
+

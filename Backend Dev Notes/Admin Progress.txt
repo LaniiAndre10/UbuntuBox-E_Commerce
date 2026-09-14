@@ -59,6 +59,6 @@ Certain data in the page, and again a table to hold user assigned Discounts. )
 Admin Site Testing.
 
 - Product Management: Test 100% Passed.
-- Order Management: Test 100% Passed.
-- Admin Management: Test 100% Passed.
-- Customer Management: Need to Implement the Reward Customer Functionality, then you just need to add the missing data, in labels.
+- Order Management: Test 100% Passed. ( Doesn't Crash)
+- Admin Management: Test 100% Passed. (Doesn't Crash!)
+- Customer Management: Test 100% Passed. ( Doesn't Crash! )

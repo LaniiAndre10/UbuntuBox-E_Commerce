@@ -38,6 +38,20 @@ namespace UbuntuBox_BE.Admin
 
         }
 
+        //2.1 Create a function to return Customer Details searched by ID//
+        public CustomerStat SearchCustomerDetails(String CustomerID)
+        {
+            //turn off deferredloading to avoid that socketException error.//
+            UbuntuBoxDatabase.DeferredLoadingEnabled = false;
+
+            int CustomID = int.Parse(CustomerID);
+
+            var Customer = (from U in UbuntuBoxDatabase.CustomerStats where U.UserID == CustomID select U).SingleOrDefault();
+
+            return Customer;
+
+        }
+
         //3. Create a function to get a customer by Id, and set their status to blocked//
         public bool BlockUser(String CustomerID)
         {
@@ -62,6 +76,37 @@ namespace UbuntuBox_BE.Admin
             else
             {
                 return isBlocked;
+            }
+
+        }
+
+        //4. Now add a function to grant a customer using their ID, a next purchase fee off.
+        public String GrantUserReward(String CustomerID, int PercentageOff)
+        {
+            int CustomID = int.Parse(CustomerID);
+
+            var CustomerStats = (from u in UbuntuBoxDatabase.CustomerStats where u.UserID == CustomID select u).SingleOrDefault();
+
+            //then update the Percentage off, if there is current Percentageoff is < than the one we want to reward them //
+            if(CustomerStats != null)
+            {
+
+                if( CustomerStats.NextOffReward <= PercentageOff)
+                {
+                    //update the percentage off//
+                    CustomerStats.NextOffReward = PercentageOff;
+                    UbuntuBoxDatabase.SubmitChanges();
+
+                    return "Successfully Granted Reward";
+
+                }
+                else
+                {
+                    return "Granting Reward Unsuccessfully as they have Reward points Greater than those offered points!";
+                }
+            }
+            {
+                return "Failed to Grant Reward at that Customer doesn't exist in the Customer Stats Database";
             }
         }
     }

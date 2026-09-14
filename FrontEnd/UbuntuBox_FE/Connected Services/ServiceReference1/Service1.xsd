@@ -304,4 +304,33 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GrantUserReward">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PercentageOff" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GrantUserRewardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GrantUserRewardResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCustomerDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCustomerDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/UbuntuBox_BE" minOccurs="0" name="SearchCustomerDetailsResult" nillable="true" type="q12:CustomerStat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

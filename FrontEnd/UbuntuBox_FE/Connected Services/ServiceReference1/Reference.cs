@@ -744,6 +744,9 @@ namespace UbuntuBox_FE.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UbuntuBox_FE.ServiceReference1.CustomerStat[] CustomerStatsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -780,6 +783,19 @@ namespace UbuntuBox_FE.ServiceReference1 {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UbuntuBox_FE.ServiceReference1.CustomerStat[] CustomerStats {
+            get {
+                return this.CustomerStatsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerStatsField, value) != true)) {
+                    this.CustomerStatsField = value;
+                    this.RaisePropertyChanged("CustomerStats");
+                }
             }
         }
         
@@ -1143,6 +1159,195 @@ namespace UbuntuBox_FE.ServiceReference1 {
                 if ((object.ReferenceEquals(this.ReturnStatusField, value) != true)) {
                     this.ReturnStatusField = value;
                     this.RaisePropertyChanged("ReturnStatus");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerStat", Namespace="http://schemas.datacontract.org/2004/07/UbuntuBox_BE")]
+    [System.SerializableAttribute()]
+    public partial class CustomerStat : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CustomerStatsIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> NextOffRewardField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> TimesRewardedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> TotalMoneySpentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> TotalOrdersCancelledField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> TotalOrdersReturnedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> TotalProductsBoughtField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UbuntuBox_FE.ServiceReference1.User UserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CustomerStatsID {
+            get {
+                return this.CustomerStatsIDField;
+            }
+            set {
+                if ((this.CustomerStatsIDField.Equals(value) != true)) {
+                    this.CustomerStatsIDField = value;
+                    this.RaisePropertyChanged("CustomerStatsID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerType {
+            get {
+                return this.CustomerTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerTypeField, value) != true)) {
+                    this.CustomerTypeField = value;
+                    this.RaisePropertyChanged("CustomerType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> NextOffReward {
+            get {
+                return this.NextOffRewardField;
+            }
+            set {
+                if ((this.NextOffRewardField.Equals(value) != true)) {
+                    this.NextOffRewardField = value;
+                    this.RaisePropertyChanged("NextOffReward");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> TimesRewarded {
+            get {
+                return this.TimesRewardedField;
+            }
+            set {
+                if ((this.TimesRewardedField.Equals(value) != true)) {
+                    this.TimesRewardedField = value;
+                    this.RaisePropertyChanged("TimesRewarded");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> TotalMoneySpent {
+            get {
+                return this.TotalMoneySpentField;
+            }
+            set {
+                if ((this.TotalMoneySpentField.Equals(value) != true)) {
+                    this.TotalMoneySpentField = value;
+                    this.RaisePropertyChanged("TotalMoneySpent");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> TotalOrdersCancelled {
+            get {
+                return this.TotalOrdersCancelledField;
+            }
+            set {
+                if ((this.TotalOrdersCancelledField.Equals(value) != true)) {
+                    this.TotalOrdersCancelledField = value;
+                    this.RaisePropertyChanged("TotalOrdersCancelled");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> TotalOrdersReturned {
+            get {
+                return this.TotalOrdersReturnedField;
+            }
+            set {
+                if ((this.TotalOrdersReturnedField.Equals(value) != true)) {
+                    this.TotalOrdersReturnedField = value;
+                    this.RaisePropertyChanged("TotalOrdersReturned");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> TotalProductsBought {
+            get {
+                return this.TotalProductsBoughtField;
+            }
+            set {
+                if ((this.TotalProductsBoughtField.Equals(value) != true)) {
+                    this.TotalProductsBoughtField = value;
+                    this.RaisePropertyChanged("TotalProductsBought");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UbuntuBox_FE.ServiceReference1.User User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserID {
+            get {
+                return this.UserIDField;
+            }
+            set {
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
                 }
             }
         }
@@ -1677,6 +1882,18 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ReturnCancelledOrders", ReplyAction="http://tempuri.org/IService1/ReturnCancelledOrdersResponse")]
         System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.CancelledOrders[]> ReturnCancelledOrdersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GrantUserReward", ReplyAction="http://tempuri.org/IService1/GrantUserRewardResponse")]
+        string GrantUserReward(string CustomerID, int PercentageOff);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GrantUserReward", ReplyAction="http://tempuri.org/IService1/GrantUserRewardResponse")]
+        System.Threading.Tasks.Task<string> GrantUserRewardAsync(string CustomerID, int PercentageOff);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchCustomerDetails", ReplyAction="http://tempuri.org/IService1/SearchCustomerDetailsResponse")]
+        UbuntuBox_FE.ServiceReference1.CustomerStat SearchCustomerDetails(string CustomerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchCustomerDetails", ReplyAction="http://tempuri.org/IService1/SearchCustomerDetailsResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.CustomerStat> SearchCustomerDetailsAsync(string CustomerID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1872,6 +2089,22 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.CancelledOrders[]> ReturnCancelledOrdersAsync() {
             return base.Channel.ReturnCancelledOrdersAsync();
+        }
+        
+        public string GrantUserReward(string CustomerID, int PercentageOff) {
+            return base.Channel.GrantUserReward(CustomerID, PercentageOff);
+        }
+        
+        public System.Threading.Tasks.Task<string> GrantUserRewardAsync(string CustomerID, int PercentageOff) {
+            return base.Channel.GrantUserRewardAsync(CustomerID, PercentageOff);
+        }
+        
+        public UbuntuBox_FE.ServiceReference1.CustomerStat SearchCustomerDetails(string CustomerID) {
+            return base.Channel.SearchCustomerDetails(CustomerID);
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.CustomerStat> SearchCustomerDetailsAsync(string CustomerID) {
+            return base.Channel.SearchCustomerDetailsAsync(CustomerID);
         }
     }
 }

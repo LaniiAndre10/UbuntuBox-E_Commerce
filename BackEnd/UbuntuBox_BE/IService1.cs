@@ -96,7 +96,16 @@ namespace UbuntuBox_BE
         //Admin - Order Management --> Return Cancelled Orders: @LaniiAndre10. //
         [OperationContract]
         public List<CancelledOrders> ReturnCancelledOrders();
-        
+
+        //Admin - Admin Management --> Grant User Reward: @LaniiAndre10. //
+        [OperationContract]
+        public String GrantUserReward(String CustomerID, int PercentageOff);
+
+        //Admin -- Admin Management --> Retrieve Customer Stats: @LaniiAndre10. //
+        [OperationContract]
+        public CustomerStat SearchCustomerDetails(String CustomerID);
+
+
     }
 
     //Add a datacontract for Product + ProductImages to tackle the Socket/Communication Exception issue//

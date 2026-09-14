@@ -22,9 +22,11 @@ namespace UbuntuBox_FE.Admin.CustomerFolder
         //Create a function to use the client function to retrieve searched data: @LaniiAndre10. //
         protected void BtnSeekCustomer_Click(object sender, EventArgs e)
         {
-            var User = ServiceClient.SearchCustomer(TxtUserID.Value);
 
-            if(User!= null)
+            var User = ServiceClient.SearchCustomer(TxtUserID.Value);
+            var UserDetails = ServiceClient.SearchCustomerDetails(TxtUserID.Value);
+
+            if(User != null)
             {
                 //display the data of that current customer//
                 lblID.Text = User.UserID.ToString();
@@ -32,6 +34,26 @@ namespace UbuntuBox_FE.Admin.CustomerFolder
                 LblEmail.Text = User.Email;
                 lblDateJoined.Text = User.UserDateAdded.ToString();
                 imgHolder.ImageUrl = User.ProfileImgURL;
+
+                if(UserDetails != null)
+                {
+
+                    lblOrdersCancelled.Text = UserDetails.TotalOrdersCancelled.ToString();
+                    lblordersRet.Text = UserDetails.TotalOrdersReturned.ToString();
+                    lblProdsBought.Text = UserDetails.TotalProductsBought.ToString();
+                    lblTimesRewarded.Text = UserDetails.TimesRewarded.ToString();
+                    lblTotalSpent.Text = UserDetails.TotalMoneySpent.ToString();
+                    lblCustomerType.Text = UserDetails.CustomerType;
+                }
+                else{
+
+                    lblOrdersCancelled.Text = "Data not Captured.";
+                    lblordersRet.Text = "Data not Captured.";
+                    lblProdsBought.Text = "Data not Captured.";
+                    lblTimesRewarded.Text = "Data not Captured.";
+                    lblTotalSpent.Text = "Data not Captured.";
+
+                }
 
             }
             else

@@ -23,15 +23,29 @@ namespace UbuntuBox_FE.Admin.CustomerFolder
             //then search and retrieve a customer using their user ID: @LaniiAndre10 //
 
             var Customer = ServiceClient.SearchCustomer(txtCustomerID.Value);
+            var CustomerData = ServiceClient.SearchCustomerDetails(txtCustomerID.Value);
 
             if (Customer != null)
             {
                 CustomerImg.ImageUrl = Customer.ProfileImgURL;
                 lblID.Text = Customer.UserID.ToString();
                 lblNames.Text = Customer.Usernames;
-                lblOrdersCancelled.Text = "-";
-                lblOrdersMade.Text = "-";
-                lblUserType.Text = "-";
+
+                if(CustomerData != null)
+                {
+
+                    lblOrdersCancelled.Text = CustomerData.TotalOrdersCancelled.ToString();
+                    lblOrdersMade.Text = CustomerData.TotalProductsBought.ToString();
+                    lblUserType.Text = CustomerData.CustomerType;
+
+                }
+                else
+                {
+                    lblOrdersCancelled.Text = "Data About Customer not Captured.";
+                    lblOrdersMade.Text = "Data About Customer not Captured.";
+                    lblUserType.Text = "Data About Customer not Captured.";
+                }
+                
 
             }
             else

@@ -67,7 +67,7 @@
 
                 <div class="input2">
                 <label for="TxtUserID">Customer ID:</label>
-                <input id="TxtUserID" runat="server" type="number" placeholder=" Enter Customer ID">
+                <input id="TxtUserID" runat="server" type="number" min="0" value="0" placeholder=" Enter Customer ID">
 
                 <asp:Button ID="BtnSeekCustomer" runat="server" CssClass="Updated" Text="Search Customer." OnClick="BtnSeekCustomer_Click" />
 
@@ -78,14 +78,14 @@
                     <label>Customer ID: <asp:Label ID="lblID" runat="server" Text=""></asp:Label></label>
                     <label>Customer Email: <asp:Label ID="LblEmail" runat="server" Text=""></asp:Label></label>
                     <label>Customer Names: <asp:Label ID="Lblnames" runat="server" Text=""></asp:Label></label>
-                    <label>Customer Type: - </label>
+                    <label>Customer Type: <asp:Label ID="lblCustomerType" runat="server" Text=""></asp:Label></label>
                     <label>Customer Account Status: <asp:Label ID="CustomerStatus" runat="server" Text=""></asp:Label></label>
-                    <label>Total Products Bought: - </label>
-                    <label>Total Orders Cancelled: - </label>
-                    <label>Total Orders Returned: - </label>
-                    <label>Total Money Spent: - </label>
+                    <label>Total Products Bought: <asp:Label ID="lblProdsBought" runat="server" Text=""></asp:Label> </label>
+                    <label>Total Orders Cancelled: <asp:Label ID="lblOrdersCancelled" runat="server" Text=""></asp:Label></label>
+                    <label>Total Orders Returned: <asp:Label ID="lblordersRet" runat="server" Text=""></asp:Label> </label>
+                    <label>Total Money Spent: <asp:Label ID="lblTotalSpent" runat="server" Text=""></asp:Label> </label>
                     <label>Date Joined: <asp:Label ID="lblDateJoined" runat="server" Text=""></asp:Label></label>
-                    <Label>Times Rewarded: - </Label>
+                    <Label>Times Rewarded: <asp:Label ID="lblTimesRewarded" runat="server" Text=""></asp:Label> </Label>
                     
                 </div>
 

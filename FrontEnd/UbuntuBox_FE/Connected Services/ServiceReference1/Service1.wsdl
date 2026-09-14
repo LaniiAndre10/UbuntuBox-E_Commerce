@@ -134,6 +134,18 @@
   <wsdl:message name="IService1_ReturnCancelledOrders_OutputMessage">
     <wsdl:part name="parameters" element="tns:ReturnCancelledOrdersResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GrantUserReward_InputMessage">
+    <wsdl:part name="parameters" element="tns:GrantUserReward" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GrantUserReward_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GrantUserRewardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SearchCustomerDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SearchCustomerDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCustomerDetailsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegisterUser" message="tns:IService1_RegisterUser_InputMessage" />
@@ -218,6 +230,14 @@
     <wsdl:operation name="ReturnCancelledOrders">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReturnCancelledOrders" message="tns:IService1_ReturnCancelledOrders_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReturnCancelledOrdersResponse" message="tns:IService1_ReturnCancelledOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GrantUserReward">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GrantUserReward" message="tns:IService1_GrantUserReward_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GrantUserRewardResponse" message="tns:IService1_GrantUserReward_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCustomerDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SearchCustomerDetails" message="tns:IService1_SearchCustomerDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SearchCustomerDetailsResponse" message="tns:IService1_SearchCustomerDetails_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -404,6 +424,24 @@
     </wsdl:operation>
     <wsdl:operation name="ReturnCancelledOrders">
       <soap:operation soapAction="http://tempuri.org/IService1/ReturnCancelledOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrantUserReward">
+      <soap:operation soapAction="http://tempuri.org/IService1/GrantUserReward" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCustomerDetails">
+      <soap:operation soapAction="http://tempuri.org/IService1/SearchCustomerDetails" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

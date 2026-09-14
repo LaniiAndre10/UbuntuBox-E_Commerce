@@ -27,11 +27,19 @@ namespace UbuntuBox_FE.Admin.ProductFolder
 
             //then populate the Textboxes with the data of that product//
 
-            txtProductName.Value = ReqProduct.ProductName;
-            txtProductPrice.Value = ReqProduct.Price.ToString(System.Globalization.CultureInfo.InvariantCulture);
-            txtProductCategory.Value = ReqProduct.BoxCategory;
-            txtProductDescription.Value = ReqProduct.Description;
+            if (ReqProduct != null)
+            {
 
+                txtProductName.Value = ReqProduct.ProductName;
+                txtProductPrice.Value = ReqProduct.Price.ToString(System.Globalization.CultureInfo.InvariantCulture);
+                txtProductCategory.Value = ReqProduct.BoxCategory;
+                txtProductDescription.Value = ReqProduct.Description;
+
+            }
+            else
+            {
+                lblSubmitstatus.Text = "Item with that ID doesn't  exist!";
+            }
             var ReqproductImages = DataClient.RetrieveSearchProductimgs(RequiredProductId);
 
             //retrieve data for the images//
@@ -51,46 +59,55 @@ namespace UbuntuBox_FE.Admin.ProductFolder
 
             }
 
-            //finally make the productID box readonly so they cannot change the productID//
-            txtProductID.Disabled = true;
         }
 
         protected void UpdateProductbtn_Click(object sender, EventArgs e)
         {
-
-            //then call the update function so that it can take any changes made to the text and push them to the database//
-            var UpdatedProductName = txtProductName.Value;
-            var UpdatedProductPrice = double.Parse(txtProductPrice.Value, System.Globalization.CultureInfo.InvariantCulture);
-            var UpdatedProductCategory = txtProductCategory.Value;
-            var UpdatedProductDescription = txtProductDescription.Value;
-
-            var UpdatedProductImagelink1 = txtProductLink1.Value;
-            var UpdatedProductImagelink2 = txtProductLink2.Value;
-
-            bool Isupdated = false;
-
-            try
+            if(txtProductName.Value != null)
             {
-                DataClient.UpdateProduct(txtProductID.Value, UpdatedProductImagelink1, UpdatedProductImagelink2, UpdatedProductName, UpdatedProductCategory, UpdatedProductDescription, UpdatedProductPrice);
-                Isupdated = true;
 
-            }
-            catch
-            {
-                //Do nothing//
-            }
+                //it means the data was retrieved!
+                //then call the update function so that it can take any changes made to the text and push them to the database//
+                var UpdatedProductName = txtProductName.Value;
+                var UpdatedProductPrice = double.Parse(txtProductPrice.Value, System.Globalization.CultureInfo.InvariantCulture);
+                var UpdatedProductCategory = txtProductCategory.Value;
+                var UpdatedProductDescription = txtProductDescription.Value;
 
-            if (Isupdated)
-            {
-                lblSubmitstatus.Text = "Successfully Updated Product.";
+                var UpdatedProductImagelink1 = txtProductLink1.Value;
+                var UpdatedProductImagelink2 = txtProductLink2.Value;
+
+                bool Isupdated = false;
+
+                try
+                {
+                    DataClient.UpdateProduct(txtProductID.Value, UpdatedProductImagelink1, UpdatedProductImagelink2, UpdatedProductName, UpdatedProductCategory, UpdatedProductDescription, UpdatedProductPrice);
+                    Isupdated = true;
+
+                }
+                catch
+                {
+                    //Do nothing//
+                }
+
+                if (Isupdated)
+                {
+                    lblSubmitstatus.Text = "Successfully Updated Product.";
+                }
+                else
+                {
+                    lblSubmitstatus.Text = "Failed to Update Product.";
+                }
+
+                txtProductID.Disabled = false; //they can not temper with the product ID post update//
+
+
             }
             else
             {
-                lblSubmitstatus.Text = "Failed to Update Product.";
+                //it means no data was retrieved//
+                lblSubmitstatus.Text = "Cannot Update non-existing Product!";
             }
-
-            txtProductID.Disabled = false; //they can not temper with the product ID post update//
-
+            
         }
     }
 }

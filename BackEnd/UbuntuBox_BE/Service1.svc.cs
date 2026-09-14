@@ -311,6 +311,8 @@ namespace UbuntuBox_BE
 
         public List<OrderReturns> ReturnOrdersWithReturns()
         {
+            //The goal here is to return all returned orders: @LaniiAndre. //
+
             Admin.OrderManagement orderManagement = new Admin.OrderManagement();
 
             List<OrderReturns> LoggedReturns = orderManagement.ReturnOrdersWithReturns();
@@ -322,11 +324,35 @@ namespace UbuntuBox_BE
 
         public List<CancelledOrders> ReturnCancelledOrders()
         {
+            //The goal is to return all the cancelled Orders: @LaniiAndre10. //
+
             Admin.OrderManagement orderManagement = new Admin.OrderManagement();
 
             var CancelledOrders = orderManagement.ReturnCancelledOrders();
 
             return CancelledOrders;
+
+        }
+
+        public string GrantUserReward(string CustomerID, int PercentageOff)
+        {
+
+            Admin.CustomerManagement customerManagement = new Admin.CustomerManagement();
+
+            String Results = customerManagement.GrantUserReward(CustomerID, PercentageOff);
+
+            return Results;
+
+        }
+
+        public CustomerStat SearchCustomerDetails(string CustomerID)
+        {
+
+            Admin.CustomerManagement customerManagement = new Admin.CustomerManagement();
+
+            var CustomerData = customerManagement.SearchCustomerDetails(CustomerID);
+
+            return CustomerData;
 
         }
     }
