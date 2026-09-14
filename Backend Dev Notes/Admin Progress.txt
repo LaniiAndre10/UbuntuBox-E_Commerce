@@ -1,0 +1,65 @@
+Admin Site Progress.
+
+> Product Management: Complete.
+> Admin Management: Complete.
+> Customer Management: ( View Customers: Complete, Block Customer: Halfway Complete since there are some labels which need,
+context or rather they need to be filled in with data that is not available in the database yet, Reward Customer: Missing tables for
+Certain data in the page, and again a table to hold user assigned Discounts. )
+
+> Order Management: Completed the Pending orders and completed orders, but have to use the Data transfer Object
+					So that i can display all the data that is Necessary in the UI, 
+					
+				  : Still need to create functionality for the Returned Orders and the cancelled orders. ( But they will be clicked on the user side ), we just creating a viewing side.
+				  : Wrap this up by 11am. Then move to wrap up customer mananagement.
+				  
+>Analytics: 0% developed, reason being, missing tables and data to visualize, plus lack of knowledge of Microsoft Chart Control.
+
+> For order control.
+- The order table must have:
+		- OrderId. (PK)
+		- Date Placed.
+		- Order Status. ( Pending = Default )
+		- UserID. (FK)
+		- We will have a bridging table: Productinorder (Has ProductID, OrderID).
+
+- Then have a Orderreturn table:
+	- OrderID.
+	- ReturnLog-Date.
+	- ReturnStatus.
+	- Reason for Return.
+	
+- Then have a Order-Cancelattion table.
+	- OrderID.
+	- Cancelattion Date.
+	- ReasonForCancellation.
+	
+-Open Tickets:
+
+	- Fix that Order Control Functionality.
+		- Order Management Complete.
+	- Fix the Customer Management functionality:
+	
+		- Add the customer Reward Table.( Maybe have a customer additional Info table: with!
+				- Customer Next Off Reward.
+				- Customer Type.
+				- Total Products bought.
+				- Total Orders Cancelled.
+				- Total orders Returned.
+				- Total Money Spent.
+				- Times Rewarded.
+				
+	- Fix the Shopping side UI.
+	
+-Things we need to add on the userside to ensure complete admin data.
+  - The Users must be able to Log Returns ( Approve if ( order placed less than 30 days ago, else reject )
+  - The users must be able to Cancel their orders 5 days post placing the order.
+  
+  
+  
+Admin Site Testing.
+
+- Product Management: Test 100% Passed. (Doesn't crash )
+- Order Management: Test 100% Passed. ( Doesn't Crash)
+- Admin Management: Test 100% Passed. (Doesn't Crash!)
+- Customer Management: Test 100% Passed. ( Doesn't Crash! )
+- Next Up: Anayltics with Microsoft chart control.

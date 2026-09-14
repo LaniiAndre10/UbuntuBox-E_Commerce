@@ -96,7 +96,9 @@ namespace UbuntuBox_BE.Admin
 
             Ubuntuboxdatabase.DeferredLoadingEnabled = false;
 
-            var Productreq = (from u in Ubuntuboxdatabase.Products where u.ProductID.Equals(ProductID) select u).SingleOrDefault();
+            int productID = int.Parse(ProductID);
+
+            var Productreq = (from u in Ubuntuboxdatabase.Products where u.ProductID == productID select u).SingleOrDefault();
 
             return Productreq;
 

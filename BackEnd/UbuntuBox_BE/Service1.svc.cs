@@ -232,6 +232,7 @@ namespace UbuntuBox_BE
             
         }
 
+<<<<<<< HEAD
         public List<Attraction> getAttractionList()
         {
             LandingPage.PopulationManagement populationManagement = new LandingPage.PopulationManagement();
@@ -239,6 +240,129 @@ namespace UbuntuBox_BE
             List<Attraction> attractions = populationManagement.getAttractionList();
 
             return attractions;
+=======
+        public List<User> ReturnCustomers()
+        {
+
+            //The goal is to return a list of customers from the database: @LaniiAndre10. //
+
+            Admin.CustomerManagement customerManagement = new Admin.CustomerManagement();
+
+            var Customers = customerManagement.ReturnCustomers();
+
+            return Customers;
+
+        }
+
+        public User SearchCustomer(string CustomerID)
+        {
+            //The goal is to retrieve a customer searched by ID: @LaniiAndre10. //
+
+            Admin.CustomerManagement customerManagement = new Admin.CustomerManagement();
+
+            var Customer = customerManagement.SearchCustomer(CustomerID);
+
+            return Customer;
+
+        }
+
+        public bool BlockUser(string CustomerID)
+        {
+            //The goal here is to change the user status from Active to blocked!: @LaniiAndre10. //
+
+            bool IsBlocked = false;
+            Admin.CustomerManagement customerManagement = new Admin.CustomerManagement();
+
+            IsBlocked = customerManagement.BlockUser(CustomerID);
+
+            return IsBlocked;
+            
+        }
+
+        public List<OrderDetails> ReturnPendingOrders()
+        {
+
+            //The goal here is to return all the orders that are pending: @LaniiAndre10. //
+
+            Admin.OrderManagement orderManagement = new Admin.OrderManagement();
+
+            List<OrderDetails> Orders = orderManagement.ReturnPendingOrders();
+
+            return Orders;
+
+        }
+
+        public bool CompleteOrder(string OrderID)
+        {
+
+            //The goal here is to change the status of a pending order to complete: @LaniiAndre10. //
+
+            bool IsUpdated = false;
+            Admin.OrderManagement orderManagement = new Admin.OrderManagement();
+
+            IsUpdated = orderManagement.CompleteOrder(OrderID);
+
+            return IsUpdated;
+            
+        }
+
+        public List<OrderDetails> ReturnCompleteOrders()
+        {
+            //The goal here is to return all the orders that are Completed: @LaniiAndre10. //
+
+            Admin.OrderManagement orderManagement = new Admin.OrderManagement();
+
+            List<OrderDetails> Orders = orderManagement.ReturnCompleteOrders();
+
+            return Orders;
+
+        }
+
+        public List<OrderReturns> ReturnOrdersWithReturns()
+        {
+            //The goal here is to return all returned orders: @LaniiAndre. //
+
+            Admin.OrderManagement orderManagement = new Admin.OrderManagement();
+
+            List<OrderReturns> LoggedReturns = orderManagement.ReturnOrdersWithReturns();
+
+
+            return LoggedReturns;
+
+        }
+
+        public List<CancelledOrders> ReturnCancelledOrders()
+        {
+            //The goal is to return all the cancelled Orders: @LaniiAndre10. //
+
+            Admin.OrderManagement orderManagement = new Admin.OrderManagement();
+
+            var CancelledOrders = orderManagement.ReturnCancelledOrders();
+
+            return CancelledOrders;
+
+        }
+
+        public string GrantUserReward(string CustomerID, int PercentageOff)
+        {
+
+            Admin.CustomerManagement customerManagement = new Admin.CustomerManagement();
+
+            String Results = customerManagement.GrantUserReward(CustomerID, PercentageOff);
+
+            return Results;
+
+        }
+
+        public CustomerStat SearchCustomerDetails(string CustomerID)
+        {
+
+            Admin.CustomerManagement customerManagement = new Admin.CustomerManagement();
+
+            var CustomerData = customerManagement.SearchCustomerDetails(CustomerID);
+
+            return CustomerData;
+>>>>>>> AdminCodingbranch
 
         }
     }

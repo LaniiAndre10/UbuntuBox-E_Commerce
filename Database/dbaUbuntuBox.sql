@@ -119,22 +119,63 @@ CREATE TABLE CartItem(
     FOREIGN KEY(CartID) REFERENCES Cart(CartID),
     FOREIGN KEY(ProductID) REFERENCES [Product](ProductID),
     CHECK(Quantity > 0)
+	
 );
 
+<<<<<<< HEAD
 --Order Management 
 
 -- ORDER TABLE
 CREATE TABLE [Order](
+=======
+--Order Management: Added Required Data Tables --
+
+CREATE TABLE [Order](
+
+>>>>>>> AdminCodingbranch
     OrderID INT IDENTITY(1,1) UNIQUE NOT NULL,
     UserID INT NOT NULL,
     OrderStatus VARCHAR(30) not null DEFAULT 'Pending',
     OrderDate DATETIME NOT NULL DEFAULT GETDATE(),
     PRIMARY KEY(OrderID),
     FOREIGN KEY(UserID)references[User](UserID)
+<<<<<<< HEAD
+=======
+
+);
+
+CREATE TABLE OrderReturn(
+    
+    ReturnID INTEGER IDENTITY(1,1) NOT NULL UNIQUE,
+    OrderID INTEGER NOT NULL UNIQUE,
+    ReturnLogDate DATE NOT NULL DEFAULT GETDATE(),
+    ReturnStatus VARCHAR(20) NOT NULL DEFAULT 'Pending',
+    ReturnReason TEXT NOT NULL,
+
+    PRIMARY KEY(ReturnID),
+    FOREIGN KEY(OrderID) REFERENCES [Order](OrderID),
+
+);
+
+CREATE TABLE OrderCancellation(
+
+    OrderCancellationID INTEGER IDENTITY(1,1) NOT NULL UNIQUE,
+    OrderID INTEGER NOT NULL UNIQUE,
+    CancellationDate DATE NOT NULL DEFAULT GETDATE(),
+    CancellationReason TEXT NOT NULL,
+
+    PRIMARY KEY(OrderCancellationID),
+    FOREIGN KEY(OrderID) REFERENCES [Order](OrderID)
+
+>>>>>>> AdminCodingbranch
 );
 
 --Order Items
 CREATE TABLE OrderItems(
+<<<<<<< HEAD
+=======
+
+>>>>>>> AdminCodingbranch
     ItemID INT identity(1,1) UNIQUE NOT NULL,
     OrderID INT NOT NULL,
     ProductID INT NOT NULL,
@@ -145,5 +186,31 @@ CREATE TABLE OrderItems(
     FOREIGN KEY(OrderID) references [Order](OrderID),
     FOREIGN KEY(ProductID)references [Product](ProductID),
     CHECK(Quantity > 0)
+<<<<<<< HEAD
 );
 
+=======
+	
+);
+
+--Create a table to add Customer Additional Info--
+
+CREATE TABLE CustomerStats (
+
+    CustomerStatsID INT IDENTITY(1,1) NOT NULL UNIQUE,
+    UserID INT NOT NULL UNIQUE,
+    NextOffReward DECIMAL(5,2) DEFAULT 0,   -- e.g., % discount or amount
+    CustomerType VARCHAR(50) DEFAULT 'Regular',
+    TotalProductsBought INT DEFAULT 0,
+    TotalOrdersCancelled INT DEFAULT 0,
+    TotalOrdersReturned INT DEFAULT 0,
+    TotalMoneySpent DECIMAL(12,2) DEFAULT 0,
+    TimesRewarded INT DEFAULT 0,
+	
+	PRIMARY KEY(CustomerStatsID),
+    FOREIGN KEY(UserID) REFERENCES [User](UserID)
+	
+);
+
+
+>>>>>>> AdminCodingbranch

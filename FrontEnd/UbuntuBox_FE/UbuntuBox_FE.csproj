@@ -113,6 +113,7 @@
     <Content Include="Admin\AdminFolder\UpdateAdmin.aspx" />
     <Content Include="Admin\AdminLanding.aspx" />
     <Content Include="Admin\AdminControl.aspx" />
+    <Content Include="Admin\BusinessIntel\AnalyticsTab2.aspx" />
     <Content Include="Admin\CustomerFolder\BlockCustomer.aspx" />
     <Content Include="Admin\CustomerFolder\RewardCustomer.aspx" />
     <Content Include="Admin\CustomerFolder\SearchCustomer.aspx" />
@@ -179,7 +180,20 @@
     <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+<<<<<<< HEAD
     <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.Attraction.datasource">
+=======
+    <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.OrderDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.OrderReturns.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.CancelledOrders.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.CustomerStat.datasource">
+>>>>>>> AdminCodingbranch
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -265,6 +279,13 @@
     </Compile>
     <Compile Include="Admin\AdminControl.aspx.designer.cs">
       <DependentUpon>AdminControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BusinessIntel\AnalyticsTab2.aspx.cs">
+      <DependentUpon>AnalyticsTab2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BusinessIntel\AnalyticsTab2.aspx.designer.cs">
+      <DependentUpon>AnalyticsTab2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\CustomerFolder\BlockCustomer.aspx.cs">
       <DependentUpon>BlockCustomer.aspx</DependentUpon>
@@ -405,7 +426,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin\AnalyticsFolder\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

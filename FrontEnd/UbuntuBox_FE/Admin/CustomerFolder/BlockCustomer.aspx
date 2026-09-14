@@ -58,22 +58,26 @@
 
 
             <div class="form2">
-                <img src="https://www.vhv.rs/dpng/d/476-4764937_insert-image-here-icon-hd-png-download.png" alt="ProductImg">
+                <asp:Image ID="CustomerImg" runat="server" />
             </div>
 
             <div class="form3">
 
                 <div class="input3">
-                <label for="ProductLink">Customer ID:</label>
-                <input id="ProductLink" type="number" placeholder=" Enter Customer ID">
-                <button type="submit">Search Customer.</button>
-                </div>
+                <label for="CustomerID">Customer ID:</label>
+                <input id="txtCustomerID" required="required" runat="server" type="number" placeholder=" Enter Customer ID">
+
+                <asp:Button ID="BtnSearchUser" CssClass="Updated" runat="server" Text="Search Customer." OnClick="BtnSearchUser_Click" />
+
+            </div>
 
                 <div class="input3">
 
-                    <label>Customer ID:</label>
-                    <label>Total Orders Made:</label>
-                    <label>Total Orders Cancelled:</label>
+                    <label>Customer ID: <asp:Label ID="lblID" runat="server" Text=""></asp:Label></label>
+                    <label>Customer Names: <asp:Label ID="lblNames" runat="server" Text=""></asp:Label></label>
+                    <label>Total Orders Made: <asp:Label ID="lblOrdersMade" runat="server" Text=""></asp:Label></label>
+                    <label>Total Orders Cancelled: <asp:Label ID="lblOrdersCancelled" runat="server" Text=""></asp:Label></label>
+                    <label>User Type By Actitity: <asp:Label ID="lblUserType" runat="server" Text=""></asp:Label></label>
                     
                 </div>
 
@@ -83,7 +87,7 @@
 
                 </div>
 
-                <button class="Delete" type="submit">Block Customer.</button>
+                <asp:Button ID="BtnBlockUser" CssClass="Delete" runat="server" Text="Block Customer." OnClick="BtnBlockUser_Click" />
 
             </div>
             

@@ -94,6 +94,66 @@
     <wsdl:part name="parameters" element="tns:getAttractionListResponse" />
 
   </wsdl:message>
+  <wsdl:message name="IService1_ReturnCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReturnCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SearchCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SearchCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BlockUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:BlockUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BlockUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BlockUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReturnPendingOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnPendingOrders" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReturnPendingOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnPendingOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CompleteOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteOrder" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CompleteOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReturnCompleteOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnCompleteOrders" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReturnCompleteOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnCompleteOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReturnOrdersWithReturns_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnOrdersWithReturns" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReturnOrdersWithReturns_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnOrdersWithReturnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReturnCancelledOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnCancelledOrders" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ReturnCancelledOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnCancelledOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GrantUserReward_InputMessage">
+    <wsdl:part name="parameters" element="tns:GrantUserReward" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GrantUserReward_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GrantUserRewardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SearchCustomerDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SearchCustomerDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCustomerDetailsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegisterUser" message="tns:IService1_RegisterUser_InputMessage" />
@@ -152,6 +212,46 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAttractionList" message="tns:IService1_getAttractionList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAttractionListResponse" message="tns:IService1_getAttractionList_OutputMessage" />
 
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReturnCustomers" message="tns:IService1_ReturnCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReturnCustomersResponse" message="tns:IService1_ReturnCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SearchCustomer" message="tns:IService1_SearchCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SearchCustomerResponse" message="tns:IService1_SearchCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BlockUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/BlockUser" message="tns:IService1_BlockUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/BlockUserResponse" message="tns:IService1_BlockUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPendingOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReturnPendingOrders" message="tns:IService1_ReturnPendingOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReturnPendingOrdersResponse" message="tns:IService1_ReturnPendingOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompleteOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CompleteOrder" message="tns:IService1_CompleteOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CompleteOrderResponse" message="tns:IService1_CompleteOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCompleteOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReturnCompleteOrders" message="tns:IService1_ReturnCompleteOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReturnCompleteOrdersResponse" message="tns:IService1_ReturnCompleteOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnOrdersWithReturns">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReturnOrdersWithReturns" message="tns:IService1_ReturnOrdersWithReturns_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReturnOrdersWithReturnsResponse" message="tns:IService1_ReturnOrdersWithReturns_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCancelledOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReturnCancelledOrders" message="tns:IService1_ReturnCancelledOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReturnCancelledOrdersResponse" message="tns:IService1_ReturnCancelledOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GrantUserReward">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GrantUserReward" message="tns:IService1_GrantUserReward_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GrantUserRewardResponse" message="tns:IService1_GrantUserReward_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCustomerDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SearchCustomerDetails" message="tns:IService1_SearchCustomerDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SearchCustomerDetailsResponse" message="tns:IService1_SearchCustomerDetails_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -271,6 +371,96 @@
     <wsdl:operation name="getAttractionList">
       <soap:operation soapAction="http://tempuri.org/IService1/getAttractionList" style="document" />
 
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCustomers">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReturnCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCustomer">
+      <soap:operation soapAction="http://tempuri.org/IService1/SearchCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlockUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/BlockUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPendingOrders">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReturnPendingOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteOrder">
+      <soap:operation soapAction="http://tempuri.org/IService1/CompleteOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCompleteOrders">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReturnCompleteOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnOrdersWithReturns">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReturnOrdersWithReturns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCancelledOrders">
+      <soap:operation soapAction="http://tempuri.org/IService1/ReturnCancelledOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrantUserReward">
+      <soap:operation soapAction="http://tempuri.org/IService1/GrantUserReward" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCustomerDetails">
+      <soap:operation soapAction="http://tempuri.org/IService1/SearchCustomerDetails" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

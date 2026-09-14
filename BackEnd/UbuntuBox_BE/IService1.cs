@@ -66,9 +66,51 @@ namespace UbuntuBox_BE
         [OperationContract]
         public bool RemoveAdmin(String WorkEmail);
 
+<<<<<<< HEAD
         //Landing-Page - Population Management --> Populate Attractions from Database: @TLethabo. //
         [OperationContract]
         public List<Attraction> getAttractionList();
+=======
+        //Admin - Customer Management --> Show A list of Customers using the platform: @LaniiAndre10.  //
+        [OperationContract]
+        public List<User> ReturnCustomers();
+
+        //Admin - Customer Management --> Retrieve A customer by ID: @LaniiAndre10. //
+        [OperationContract]
+        public User SearchCustomer(String CustomerID);
+
+        //Admin - Customer Management --> Block User: @LaniiAndre10.//
+        [OperationContract]
+        public bool BlockUser(String CustomerID);
+
+        //Admin - Order Management --> Return pending Orders: @LaniiAndre10. //
+        [OperationContract]
+        public List<OrderDetails> ReturnPendingOrders();
+
+        //Admin - Order Management --> Complete an Order: @LaniiAndre10. //
+        [OperationContract]
+        public bool CompleteOrder(String OrderID);
+
+        //Admin - Order Management --> Return Completed Orders: @LaniiAndre10. //
+        [OperationContract]
+        public List<OrderDetails> ReturnCompleteOrders();
+
+        //Admin - Order Management --> Return LoggedReturnOrders: @LaniiAndre10. //
+        [OperationContract]
+        public List<OrderReturns> ReturnOrdersWithReturns();
+        //Admin - Order Management --> Return Cancelled Orders: @LaniiAndre10. //
+        [OperationContract]
+        public List<CancelledOrders> ReturnCancelledOrders();
+
+        //Admin - Admin Management --> Grant User Reward: @LaniiAndre10. //
+        [OperationContract]
+        public String GrantUserReward(String CustomerID, int PercentageOff);
+
+        //Admin -- Admin Management --> Retrieve Customer Stats: @LaniiAndre10. //
+        [OperationContract]
+        public CustomerStat SearchCustomerDetails(String CustomerID);
+
+>>>>>>> AdminCodingbranch
 
     }
 
@@ -86,6 +128,47 @@ namespace UbuntuBox_BE
 
         //add the list of images from the product Image table//
         [DataMember] public List<string> ImageUrls { get; set; }
+
+    }
+
+    //Add a datacontract for the orders, with product Name, Product ID, Price etc//
+    [DataContract]
+    public class OrderDetails
+    {
+
+        [DataMember] public int OrderID { get; set; }
+        [DataMember] public int UserID { get; set; }
+        [DataMember] public String OrderStatus { get; set; }
+        [DataMember] public DateTime OrderDate { get; set; }
+        [DataMember] public int ProductID { get; set; }
+        [DataMember] public String ProductName { get; set; }
+        [DataMember] public decimal ProductPrice { get; set; }
+
+    }
+
+    //Add a datacontract for the orderReturns, with ProductID, Product Name, Status, ReturnDate, Reason for Return
+    [DataContract]
+    public class OrderReturns
+    {
+        [DataMember] public int OrderID { get; set; }
+        [DataMember] public int ProductID { get; set; }
+        [DataMember] public String ProductName { get; set; }
+        [DataMember] public DateTime ReturnDateLog { get; set; }
+        [DataMember] public String Status { get; set; }
+        [DataMember] public String ReturnReason { get; set; }
+
+    }
+
+    //Add a dataContract for the OrderCancellations, with OrderID, CustomerID, Product Name, ProductID, Cancellation Date, Reason For Cancellation. //
+    [DataContract]
+    public class CancelledOrders
+    {
+        [DataMember] public int OrderID { get; set; }
+        [DataMember] public int CustomerID { get; set; }
+        [DataMember] public String ProductName { get; set; }
+        [DataMember] public int ProductID { get; set; }
+        [DataMember] public DateTime CancellationDate { get; set; }
+        [DataMember] public String CancellationReason { get; set; }
 
     }
     

@@ -420,55 +420,6 @@ html{
 
 }
 
-.shippedbutton{
-
-    background-color: #459da1;
-    color: white;                
-    border: none;                
-    border-radius: 6px;          
-    padding: 4px 6px;           
-    font-weight: bold;
-    cursor: pointer;             
-    transition: 0.2s;
-
-}
-
-.shippedbutton:hover{
-
-    padding: 6px;
-    background-color: #275a5c; 
-    color: white;
-    border-radius: 6px; 
-    cursor: pointer;
-    transition: 0.2s;
-
-}
-
-.ordercomplete{
-
-    background-color: #45a154;
-    color: white;                
-    border: none;                
-    border-radius: 6px;          
-    padding: 4px 6px;           
-    font-weight: bold;
-    cursor: pointer;             
-    transition: 0.3s;
-
-}
-
-.ordercomplete:hover{
-
-    padding: 6px;
-    background-color: #275c34; 
-    color: white;
-    border-radius: 6px; 
-    cursor: pointer;
-    transition: 0.2s;
-
-}
-
-
 .Rowcontainer {
 
     flex-grow: 1;
@@ -608,7 +559,7 @@ html{
 .Updated{
 
    
-    padding: 8px !important; 
+    padding: 12px !important;
     height: auto !important;
     color: rgb(253, 253, 253) !important;
     background-color: rgb(0, 29, 0) !important;
@@ -621,9 +572,9 @@ html{
 
 .Updated:hover{
 
+    padding: 11px !important;
     color:gold !important;
     background-color: rgb(0, 66, 0) !important;
-    padding: 9px !important;
     transition: 0.25s !important;
     
 }
@@ -828,6 +779,105 @@ html{
 img {
     max-width: 100%;
     display: block;
+}
+
+.Functionality{
+
+    background-color: rgba(0, 46, 0, 0.26);
+    border: 1px solid rgba(0, 46, 0, 0.15);
+    backdrop-filter: blur(8px);
+    width: min(600px, calc(100% - 40px));
+    border-radius: 15px;
+    margin: 30px auto 60px;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Functionality h4{
+
+    color:rgb(0, 29, 0);
+
+}
+
+.Functionality input{
+
+    width: 100%;
+    height: 35px;
+    background-color: white;
+    font-family: inherit;
+    box-shadow: 0 4px 4px rgb(0, 0, 0);
+    color: rgb(0, 29, 0);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+}
+
+.Functionality input:active{
+
+    border: none;
+    background-color: #f8faf8;
+
+}
+
+.OrderClosed{
+
+    background-color: #45a154 !important;
+    color: white !important;                
+    border: none !important;                
+    border-radius: 6px !important;          
+    padding: 12px !important;           
+    font-weight: bold !important;
+    cursor: pointer !important;             
+    transition: 0.25s !important;
+    margin-bottom: 20px !important;
+
+}
+
+.OrderClosed:hover {
+
+    background-color: #2c6635 !important;
+    color: white !important;                
+    border: 1px solid white !important;                
+    border-radius: 6px !important;          
+    padding: 12px !important;           
+    font-weight: bold !important;
+    cursor: pointer !important;             
+    transition: 0.25s !important;
+    margin-bottom: 20px !important;
+    
+}
+
+@media (max-width: 900px) {
+    .Functionality {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .Functionality {
+        width: calc(100% - 18px);
+        margin: 20px 9px 40px;
+        padding: 20px 15px;
+    }
+
+    .Functionality h4 {
+        margin: 0 0 8px;
+        text-align: center;
+    }
+
+    .Functionality label {
+        overflow-wrap: anywhere;
+        text-align: center;
+    }
+
+    .OrderClosed {
+        width: 100%;
+    }
 }
 
 /* Media Query*/

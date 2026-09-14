@@ -58,30 +58,34 @@
 
 
             <div class="form2">
-                <img src="https://www.vhv.rs/dpng/d/476-4764937_insert-image-here-icon-hd-png-download.png" alt="ProductImg">
+                
+                <asp:Image ID="imgHolder" runat="server" />
+
             </div>
 
             <div class="form2">
 
                 <div class="input2">
-                <label for="ProductLink">Customer ID:</label>
-                <input id="ProductLink" type="number" placeholder=" Enter Customer ID">
-                <button type="submit">Search Customer.</button>
+                <label for="TxtUserID">Customer ID:</label>
+                <input id="TxtUserID" runat="server" type="number" min="0" value="0" placeholder=" Enter Customer ID">
+
+                <asp:Button ID="BtnSeekCustomer" runat="server" CssClass="Updated" Text="Search Customer." OnClick="BtnSeekCustomer_Click" />
+
                 </div>
 
                 <div class="input2">
 
-                    <label>Customer ID:</label>
-                    <label>Customer Email:</label>
-                    <label>Customer Names:</label>
-                    <label>Customer Type:</label>
-                    <label>Customer Account Status:</label>
-                    <label>Total Products Bought:</label>
-                    <label>Total Orders Cancelled:</label>
-                    <label>Total Orders Returned:</label>
-                    <label>Total Money Spent:</label>
-                    <label>Date Joined:</label>
-                    <Label>Times Rewarded:</Label>
+                    <label>Customer ID: <asp:Label ID="lblID" runat="server" Text=""></asp:Label></label>
+                    <label>Customer Email: <asp:Label ID="LblEmail" runat="server" Text=""></asp:Label></label>
+                    <label>Customer Names: <asp:Label ID="Lblnames" runat="server" Text=""></asp:Label></label>
+                    <label>Customer Type: <asp:Label ID="lblCustomerType" runat="server" Text=""></asp:Label></label>
+                    <label>Customer Account Status: <asp:Label ID="CustomerStatus" runat="server" Text=""></asp:Label></label>
+                    <label>Total Products Bought: <asp:Label ID="lblProdsBought" runat="server" Text=""></asp:Label> </label>
+                    <label>Total Orders Cancelled: <asp:Label ID="lblOrdersCancelled" runat="server" Text=""></asp:Label></label>
+                    <label>Total Orders Returned: <asp:Label ID="lblordersRet" runat="server" Text=""></asp:Label> </label>
+                    <label>Total Money Spent: <asp:Label ID="lblTotalSpent" runat="server" Text=""></asp:Label> </label>
+                    <label>Date Joined: <asp:Label ID="lblDateJoined" runat="server" Text=""></asp:Label></label>
+                    <Label>Times Rewarded: <asp:Label ID="lblTimesRewarded" runat="server" Text=""></asp:Label> </Label>
                     
                 </div>
 

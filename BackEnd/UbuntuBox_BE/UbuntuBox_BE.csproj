@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\AdminManagement.cs" />
+    <Compile Include="Admin\Customer_Management.cs" />
+    <Compile Include="Admin\OrderManagement.cs" />
     <Compile Include="Admin\ProductManagement.cs" />
     <Compile Include="dbaUbuntuBox.designer.cs">
       <AutoGen>True</AutoGen>

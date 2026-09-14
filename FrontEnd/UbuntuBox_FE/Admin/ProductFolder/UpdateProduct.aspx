@@ -65,30 +65,30 @@
 
                 <div class="input1">
                 <label for="ProductLink">Product ID:</label>
-                <input id="txtProductID" runat="server" type="Number" placeholder=" Enter Product Id">
+                <input id="txtProductID" runat="server" type="Number" min="0" required="required" placeholder=" Enter Product Id">
        
-                 <asp:Button ID="SearchProduct" CssClass="ClickSubmit" runat="server" Text="Search Product." OnClick="SearchProduct_Click" />
+                 <asp:Button ID="SearchProduct" CssClass="Updated" runat="server" Text="Search Product." OnClick="SearchProduct_Click" />
 
                 </div>
                 
                 <div class="input1">
                 <label for="ProductLink1">Update Product Image 1 Link:</label>
-                <input id="txtProductLink1" runat="server" type="url" placeholder=" Search Product to retrieve product Image Link">
+                <input id="txtProductLink1" runat="server" type="url" value="https://example.com/" placeholder=" Search Product to retrieve product Image Link">
                 </div>
 
                 <div class="input1">
                 <label for="ProductLink2">Update Product Image 2 Link:</label>
-                <input id="txtProductLink2" runat="server" type="url" placeholder=" Search Product to retrieve product Image Link">
+                <input id="txtProductLink2" runat="server" type="url" value="https://example.com/" placeholder=" Search Product to retrieve product Image Link">
                 </div>
 
                 <div class="input1">
                 <label for="ProductName">Update Product Name:</label>
-                <input id="txtProductName" runat="server" type="text" placeholder="Search Product to retrieve product Name">
+                <input id="txtProductName" runat="server" type="text" value="-" placeholder="Search Product to retrieve product Name">
                 </div>
 
                 <div class="input1">
                 <label for="ProductCategory">Update Product Category:</label>
-                <input id="txtProductCategory" runat="server" type="text" placeholder="Search Product to retrieve product Category">
+                <input id="txtProductCategory" runat="server" type="text" value="-" placeholder="Search Product to retrieve product Category">
                 </div>
 
             </div>
@@ -97,12 +97,12 @@
 
                 <div class="input1">
                 <label for="ProductPrice">Update Product Price:</label>
-                <input id="txtProductPrice" runat="server" type="number" placeholder="Search Product to retrieve product Price">
+                <input id="txtProductPrice" runat="server" type="number" value="0" min="0" placeholder="Search Product to retrieve product Price">
                 </div>
 
                 <div class="input1">
                 <label for="ProductDescription">Update Product Description:</label>
-                <textarea name="ProductDescContainer" runat="server" id="txtProductDescription" placeholder="Search Product to retrieve product Description." wrap="soft" rows="10" cols="10"></textarea>
+                <textarea name="ProductDescContainer" runat="server" id="txtProductDescription" value="-" placeholder="Search Product to retrieve product Description." wrap="soft" rows="10" cols="10"></textarea>
                 </div>
 
                 <asp:Label CssClass="submitform" ID="lblSubmitstatus" runat="server" Text=""></asp:Label>
