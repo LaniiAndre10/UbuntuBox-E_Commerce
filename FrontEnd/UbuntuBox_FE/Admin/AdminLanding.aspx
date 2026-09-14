@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
         <div class="pagecontent">
-        <h2>📈Analytics: Revenue Charts.📉</h2>
+        <h2>📈1️⃣Analytics: Sales And Operational Efficiency.1️⃣📉</h2>
     </div>
 
     <div class="AnalyticsGrid">
@@ -21,37 +21,20 @@
 
                     <a href="#">
                     <img  Id="Sales" src="./Analytics/Icons/icons8-sales-50.png" alt="Sales Logo" width="40px">
-                    <span>Revenue.</span>
+                    <span>Data Tab I.</span>
                     </a>
                     
                 </div>
 
                 <div class="AnalyticControl">
 
-                    <a href="#">
+                    <a href="BusinessIntel/AnalyticsTab2.aspx">
                     <img  Id="P_Orders" src="./Analytics/Icons/icons8-customer-50.png" alt="Sales Logo" width="40px">
-                    <span>Customer Analytics.</span>
+                    <span>Data Tab II.</span>
                     </a>
                     
                 </div>
 
-                <div id="Errors" class="AnalyticControl">
-
-                    <a href="#">
-                    <img  Id="Errors" src="./Analytics/Icons/icons8-error-64.png" alt="Sales Logo" width="40px">
-                    <span>Failed Payments.</span>
-                    </a>
-                    
-                </div>
-
-                <div class="AnalyticControl">
-
-                    <a href="#">
-                    <img  Id="BestSeller" src="./Analytics/Icons/icons8-best-seller-30.png" alt="Sales Logo" width="40px">
-                    <span>Best Selling Products.</span>
-                    </a>
-                    
-                </div>
 
             </div>
         </div>
@@ -60,22 +43,107 @@
 
             <div class="statgraph">
 
-                <h4>Revenue.</h4>
-                <p>Add Graph Here.</p>
+             <!--Add Line graph of Revenue trend for the past this Quarter -->
+
+
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:UbuntuBoxConnection %>" SelectCommand="SELECT 
+    DATENAME(MONTH, O.OrderDate) AS MonthName,
+    SUM(OI.Quantity * OI.UnitPrice) AS Revenue
+FROM [Order] O
+INNER JOIN OrderItems OI ON O.OrderID = OI.OrderID
+WHERE O.OrderDate &gt;= DATEADD(MONTH, -2, DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1))
+  AND O.OrderDate &lt; DATEADD(MONTH, 1, DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1))
+GROUP BY DATENAME(MONTH, O.OrderDate), MONTH(O.OrderDate)
+ORDER BY MONTH(O.OrderDate);
+"></asp:SqlDataSource>
+
+                <asp:Chart ID="Chart3" runat="server" DataSourceID="SqlDataSource3" Height="357px" Width="348px">
+                    <Titles>
+                        <asp:Title Name="MainTitle" Text="Revenue Trend for the Current Quarter" />
+                    </Titles>
+                    <Series>
+                        <asp:Series ChartType="Line" Name="Series1" 
+                            XValueMember="MonthName" 
+                            YValueMembers="Revenue" YValuesPerPoint="4" />
+                    </Series>
+                    <ChartAreas>
+                        <asp:ChartArea Name="ChartArea1">
+                            <AxisX Title="Months" />
+                            <AxisY Title="Revenue (Rands)" />
+                        </asp:ChartArea>
+                    </ChartAreas>
+                </asp:Chart>
 
             </div>
 
             <div class="statgraph">
 
-                <h4>Expenses</h4>
-                <p>Add Graph Here.</p>
+            <!--Add Radar of How the boxes are selling this current month by Category -->
+
+                
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:UbuntuBoxConnection %>" SelectCommand="SELECT 
+    P.BoxCategory,
+    SUM(OI.Quantity) AS UnitsSold
+FROM [Order] O
+INNER JOIN OrderItems OI ON O.OrderID = OI.OrderID
+INNER JOIN Product P ON OI.ProductID = P.ProductID
+WHERE MONTH(O.OrderDate) = MONTH(GETDATE())
+  AND YEAR(O.OrderDate) = YEAR(GETDATE())
+GROUP BY P.BoxCategory
+ORDER BY UnitsSold DESC;
+"></asp:SqlDataSource>
+
+                <asp:Chart ID="Chart2" runat="server" DataSourceID="SqlDataSource2" Height="358px" Width="351px">
+                    <Titles>
+                        <asp:Title Name="MainTitle" Text="Current Month Box Category Sales" />
+                    </Titles>
+                    <Series>
+                        <asp:Series ChartType="Bubble" Name="Series1" 
+                            XValueMember="BoxCategory" 
+                            YValueMembers="UnitsSold" YValuesPerPoint="2" />
+                    </Series>
+                    <ChartAreas>
+                        <asp:ChartArea Name="ChartArea1">
+                            <AxisX Title="Box Category" />
+                            <AxisY Title="Units Sold" />
+                        </asp:ChartArea>
+                    </ChartAreas>
+                </asp:Chart>
+
+
                 
             </div>
 
             <div class="statgraph">
 
-                <h4>Income</h4>
-                <p>Add Graph Here.</p>
+                <!--Add a pie chart of order Distribution per Month by  Order Status ( Pending, Completed, Cancelled, and Returned ) | Operational Efficiency Analytics. -->
+                
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:UbuntuBoxConnection %>" SelectCommand="SELECT 
+                    OrderStatus,
+                    COUNT(*) AS TotalOrders
+                FROM [Order]
+                WHERE MONTH(OrderDate) = MONTH(GETDATE())
+                  AND YEAR(OrderDate) = YEAR(GETDATE())
+                GROUP BY OrderStatus;
+                "></asp:SqlDataSource>
+
+                <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource1" Width="348px" Height="358px">
+                    <Titles>
+                        <asp:Title Name="MainTitle" Text="Current Month Order Distribution" />
+                    </Titles>
+                    <Series>
+                        <asp:Series Name="Orders" 
+                            XValueMember="OrderStatus" 
+                            YValueMembers="TotalOrders" 
+                            ChartType="Column" />
+                    </Series>
+                    <ChartAreas>
+                        <asp:ChartArea Name="ChartArea1">
+                            <AxisX Title="Order Status" />
+                            <AxisY Title="Number of Orders Processed" />
+                        </asp:ChartArea>
+                    </ChartAreas>
+                </asp:Chart>
                 
             </div>
             

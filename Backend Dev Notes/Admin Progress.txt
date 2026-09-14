@@ -58,7 +58,8 @@ Certain data in the page, and again a table to hold user assigned Discounts. )
   
 Admin Site Testing.
 
-- Product Management: Test 100% Passed.
+- Product Management: Test 100% Passed. (Doesn't crash )
 - Order Management: Test 100% Passed. ( Doesn't Crash)
 - Admin Management: Test 100% Passed. (Doesn't Crash!)
 - Customer Management: Test 100% Passed. ( Doesn't Crash! )
+- Next Up: Anayltics with Microsoft chart control.

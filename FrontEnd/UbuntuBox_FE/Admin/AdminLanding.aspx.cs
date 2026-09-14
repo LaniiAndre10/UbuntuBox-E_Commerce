@@ -13,5 +13,10 @@ namespace UbuntuBox_FE.Admin
         {
 
         }
+
+        protected void Chart2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -113,6 +113,7 @@
     <Content Include="Admin\AdminFolder\UpdateAdmin.aspx" />
     <Content Include="Admin\AdminLanding.aspx" />
     <Content Include="Admin\AdminControl.aspx" />
+    <Content Include="Admin\BusinessIntel\AnalyticsTab2.aspx" />
     <Content Include="Admin\CustomerFolder\BlockCustomer.aspx" />
     <Content Include="Admin\CustomerFolder\RewardCustomer.aspx" />
     <Content Include="Admin\CustomerFolder\SearchCustomer.aspx" />
@@ -275,6 +276,13 @@
     <Compile Include="Admin\AdminControl.aspx.designer.cs">
       <DependentUpon>AdminControl.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\BusinessIntel\AnalyticsTab2.aspx.cs">
+      <DependentUpon>AnalyticsTab2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BusinessIntel\AnalyticsTab2.aspx.designer.cs">
+      <DependentUpon>AnalyticsTab2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\CustomerFolder\BlockCustomer.aspx.cs">
       <DependentUpon>BlockCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -414,7 +422,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin\AnalyticsFolder\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
