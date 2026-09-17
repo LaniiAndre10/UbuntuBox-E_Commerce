@@ -16,6 +16,98 @@ a {
     color: inherit;
 }
 
+/*Hero Section*/
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 50px;
+    background-image: linear-gradient(to right,rgb(0,0,0,0.8),rgba(0, 0, 0, 0)), url(https://images.pexels.com/photos/33622081/pexels-photo-33622081.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-text {
+    width: 45%;
+}
+
+.hero-text h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.hero-text h1 span {
+    color: #d9a441;
+}
+
+.hero-line {
+    border-top: 2px solid #d9a441;
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 17px;
+    color: white;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.btn-gold {
+    background-color: #d9a441 !important;
+    color: #0a1a15 !important;
+    font-weight: 900 !important;
+    padding: 15px 30px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    margin-right: 10px !important;
+    transition: 0.25s !important;
+}
+
+.btn-gold:hover {
+    background-color: #f6d77a !important;
+    padding: 14px 29px !important;
+    transition: 0.25s !important;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #d9a441;
+    border: 2px solid #d9a441;
+    font-weight: 900;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-outline:hover {
+    background-color: #d9a441;
+    color: #0a1a15;
+}
+
+.btn-outline i {
+    margin-right: 8px;
+}
+
+.hero-image {
+    width: 50%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+
 
 /* Header */
 .top-bar {
@@ -97,7 +189,7 @@ a {
 .categories {
     display: flex;
     justify-content: space-around;
-    margin: 20px 0px;
+    margin: 20px 10px;
 }
 
 td {
@@ -107,9 +199,13 @@ td {
 }
 
 .sort-options {
+
     display: flex;
-    align-items: center;
+    align-items:center;
     gap: 10px;
+    margin:40px;
+    justify-content: end;
+    font-family: Arial, sans-serif;
 }
 
 .attractions-section {
@@ -118,17 +214,50 @@ td {
 
 .attraction-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
     margin-top: 20px;
 }
 
 .attraction-card {
-    background-color: #0a1a15;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(151, 209, 151, 0.692),
+        rgba(195, 226, 160, 0.39),
+        rgba(211, 171, 155, 0.664)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.2); /* light border */
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /*glass blur */
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.322), 
+        0 6px 25px rgba(0, 37, 0, 0.493); 
     overflow: hidden;
+
+    transition: 0.25s;
+    width: 300px;
 }
+
+.attraction-card:hover {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(151, 209, 151, 0.692),
+        rgba(195, 226, 160, 0.39),
+        rgba(211, 171, 155, 0.664)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    border-radius: 10px;
+    backdrop-filter: blur(10px); 
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.274),   
+        0 6px 25px rgba(100, 99, 0, 0.63); 
+    overflow: hidden;
+
+    width: 305px;
+    transition: 0.25s;
+}
+
+
 
 .attraction-card:hover {
     border-color: #d9a441;
@@ -145,16 +274,18 @@ td {
     padding: 10px;
 }
 
-.attr-info h3 {
+.attr-info h5 {
     margin: 0;
-    font-size: 18px;
-    color: white;
+    font-style: italic;
+    font-size: 16px;
+    color:rgb(0, 19, 0);
 }
 
 .attr-info p {
     margin: 0;
     font-size: 12px;
-    color: white;
+    font-weight: bold;
+    color:rgb(0, 19, 0);
     gap: 5px;
 }
 
@@ -164,10 +295,11 @@ td {
 }
 
 .price {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
-    color: #d9a441;
+    color:rgb(0, 19, 0);
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .price span {
@@ -200,11 +332,71 @@ button {
     background-color: #d9a441;
     color: #0a1a15;
     border: none;
-    padding: 10px 20px;
+    padding: 11px 21px;
+    border-radius: 7px;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    margin-top: 5%;
-    margin-left: 30%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+
+button:hover {
+
+    background-color: #f6d77a;
+    color: #0a1a15;
+    border: 2px solid #0a1a15;
+    padding: 9px 19px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.Seebutton {
+    background-color: #003803;
+    color: #ffffff;
+    border: none;
+    padding: 11px 21px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+
+.Seebutton:hover {
+
+    background-color: #3a923e;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 9px 19px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.shopbuttons{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
 }

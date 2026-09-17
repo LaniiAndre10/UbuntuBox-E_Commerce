@@ -8,9 +8,9 @@
 //------------------------------------------------------------------------------
 
 
-namespace User_Management
+namespace shoppage
 {
-    public partial class Shop
+    public partial class shop
     {
     }
 }

@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace User_Management
+namespace shoppage
 {
-    public partial class Shop : System.Web.UI.Page
+    public partial class shop : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
