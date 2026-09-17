@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -66,11 +66,9 @@ namespace UbuntuBox_BE
         [OperationContract]
         public bool RemoveAdmin(String WorkEmail);
 
-<<<<<<< HEAD
         //Landing-Page - Population Management --> Populate Attractions from Database: @TLethabo. //
         [OperationContract]
         public List<Attraction> getAttractionList();
-=======
         //Admin - Customer Management --> Show A list of Customers using the platform: @LaniiAndre10.  //
         [OperationContract]
         public List<User> ReturnCustomers();
@@ -110,7 +108,6 @@ namespace UbuntuBox_BE
         [OperationContract]
         public CustomerStat SearchCustomerDetails(String CustomerID);
 
->>>>>>> AdminCodingbranch
 
     }
 
