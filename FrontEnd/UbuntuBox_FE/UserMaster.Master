@@ -31,8 +31,8 @@
             </div>
     
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="Shop.html">Shop</a>
+                <a href="Landing.aspx" class="active">Home</a>
+                <a href="Shop.aspx">Shop</a>
                 <a href="index.html#attractions">Attractions</a>
                 <a href="index.html#about">About Us</a>
                 <a href="index.html#faqs">FAQs</a>
@@ -44,7 +44,7 @@
                     <input type="search" placeholder="Search gifts..." style="background-color: rgba(255,255,255,0.1); border: none; padding: 10px; border-radius: 20px; color: white;">
                 </div>
                 <a href="#"><i class="fa-regular fa-user"></i> Account</a>
-                <a href="cart.html" class="cart-box"><i class="fa-solid fa-cart-shopping"></i> Cart <span class="cart-count">3</span></a>
+                <a href="cart.aspx" class="cart-box"><i class="fa-solid fa-cart-shopping"></i> Cart <span class="cart-count">3</span></a>
             </div>
         </div>
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="User_Management._Default" %>
+<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="User_Management._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -94,82 +94,68 @@
         </div>
 
         <div class="attraction-card">
-<<<<<<< HEAD
             <img src="Logo/palace-homepage-hero.jpg" alt="Sunset Coast">
             <div class="attr-info">
                 <div>
                     <h3>Sun City Resort</h3>
                     <p>North West</p>
-=======
             <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
             <div class="attr-info">
                 <div>
                     <h3>Table Mountain</h3>
                     <p>Cape Town</p>
->>>>>>> AdminCodingbranch
                 </div>
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
         </div>
 
         <div class="attraction-card">
-<<<<<<< HEAD
             <img src="Logo/images.jpg" alt="Sunset Coast">
             <div class="attr-info">
                 <div>
                     <h3>uShaka Marine World</h3>
                     <p>KwaZulu-Natal</p>
-=======
             <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
             <div class="attr-info">
                 <div>
                     <h3>Table Mountain</h3>
                     <p>Cape Town</p>
->>>>>>> AdminCodingbranch
                 </div>
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
         </div>
 
         <div class="attraction-card">
-<<<<<<< HEAD
             <img src="Logo/images 2.jpg" alt="Sunset Coast">
             <div class="attr-info">
                 <div>
                     <h3>Soweto</h3>
                     <p>Gauteng</p>
-=======
             <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
             <div class="attr-info">
                 <div>
                     <h3>Table Mountain</h3>
                     <p>Cape Town</p>
->>>>>>> AdminCodingbranch
                 </div>
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
         </div>
 
         <div class="attraction-card">
-<<<<<<< HEAD
             <img src="Logo/images 3.jpg" alt="Sunset Coast">
             <div class="attr-info">
                 <div>
                     <h3>Augrabies Falls National Park</h3>
                     <p>Northern Cape</p>
-=======
             <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
             <div class="attr-info">
                 <div>
                     <h3>Table Mountain</h3>
                     <p>Cape Town</p>
->>>>>>> AdminCodingbranch
                 </div>
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
         </div>
-<<<<<<< HEAD
-=======
 
         <div class="attraction-card">
             <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
@@ -182,7 +168,6 @@
             </div>
         </div>
 
->>>>>>> AdminCodingbranch
     </div>
 
 </section>

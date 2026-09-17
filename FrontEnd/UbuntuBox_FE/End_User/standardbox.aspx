@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="standardbox.aspx.cs" Inherits="User_Management.standardbox" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="standardbox.aspx.cs" Inherits="User_Management.standardbox" %>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="HeadContent" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
         <link rel="stylesheet" href="Boxes.css" runat="server" />
     </asp:Content>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="breadcrumb-bar">
     <div class="container">

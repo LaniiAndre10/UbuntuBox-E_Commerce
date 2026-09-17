@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cart.aspx.cs" Inherits="User_Management.cart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="cart.aspx.cs" Inherits="User_Management.cart" %>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="HeadContent" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
         <link rel="stylesheet" href="cart.css" runat="server" />
     </asp:Content>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <section class="cart-section">
 
@@ -24,7 +24,8 @@
                 <button>+</button>
             </div>
             <div class="item-total">R 320.00</div>
-            <button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>
+            <!--<button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>-->
+            <asp:LinkButton class="remove-btn" ID="trash" runat="server"><i class="fa-solid fa-trash-can"></i></asp:LinkButton>
         </div>
 
         <div class="cart-item">
@@ -36,12 +37,15 @@
                 <div class="price">R 650.00</div>
             </div>
             <div class="quantity-control">
-                <button>−</button>
+                <!--<button>−</button>-->
+                <asp:Button ID="DecreaseQuantity" runat="server" Text="-" OnClick="DecreaseQuantity_Click" />
                 <span>1</span>
-                <button>+</button>
+                <!--<button>+</button>-->
+                <asp:Button ID="IncreaseQuantity" runat="server" Text="+" OnClick="IncreaseQuantity_Click" />
             </div>
             <div class="item-total">R 650.00</div>
-            <button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>
+            <!--<button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>-->
+            <asp:LinkButton class="remove-btn" ID="removeP" runat="server"><i class="fa-solid fa-trash-can"></i></asp:LinkButton>
         </div>
 
         <div class="cart-item">
@@ -61,7 +65,7 @@
             <button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>
         </div>
 
-        <a href="shop.html" class="continue-shopping">
+        <a href="shop.aspx" class="continue-shopping">
             <i class="fa-solid fa-arrow-left"></i> Continue Shopping
         </a>
     </div>

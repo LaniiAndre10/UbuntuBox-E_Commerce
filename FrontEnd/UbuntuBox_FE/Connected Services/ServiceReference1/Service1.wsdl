@@ -68,7 +68,6 @@
   <wsdl:message name="IService1_AddAdmin_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddAdminResponse" />
   </wsdl:message>
-
   <wsdl:message name="IService1_SearchAdmin_InputMessage">
     <wsdl:part name="parameters" element="tns:SearchAdmin" />
   </wsdl:message>
@@ -86,13 +85,48 @@
   </wsdl:message>
   <wsdl:message name="IService1_RemoveAdmin_OutputMessage">
     <wsdl:part name="parameters" element="tns:RemoveAdminResponse" />
-
+  </wsdl:message>
   <wsdl:message name="IService1_getAttractionList_InputMessage">
     <wsdl:part name="parameters" element="tns:getAttractionList" />
   </wsdl:message>
   <wsdl:message name="IService1_getAttractionList_OutputMessage">
     <wsdl:part name="parameters" element="tns:getAttractionListResponse" />
-
+  </wsdl:message>
+  <wsdl:message name="IService1_getProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProducts" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddToCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToCart" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddToCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoveFromCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFromCart" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoveFromCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFromCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IncreaseQuantity_InputMessage">
+    <wsdl:part name="parameters" element="tns:IncreaseQuantity" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IncreaseQuantity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IncreaseQuantityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DecreaseQuantity_InputMessage">
+    <wsdl:part name="parameters" element="tns:DecreaseQuantity" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DecreaseQuantity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DecreaseQuantityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIdResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_ReturnCustomers_InputMessage">
     <wsdl:part name="parameters" element="tns:ReturnCustomers" />
@@ -195,7 +229,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddAdmin" message="tns:IService1_AddAdmin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddAdminResponse" message="tns:IService1_AddAdmin_OutputMessage" />
     </wsdl:operation>
-
     <wsdl:operation name="SearchAdmin">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SearchAdmin" message="tns:IService1_SearchAdmin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/SearchAdminResponse" message="tns:IService1_SearchAdmin_OutputMessage" />
@@ -207,11 +240,34 @@
     <wsdl:operation name="RemoveAdmin">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RemoveAdmin" message="tns:IService1_RemoveAdmin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/RemoveAdminResponse" message="tns:IService1_RemoveAdmin_OutputMessage" />
-
+    </wsdl:operation>
     <wsdl:operation name="getAttractionList">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAttractionList" message="tns:IService1_getAttractionList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAttractionListResponse" message="tns:IService1_getAttractionList_OutputMessage" />
-
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getProducts" message="tns:IService1_getProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getProductsResponse" message="tns:IService1_getProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddToCart" message="tns:IService1_AddToCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddToCartResponse" message="tns:IService1_AddToCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RemoveFromCart" message="tns:IService1_RemoveFromCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RemoveFromCartResponse" message="tns:IService1_RemoveFromCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IncreaseQuantity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IncreaseQuantity" message="tns:IService1_IncreaseQuantity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IncreaseQuantityResponse" message="tns:IService1_IncreaseQuantity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DecreaseQuantity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DecreaseQuantity" message="tns:IService1_DecreaseQuantity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DecreaseQuantityResponse" message="tns:IService1_DecreaseQuantity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUserId" message="tns:IService1_GetUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUserIdResponse" message="tns:IService1_GetUserId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ReturnCustomers">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ReturnCustomers" message="tns:IService1_ReturnCustomers_InputMessage" />
@@ -346,7 +402,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-
     <wsdl:operation name="SearchAdmin">
       <soap:operation soapAction="http://tempuri.org/IService1/SearchAdmin" style="document" />
       <wsdl:input>
@@ -367,10 +422,69 @@
     </wsdl:operation>
     <wsdl:operation name="RemoveAdmin">
       <soap:operation soapAction="http://tempuri.org/IService1/RemoveAdmin" style="document" />
-
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getAttractionList">
       <soap:operation soapAction="http://tempuri.org/IService1/getAttractionList" style="document" />
-
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <soap:operation soapAction="http://tempuri.org/IService1/getProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToCart">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddToCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromCart">
+      <soap:operation soapAction="http://tempuri.org/IService1/RemoveFromCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncreaseQuantity">
+      <soap:operation soapAction="http://tempuri.org/IService1/IncreaseQuantity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DecreaseQuantity">
+      <soap:operation soapAction="http://tempuri.org/IService1/DecreaseQuantity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserId">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUserId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

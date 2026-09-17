@@ -29,7 +29,11 @@ namespace UbuntuBox_FE.Authentication
             if (userInfo ==2)
             {
                 //User is type Buyer//
+                System.Web.UI.HtmlControls.HtmlInputGenericControl emailbox = Emailbox;
+                int UserID = client.GetUserId(emailbox);
+                Session["UserID"] = UserID;
                 Response.Redirect("./Store/ProductLanding.aspx");
+                
 
             }
             else

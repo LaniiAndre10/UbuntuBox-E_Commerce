@@ -109,6 +109,31 @@ namespace UbuntuBox_BE
         public CustomerStat SearchCustomerDetails(String CustomerID);
 
 
+        //Shop-Page - Product Management --> Populate Products from Database: @TLethabo. //
+        [OperationContract]
+        public List<Product> getProducts();
+
+        //Cart - Population Management --> Add product to cart: @TLethabo. //
+        [OperationContract]
+        public bool AddToCart(int userID, int productID);
+
+        //Cart - Population Management --> Remove product from cart: @TLethabo. //
+        [OperationContract]
+        public bool RemoveFromCart(int userID, int productID);
+
+        //Cart - Population Management --> Increase the quantity of a product in cart,
+        //provided that its available: @TLethabo. //
+        [OperationContract]
+        public bool IncreaseQuantity(int userID, int productID);
+
+        //Cart - Population Management --> Decrease the quantity of ap product in cart: @TLethabo. //
+        [OperationContract]
+        public bool DecreaseQuantity(int userID, int productID);
+
+        //Cart - Population Management --> Decrease the quantity of ap product in cart: @TLethabo. //
+        [OperationContract]
+        public int GetUserId(string email);
+
     }
 
     //Add a datacontract for Product + ProductImages to tackle the Socket/Communication Exception issue//

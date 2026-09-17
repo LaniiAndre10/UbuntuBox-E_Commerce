@@ -362,5 +362,64 @@ namespace UbuntuBox_BE
             return CustomerData;
 
         }
+
+        public bool AddToCart(int userID, int productID)
+        {
+            CartPage.CartManagement cartManagement = new CartPage.CartManagement();
+
+            bool result = cartManagement.AddToCart(userID, productID);
+
+            return result;
+        }
+
+        public bool RemoveFromCart(int userID, int productID)
+        {
+            CartPage.CartManagement cartManagement = new CartPage.CartManagement();
+
+            bool Isremoved = cartManagement.RemoveFromCart(userID, productID);
+
+            return Isremoved;
+        }
+
+        public bool IncreaseQuantity(int userID, int productID)
+        {
+            CartPage.CartManagement cartManagement = new CartPage.CartManagement();
+
+            bool QIncreased = cartManagement.IncreaseQuantity(userID, productID);
+
+            return QIncreased;
+        }
+
+        public bool DecreaseQuantity(int userID, int productID)
+        {
+            CartPage.CartManagement cartManagement = new CartPage.CartManagement();
+
+            bool QDecreased = cartManagement.DecreaseQuantity(userID, productID);
+
+            return QDecreased;
+        }
+
+        public List<Product> getProducts()
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+
+            List<Product> products = productManagement.getProducts();
+
+            return products;
+        }
+
+        public int GetUserId(string email)
+        {
+            var userId = (from u in dbaUbuntuBox.Users
+                          where u.Email == email
+                          select u).SingleOrDefault();
+
+            if (userId == null)
+            {
+                return 0;
+            }
+
+            return userId.UserID;
+        }
     }
 }

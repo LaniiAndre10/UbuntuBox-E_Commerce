@@ -63,7 +63,15 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\UbuntuBox_BE.dll" />
+    <Content Include="bin\UbuntuBox_BE.pdb" />
+    <Content Include="obj\Debug\TempPE\dbaUbuntuBox.designer.cs.dll" />
+    <Content Include="obj\Debug\UbuntuBox_BE.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\UbuntuBox_BE.dll" />
+    <Content Include="obj\Debug\UbuntuBox_BE.pdb" />
     <Content Include="Service1.svc" />
+    <Content Include="UpgradeLog.htm" />
+    <Content Include="UpgradeLog2.htm" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -71,12 +79,15 @@
     <Compile Include="Admin\Customer_Management.cs" />
     <Compile Include="Admin\OrderManagement.cs" />
     <Compile Include="Admin\ProductManagement.cs" />
+    <Compile Include="CartPage\CartManagement.cs" />
     <Compile Include="dbaUbuntuBox.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbaUbuntuBox.dbml</DependentUpon>
     </Compile>
     <Compile Include="LandingPage\PopulationManagement.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="ProductPage\ProductManage.cs" />
     <Compile Include="Secrecy\Secrecy.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
@@ -93,9 +104,13 @@
       <LastGenOutput>dbaUbuntuBox.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="bin\UbuntuBox_BE.dll.config" />
     <None Include="dbaUbuntuBox.dbml.layout">
       <DependentUpon>dbaUbuntuBox.dbml</DependentUpon>
     </None>
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\UbuntuBox_BE.csproj.AssemblyReference.cache" />
+    <Content Include="obj\Debug\UbuntuBox_BE.csproj.CoreCompileInputs.cache" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
