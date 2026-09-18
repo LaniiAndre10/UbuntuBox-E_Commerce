@@ -7,10 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-namespace shoppage
-{
-    public partial class shop
 namespace UbuntuBox_FE.End_User
 {
 
@@ -19,21 +15,48 @@ namespace UbuntuBox_FE.End_User
     {
 
         /// <summary>
-        /// rptProducts control.
+        /// lblAttractionName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptProducts;
+        protected global::System.Web.UI.WebControls.Label lblAttractionName;
 
         /// <summary>
-        /// tocart control.
+        /// AttractionImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button tocart;
+        protected global::System.Web.UI.WebControls.Image AttractionImage;
+
+        /// <summary>
+        /// lblAttractionDes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAttractionDes;
+
+        /// <summary>
+        /// rptCategories control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptCategories;
+
+        /// <summary>
+        /// Repeater1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
     }
 }

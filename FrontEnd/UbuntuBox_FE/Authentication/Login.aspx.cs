@@ -30,7 +30,7 @@ namespace UbuntuBox_FE.Authentication
             {
                 //User is type Buyer//
                 System.Web.UI.HtmlControls.HtmlInputGenericControl emailbox = Emailbox;
-                int UserID = client.GetUserId(emailbox);
+                int UserID = client.GetUserId(emailbox.Value);
                 Session["UserID"] = UserID;
                 Response.Redirect("./Store/ProductLanding.aspx");
                 

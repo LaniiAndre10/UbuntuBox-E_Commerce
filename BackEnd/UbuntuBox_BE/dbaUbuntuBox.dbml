@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><Database Name="dbaUbuntuBox" Class="dbaUbuntuBoxDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbaUbuntuBox" Class="dbaUbuntuBoxDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=dbaUbuntuBox;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="dbaUbuntuBoxConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Product" Member="Products">
     <Type Name="Product">
@@ -35,6 +35,7 @@
       <Column Name="UserDateAdded" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Association Name="User_Order" Member="Orders" ThisKey="UserID" OtherKey="UserID" Type="Order" />
       <Association Name="User_CustomerStat" Member="CustomerStats" ThisKey="UserID" OtherKey="UserID" Type="CustomerStat" />
+      <Association Name="User_Cart" Member="Carts" ThisKey="UserID" OtherKey="UserID" Type="Cart" />
     </Type>
   </Table>
   <Table Name="dbo.[Order]" Member="Orders">
@@ -91,7 +92,6 @@
       <Column Name="TotalMoneySpent" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
       <Column Name="TimesRewarded" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="User_CustomerStat" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
-      <Association Name="User_Cart" Member="Carts" ThisKey="UserID" OtherKey="UserID" Type="Cart" />
     </Type>
   </Table>
   <Table Name="dbo.Attraction" Member="Attractions">

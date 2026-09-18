@@ -8,7 +8,7 @@
 
     <div class="breadcrumb-bar">
     <div class="container">
-        <a href="Default.aspx">Home</a>
+        <a href="Landing.aspx">Home</a>
         <span class="separator">/</span>
         <a href="Shop.aspx">Shop</a>
         <span class="separator">/</span>
@@ -22,23 +22,27 @@
 
         <div class="product-image-section">
             <div class="main-image">
-                <img src="Logo/Mock Standard.png" alt="Standard Box">
+                <!--<img src="Logo/Mock Standard.png" alt="Standard Box">-->
+                <asp:Image ID="ProductImage" runat="server" />
             </div>
         </div>
 
         <div class="product-info-section">
-            <h1 class="product-title">Standard Box</h1>
-
+            <!--<h1 class="product-title">Standard Box</h1>-->
+             <!--<h1 class="product-title"><%# ("BoxCategory") %></h1>-->
             <div class="rating">
                 <span class="stars">★★★★★</span>
                 <span class="count">(89 reviews)</span>
             </div>
 
-            <div class="price">R 320.00</div>
-
+            <!--<div class="price">R 320.00</div>-->
+            <!--<div class="price">R <%# ("ProductPrice") %></div>-->
             <p class="description">
                 A thoughtfully curated collection of South African-inspired gifts. Perfect for anyone who wants to experience a taste of our culture, this box brings together meaningful, beautiful, and locally inspired treasures.
             </p>
+            <!--<p class="description">
+                <!--<%# ("Description") %>-->
+            </p>-->
 
             <div class="product-tags">
                 <span class="tag"><i class="fa-solid fa-hand-holding-heart"></i> Handmade</span>

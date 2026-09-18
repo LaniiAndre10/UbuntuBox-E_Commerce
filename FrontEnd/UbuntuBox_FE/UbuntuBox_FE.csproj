@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -215,7 +215,6 @@
     <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.Attraction.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-
     <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.OrderDetails.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -228,7 +227,6 @@
     <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.CustomerStat.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="obj\Debug\TempPE\Connected Services.ServiceReference1.Reference.cs.dll" />
     <Content Include="obj\Debug\UbuntuBox_FE.csproj.FileListAbsolute.txt" />
@@ -402,6 +400,8 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="styles.css" />
+    <Content Include="UpgradeLog.htm" />
+    <Content Include="UpgradeLog2.htm" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -712,5 +712,3 @@
   </Target>
   -->
 </Project>
-
-

@@ -10,9 +10,21 @@ namespace UbuntuBox_BE.ProductPage
         UbuntuBox_BE.dbaUbuntuBoxDataContext dbaUbuntuBox = new dbaUbuntuBoxDataContext();
         public List<Product> getProducts()
         {
-            var products = (from u in dbaUbuntuBox.Products select u).ToList();
+            var products = (from u in dbaUbuntuBox.Products
+                            select u).ToList();
 
             return products;
+        }
+
+        public Product GetProductId(string productID)
+        {
+
+            var product = (from p in dbaUbuntuBox.Products where
+                            p.ProductID.Equals(productID) select p).SingleOrDefault();
+
+
+            return product;
+        
         }
     }
 }

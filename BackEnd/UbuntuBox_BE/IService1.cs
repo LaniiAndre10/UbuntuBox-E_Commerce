@@ -134,6 +134,14 @@ namespace UbuntuBox_BE
         [OperationContract]
         public int GetUserId(string email);
 
+        //Product - Product Management --> Get the Id of a product: @TLethabo. //
+        [OperationContract]
+        public Product GetProductId(string productID);
+
+
+        //Attraction - Population Management --> Get the Id of a product: @TLethabo. //
+        [OperationContract]
+        public Attraction GetAttractionId(string attractionID);
     }
 
     //Add a datacontract for Product + ProductImages to tackle the Socket/Communication Exception issue//

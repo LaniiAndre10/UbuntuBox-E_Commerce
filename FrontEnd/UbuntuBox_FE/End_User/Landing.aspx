@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="Landing.aspx.cs" Inherits="UbuntuBox_FE.End_User.Landing" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -57,16 +58,16 @@
 
          <asp:Repeater ID="rptAttractions" runat="server">
           <ItemTemplate>
-        <a href="#">
+        <a href="Shop.aspx?Id=<%# Eval("AttractionID") %>">
         <div class="attraction-card">
-            <!--<img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">-->
-            <img src= <%# Eval("AttractionImageURL") %> alt="Table Mountain">
+             <!--<img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">-->
+             <img src= <%# Eval("AttractionImageURL") %> alt="Table Mountain">
             <div class="attr-info">
                 <div>
                     <!--<h3>Table Mountain</h3>-->
-                    <h3><%# Eval("AttractionName") %></h3>
+                         <h3> <%# Eval("AttractionName") %></h3>
                     <!--<p>Cape Town</p>-->
-                    <p><%# Eval("Province") %></p>
+                         <p> <%# Eval("Province") %></p>
                 </div>
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
@@ -74,47 +75,6 @@
         </a>
           </ItemTemplate>
       </asp:Repeater>
-
-
-        <!--<a href="#">
-        <div class="attraction-card">
-            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
-            <div class="attr-info">
-                <div>
-                    <h3>Table Mountain</h3>
-                    <p>Cape Town</p>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </div>
-        </div>
-        </a>
-
-        <a href="#">
-        <div class="attraction-card">
-            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
-            <div class="attr-info">
-                <div>
-                    <h3>Table Mountain</h3>
-                    <p>Cape Town</p>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </div>
-        </div>
-        </a>
-
-        <a href="#">
-        <div class="attraction-card">
-            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
-            <div class="attr-info">
-                <div>
-                    <h3>Table Mountain</h3>
-                    <p>Cape Town</p>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </div>
-        </div>
-        </a>
-        -->
 
     </div>
 

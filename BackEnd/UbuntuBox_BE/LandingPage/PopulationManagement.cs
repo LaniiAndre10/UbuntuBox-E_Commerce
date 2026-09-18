@@ -14,5 +14,17 @@ namespace UbuntuBox_BE.LandingPage
 
             return attractions;
         }
+
+        public Attraction GetAttractionId(string attractionID)
+        {
+
+            var attraction = (from a in dbaUbuntuBox.Attractions where
+                           a.AttractionID.Equals(attractionID) select a).SingleOrDefault();
+
+            return attraction;
+
+        }
     }
+
+    
 }

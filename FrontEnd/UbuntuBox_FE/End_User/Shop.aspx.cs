@@ -6,10 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UbuntuBox_FE.ServiceReference1;
 
-namespace shoppage
 namespace UbuntuBox_FE.End_User
 {
-    public partial class shop : System.Web.UI.Page
+    public partial class Shop : System.Web.UI.Page
     {
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         protected void Page_Load(object sender, EventArgs e)
@@ -18,6 +17,17 @@ namespace UbuntuBox_FE.End_User
             {
                 showProducts();
             }
+
+            string attractionId = Request.QueryString["Id"];
+            Attraction selectedAttraction = client.GetAttractionId(attractionId);
+
+            if (selectedAttraction != null)
+            {
+                AttractionImage.ImageUrl = selectedAttraction.AttractionImageURL;
+                lblAttractionName.Text = selectedAttraction.AttractionName;
+                lblAttractionDes.Text = selectedAttraction.AttractionDescription;
+            }
+
         }
 
         protected void tocart_Click(object sender, EventArgs e)
@@ -40,9 +50,13 @@ namespace UbuntuBox_FE.End_User
 
         private void showProducts()
         {
-            List<Product> products = client.getProducts().ToList();
-            rptProducts.DataSource = products;
-            rptProducts.DataBind();
+            List<ProductWithImages> products = client.viewProducts().ToList();
+
+            var groupedProducts = products.GroupBy(p => p.BoxCategory).ToList();
+
+            rptCategories.DataSource = groupedProducts;
+            rptCategories.DataBind();   
         }
+
     }
 }

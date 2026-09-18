@@ -94,10 +94,10 @@ namespace UbuntuBox_BE
         {
             //The goal is to return active products: @laniiAndre10//
 
-            UbuntuBox_BE.Admin.ProductManagement productManagement = new Admin.ProductManagement();
-            List<ProductWithImages> products = new List<ProductWithImages>();
+            Admin.ProductManagement productManagement = new Admin.ProductManagement();
+            List<ProductWithImages> products = productManagement.ViewActiveProducts();
 
-            products = productManagement.ViewActiveProducts();
+            //products = productManagement.ViewActiveProducts();
 
             return products;
             
@@ -239,6 +239,9 @@ namespace UbuntuBox_BE
             List<Attraction> attractions = populationManagement.getAttractionList();
 
             return attractions;
+
+        }
+
         public List<User> ReturnCustomers()
         {
 
@@ -420,6 +423,24 @@ namespace UbuntuBox_BE
             }
 
             return userId.UserID;
+        }
+
+        public Product GetProductId(string productID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+
+            var products = productManagement.GetProductId(productID);
+
+            return products;
+        }
+
+        public Attraction GetAttractionId(string attractionID)
+        {
+            LandingPage.PopulationManagement populationManagement = new LandingPage.PopulationManagement();
+
+            var attraction = populationManagement.GetAttractionId(attractionID);
+
+            return attraction;
         }
     }
 }

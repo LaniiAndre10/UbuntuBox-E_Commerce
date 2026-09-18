@@ -19,7 +19,6 @@ namespace UbuntuBox_BE.Admin
             Ubuntuboxdatabase.DeferredLoadingEnabled = false;
 
             var ProductWithImages = from u in Ubuntuboxdatabase.Products
-                                    where u.ProductStatus == true
                                     select new ProductWithImages
                                     {
 
