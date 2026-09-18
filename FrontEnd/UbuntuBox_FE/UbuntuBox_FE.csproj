@@ -180,20 +180,7 @@
     <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-<<<<<<< HEAD
     <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.Attraction.datasource">
-=======
-    <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.OrderDetails.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.OrderReturns.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.CancelledOrders.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.CustomerStat.datasource">
->>>>>>> AdminCodingbranch
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
