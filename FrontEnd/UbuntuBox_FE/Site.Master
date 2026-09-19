@@ -1,0 +1,139 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="User_Management.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UbuntuBox — Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="~/Boxes.css" />
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+
+        <div class="top-bar">
+            <span class="diamond">◆</span> GIFTS WITH A SOUTH AFRICAN STORY <span class="diamond">◆</span>
+        </div>
+
+        <div class="header">
+            <div class="logo">
+                <img src="Logo/text_logo_1.png" alt="UbuntuBox Logo">
+            </div>
+
+            <div class="nav-links">
+                <a href="Default.aspx" class="active">Home</a>
+                <a href="Shop.aspx">Shop</a>
+                <a href="Default.aspx#attractions">Attractions</a>
+                <a href="Default.aspx#about">About Us</a>
+                <a href="Default.aspx#faqs">FAQs</a>
+                <a href="Default.aspx#careers">Careers</a>
+            </div>
+
+            <div class="header-icons">
+                <div class="searchbox">
+                    <input type="search" placeholder="Search gifts..." style="background-color: rgba(255,255,255,0.1); border: none; padding: 10px; border-radius: 20px; color: white;">
+                </div>
+                <a href="#"><i class="fa-regular fa-user"></i>Account</a>
+                <a href="cart.aspx" class="cart-box"><i class="fa-solid fa-cart-shopping"></i>Cart <span class="cart-count">3</span></a>
+            </div>
+        </div>
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+        </div>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="Logo/text_logo_1.png" alt="UbuntuBox">
+                        <p>Gifts with a South African Story</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Products.html">Shop</a></li>
+                        <li><a href="#">Attractions</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Mystery Boxes</a></li>
+                        <li><a href="#">Standard Boxes</a></li>
+                        <li><a href="#">Premium Boxes</a></li>
+                        <li><a href="#">By Attraction</a></li>
+                        <li><a href="#">By Province</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-envelope"></i>info@ubuntubox.com</li>
+                        <li><i class="fa-solid fa-phone"></i>+27 (0) 21 123 4567</li>
+                        <li><i class="fa-solid fa-location-dot"></i>Cape Town, South Africa</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 UbuntuBox. All rights reserved. Designed with <i class="fa-solid fa-heart" style="color: #d9a441;"></i> in South Africa.</p>
+            </div>
+        </footer>
+
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+    </form>
+</body>
+</html>

@@ -31,10 +31,10 @@
             </div>
     
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="Shop.html">Shop</a>
-                <a href="index.html#attractions">Attractions</a>
-                <a href="index.html#about">About Us</a>
+                <a href="#" class="active">Home</a>
+                <a href="#attractions">Shop</a>
+                <a href="#about">Blogs</a>
+                <a href="#about">About Us</a>
                 <a href="index.html#faqs">FAQs</a>
                 <a href="index.html#careers">Careers</a>
             </div>
@@ -93,9 +93,9 @@
                 <div class="footer-section">
                     <h4>Contact Us</h4>
                     <ul>
-                        <li><i class="fa-solid fa-envelope"></i> info@ubuntubox.com</li>
-                        <li><i class="fa-solid fa-phone"></i> +27 (0) 21 123 4567</li>
-                        <li><i class="fa-solid fa-location-dot"></i> Cape Town, South Africa</li>
+                        <li class="contact"><i class="fa-solid fa-envelope"></i> info@ubuntubox.com</li>
+                        <li class="contact"><i class="fa-solid fa-phone"></i> +27 (0) 21 123 4567</li>
+                        <li class="contact"><i class="fa-solid fa-location-dot"></i> Cape Town, South Africa</li>
                     </ul>
                 </div>
             </div>

@@ -58,7 +58,8 @@ namespace UbuntuBox_BE
                 Email = UserEmail,
                 PhoneNum = UserPhone,
                 PasswordHash = UbuntuBox_BE.Secrecy.Secrecy.HashPassword(UserPass), //Hashed//
-                IsAdmin = IsAdmin
+                IsAdmin = IsAdmin,
+                UserStatus = "Active"
 
             };
 
@@ -347,6 +348,7 @@ namespace UbuntuBox_BE
 
         public string GrantUserReward(string CustomerID, int PercentageOff)
         {
+            //The goal here is to grant our user the given percent off: @LaniiAndre10.
 
             Admin.CustomerManagement customerManagement = new Admin.CustomerManagement();
 
@@ -358,6 +360,7 @@ namespace UbuntuBox_BE
 
         public CustomerStat SearchCustomerDetails(string CustomerID)
         {
+            //The goal here is to retrieve data from the customer stats table: @LaniiAndre10.
 
             Admin.CustomerManagement customerManagement = new Admin.CustomerManagement();
 

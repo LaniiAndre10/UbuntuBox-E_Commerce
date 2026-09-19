@@ -29,7 +29,7 @@ namespace UbuntuBox_FE.Authentication
             if (userInfo ==2)
             {
                 //User is type Buyer//
-                Response.Redirect("./Store/ProductLanding.aspx");
+                Response.Redirect("../End_User/Landing.aspx");
 
             }
             else

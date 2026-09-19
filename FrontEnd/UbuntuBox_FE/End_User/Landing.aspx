@@ -8,8 +8,10 @@
         <h1>Gifts with a <span>South African Story</span></h1>
         <div class="hero-line"></div>
         <p>Discover mystery and meaning in every box. Curated gifts from iconic South African places, packed with culture, crafted with love.</p>
-        <button class="btn-gold">Shop <i class="fa-solid fa-arrow-right"></i></button>
-        <button class="btn-outline"><i class="fa-solid fa-play"></i>About UbuntuBox</button>
+
+        <a href="#attractions" class="btn-gold">Shop <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#about" class="btn-outline"><i class="fa-solid fa-play"></i>About UbuntuBox</a>
+
     </div>
 </section>
 
@@ -63,9 +65,7 @@
             <img src= <%# Eval("AttractionImageURL") %> alt="Table Mountain">
             <div class="attr-info">
                 <div>
-                    <!--<h3>Table Mountain</h3>-->
                     <h3><%# Eval("AttractionName") %></h3>
-                    <!--<p>Cape Town</p>-->
                     <p><%# Eval("Province") %></p>
                 </div>
                 <i class="fa-solid fa-arrow-right"></i>
@@ -75,46 +75,6 @@
           </ItemTemplate>
       </asp:Repeater>
 
-
-        <!--<a href="#">
-        <div class="attraction-card">
-            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
-            <div class="attr-info">
-                <div>
-                    <h3>Table Mountain</h3>
-                    <p>Cape Town</p>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </div>
-        </div>
-        </a>
-
-        <a href="#">
-        <div class="attraction-card">
-            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
-            <div class="attr-info">
-                <div>
-                    <h3>Table Mountain</h3>
-                    <p>Cape Town</p>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </div>
-        </div>
-        </a>
-
-        <a href="#">
-        <div class="attraction-card">
-            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">
-            <div class="attr-info">
-                <div>
-                    <h3>Table Mountain</h3>
-                    <p>Cape Town</p>
-                </div>
-                <i class="fa-solid fa-arrow-right"></i>
-            </div>
-        </div>
-        </a>
-        -->
 
     </div>
 
