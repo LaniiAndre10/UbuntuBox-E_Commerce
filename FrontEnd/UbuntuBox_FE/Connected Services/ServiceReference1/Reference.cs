@@ -941,35 +941,14 @@ namespace UbuntuBox_FE.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-<<<<<<< HEAD
-    [System.Runtime.Serialization.DataContractAttribute(Name="Attraction", Namespace="http://schemas.datacontract.org/2004/07/UbuntuBox_BE")]
-    [System.SerializableAttribute()]
-    public partial class Attraction : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-=======
     [System.Runtime.Serialization.DataContractAttribute(Name="OrderCancellation", Namespace="http://schemas.datacontract.org/2004/07/UbuntuBox_BE")]
     [System.SerializableAttribute()]
     public partial class OrderCancellation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
->>>>>>> AdminCodingbranch
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-<<<<<<< HEAD
-        private string AttractionDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int AttractionIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AttractionImageURLField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AttractionNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProvinceField;
-=======
         private System.DateTime CancellationDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -983,7 +962,6 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int OrderIDField;
->>>>>>> AdminCodingbranch
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -996,16 +974,6 @@ namespace UbuntuBox_FE.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-<<<<<<< HEAD
-        public string AttractionDescription {
-            get {
-                return this.AttractionDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AttractionDescriptionField, value) != true)) {
-                    this.AttractionDescriptionField = value;
-                    this.RaisePropertyChanged("AttractionDescription");
-=======
         public System.DateTime CancellationDate {
             get {
                 return this.CancellationDateField;
@@ -1014,22 +982,11 @@ namespace UbuntuBox_FE.ServiceReference1 {
                 if ((this.CancellationDateField.Equals(value) != true)) {
                     this.CancellationDateField = value;
                     this.RaisePropertyChanged("CancellationDate");
->>>>>>> AdminCodingbranch
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-<<<<<<< HEAD
-        public int AttractionID {
-            get {
-                return this.AttractionIDField;
-            }
-            set {
-                if ((this.AttractionIDField.Equals(value) != true)) {
-                    this.AttractionIDField = value;
-                    this.RaisePropertyChanged("AttractionID");
-=======
         public string CancellationReason {
             get {
                 return this.CancellationReasonField;
@@ -1038,22 +995,11 @@ namespace UbuntuBox_FE.ServiceReference1 {
                 if ((object.ReferenceEquals(this.CancellationReasonField, value) != true)) {
                     this.CancellationReasonField = value;
                     this.RaisePropertyChanged("CancellationReason");
->>>>>>> AdminCodingbranch
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-<<<<<<< HEAD
-        public string AttractionImageURL {
-            get {
-                return this.AttractionImageURLField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AttractionImageURLField, value) != true)) {
-                    this.AttractionImageURLField = value;
-                    this.RaisePropertyChanged("AttractionImageURL");
-=======
         public UbuntuBox_FE.ServiceReference1.Order Order {
             get {
                 return this.OrderField;
@@ -1062,22 +1008,11 @@ namespace UbuntuBox_FE.ServiceReference1 {
                 if ((object.ReferenceEquals(this.OrderField, value) != true)) {
                     this.OrderField = value;
                     this.RaisePropertyChanged("Order");
->>>>>>> AdminCodingbranch
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-<<<<<<< HEAD
-        public string AttractionName {
-            get {
-                return this.AttractionNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AttractionNameField, value) != true)) {
-                    this.AttractionNameField = value;
-                    this.RaisePropertyChanged("AttractionName");
-=======
         public int OrderCancellationID {
             get {
                 return this.OrderCancellationIDField;
@@ -1086,22 +1021,11 @@ namespace UbuntuBox_FE.ServiceReference1 {
                 if ((this.OrderCancellationIDField.Equals(value) != true)) {
                     this.OrderCancellationIDField = value;
                     this.RaisePropertyChanged("OrderCancellationID");
->>>>>>> AdminCodingbranch
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-<<<<<<< HEAD
-        public string Province {
-            get {
-                return this.ProvinceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProvinceField, value) != true)) {
-                    this.ProvinceField = value;
-                    this.RaisePropertyChanged("Province");
-=======
         public int OrderID {
             get {
                 return this.OrderIDField;
@@ -1424,6 +1348,115 @@ namespace UbuntuBox_FE.ServiceReference1 {
                 if ((this.UserIDField.Equals(value) != true)) {
                     this.UserIDField = value;
                     this.RaisePropertyChanged("UserID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Attraction", Namespace="http://schemas.datacontract.org/2004/07/UbuntuBox_BE")]
+    [System.SerializableAttribute()]
+    public partial class Attraction : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AttractionDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AttractionIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AttractionImageURLField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AttractionNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProvinceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AttractionDescription {
+            get {
+                return this.AttractionDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AttractionDescriptionField, value) != true)) {
+                    this.AttractionDescriptionField = value;
+                    this.RaisePropertyChanged("AttractionDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AttractionID {
+            get {
+                return this.AttractionIDField;
+            }
+            set {
+                if ((this.AttractionIDField.Equals(value) != true)) {
+                    this.AttractionIDField = value;
+                    this.RaisePropertyChanged("AttractionID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AttractionImageURL {
+            get {
+                return this.AttractionImageURLField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AttractionImageURLField, value) != true)) {
+                    this.AttractionImageURLField = value;
+                    this.RaisePropertyChanged("AttractionImageURL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AttractionName {
+            get {
+                return this.AttractionNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AttractionNameField, value) != true)) {
+                    this.AttractionNameField = value;
+                    this.RaisePropertyChanged("AttractionName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Province {
+            get {
+                return this.ProvinceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProvinceField, value) != true)) {
+                    this.ProvinceField = value;
+                    this.RaisePropertyChanged("Province");
                 }
             }
         }
@@ -1815,7 +1848,6 @@ namespace UbuntuBox_FE.ServiceReference1 {
                 if ((object.ReferenceEquals(this.ProductNameField, value) != true)) {
                     this.ProductNameField = value;
                     this.RaisePropertyChanged("ProductName");
->>>>>>> AdminCodingbranch
                 }
             }
         }
@@ -1894,7 +1926,6 @@ namespace UbuntuBox_FE.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddAdmin", ReplyAction="http://tempuri.org/IService1/AddAdminResponse")]
         System.Threading.Tasks.Task<bool> AddAdminAsync(string ImageUrl, string PhoneNumber, string Usernames, string UserEmail, string Password);
         
-
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchAdmin", ReplyAction="http://tempuri.org/IService1/SearchAdminResponse")]
         UbuntuBox_FE.ServiceReference1.User SearchAdmin(string WorkEmailAddress);
         
@@ -1912,14 +1943,12 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveAdmin", ReplyAction="http://tempuri.org/IService1/RemoveAdminResponse")]
         System.Threading.Tasks.Task<bool> RemoveAdminAsync(string WorkEmail);
-<<<<<<< HEAD
-
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getAttractionList", ReplyAction="http://tempuri.org/IService1/getAttractionListResponse")]
         UbuntuBox_FE.ServiceReference1.Attraction[] getAttractionList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getAttractionList", ReplyAction="http://tempuri.org/IService1/getAttractionListResponse")]
         System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.Attraction[]> getAttractionListAsync();
-=======
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ReturnCustomers", ReplyAction="http://tempuri.org/IService1/ReturnCustomersResponse")]
         UbuntuBox_FE.ServiceReference1.User[] ReturnCustomers();
@@ -1980,7 +2009,6 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchCustomerDetails", ReplyAction="http://tempuri.org/IService1/SearchCustomerDetailsResponse")]
         System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.CustomerStat> SearchCustomerDetailsAsync(string CustomerID);
->>>>>>> AdminCodingbranch
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2112,7 +2140,8 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> RemoveAdminAsync(string WorkEmail) {
             return base.Channel.RemoveAdminAsync(WorkEmail);
-
+        }
+        
         public UbuntuBox_FE.ServiceReference1.Attraction[] getAttractionList() {
             return base.Channel.getAttractionList();
         }

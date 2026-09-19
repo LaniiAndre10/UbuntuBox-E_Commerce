@@ -162,13 +162,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
-  <xs:complexType name="ArrayOfOrderDetails">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderDetails" nillable="true" type="tns:OrderDetails" />
-    </xs:sequence>
-  </xs:complexType>
-<<<<<<< HEAD
-  <xs:element name="User" nillable="true" type="tns:User" />
   <xs:complexType name="ArrayOfAttraction">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Attraction" nillable="true" type="tns:Attraction" />
@@ -185,7 +178,11 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Attraction" nillable="true" type="tns:Attraction" />
-=======
+  <xs:complexType name="ArrayOfOrderDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderDetails" nillable="true" type="tns:OrderDetails" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:element name="ArrayOfOrderDetails" nillable="true" type="tns:ArrayOfOrderDetails" />
   <xs:complexType name="OrderDetails">
     <xs:sequence>
@@ -233,5 +230,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CancelledOrders" nillable="true" type="tns:CancelledOrders" />
->>>>>>> AdminCodingbranch
 </xs:schema>

@@ -232,7 +232,7 @@ namespace UbuntuBox_BE
             
         }
 
-<<<<<<< HEAD
+
         public List<Attraction> getAttractionList()
         {
             LandingPage.PopulationManagement populationManagement = new LandingPage.PopulationManagement();
@@ -240,7 +240,9 @@ namespace UbuntuBox_BE
             List<Attraction> attractions = populationManagement.getAttractionList();
 
             return attractions;
-=======
+
+        }
+
         public List<User> ReturnCustomers()
         {
 
@@ -362,7 +364,6 @@ namespace UbuntuBox_BE
             var CustomerData = customerManagement.SearchCustomerDetails(CustomerID);
 
             return CustomerData;
->>>>>>> AdminCodingbranch
 
         }
     }

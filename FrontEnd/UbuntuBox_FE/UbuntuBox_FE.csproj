@@ -183,6 +183,18 @@
     <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.Attraction.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.CancelledOrders1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.CustomerStat1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.OrderDetails1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\UbuntuBox_FE.ServiceReference1.OrderReturns1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

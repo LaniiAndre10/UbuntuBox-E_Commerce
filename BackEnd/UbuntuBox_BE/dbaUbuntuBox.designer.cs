@@ -39,11 +39,6 @@ namespace UbuntuBox_BE
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
-<<<<<<< HEAD
-    partial void InsertAttraction(Attraction instance);
-    partial void UpdateAttraction(Attraction instance);
-    partial void DeleteAttraction(Attraction instance);
-=======
     partial void InsertOrder(Order instance);
     partial void UpdateOrder(Order instance);
     partial void DeleteOrder(Order instance);
@@ -59,7 +54,9 @@ namespace UbuntuBox_BE
     partial void InsertCustomerStat(CustomerStat instance);
     partial void UpdateCustomerStat(CustomerStat instance);
     partial void DeleteCustomerStat(CustomerStat instance);
->>>>>>> AdminCodingbranch
+    partial void InsertAttraction(Attraction instance);
+    partial void UpdateAttraction(Attraction instance);
+    partial void DeleteAttraction(Attraction instance);
     #endregion
 		
 		public dbaUbuntuBoxDataContext() : 
@@ -116,13 +113,6 @@ namespace UbuntuBox_BE
 			}
 		}
 		
-<<<<<<< HEAD
-		public System.Data.Linq.Table<Attraction> Attractions
-		{
-			get
-			{
-				return this.GetTable<Attraction>();
-=======
 		public System.Data.Linq.Table<Order> Orders
 		{
 			get
@@ -160,7 +150,14 @@ namespace UbuntuBox_BE
 			get
 			{
 				return this.GetTable<CustomerStat>();
->>>>>>> AdminCodingbranch
+			}
+		}
+		
+		public System.Data.Linq.Table<Attraction> Attractions
+		{
+			get
+			{
+				return this.GetTable<Attraction>();
 			}
 		}
 	}
