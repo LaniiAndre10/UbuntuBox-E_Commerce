@@ -15,15 +15,6 @@ namespace UbuntuBox_FE.End_User
     {
 
         /// <summary>
-        /// lblAttractionName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAttractionName;
-
-        /// <summary>
         /// AttractionImage control.
         /// </summary>
         /// <remarks>
@@ -31,6 +22,15 @@ namespace UbuntuBox_FE.End_User
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image AttractionImage;
+
+        /// <summary>
+        /// lblAttractionName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAttractionName;
 
         /// <summary>
         /// lblAttractionDes control.
@@ -42,15 +42,6 @@ namespace UbuntuBox_FE.End_User
         protected global::System.Web.UI.WebControls.Label lblAttractionDes;
 
         /// <summary>
-        /// lblAttractionNam control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAttractionNam;
-
-        /// <summary>
         /// rptProducts control.
         /// </summary>
         /// <remarks>
@@ -58,14 +49,5 @@ namespace UbuntuBox_FE.End_User
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptProducts;
-
-        /// <summary>
-        /// Repeater1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
     }
 }

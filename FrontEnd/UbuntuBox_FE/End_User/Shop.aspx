@@ -19,24 +19,35 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <section class="hero-section">
-    <div class="hero-text">
-        <h1>
-            <!--Table <span>Mountain.</span>-->
-            <asp:Label ID="lblAttractionName" runat="server" Text=""></asp:Label>
-        </h1>
-        <div >
-            <asp:Image class="hero-line" ID="AttractionImage" runat="server" />
+    <section class="hero-section" 
+        style='<%= "background-image: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.6)), url(" + AttractionImage.ImageUrl + ");" %>'>
+    
+        <asp:Image ID="AttractionImage" runat="server" CssClass="hidden-bg-source" />
+
+        <div class="hero-text">
+            <h1>
+                <asp:Label ID="lblAttractionName" runat="server" Text=""></asp:Label>
+            </h1>
+            <p>
+                <asp:Label ID="lblAttractionDes" runat="server" Text=""></asp:Label>
+            </p>
+
+            <a href="https://computicket.com/page/home" class="btn-gold" >Buy Attraction Ticket <i class="fa-solid fa-arrow-right"></i></a>
         </div>
-        <p>  
-        <!--“Rising majestically above Cape Town, Table Mountain is a world‑renowned natural wonder. Its flat summit offers breathtaking panoramic views of the city, ocean, and surrounding peaks. A symbol of South Africa’s beauty, it’s the perfect blend of adventure and serenity.”-->
-            <asp:Label ID="lblAttractionDes" runat="server" Text=""></asp:Label>
-        </p>
-        <button class="btn-gold">Buy Attaction Ticket. <i class="fa-solid fa-arrow-right"></i></button>
-    </div>
-</section>
+    </section>
+
+
 
 <section class="categories">
+
+    <div class="sort-options">
+        <p>Box Filter: <select>
+            <option>All Boxes</option>
+            <option>Standard Box</option>
+            <option>Premium Box</option>
+            <option>Mystery Box</option>
+        </select></p>
+    </div>
     
     <div class="sort-options">
         <p>Sort By: <select>
@@ -46,105 +57,45 @@
             <option>Newest Arrivals</option>
         </select></p>
         <i class="fa-solid fa-table-cells-large"></i>
-        <i class="fa-solid fa-list"></i>
     </div>
+
 </section>
 
 <section class="attractions-section" id="attractions">
-
+    
     <!--<h2 class="section-title">Standard <span>Boxes</span></h2>-->
-     <h2 class="section-title">
-        Boxes Available for <asp:Label ID="lblAttractionNam" runat="server" Text="Label"></asp:Label>
-     </h2>
     <div class="attraction-grid">
         <asp:Repeater ID="rptProducts" runat="server">
-        <itemTemplate>
-        <div class="attraction-card">
-            <img class="image"src="Logo/Mock Standard.png" alt="Table Mountain">
-             
-            <div class="attr-info">
-                    <h5><%# Eval("ProductName") %></h5>
-                    <div class="price">R <%# Eval("ProductPrice") %> </div>
-                    <p><i class="fa-solid fa-star"></i>&nbsp;4.9 (50)</p>
+            <ItemTemplate>
+                
+                <div class="attraction-card">
+                    <!-- Added a space between class and src to let the image render -->
+                    <img class="image" src="Logo/Mock Standard.png" alt="Table Mountain" />
+                     
+                    <div class="attr-info">
+                        <h5><%# Eval("ProductName") %></h5>
+                        
+                        <div class="price">R <%# Eval("ProductPrice") %></div>
+                        
+                        <p><i class="fa-solid fa-star"></i>&nbsp;4.9 (50)</p>
 
-                    <div class="shopbuttons">
-                        <!--<button class="Seebutton"> See Product </button>-->
-                        <a class="Seebutton" href="standardbox.aspx?Id=<%# Eval("ProductID") %>" >
-                            See Product
-                        </a>
-                        <!--<button> Add to Cart </button>-->
-                        <asp:button CssClass="tocart" ID="tocart" runat="server" Text="Add To Cart" CommandArgument='<%# Eval("ProductID") %>' OnClick="tocart_Click" />
+                        <div class="shopbuttons">
+                            <!--<button class="Seebutton"> See Product </button>-->
+                            <a class="Seebutton" href="standardbox.aspx?Id=<%# Eval("ProductID") %>">
+                                See Product
+                            </a>
+                            <!--<button> Add to Cart </button>-->
+                            <asp:Button ID="tocart" runat="server" Text="Add To Cart" CommandArgument='<%# Eval("ProductID") %>' OnClick="tocart_Click" />
+                        </div>
                     </div>
-                    
-            </div>
-        </div>
-             </itemTemplate>
-           </asp:Repeater>
+                </div>
+
+            </ItemTemplate>
+        </asp:Repeater>
     </div>
 
 </section>
 
-  <!-- <section class="attractions-section" id="attractions">
-            <h2 class="section-title">Premium <span>Boxes</span></h2>
-             <h2 class="section-title">
-                 <%# Eval("Key") %>
-             </h2>
-            <div class="attraction-grid">
-                <asp:Repeater DataSource="<%# Container %>" runat="server">
-                    <itemTemplate>
-                <div class="attraction-card">
-                    <img class="image"src="Logo/Mock Standard.png" alt="Table Mountain">
-
-                    <div class="attr-info">
-                            <h5>Standard Box - Drakensberg</h5>
-                            <h5><%# Eval("ProductName") %></h5>
-                            <div class="price">R 2500 </div>
-                            <div class="price">R <%# Eval("ProductPrice") %> </div>
-                            <p><i class="fa-solid fa-star"></i>&nbsp;4.9 (50)</p>
-
-                            <div class="shopbuttons">
-
-                                <button class="Seebutton"> See Product </button>
-                                <button> Add to Cart </button>
-                                <asp:Button class="Addtocartbutton" ID="tocart" runat="server" Text="Add To Cart" CommandArgument='<%# Eval("ProductID") %>' OnClick="tocart_Click" />
-                            </div>
-                            
-                    </div>
-                </div>
-                  </itemTemplate>
-            </asp:Repeater>
-           
-            </div>
-    </section>-->
-
-   <!--<section class="attractions-section" id="attractions">
-    <h2 class="section-title">Mystery <span>Boxes</span></h2>
-
-    <div class="attraction-grid">
-         <asp:Repeater ID="Repeater1" runat="server">
-              <itemTemplate>
-        <div class="attraction-card">
-                    <img class="image"src="Logo/Mock Standard.png" alt="Table Mountain">
-                <div class="attr-info">
-                        <h5>Standard Box - Drakensberg</h5>
-                <div class="price">R 2500 </div>
-                    <p><i class="fa-solid fa-star"></i>&nbsp;4.9 (50)</p>
-
-                <div class="shopbuttons">
-
-                    <button class="Seebutton"> See Product </button>
-                    <button> Add to Cart </button>
-                                
-                </div>
-                            
-            </div>
-        </div>
-              </itemTemplate>
-         </asp:Repeater>
-                                
-                </div>
-
-</section>-->
 
 
 </asp:Content>

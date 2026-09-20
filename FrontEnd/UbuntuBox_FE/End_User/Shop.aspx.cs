@@ -32,7 +32,6 @@ namespace UbuntuBox_FE.End_User
                  
                 AttractionImage.ImageUrl = selectedAttraction.AttractionImageUrls;
                 lblAttractionName.Text = selectedAttraction.AttractionName;
-                lblAttractionNam.Text = selectedAttraction.AttractionName;
                 lblAttractionDes.Text = selectedAttraction.AttractionDescription;
                 
             }
