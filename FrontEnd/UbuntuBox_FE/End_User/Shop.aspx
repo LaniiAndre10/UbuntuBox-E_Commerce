@@ -52,14 +52,12 @@
 
 <section class="attractions-section" id="attractions">
 
-    <asp:Repeater ID="rptCategories" runat="server">
-        <itemTemplate>
     <!--<h2 class="section-title">Standard <span>Boxes</span></h2>-->
      <h2 class="section-title">
-         <%# Eval("Key") %>
+        Boxes Available for <asp:Label ID="lblAttractionNam" runat="server" Text="Label"></asp:Label>
      </h2>
     <div class="attraction-grid">
-        <asp:Repeater ID="rptProducts" runat="server" DataSource="<%# Container.DataItem %>">
+        <asp:Repeater ID="rptProducts" runat="server">
         <itemTemplate>
         <div class="attraction-card">
             <img class="image"src="Logo/Mock Standard.png" alt="Table Mountain">
@@ -74,9 +72,8 @@
                         <a class="Seebutton" href="standardbox.aspx?Id=<%# Eval("ProductID") %>" >
                             See Product
                         </a>
-                        <!--<button class="Addtocartbutton"> Add to Cart </button>-->
-                        <asp:Button class="Addtocartbutton" ID="tocart" runat="server" Text="Add To Cart" CommandArgument='<%# Eval("ProductID") %>' OnClick="tocart_Click" />
-                        
+                        <!--<button> Add to Cart </button>-->
+                        <asp:button CssClass="tocart" ID="tocart" runat="server" Text="Add To Cart" CommandArgument='<%# Eval("ProductID") %>' OnClick="tocart_Click" />
                     </div>
                     
             </div>
@@ -84,8 +81,6 @@
              </itemTemplate>
            </asp:Repeater>
     </div>
-              </itemTemplate>
-           </asp:Repeater>
 
 </section>
 

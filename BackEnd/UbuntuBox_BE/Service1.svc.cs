@@ -232,11 +232,11 @@ namespace UbuntuBox_BE
             
         }
 
-        public List<Attraction> getAttractionList()
+        public List<AttractionDetails> getAttractionList()
         {
             LandingPage.PopulationManagement populationManagement = new LandingPage.PopulationManagement();
 
-            List<Attraction> attractions = populationManagement.getAttractionList();
+            List<AttractionDetails> attractions = populationManagement.getAttractionList();
 
             return attractions;
 
@@ -425,22 +425,31 @@ namespace UbuntuBox_BE
             return userId.UserID;
         }
 
-        public Product GetProductId(string productID)
+        public ProductWithImages GetProductId(int productID)
         {
             ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
 
-            var products = productManagement.GetProductId(productID);
+            ProductWithImages products = productManagement.GetProductId(productID);
 
             return products;
         }
 
-        public Attraction GetAttractionId(string attractionID)
+        public AttractionDetails GetAttractionId(int attractionID)
         {
             LandingPage.PopulationManagement populationManagement = new LandingPage.PopulationManagement();
 
             var attraction = populationManagement.GetAttractionId(attractionID);
 
             return attraction;
+        }
+
+        public List<ProductWithImages> GetProductsByDestination(int attractionID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+
+            List<ProductWithImages> products = productManagement.GetProductsByDestination(attractionID);
+
+            return products;
         }
     }
 }

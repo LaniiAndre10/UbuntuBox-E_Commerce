@@ -9,6 +9,7 @@
   <xs:element name="ArrayOfProductWithImages" nillable="true" type="tns:ArrayOfProductWithImages" />
   <xs:complexType name="ProductWithImages">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AttractionID" type="xs:int" />
       <xs:element minOccurs="0" name="BoxCategory" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DateAdded" type="xs:dateTime" />
       <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ImageUrls" nillable="true" type="q1:ArrayOfstring" />
@@ -22,10 +23,11 @@
   <xs:element name="ProductWithImages" nillable="true" type="tns:ProductWithImages" />
   <xs:complexType name="Product">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Attraction" nillable="true" type="tns:Attraction" />
+      <xs:element minOccurs="0" name="AttractionID" type="xs:int" />
       <xs:element minOccurs="0" name="BoxCategory" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CartItems" nillable="true" type="tns:ArrayOfCartItem" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OrderItems" nillable="true" type="tns:ArrayOfOrderItem" />
       <xs:element minOccurs="0" name="Price" type="xs:decimal" />
       <xs:element minOccurs="0" name="ProductDateAdded" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ProductID" type="xs:int" />
@@ -35,6 +37,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="Attraction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttractionDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttractionID" type="xs:int" />
+      <xs:element minOccurs="0" name="AttractionImageURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttractionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProduct" />
+      <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Attraction" nillable="true" type="tns:Attraction" />
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
   <xs:complexType name="ArrayOfCartItem">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="CartItem" nillable="true" type="tns:CartItem" />
@@ -152,7 +171,6 @@
       <xs:element minOccurs="0" name="ItemID" type="xs:int" />
       <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Order" />
       <xs:element minOccurs="0" name="OrderID" type="xs:int" />
-      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
       <xs:element minOccurs="0" name="ProductID" type="xs:int" />
       <xs:element minOccurs="0" name="Quantity" type="xs:int" />
       <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
@@ -197,22 +215,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
-  <xs:complexType name="ArrayOfAttraction">
+  <xs:complexType name="ArrayOfAttractionDetails">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Attraction" nillable="true" type="tns:Attraction" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttractionDetails" nillable="true" type="tns:AttractionDetails" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfAttraction" nillable="true" type="tns:ArrayOfAttraction" />
-  <xs:complexType name="Attraction">
+  <xs:element name="ArrayOfAttractionDetails" nillable="true" type="tns:ArrayOfAttractionDetails" />
+  <xs:complexType name="AttractionDetails">
     <xs:sequence>
       <xs:element minOccurs="0" name="AttractionDescription" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="AttractionID" type="xs:int" />
-      <xs:element minOccurs="0" name="AttractionImageURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttractionImageUrls" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="AttractionName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Attraction" nillable="true" type="tns:Attraction" />
+  <xs:element name="AttractionDetails" nillable="true" type="tns:AttractionDetails" />
   <xs:complexType name="ArrayOfOrderDetails">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderDetails" nillable="true" type="tns:OrderDetails" />
@@ -265,10 +283,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CancelledOrders" nillable="true" type="tns:CancelledOrders" />
-  <xs:complexType name="ArrayOfProduct">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
 </xs:schema>

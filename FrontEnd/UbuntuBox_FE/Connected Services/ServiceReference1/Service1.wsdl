@@ -200,6 +200,12 @@
   <wsdl:message name="IService1_GetAttractionId_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAttractionIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetProductsByDestination_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsByDestination" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetProductsByDestination_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsByDestinationResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegisterUser" message="tns:IService1_RegisterUser_InputMessage" />
@@ -328,6 +334,10 @@
     <wsdl:operation name="GetAttractionId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAttractionId" message="tns:IService1_GetAttractionId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAttractionIdResponse" message="tns:IService1_GetAttractionId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsByDestination">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetProductsByDestination" message="tns:IService1_GetProductsByDestination_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetProductsByDestinationResponse" message="tns:IService1_GetProductsByDestination_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -613,6 +623,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAttractionId">
       <soap:operation soapAction="http://tempuri.org/IService1/GetAttractionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsByDestination">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetProductsByDestination" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

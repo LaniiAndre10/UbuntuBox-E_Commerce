@@ -13,21 +13,31 @@ namespace UbuntuBox_FE.End_User
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         protected void Page_Load(object sender, EventArgs e)
         {
+            int attractionId = int.Parse(Request.QueryString["Id"]);
+
             if (!IsPostBack)
             {
-                showProducts();
+
+                var products = client.GetProductsByDestination(attractionId);
+                rptProducts.DataSource = products;
+                rptProducts.DataBind();
+
             }
 
-            string attractionId = Request.QueryString["Id"];
-            Attraction selectedAttraction = client.GetAttractionId(attractionId);
+           
+            AttractionDetails selectedAttraction = client.GetAttractionId(attractionId);
 
             if (selectedAttraction != null)
             {
-                AttractionImage.ImageUrl = selectedAttraction.AttractionImageURL;
+                 
+                AttractionImage.ImageUrl = selectedAttraction.AttractionImageUrls;
                 lblAttractionName.Text = selectedAttraction.AttractionName;
+                lblAttractionNam.Text = selectedAttraction.AttractionName;
                 lblAttractionDes.Text = selectedAttraction.AttractionDescription;
+                
             }
 
+           
         }
 
         protected void tocart_Click(object sender, EventArgs e)
@@ -46,16 +56,6 @@ namespace UbuntuBox_FE.End_User
             {
                 Response.Write("Could not add product to cart");
             }
-        }
-
-        private void showProducts()
-        {
-            List<ProductWithImages> products = client.viewProducts().ToList();
-
-            var groupedProducts = products.GroupBy(p => p.BoxCategory).ToList();
-
-            rptCategories.DataSource = groupedProducts;
-            rptCategories.DataBind();   
         }
 
     }

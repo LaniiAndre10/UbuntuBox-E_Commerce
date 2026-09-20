@@ -68,7 +68,8 @@ namespace UbuntuBox_BE
 
         //Landing-Page - Population Management --> Populate Attractions from Database: @TLethabo. //
         [OperationContract]
-        public List<Attraction> getAttractionList();
+        public List<AttractionDetails> getAttractionList();
+
         //Admin - Customer Management --> Show A list of Customers using the platform: @LaniiAndre10.  //
         [OperationContract]
         public List<User> ReturnCustomers();
@@ -136,12 +137,16 @@ namespace UbuntuBox_BE
 
         //Product - Product Management --> Get the Id of a product: @TLethabo. //
         [OperationContract]
-        public Product GetProductId(string productID);
+        public ProductWithImages GetProductId(int productID);
 
 
         //Attraction - Population Management --> Get the Id of a product: @TLethabo. //
         [OperationContract]
-        public Attraction GetAttractionId(string attractionID);
+        public AttractionDetails GetAttractionId(int attractionID);
+
+        //Products - Product Management --> Get product associated with a certain attraction: @TLethabo. //
+        [OperationContract]
+        public List<ProductWithImages> GetProductsByDestination(int attractionID);
     }
 
     //Add a datacontract for Product + ProductImages to tackle the Socket/Communication Exception issue//
@@ -149,6 +154,7 @@ namespace UbuntuBox_BE
     public class ProductWithImages
     {
         [DataMember] public int ProductID { get; set; }
+        [DataMember] public int AttractionID { get; set; }
         [DataMember] public string ProductName { get; set; }
         [DataMember] public string ProductDescription { get; set; }
         [DataMember] public decimal ProductPrice { get; set; }
@@ -161,8 +167,18 @@ namespace UbuntuBox_BE
 
     }
 
-    //Add a datacontract for the orders, with product Name, Product ID, Price etc//
     [DataContract]
+    public class AttractionDetails
+    {
+        [DataMember] public int AttractionID { get; set; }
+        [DataMember] public string AttractionName { get; set; }
+        [DataMember] public string AttractionDescription { get; set; }
+        [DataMember] public string Province { get; set; }
+        [DataMember] public string AttractionImageUrls { get; set; }
+    }
+
+        //Add a datacontract for the orders, with product Name, Product ID, Price etc//
+        [DataContract]
     public class OrderDetails
     {
 

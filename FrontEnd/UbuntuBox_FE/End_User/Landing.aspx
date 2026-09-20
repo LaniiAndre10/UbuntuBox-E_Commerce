@@ -61,7 +61,7 @@
         <a href="Shop.aspx?Id=<%# Eval("AttractionID") %>">
         <div class="attraction-card">
              <!--<img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">-->
-             <img src= <%# Eval("AttractionImageURL") %> alt="Table Mountain">
+             <img src= <%# Eval("AttractionImageUrls") %> alt="Table Mountain">
             <div class="attr-info">
                 <div>
                     <!--<h3>Table Mountain</h3>-->

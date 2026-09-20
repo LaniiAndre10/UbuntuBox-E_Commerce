@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace User_Management
+namespace End_USer
 {
 
 

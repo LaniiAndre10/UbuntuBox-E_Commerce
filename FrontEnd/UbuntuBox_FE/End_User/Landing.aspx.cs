@@ -21,7 +21,7 @@ namespace UbuntuBox_FE.End_User
 
         private void showAttractions()
         {
-            List<Attraction> allattractions = client.getAttractionList().ToList();
+            List<AttractionDetails> allattractions = client.getAttractionList().ToList();
             rptAttractions.DataSource = allattractions;
             rptAttractions.DataBind();
         }

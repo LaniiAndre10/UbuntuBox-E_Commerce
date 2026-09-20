@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="standardbox.aspx.cs" Inherits="User_Management.standardbox" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="standardbox.aspx.cs" Inherits="UbuntuBox_FE.End_User.standardbox" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
         <link rel="stylesheet" href="Boxes.css" runat="server" />
@@ -22,27 +22,30 @@
 
         <div class="product-image-section">
             <div class="main-image">
-                <!--<img src="Logo/Mock Standard.png" alt="Standard Box">-->
-                <asp:Image ID="ProductImage" runat="server" />
+                <img src="Logo/Mock Standard.png" alt="Standard Box">
+                <!--<asp:Image ID="ProductImage" runat="server" />-->
             </div>
         </div>
 
         <div class="product-info-section">
             <!--<h1 class="product-title">Standard Box</h1>-->
-             <!--<h1 class="product-title"><%# ("BoxCategory") %></h1>-->
+            <h1 class="product-title">
+                <asp:Label ID="lblCategory" runat="server" Text="Label"></asp:Label>
+            </h1>
+            
             <div class="rating">
                 <span class="stars">★★★★★</span>
                 <span class="count">(89 reviews)</span>
             </div>
 
-            <!--<div class="price">R 320.00</div>-->
-            <!--<div class="price">R <%# ("ProductPrice") %></div>-->
+            <div class="price">R 
+                <asp:Label ID="lblPrice" runat="server" Text="Label"></asp:Label>
+            </div>
+            
             <p class="description">
-                A thoughtfully curated collection of South African-inspired gifts. Perfect for anyone who wants to experience a taste of our culture, this box brings together meaningful, beautiful, and locally inspired treasures.
+               <asp:Label ID="lblDes" runat="server" Text="Label"></asp:Label>
             </p>
-            <!--<p class="description">
-                <!--<%# ("Description") %>-->
-            </p>-->
+            
 
             <div class="product-tags">
                 <span class="tag"><i class="fa-solid fa-hand-holding-heart"></i> Handmade</span>
@@ -52,6 +55,7 @@
 
             <div class="product-actions">
                 <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                
                 <button class="btn-wishlist"><i class="fa-regular fa-heart"></i> Add to Wishlist</button>
             </div>
         </div>
