@@ -103,6 +103,7 @@ CREATE TABLE Cart(
     CartID INT Identity(1,1) UNIQUE NOT NULL,
     UserID INT NOT NULL,
     CartDate DATETIME DEFAULT GETDATE(),
+	TotalPrice DECIMAL(10,2) NOT NULL DEFAULT 0.00,
     PRIMARY KEY(CartID),
     FOREIGN KEY(UserID) REFERENCES [User](UserID)
 );
@@ -122,25 +123,16 @@ CREATE TABLE CartItem(
 	
 );
 
-<<<<<<< HEAD
---Order Management 
-
--- ORDER TABLE
-CREATE TABLE [Order](
-=======
 --Order Management: Added Required Data Tables --
 
 CREATE TABLE [Order](
 
->>>>>>> AdminCodingbranch
     OrderID INT IDENTITY(1,1) UNIQUE NOT NULL,
     UserID INT NOT NULL,
     OrderStatus VARCHAR(30) not null DEFAULT 'Pending',
     OrderDate DATETIME NOT NULL DEFAULT GETDATE(),
     PRIMARY KEY(OrderID),
     FOREIGN KEY(UserID)references[User](UserID)
-<<<<<<< HEAD
-=======
 
 );
 
@@ -153,7 +145,7 @@ CREATE TABLE OrderReturn(
     ReturnReason TEXT NOT NULL,
 
     PRIMARY KEY(ReturnID),
-    FOREIGN KEY(OrderID) REFERENCES [Order](OrderID),
+    FOREIGN KEY(OrderID) REFERENCES [Order](OrderID)
 
 );
 
@@ -167,15 +159,11 @@ CREATE TABLE OrderCancellation(
     PRIMARY KEY(OrderCancellationID),
     FOREIGN KEY(OrderID) REFERENCES [Order](OrderID)
 
->>>>>>> AdminCodingbranch
+
 );
 
 --Order Items
 CREATE TABLE OrderItems(
-<<<<<<< HEAD
-=======
-
->>>>>>> AdminCodingbranch
     ItemID INT identity(1,1) UNIQUE NOT NULL,
     OrderID INT NOT NULL,
     ProductID INT NOT NULL,
@@ -186,10 +174,6 @@ CREATE TABLE OrderItems(
     FOREIGN KEY(OrderID) references [Order](OrderID),
     FOREIGN KEY(ProductID)references [Product](ProductID),
     CHECK(Quantity > 0)
-<<<<<<< HEAD
-);
-
-=======
 	
 );
 
@@ -212,5 +196,3 @@ CREATE TABLE CustomerStats (
 	
 );
 
-
->>>>>>> AdminCodingbranch

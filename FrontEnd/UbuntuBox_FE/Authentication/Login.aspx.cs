@@ -33,7 +33,6 @@ namespace UbuntuBox_FE.Authentication
                 int UserID = client.GetUserId(emailbox.Value);
                 Session["UserID"] = UserID;
                 Response.Redirect("../End_User/Landing.aspx");
-                
 
             }
             else

@@ -109,7 +109,6 @@ namespace UbuntuBox_BE
         [OperationContract]
         public CustomerStat SearchCustomerDetails(String CustomerID);
 
-
         //Shop-Page - Product Management --> Populate Products from Database: @TLethabo. //
         [OperationContract]
         public List<Product> getProducts();

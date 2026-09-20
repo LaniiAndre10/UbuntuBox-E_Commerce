@@ -20,10 +20,10 @@
         <elementListCompartment Id="c505288d-8577-4a2d-878a-8bcf050ab745" absoluteBounds="13.39, 1.7100000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="857ef192-8e17-4209-9d95-ec8ae6cece86" absoluteBounds="3.75, 0.5, 2, 1.5785953776041666">
+    <classShape Id="857ef192-8e17-4209-9d95-ec8ae6cece86" absoluteBounds="4.625, 2, 2, 1.5785953776041666">
       <DataClassMoniker Name="/dbaUbuntuBoxDataContext/Order" />
       <nestedChildShapes>
-        <elementListCompartment Id="73db5d54-f143-495e-a87a-d37c93a01d77" absoluteBounds="3.765, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="73db5d54-f143-495e-a87a-d37c93a01d77" absoluteBounds="4.6400000000000006, 2.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(4.6875 : 3.5); (4.6875 : 2.07859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
@@ -52,7 +52,7 @@
         <elementListCompartment Id="aa8029fc-06a6-4f84-bd49-c75fc313fe82" absoluteBounds="0.51500000000000057, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.75 : 1.28929768880208); (2.5 : 1.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.625 : 2.55979420698117); (1.46875 : 2.55979420698117); (1.46875 : 2.27089680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Order/Order_OrderReturn" />
       <nodes>
         <classShapeMoniker Id="857ef192-8e17-4209-9d95-ec8ae6cece86" />
@@ -73,6 +73,15 @@
       </nodes>
     </associationConnector>
     <classShape Id="afd79a09-9c38-4ddd-a50b-ca51722b964b" absoluteBounds="0.625, 6.75, 2, 2.5401025390625">
+    <associationConnector edgePoints="[(6.75 : 2.14464934440104); (6.640625 : 2.14464934440104); (6.640625 : 3.59422037760417); (4.515625 : 3.59422037760417); (4.515625 : 2.984375); (2.031252 : 2.984375); (2.031252 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Product/Product_OrderItem" />
+      <nodes>
+        <classShapeMoniker Id="e43bd665-61d3-4429-ad8c-7f17838f003b" />
+        <classShapeMoniker Id="16df4da6-1aec-4d24-a9ae-eb0f041256fe" />
+      </nodes>
+    </associationConnector>
+	</classShape>
+    <classShape Id="afd79a09-9c38-4ddd-a50b-ca51722b964b" absoluteBounds="10.125, 4.375, 2, 2.5401025390625">
       <DataClassMoniker Name="/dbaUbuntuBoxDataContext/CustomerStat" />
       <nestedChildShapes>
         <elementListCompartment Id="ad912473-d3de-49e8-a682-2e09a8175e29" absoluteBounds="0.64000000000000057, 7.2100000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />

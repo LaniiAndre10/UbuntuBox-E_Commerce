@@ -151,6 +151,8 @@ namespace UbuntuBox_BE
 			}
 		}
 		
+		
+		
 		public System.Data.Linq.Table<Attraction> Attractions
 		{
 			get

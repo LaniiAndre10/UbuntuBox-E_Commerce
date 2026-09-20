@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+    transition: 0.25s;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -335,4 +340,8 @@ ul {
 .attr-info i {
     color: #d9a441;
     font-size: 20px;
+}
+
+.footer-section ul li.contact {
+    color: white !important;
 }
