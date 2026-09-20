@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="Landing.aspx.cs" Inherits="UbuntuBox_FE.End_User.Landing" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -59,10 +60,10 @@
 
          <asp:Repeater ID="rptAttractions" runat="server">
           <ItemTemplate>
-        <a href="#">
+        <a href="Shop.aspx?Id=<%# Eval("AttractionID") %>">
         <div class="attraction-card">
-            <!--<img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">-->
-            <img src= <%# Eval("AttractionImageURL") %> alt="Table Mountain">
+             <!--<img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Table Mountain">-->
+             <img src= <%# Eval("AttractionImageUrls") %> alt="Table Mountain">
             <div class="attr-info">
                 <div>
                     <h3><%# Eval("AttractionName") %></h3>
@@ -74,7 +75,6 @@
         </a>
           </ItemTemplate>
       </asp:Repeater>
-
 
     </div>
 

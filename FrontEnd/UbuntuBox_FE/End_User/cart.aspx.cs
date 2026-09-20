@@ -13,5 +13,15 @@ namespace User_Management
         {
 
         }
+
+        protected void DecreaseQuantity_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void IncreaseQuantity_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

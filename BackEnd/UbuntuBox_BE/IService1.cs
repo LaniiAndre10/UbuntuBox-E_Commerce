@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -66,10 +66,9 @@ namespace UbuntuBox_BE
         [OperationContract]
         public bool RemoveAdmin(String WorkEmail);
 
-
         //Landing-Page - Population Management --> Populate Attractions from Database: @TLethabo. //
         [OperationContract]
-        public List<Attraction> getAttractionList();
+        public List<AttractionDetails> getAttractionList();
 
         //Admin - Customer Management --> Show A list of Customers using the platform: @LaniiAndre10.  //
         [OperationContract]
@@ -110,8 +109,43 @@ namespace UbuntuBox_BE
         [OperationContract]
         public CustomerStat SearchCustomerDetails(String CustomerID);
 
+        //Shop-Page - Product Management --> Populate Products from Database: @TLethabo. //
+        [OperationContract]
+        public List<Product> getProducts();
+
+        //Cart - Population Management --> Add product to cart: @TLethabo. //
+        [OperationContract]
+        public bool AddToCart(int userID, int productID);
+
+        //Cart - Population Management --> Remove product from cart: @TLethabo. //
+        [OperationContract]
+        public bool RemoveFromCart(int userID, int productID);
+
+        //Cart - Population Management --> Increase the quantity of a product in cart,
+        //provided that its available: @TLethabo. //
+        [OperationContract]
+        public bool IncreaseQuantity(int userID, int productID);
+
+        //Cart - Population Management --> Decrease the quantity of ap product in cart: @TLethabo. //
+        [OperationContract]
+        public bool DecreaseQuantity(int userID, int productID);
+
+        //Cart - Population Management --> Decrease the quantity of ap product in cart: @TLethabo. //
+        [OperationContract]
+        public int GetUserId(string email);
+
+        //Product - Product Management --> Get the Id of a product: @TLethabo. //
+        [OperationContract]
+        public ProductWithImages GetProductId(int productID);
 
 
+        //Attraction - Population Management --> Get the Id of a product: @TLethabo. //
+        [OperationContract]
+        public AttractionDetails GetAttractionId(int attractionID);
+
+        //Products - Product Management --> Get product associated with a certain attraction: @TLethabo. //
+        [OperationContract]
+        public List<ProductWithImages> GetProductsByDestination(int attractionID);
     }
 
     //Add a datacontract for Product + ProductImages to tackle the Socket/Communication Exception issue//
@@ -119,6 +153,7 @@ namespace UbuntuBox_BE
     public class ProductWithImages
     {
         [DataMember] public int ProductID { get; set; }
+        [DataMember] public int AttractionID { get; set; }
         [DataMember] public string ProductName { get; set; }
         [DataMember] public string ProductDescription { get; set; }
         [DataMember] public decimal ProductPrice { get; set; }
@@ -131,8 +166,18 @@ namespace UbuntuBox_BE
 
     }
 
-    //Add a datacontract for the orders, with product Name, Product ID, Price etc//
     [DataContract]
+    public class AttractionDetails
+    {
+        [DataMember] public int AttractionID { get; set; }
+        [DataMember] public string AttractionName { get; set; }
+        [DataMember] public string AttractionDescription { get; set; }
+        [DataMember] public string Province { get; set; }
+        [DataMember] public string AttractionImageUrls { get; set; }
+    }
+
+        //Add a datacontract for the orders, with product Name, Product ID, Price etc//
+        [DataContract]
     public class OrderDetails
     {
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -95,10 +95,10 @@ namespace UbuntuBox_BE
         {
             //The goal is to return active products: @laniiAndre10//
 
-            UbuntuBox_BE.Admin.ProductManagement productManagement = new Admin.ProductManagement();
-            List<ProductWithImages> products = new List<ProductWithImages>();
+            Admin.ProductManagement productManagement = new Admin.ProductManagement();
+            List<ProductWithImages> products = productManagement.ViewActiveProducts();
 
-            products = productManagement.ViewActiveProducts();
+            //products = productManagement.ViewActiveProducts();
 
             return products;
             
@@ -233,12 +233,11 @@ namespace UbuntuBox_BE
             
         }
 
-
-        public List<Attraction> getAttractionList()
+        public List<AttractionDetails> getAttractionList()
         {
             LandingPage.PopulationManagement populationManagement = new LandingPage.PopulationManagement();
 
-            List<Attraction> attractions = populationManagement.getAttractionList();
+            List<AttractionDetails> attractions = populationManagement.getAttractionList();
 
             return attractions;
 
@@ -368,6 +367,92 @@ namespace UbuntuBox_BE
 
             return CustomerData;
 
+        }
+
+        public bool AddToCart(int userID, int productID)
+        {
+            CartPage.CartManagement cartManagement = new CartPage.CartManagement();
+
+            bool result = cartManagement.AddToCart(userID, productID);
+
+            return result;
+        }
+
+        public bool RemoveFromCart(int userID, int productID)
+        {
+            CartPage.CartManagement cartManagement = new CartPage.CartManagement();
+
+            bool Isremoved = cartManagement.RemoveFromCart(userID, productID);
+
+            return Isremoved;
+        }
+
+        public bool IncreaseQuantity(int userID, int productID)
+        {
+            CartPage.CartManagement cartManagement = new CartPage.CartManagement();
+
+            bool QIncreased = cartManagement.IncreaseQuantity(userID, productID);
+
+            return QIncreased;
+        }
+
+        public bool DecreaseQuantity(int userID, int productID)
+        {
+            CartPage.CartManagement cartManagement = new CartPage.CartManagement();
+
+            bool QDecreased = cartManagement.DecreaseQuantity(userID, productID);
+
+            return QDecreased;
+        }
+
+        public List<Product> getProducts()
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+
+            List<Product> products = productManagement.getProducts();
+
+            return products;
+        }
+
+        public int GetUserId(string email)
+        {
+            var userId = (from u in dbaUbuntuBox.Users
+                          where u.Email == email
+                          select u).SingleOrDefault();
+
+            if (userId == null)
+            {
+                return 0;
+            }
+
+            return userId.UserID;
+        }
+
+        public ProductWithImages GetProductId(int productID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+
+            ProductWithImages products = productManagement.GetProductId(productID);
+
+            return products;
+        }
+
+        public AttractionDetails GetAttractionId(int attractionID)
+        {
+            LandingPage.PopulationManagement populationManagement = new LandingPage.PopulationManagement();
+
+            var attraction = populationManagement.GetAttractionId(attractionID);
+
+            return attraction;
+        }
+
+        public List<ProductWithImages> GetProductsByDestination(int attractionID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+
+            List<ProductWithImages> products = productManagement.GetProductsByDestination(attractionID);
+
+            return products;
         }
     }
 }
