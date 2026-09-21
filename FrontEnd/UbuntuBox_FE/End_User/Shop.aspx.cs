@@ -49,6 +49,8 @@ namespace UbuntuBox_FE.End_User
 
             if (IsAdded)
             {
+                UserMaster master = (UserMaster)this.Master;
+                master.showCartCount();
                 Response.Write("Product added to cart");
             }
             else 

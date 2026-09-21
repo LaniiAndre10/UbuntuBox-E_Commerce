@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace End_USer
+namespace UbuntuBox_FE.End_User
 {
 
 
@@ -15,39 +15,12 @@ namespace End_USer
     {
 
         /// <summary>
-        /// trash control.
+        /// rptCartItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton trash;
-
-        /// <summary>
-        /// DecreaseQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DecreaseQuantity;
-
-        /// <summary>
-        /// IncreaseQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button IncreaseQuantity;
-
-        /// <summary>
-        /// removeP control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton removeP;
+        protected global::System.Web.UI.WebControls.Repeater rptCartItems;
     }
 }

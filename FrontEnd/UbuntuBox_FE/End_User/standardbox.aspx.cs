@@ -21,7 +21,35 @@ namespace UbuntuBox_FE.End_User
                 lblCategory.Text = selectedProduct.BoxCategory;
                 lblPrice.Text = selectedProduct.ProductPrice.ToString();
                 lblDes.Text = selectedProduct.ProductDescription;
+                tocart.CommandArgument = selectedProduct.ProductID.ToString();
+                towishlist.CommandArgument = selectedProduct.ProductID.ToString();
+                
             }
+
+        }
+
+        protected void tocart_Click(object sender, EventArgs e)
+        {
+            System.Web.UI.WebControls.Button btnclick = (System.Web.UI.WebControls.Button)sender;
+            int productID = Convert.ToInt32(btnclick.CommandArgument);
+
+            int userID = Convert.ToInt32(Session["UserID"]);
+            bool IsAdded = client.AddToCart(userID, productID);
+
+            if (IsAdded)
+            {
+                UserMaster master = (UserMaster)this.Master;
+                master.showCartCount();
+                Response.Write("Product added to cart");
+            }
+            else
+            {
+                Response.Write("Could not add product to cart");
+            }
+        }
+
+        protected void towishlist_Click(object sender, EventArgs e)
+        {
         }
     }
 }
