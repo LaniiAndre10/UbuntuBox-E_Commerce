@@ -69,13 +69,26 @@ namespace UbuntuBox_FE.Admin.ProductFolder
                 ProductPrice = 0;
             }
 
+            int AttractionID;
+
+            if (!string.IsNullOrEmpty(lblAttractionNum.Value) && int.TryParse(lblAttractionNum.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out AttractionID))
+            {
+
+                //the price is valid
+            }
+            else
+            {
+
+                AttractionID = 0;
+            }
+
             var ProductDescription = lblProductDescription.Value;
 
             bool isadded = false;
 
             try
             {
-                isadded = service1Client.AddProduct(ProductImgUrl1, ProductImgUrl2, ProductName,category, ProductDescription, ProductPrice);
+                isadded = service1Client.AddProduct(ProductImgUrl1, ProductImgUrl2, AttractionID, ProductName, ProductPrice, ProductDescription, category);
 
                 if (isadded)
                 {

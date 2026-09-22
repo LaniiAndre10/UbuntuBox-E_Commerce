@@ -19,7 +19,7 @@ namespace UbuntuBox_BE.Admin
             Ubuntuboxdatabase.DeferredLoadingEnabled = false;
 
             var ProductWithImages = from u in Ubuntuboxdatabase.Products
-                                    where u.ProductStatus.Equals(0)
+                                    where u.ProductStatus.Equals(1)
                                     select new ProductWithImages
                                     {
 
@@ -39,11 +39,12 @@ namespace UbuntuBox_BE.Admin
         }
 
         //1.2: Add Product Function: Tested.//
-        public bool AddProduct(string imglink, string imglink2, string ProductName,
+        public bool AddProduct(string imglink, string imglink2,int AttractionID, string ProductName,
                         double ProductPrice, string ProductDescription, string Category)
         {
             try
             {
+
                 // 1. Add the product
                 var NewProduct = new Product
                 {
@@ -52,6 +53,7 @@ namespace UbuntuBox_BE.Admin
                     BoxCategory = Category,
                     Description = ProductDescription,
                     ProductStatus = true,
+                    AttractionID = AttractionID,
                     ProductDateAdded = DateTime.Now
                 };
 
@@ -68,6 +70,7 @@ namespace UbuntuBox_BE.Admin
                 {
                     ProductID = NewProduct.ProductID,
                     ImageURL = string.IsNullOrEmpty(imglink) ? defaultImage : imglink
+
                 });
 
                 // Second image
@@ -81,11 +84,13 @@ namespace UbuntuBox_BE.Admin
                 Ubuntuboxdatabase.SubmitChanges();
 
                 return true;
+
             }
             catch
             {
                 return false;
             }
+            
 
         }
 

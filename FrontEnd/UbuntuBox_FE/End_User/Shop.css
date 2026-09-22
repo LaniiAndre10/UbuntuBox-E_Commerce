@@ -213,90 +213,93 @@ td {
 
 
 .attractions-section {
-    padding: 0 50px 80px 50px;
+    padding: 0 50px 80px 50px !important;
 }
 
 .attraction-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
-    margin-top: 20px;
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 30px !important;
+    margin-top: 20px !important;
 }
 
 .attraction-card {
-    background-image: linear-gradient( to bottom, rgba(151, 209, 151, 0.692), rgba(195, 226, 160, 0.39), rgba(211, 171, 155, 0.664) );
-    border: 1px solid rgba(255, 255, 255, 0.2); /* light border */
-    border-radius: 10px;
-    backdrop-filter: blur(10px); /*glass blur */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.322), 0 6px 25px rgba(0, 37, 0, 0.493);
-    overflow: hidden;
-    transition: 0.25s;
-    width: 300px;
+    background-image: linear-gradient( to bottom, #faeec0,#fff6db, #f8d2b8 ) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 10px !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.322), 0 6px 25px rgba(0, 37, 0, 0.493) !important;
+    overflow: hidden !important;
+    transition: 0.25s !important;
+    width: 300px !important;
 }
 
     .attraction-card:hover {
-        background-image: linear-gradient( to bottom, rgba(151, 209, 151, 0.692), rgba(195, 226, 160, 0.39), rgba(211, 171, 155, 0.664) );
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 10px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.274), 0 6px 25px rgba(100, 99, 0, 0.63);
-        overflow: hidden;
-        width: 305px;
-        transition: 0.25s;
+        background-image: linear-gradient( to bottom, #faeec0,#fff9e6, #f9e5c0 ) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 10px !important;
+        backdrop-filter: blur(10px) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.274), 0 6px 25px rgba(100, 99, 0, 0.63) !important;
+        overflow: hidden !important;
+        width: 305px !important;
+        transition: 0.25s !important;
     }
 
+.attraction-card:hover {
+    border-color: #d9a441;
+}
 
-
-    .attraction-card:hover {
-        border-color: #d9a441;
-    }
-
-    .attraction-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        display: block;
-    }
+.attraction-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
 
 .attr-info {
     padding: 10px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
 }
 
-    .attr-info h5 {
-        margin: 0;
-        font-style: italic;
-        font-size: 16px;
-        color: rgb(0, 19, 0);
-    }
+.attr-info h5 {
+    margin: 0;
+    font-style: italic;
+    font-size: 16px;
+    color: rgb(0, 19, 0);
+}
 
-    .attr-info p {
-        margin: 0;
-        font-size: 12px;
-        font-weight: bold;
-        color: rgb(0, 19, 0);
-        gap: 5px;
-    }
+.attr-info p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(0, 19, 0);
+    gap: 5px;
+}
 
-    .attr-info i {
-        color: #d9a441;
-        font-size: 20px;
-    }
+.attr-info i {
+    color: #d9a441;
+    font-size: 20px;
+}
 
 .price {
     font-size: 20px;
     font-weight: bold;
     color: rgb(0, 19, 0);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 10px;
     margin-top: 10px;
 }
 
-    .price span {
-        font-size: 14px;
-        font-weight: normal;
-        color: rgba(255, 255, 255, 0.35);
-        text-decoration: line-through;
-        margin-left: 10px;
-    }
+.price span {
+    font-size: 14px;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.35);
+    text-decoration: line-through;
+    margin-left: 10px;
+}
 
 
 .features-preview {
@@ -304,14 +307,14 @@ td {
     margin-bottom: 18px;
 }
 
-    .features-preview li {
-        padding: 4px 0;
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.6);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
+.features-preview li {
+    padding: 4px 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
 .same {
     margin-left: 30px;
@@ -332,19 +335,19 @@ button {
 }
 
 
-    button:hover {
-        background-color: #f6d77a;
-        color: #0a1a15;
-        border: 2px solid #0a1a15;
-        padding: 9px 19px;
-        border-radius: 7px;
-        font-size: 14px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
+button:hover {
+    background-color: #f6d77a;
+    color: #0a1a15;
+    border: 2px solid #0a1a15;
+    padding: 9px 19px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 .Seebutton {
     background-color: #003803;
@@ -361,19 +364,49 @@ button {
 }
 
 
-    .Seebutton:hover {
-        background-color: #3a923e;
-        color: #ffffff;
-        border: 2px solid #ffffff;
-        padding: 9px 19px;
-        border-radius: 7px;
-        font-size: 14px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
+.Seebutton:hover {
+    background-color: #3a923e;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 9px 19px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tocart {
+    background-color: #d9a441;
+    color: #0a1a15;
+    border: none;
+    padding: 14px 21px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.tocart:hover {
+    background-color: #f6d77a;
+    color: #0a1a15;
+    border: 2px solid #0a1a15;
+    padding: 11px 19px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 
 .shopbuttons {
     display: flex;

@@ -2654,10 +2654,10 @@ namespace UbuntuBox_FE.ServiceReference1 {
         System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> viewProductsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
-        bool AddProduct(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice);
+        bool AddProduct(string imglink, string imglink2, int AttractionID, string ProductName, double ProductPrice, string productDescription, string ProductCategory);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
-        System.Threading.Tasks.Task<bool> AddProductAsync(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice);
+        System.Threading.Tasks.Task<bool> AddProductAsync(string imglink, string imglink2, int AttractionID, string ProductName, double ProductPrice, string productDescription, string ProductCategory);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProduct", ReplyAction="http://tempuri.org/IService1/UpdateProductResponse")]
         bool UpdateProduct(string ProductID, string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice);
@@ -2833,6 +2833,42 @@ namespace UbuntuBox_FE.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductsByDestination", ReplyAction="http://tempuri.org/IService1/GetProductsByDestinationResponse")]
         System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> GetProductsByDestinationAsync(int attractionID);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetStandardProducts", ReplyAction="http://tempuri.org/IService1/GetStandardProductsResponse")]
+        UbuntuBox_FE.ServiceReference1.ProductWithImages[] GetStandardProducts(int attractionID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetStandardProducts", ReplyAction="http://tempuri.org/IService1/GetStandardProductsResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> GetStandardProductsAsync(int attractionID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetPremiumProducts", ReplyAction="http://tempuri.org/IService1/GetPremiumProductsResponse")]
+        UbuntuBox_FE.ServiceReference1.ProductWithImages[] GetPremiumProducts(int attractionID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetPremiumProducts", ReplyAction="http://tempuri.org/IService1/GetPremiumProductsResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> GetPremiumProductsAsync(int attractionID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetMysteryProducts", ReplyAction="http://tempuri.org/IService1/GetMysteryProductsResponse")]
+        UbuntuBox_FE.ServiceReference1.ProductWithImages[] GetMysteryProducts(int attractionID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetMysteryProducts", ReplyAction="http://tempuri.org/IService1/GetMysteryProductsResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> GetMysteryProductsAsync(int attractionID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SortProductsbyAscPrice", ReplyAction="http://tempuri.org/IService1/SortProductsbyAscPriceResponse")]
+        UbuntuBox_FE.ServiceReference1.ProductWithImages[] SortProductsbyAscPrice(int attractionID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SortProductsbyAscPrice", ReplyAction="http://tempuri.org/IService1/SortProductsbyAscPriceResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> SortProductsbyAscPriceAsync(int attractionID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SortProductsbyDescPrice", ReplyAction="http://tempuri.org/IService1/SortProductsbyDescPriceResponse")]
+        UbuntuBox_FE.ServiceReference1.ProductWithImages[] SortProductsbyDescPrice(int attractionID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SortProductsbyDescPrice", ReplyAction="http://tempuri.org/IService1/SortProductsbyDescPriceResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> SortProductsbyDescPriceAsync(int attractionID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SortProductsbyLatestDate", ReplyAction="http://tempuri.org/IService1/SortProductsbyLatestDateResponse")]
+        UbuntuBox_FE.ServiceReference1.ProductWithImages[] SortProductsbyLatestDate(int attractionID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SortProductsbyLatestDate", ReplyAction="http://tempuri.org/IService1/SortProductsbyLatestDateResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> SortProductsbyLatestDateAsync(int attractionID);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCartItems", ReplyAction="http://tempuri.org/IService1/GetCartItemsResponse")]
         UbuntuBox_FE.ServiceReference1.CartProductDetails[] GetCartItems(int UserId);
         
@@ -2903,12 +2939,12 @@ namespace UbuntuBox_FE.ServiceReference1 {
             return base.Channel.viewProductsAsync();
         }
         
-        public bool AddProduct(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice) {
-            return base.Channel.AddProduct(imglink, imglink2, ProductName, ProductCategory, productDescription, ProductPrice);
+        public bool AddProduct(string imglink, string imglink2, int AttractionID, string ProductName, double ProductPrice, string productDescription, string ProductCategory) {
+            return base.Channel.AddProduct(imglink, imglink2, AttractionID, ProductName, ProductPrice, productDescription, ProductCategory);
         }
         
-        public System.Threading.Tasks.Task<bool> AddProductAsync(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice) {
-            return base.Channel.AddProductAsync(imglink, imglink2, ProductName, ProductCategory, productDescription, ProductPrice);
+        public System.Threading.Tasks.Task<bool> AddProductAsync(string imglink, string imglink2, int AttractionID, string ProductName, double ProductPrice, string productDescription, string ProductCategory) {
+            return base.Channel.AddProductAsync(imglink, imglink2, AttractionID, ProductName, ProductPrice, productDescription, ProductCategory);
         }
         
         public bool UpdateProduct(string ProductID, string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice) {
@@ -3141,6 +3177,54 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> GetProductsByDestinationAsync(int attractionID) {
             return base.Channel.GetProductsByDestinationAsync(attractionID);
+        }
+        
+        public UbuntuBox_FE.ServiceReference1.ProductWithImages[] GetStandardProducts(int attractionID) {
+            return base.Channel.GetStandardProducts(attractionID);
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> GetStandardProductsAsync(int attractionID) {
+            return base.Channel.GetStandardProductsAsync(attractionID);
+        }
+        
+        public UbuntuBox_FE.ServiceReference1.ProductWithImages[] GetPremiumProducts(int attractionID) {
+            return base.Channel.GetPremiumProducts(attractionID);
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> GetPremiumProductsAsync(int attractionID) {
+            return base.Channel.GetPremiumProductsAsync(attractionID);
+        }
+        
+        public UbuntuBox_FE.ServiceReference1.ProductWithImages[] GetMysteryProducts(int attractionID) {
+            return base.Channel.GetMysteryProducts(attractionID);
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> GetMysteryProductsAsync(int attractionID) {
+            return base.Channel.GetMysteryProductsAsync(attractionID);
+        }
+        
+        public UbuntuBox_FE.ServiceReference1.ProductWithImages[] SortProductsbyAscPrice(int attractionID) {
+            return base.Channel.SortProductsbyAscPrice(attractionID);
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> SortProductsbyAscPriceAsync(int attractionID) {
+            return base.Channel.SortProductsbyAscPriceAsync(attractionID);
+        }
+        
+        public UbuntuBox_FE.ServiceReference1.ProductWithImages[] SortProductsbyDescPrice(int attractionID) {
+            return base.Channel.SortProductsbyDescPrice(attractionID);
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> SortProductsbyDescPriceAsync(int attractionID) {
+            return base.Channel.SortProductsbyDescPriceAsync(attractionID);
+        }
+        
+        public UbuntuBox_FE.ServiceReference1.ProductWithImages[] SortProductsbyLatestDate(int attractionID) {
+            return base.Channel.SortProductsbyLatestDate(attractionID);
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> SortProductsbyLatestDateAsync(int attractionID) {
+            return base.Channel.SortProductsbyLatestDateAsync(attractionID);
         }
         
         public UbuntuBox_FE.ServiceReference1.CartProductDetails[] GetCartItems(int UserId) {

@@ -42,6 +42,24 @@ namespace UbuntuBox_FE.End_User
         protected global::System.Web.UI.WebControls.Label lblAttractionDes;
 
         /// <summary>
+        /// BoxFilter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect BoxFilter;
+
+        /// <summary>
+        /// ProductSorter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect ProductSorter;
+
+        /// <summary>
         /// rptProducts control.
         /// </summary>
         /// <remarks>
