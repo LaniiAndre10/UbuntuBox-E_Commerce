@@ -28,7 +28,7 @@ namespace UbuntuBox_BE
 
         //Admin - Product Management --> Add Product: @laniiAndre10. //
         [OperationContract]
-        public bool AddProduct(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice);
+        public bool AddProduct(string imglink, string imglink2, int AttractionID, string ProductName, double ProductPrice, string productDescription, String ProductCategory);
 
         //Admin - Product Management --> Update Product: @LaniiAndre10. //
         [OperationContract]

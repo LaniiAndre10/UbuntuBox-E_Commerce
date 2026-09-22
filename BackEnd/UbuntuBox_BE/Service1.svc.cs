@@ -104,14 +104,14 @@ namespace UbuntuBox_BE
             
         }
 
-        public bool AddProduct(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice)
+        public bool AddProduct(string imglink, string imglink2, int AttractionID, string ProductName, double ProductPrice, string productDescription, String ProductCategory)
         {
             //The goal is to add a new product into the system: @LaniiAndre10//
             bool isSuccess = false;
 
             UbuntuBox_BE.Admin.ProductManagement productManagement = new Admin.ProductManagement();
 
-            isSuccess = productManagement.AddProduct(imglink, imglink2, ProductName, ProductPrice, productDescription, ProductCategory);
+            isSuccess = productManagement.AddProduct(imglink, imglink2,AttractionID, ProductName, ProductPrice, productDescription, ProductCategory);
 
             return isSuccess;
 
