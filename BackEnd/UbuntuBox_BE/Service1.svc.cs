@@ -472,5 +472,39 @@ namespace UbuntuBox_BE
 
             return count;
         }
+
+        public bool AddToWishlist(int userID, int productID)
+        {
+            UbuntuBox_BE.WishlistPage.WishlistManagement wishlistManagement =
+   new UbuntuBox_BE.WishlistPage.WishlistManagement();
+
+            bool result = wishlistManagement.AddToWishlist(userID, productID);
+
+            //Return whether the product was successfully added. //
+            return result;
+        }
+
+        public bool RemoveFromWishlist(int userID, int productID)
+        {
+            UbuntuBox_BE.WishlistPage.WishlistManagement wishlistManagement =
+   new UbuntuBox_BE.WishlistPage.WishlistManagement();
+
+            bool result = wishlistManagement.RemoveFromWishlist(userID, productID);
+
+            //Return whether the product was successfully removed. //
+            return result;
+        }
+
+        public List<ProductWithImages> GetWishlist(int userID)
+        {
+            UbuntuBox_BE.WishlistPage.WishlistManagement wishlistManagement =
+   new UbuntuBox_BE.WishlistPage.WishlistManagement();
+            //Retrieve the products belonging to the user's wishlist. //
+
+            List<ProductWithImages> products = wishlistManagement.GetWishlist(userID);
+
+            //Return the wishlist products to the frontend. //
+            return products;
+        }
     }
 }

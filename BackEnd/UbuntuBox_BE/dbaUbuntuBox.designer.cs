@@ -63,6 +63,9 @@ namespace UbuntuBox_BE
     partial void InsertCartItem(CartItem instance);
     partial void UpdateCartItem(CartItem instance);
     partial void DeleteCartItem(CartItem instance);
+    partial void InsertWishlist(Wishlist instance);
+    partial void UpdateWishlist(Wishlist instance);
+    partial void DeleteWishlist(Wishlist instance);
     #endregion
 		
 		public dbaUbuntuBoxDataContext() : 
@@ -180,6 +183,14 @@ namespace UbuntuBox_BE
 			get
 			{
 				return this.GetTable<CartItem>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Wishlist> Wishlists
+		{
+			get
+			{
+				return this.GetTable<Wishlist>();
 			}
 		}
 	}
@@ -365,6 +376,8 @@ namespace UbuntuBox_BE
 		
 		private EntitySet<Cart> _Carts;
 		
+		private EntitySet<Wishlist> _Wishlists;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -394,6 +407,7 @@ namespace UbuntuBox_BE
 			this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
 			this._CustomerStats = new EntitySet<CustomerStat>(new Action<CustomerStat>(this.attach_CustomerStats), new Action<CustomerStat>(this.detach_CustomerStats));
 			this._Carts = new EntitySet<Cart>(new Action<Cart>(this.attach_Carts), new Action<Cart>(this.detach_Carts));
+			this._Wishlists = new EntitySet<Wishlist>(new Action<Wishlist>(this.attach_Wishlists), new Action<Wishlist>(this.detach_Wishlists));
 			OnCreated();
 		}
 		
@@ -616,6 +630,19 @@ namespace UbuntuBox_BE
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Wishlist", Storage="_Wishlists", ThisKey="UserID", OtherKey="UserID")]
+		public EntitySet<Wishlist> Wishlists
+		{
+			get
+			{
+				return this._Wishlists;
+			}
+			set
+			{
+				this._Wishlists.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -667,6 +694,18 @@ namespace UbuntuBox_BE
 		}
 		
 		private void detach_Carts(Cart entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_Wishlists(Wishlist entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Wishlists(Wishlist entity)
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
@@ -2012,6 +2051,8 @@ namespace UbuntuBox_BE
 		
 		private EntitySet<CartItem> _CartItems;
 		
+		private EntitySet<Wishlist> _Wishlists;
+		
 		private EntityRef<Attraction> _Attraction;
 		
     #region Extensibility Method Definitions
@@ -2040,6 +2081,7 @@ namespace UbuntuBox_BE
 		{
 			this._ProductImages = new EntitySet<ProductImage>(new Action<ProductImage>(this.attach_ProductImages), new Action<ProductImage>(this.detach_ProductImages));
 			this._CartItems = new EntitySet<CartItem>(new Action<CartItem>(this.attach_CartItems), new Action<CartItem>(this.detach_CartItems));
+			this._Wishlists = new EntitySet<Wishlist>(new Action<Wishlist>(this.attach_Wishlists), new Action<Wishlist>(this.detach_Wishlists));
 			this._Attraction = default(EntityRef<Attraction>);
 			OnCreated();
 		}
@@ -2234,6 +2276,19 @@ namespace UbuntuBox_BE
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Wishlist", Storage="_Wishlists", ThisKey="ProductID", OtherKey="ProductID")]
+		public EntitySet<Wishlist> Wishlists
+		{
+			get
+			{
+				return this._Wishlists;
+			}
+			set
+			{
+				this._Wishlists.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Attraction_Product", Storage="_Attraction", ThisKey="AttractionID", OtherKey="AttractionID", IsForeignKey=true)]
 		public Attraction Attraction
 		{
@@ -2307,6 +2362,18 @@ namespace UbuntuBox_BE
 		}
 		
 		private void detach_CartItems(CartItem entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = null;
+		}
+		
+		private void attach_Wishlists(Wishlist entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = this;
+		}
+		
+		private void detach_Wishlists(Wishlist entity)
 		{
 			this.SendPropertyChanging();
 			entity.Product = null;
@@ -2731,6 +2798,198 @@ namespace UbuntuBox_BE
 						this._ProductID = default(int);
 					}
 					this.SendPropertyChanged("Product");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Wishlist")]
+	public partial class Wishlist : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _WishlistID;
+		
+		private int _UserID;
+		
+		private int _ProductID;
+		
+		private EntityRef<Product> _Product;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnWishlistIDChanging(int value);
+    partial void OnWishlistIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnProductIDChanging(int value);
+    partial void OnProductIDChanged();
+    #endregion
+		
+		public Wishlist()
+		{
+			this._Product = default(EntityRef<Product>);
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WishlistID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int WishlistID
+		{
+			get
+			{
+				return this._WishlistID;
+			}
+			set
+			{
+				if ((this._WishlistID != value))
+				{
+					this.OnWishlistIDChanging(value);
+					this.SendPropertyChanging();
+					this._WishlistID = value;
+					this.SendPropertyChanged("WishlistID");
+					this.OnWishlistIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int NOT NULL")]
+		public int ProductID
+		{
+			get
+			{
+				return this._ProductID;
+			}
+			set
+			{
+				if ((this._ProductID != value))
+				{
+					if (this._Product.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnProductIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProductID = value;
+					this.SendPropertyChanged("ProductID");
+					this.OnProductIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Wishlist", Storage="_Product", ThisKey="ProductID", OtherKey="ProductID", IsForeignKey=true)]
+		public Product Product
+		{
+			get
+			{
+				return this._Product.Entity;
+			}
+			set
+			{
+				Product previousValue = this._Product.Entity;
+				if (((previousValue != value) 
+							|| (this._Product.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Product.Entity = null;
+						previousValue.Wishlists.Remove(this);
+					}
+					this._Product.Entity = value;
+					if ((value != null))
+					{
+						value.Wishlists.Add(this);
+						this._ProductID = value.ProductID;
+					}
+					else
+					{
+						this._ProductID = default(int);
+					}
+					this.SendPropertyChanged("Product");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Wishlist", Storage="_User", ThisKey="UserID", OtherKey="UserID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Wishlists.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Wishlists.Add(this);
+						this._UserID = value.UserID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
 				}
 			}
 		}

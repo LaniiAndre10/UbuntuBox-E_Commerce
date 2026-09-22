@@ -154,6 +154,19 @@ namespace UbuntuBox_BE
         //CartItems - Cart Management -->counts the number of products in cart and returns the value: @TLethabo. //
         [OperationContract]
         public int GetCartItemCount(int UserID);
+
+        //Wishlist - Product Management --> Add a product to the user's wishlist: @Lethabohamese30. //
+        [OperationContract]
+        public bool AddToWishlist(int userID, int productID);
+
+        //Wishlist - Product Management --> Remove a product from the user's wishlist: @Lethabohamese30. //
+        [OperationContract]
+        public bool RemoveFromWishlist(int userID, int productID);
+
+        //Wishlist - Product Management --> Retrieve all products saved in the user's wishlist: @Lethabohamese30. //
+        [OperationContract]
+        public List<ProductWithImages> GetWishlist(int userID);
+
     }
 
     //Add a datacontract for Product + ProductImages to tackle the Socket/Communication Exception issue//
