@@ -73,6 +73,11 @@
                 <input id="lblProductName" runat="server" required="required" type="text" placeholder="Enter Product Name">
                 </div>
 
+                <div class="input">
+                <label for="ProductPrice">Attraction ID:</label>
+                <input id="lblAttractionNum" runat="server" required="required"  type="number" step="1" value="0" min="0" placeholder="Enter Product Attraction ID">
+                </div>
+
                 <h4>Product Category:</h4>
 
                 <div class="Category">
@@ -104,9 +109,10 @@
                 <input id="lblProductPrice" runat="server" required="required"  type="number" step="0.01" placeholder="Enter Product Price">
                 </div>
 
+
                 <div class="input">
                 <label for="ProductDescription">Product Description:</label>
-                <textarea name="ProductDescContainer" runat="server" required="required" id="lblProductDescription" placeholder="Enter Product Description Here." wrap="soft" rows="10" cols="10"></textarea>
+                <textarea name="ProductDescContainer" runat="server" required="required" id="lblProductDescription" placeholder="Enter Product Description Here." wrap="soft" rows="4" cols="4"></textarea>
                 </div>
 
                 <asp:Label CssClass="submitform" ID="lblSubmitstatus" runat="server" Text=""></asp:Label>

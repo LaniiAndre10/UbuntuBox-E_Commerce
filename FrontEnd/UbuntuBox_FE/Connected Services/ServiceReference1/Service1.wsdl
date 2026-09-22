@@ -206,6 +206,42 @@
   <wsdl:message name="IService1_GetProductsByDestination_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductsByDestinationResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetStandardProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStandardProducts" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetStandardProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStandardProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPremiumProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPremiumProducts" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPremiumProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPremiumProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMysteryProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMysteryProducts" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMysteryProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMysteryProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SortProductsbyAscPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:SortProductsbyAscPrice" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SortProductsbyAscPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SortProductsbyAscPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SortProductsbyDescPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:SortProductsbyDescPrice" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SortProductsbyDescPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SortProductsbyDescPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SortProductsbyLatestDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SortProductsbyLatestDate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SortProductsbyLatestDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SortProductsbyLatestDateResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetCartItems_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCartItems" />
   </wsdl:message>
@@ -350,6 +386,30 @@
     <wsdl:operation name="GetProductsByDestination">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetProductsByDestination" message="tns:IService1_GetProductsByDestination_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetProductsByDestinationResponse" message="tns:IService1_GetProductsByDestination_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStandardProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetStandardProducts" message="tns:IService1_GetStandardProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetStandardProductsResponse" message="tns:IService1_GetStandardProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPremiumProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetPremiumProducts" message="tns:IService1_GetPremiumProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetPremiumProductsResponse" message="tns:IService1_GetPremiumProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMysteryProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetMysteryProducts" message="tns:IService1_GetMysteryProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetMysteryProductsResponse" message="tns:IService1_GetMysteryProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SortProductsbyAscPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SortProductsbyAscPrice" message="tns:IService1_SortProductsbyAscPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SortProductsbyAscPriceResponse" message="tns:IService1_SortProductsbyAscPrice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SortProductsbyDescPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SortProductsbyDescPrice" message="tns:IService1_SortProductsbyDescPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SortProductsbyDescPriceResponse" message="tns:IService1_SortProductsbyDescPrice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SortProductsbyLatestDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SortProductsbyLatestDate" message="tns:IService1_SortProductsbyLatestDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SortProductsbyLatestDateResponse" message="tns:IService1_SortProductsbyLatestDate_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCartItems">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCartItems" message="tns:IService1_GetCartItems_InputMessage" />
@@ -652,6 +712,60 @@
     </wsdl:operation>
     <wsdl:operation name="GetProductsByDestination">
       <soap:operation soapAction="http://tempuri.org/IService1/GetProductsByDestination" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStandardProducts">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetStandardProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPremiumProducts">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetPremiumProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMysteryProducts">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetMysteryProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SortProductsbyAscPrice">
+      <soap:operation soapAction="http://tempuri.org/IService1/SortProductsbyAscPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SortProductsbyDescPrice">
+      <soap:operation soapAction="http://tempuri.org/IService1/SortProductsbyDescPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SortProductsbyLatestDate">
+      <soap:operation soapAction="http://tempuri.org/IService1/SortProductsbyLatestDate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

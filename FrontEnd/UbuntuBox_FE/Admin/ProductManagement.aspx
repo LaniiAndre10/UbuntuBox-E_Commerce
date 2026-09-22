@@ -70,7 +70,13 @@
             <ItemTemplate>
                 <div class="ProductRow">
 
-                    <div><img src='<%# Eval("ImageUrls[0]") %>' width="80" /></div>
+                    <div>
+                        <img src='<%# ((string[])Eval("ImageUrls")).Length > 0 
+                                      ? ((string[])Eval("ImageUrls"))[0] 
+                                      : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU04LdgC-OUYvOGFuUUlBBpmpXw87OobWRT1ggG49lWw&s=10" %>' 
+                             width="80" />
+                    </div>
+
                     <div><asp:Label ID="lblProductID" runat="server" Text=<%# Eval("ProductID") %>></asp:Label></div>
                     <div><asp:Label ID="lblProductName" runat="server" Text=<%# Eval("ProductName") %>></asp:Label></div>
                     <div><asp:Label ID="lblProductCategory" runat="server" Text=<%# Eval("BoxCategory") %>></asp:Label></div>

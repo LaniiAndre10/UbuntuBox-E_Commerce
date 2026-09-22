@@ -41,23 +41,27 @@
 <section class="categories">
 
     <div class="sort-options">
-        <p>Box Filter: <select>
-            <option>All Boxes</option>
-            <option>Standard Box</option>
-            <option>Premium Box</option>
-            <option>Mystery Box</option>
+        <p>Box Filter: <select id="BoxFilter" runat="server" onserverchange="BoxFilter_SelectedIndexChanged" onchange="this.form.submit();">
+            <option value="All">All Boxes</option>
+            <option value="Standard">Standard Box</option>
+            <option value="Premium">Premium Box</option>
+            <option value="Mystery">Mystery Box</option>
         </select></p>
     </div>
+
     
     <div class="sort-options">
-        <p>Sort By: <select>
-            <option>Price: Low to High</option>
-            <option>Price: High to Low</option>
-            <option>Top Rated</option>
-            <option>Newest Arrivals</option>
-        </select></p>
-        <i class="fa-solid fa-table-cells-large"></i>
-    </div>
+    <p>Sort By: 
+        <select id="ProductSorter" runat="server" 
+                onserverchange="ProductSort_SelectedIndexChanged" 
+                onchange="this.form.submit();">
+            <option value="PriceAsc">Price: Low to High</option>
+            <option value="PriceDesc">Price: High to Low</option>
+            <option value="DateDesc">Newest Arrivals</option>
+        </select>
+    </p>
+</div>
+
 
 </section>
 
@@ -65,11 +69,13 @@
     
     <!--<h2 class="section-title">Standard <span>Boxes</span></h2>-->
     <div class="attraction-grid">
+
         <asp:Repeater ID="rptProducts" runat="server">
+
             <ItemTemplate>
                 
                 <div class="attraction-card">
-                    <!-- Added a space between class and src to let the image render -->
+                    
                     <img class="image" src="Logo/Mock Standard.png" alt="Table Mountain" />
                      
                     <div class="attr-info">
@@ -85,7 +91,7 @@
                                 See Product
                             </a>
                             <!--<button> Add to Cart </button>-->
-                            <asp:Button ID="tocart" runat="server" Text="Add To Cart" CommandArgument='<%# Eval("ProductID") %>' OnClick="tocart_Click" />
+                            <asp:Button ID="tocart" CssClass="tocart" runat="server" Text="Add To Cart" CommandArgument='<%# Eval("ProductID") %>' OnClick="tocart_Click" />
                         </div>
                     </div>
                 </div>

@@ -51,10 +51,11 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="imglink" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="imglink2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AttractionID" type="xs:int" />
         <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="ProductCategory" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="productDescription" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="ProductPrice" type="xs:double" />
+        <xs:element minOccurs="0" name="productDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ProductCategory" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -473,6 +474,90 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetStandardProducts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="attractionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStandardProductsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/UbuntuBox_BE" minOccurs="0" name="GetStandardProductsResult" nillable="true" type="q18:ArrayOfProductWithImages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPremiumProducts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="attractionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPremiumProductsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/UbuntuBox_BE" minOccurs="0" name="GetPremiumProductsResult" nillable="true" type="q19:ArrayOfProductWithImages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMysteryProducts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="attractionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMysteryProductsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/UbuntuBox_BE" minOccurs="0" name="GetMysteryProductsResult" nillable="true" type="q20:ArrayOfProductWithImages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SortProductsbyAscPrice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="attractionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SortProductsbyAscPriceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/UbuntuBox_BE" minOccurs="0" name="SortProductsbyAscPriceResult" nillable="true" type="q21:ArrayOfProductWithImages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SortProductsbyDescPrice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="attractionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SortProductsbyDescPriceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/UbuntuBox_BE" minOccurs="0" name="SortProductsbyDescPriceResult" nillable="true" type="q22:ArrayOfProductWithImages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SortProductsbyLatestDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="attractionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SortProductsbyLatestDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/UbuntuBox_BE" minOccurs="0" name="SortProductsbyLatestDateResult" nillable="true" type="q23:ArrayOfProductWithImages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetCartItems">
     <xs:complexType>
       <xs:sequence>
@@ -483,7 +568,7 @@
   <xs:element name="GetCartItemsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/UbuntuBox_BE" minOccurs="0" name="GetCartItemsResult" nillable="true" type="q18:ArrayOfCartProductDetails" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/UbuntuBox_BE" minOccurs="0" name="GetCartItemsResult" nillable="true" type="q24:ArrayOfCartProductDetails" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

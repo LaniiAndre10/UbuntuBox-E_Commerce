@@ -36,8 +36,117 @@ namespace UbuntuBox_FE.End_User
                 
             }
 
-           
         }
+
+        protected void BoxFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Box Filtering: @LaniiAndre10.//
+
+            string selectedValue = BoxFilter.Value;
+            int attractionId = int.Parse(Request.QueryString["Id"]);
+
+            switch (selectedValue)
+            {
+                case "All":
+                    {
+
+                        //Set the data source to display all the items..//
+                        var Allproducts = client.GetProductsByDestination(attractionId);
+
+                        rptProducts.DataSource = Allproducts;
+
+                        break;
+
+                    }
+
+                case "Standard":
+                    {
+
+                        //Set the data source to display all the  Standard items..//
+                        var Standardproducts = client.GetStandardProducts(attractionId);
+
+                        rptProducts.DataSource = Standardproducts;
+
+                        break;
+
+                    }
+                case "Premium":
+                    {
+
+                        //Set the data source to display all the  Premium items..//
+                        var Premiumproducts = client.GetPremiumProducts(attractionId);
+
+                        rptProducts.DataSource = Premiumproducts;
+
+                        break;
+
+                    }
+                case "Mystery":
+                    {
+
+                        //Set the data source to display all the  Standard items..//
+                        var Mysteryproducts = client.GetMysteryProducts(attractionId);
+
+                        rptProducts.DataSource = Mysteryproducts;
+
+                        break;
+
+                    }
+            }
+
+            rptProducts.DataBind();
+        }
+
+
+        protected void ProductSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Product Sorting: @LaniiAndre10.//
+
+            string selectedValue = ProductSorter.Value;
+            int attractionId = int.Parse(Request.QueryString["Id"]);
+
+            switch (selectedValue)
+            {
+                case "PriceAsc":
+                    {
+
+                        //Set the data source to display all the items, by asc price..//
+                        var Cheapproducts = client.SortProductsbyAscPrice(attractionId);
+
+                        rptProducts.DataSource = Cheapproducts;
+
+                        break;
+
+                    }
+
+                case "PriceDesc":
+                    {
+
+                        //Set the data source to display all the items by Desc Price..//
+                        var Expensiveproducts = client.SortProductsbyDescPrice(attractionId);
+
+                        rptProducts.DataSource = Expensiveproducts;
+
+                        break;
+
+                    }
+                case "DateDesc":
+                    {
+
+                        //Set the data source to display all the items by latest added date..//
+                        var Latestproducts = client.SortProductsbyLatestDate(attractionId);
+
+                        rptProducts.DataSource = Latestproducts;
+
+                        break;
+
+                    }
+            }
+
+            rptProducts.DataBind();
+        }
+
+
 
         protected void tocart_Click(object sender, EventArgs e)
         {

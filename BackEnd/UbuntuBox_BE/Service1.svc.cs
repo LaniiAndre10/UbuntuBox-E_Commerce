@@ -104,14 +104,14 @@ namespace UbuntuBox_BE
             
         }
 
-        public bool AddProduct(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice)
+        public bool AddProduct(string imglink, string imglink2, int AttractionID, string ProductName, double ProductPrice, string productDescription, String ProductCategory)
         {
             //The goal is to add a new product into the system: @LaniiAndre10//
             bool isSuccess = false;
 
             UbuntuBox_BE.Admin.ProductManagement productManagement = new Admin.ProductManagement();
 
-            isSuccess = productManagement.AddProduct(imglink, imglink2, ProductName, ProductPrice, productDescription, ProductCategory);
+            isSuccess = productManagement.AddProduct(imglink, imglink2,AttractionID, ProductName, ProductPrice, productDescription, ProductCategory);
 
             return isSuccess;
 
@@ -455,6 +455,54 @@ namespace UbuntuBox_BE
             return products;
         }
 
+        //Product Management - Filter by Standard box: @LaniiAndre10.//
+        public List<ProductWithImages> GetStandardProducts(int attractionID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+            List<ProductWithImages> products = productManagement.GetStandardProducts(attractionID);
+            return products;
+        }
+
+        //Product Management - Filter by Premium box: @LaniiAndre10.//
+        public List<ProductWithImages> GetPremiumProducts(int attractionID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+            List<ProductWithImages> products = productManagement.GetPremiumProducts(attractionID);
+            return products;
+        }
+
+        //Product Management - Filter by Mystery box: @LaniiAndre10.//
+        public List<ProductWithImages> GetMysteryProducts(int attractionID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+            List<ProductWithImages> products = productManagement.GetMysteryProducts(attractionID);
+            return products;
+        }
+
+        //Product Management - Sort by Ascending Price: @LaniiAndre10.//
+        public List<ProductWithImages> SortProductsbyAscPrice(int attractionID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+            List<ProductWithImages> products = productManagement.SortProductsbyAscPrice(attractionID);
+            return products;
+        }
+
+        //Product Management - Sort by Descending Price: @LaniiAndre10.//
+        public List<ProductWithImages> SortProductsbyDescPrice(int attractionID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+            List<ProductWithImages> products = productManagement.SortProductsbyDescPrice(attractionID);
+            return products;
+        }
+
+        //Product Management - Sort by Latest Date: @LaniiAndre10.//
+        public List<ProductWithImages> SortProductsbyLatestDate(int attractionID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+            List<ProductWithImages> products = productManagement.SortProductsbyLatestDate(attractionID);
+            return products;
+        }
+
         public List<CartProductDetails> GetCartItems(int UserId)
         {
             CartPage.CartManagement CartManagement = new CartPage.CartManagement();
@@ -475,8 +523,7 @@ namespace UbuntuBox_BE
 
         public bool AddToWishlist(int userID, int productID)
         {
-            UbuntuBox_BE.WishlistPage.WishlistManagement wishlistManagement =
-   new UbuntuBox_BE.WishlistPage.WishlistManagement();
+            UbuntuBox_BE.WishlistPage.WishlistManagement wishlistManagement = new UbuntuBox_BE.WishlistPage.WishlistManagement();
 
             bool result = wishlistManagement.AddToWishlist(userID, productID);
 
@@ -486,8 +533,7 @@ namespace UbuntuBox_BE
 
         public bool RemoveFromWishlist(int userID, int productID)
         {
-            UbuntuBox_BE.WishlistPage.WishlistManagement wishlistManagement =
-   new UbuntuBox_BE.WishlistPage.WishlistManagement();
+            UbuntuBox_BE.WishlistPage.WishlistManagement wishlistManagement = new UbuntuBox_BE.WishlistPage.WishlistManagement();
 
             bool result = wishlistManagement.RemoveFromWishlist(userID, productID);
 
@@ -497,8 +543,7 @@ namespace UbuntuBox_BE
 
         public List<ProductWithImages> GetWishlist(int userID)
         {
-            UbuntuBox_BE.WishlistPage.WishlistManagement wishlistManagement =
-   new UbuntuBox_BE.WishlistPage.WishlistManagement();
+            UbuntuBox_BE.WishlistPage.WishlistManagement wishlistManagement= new UbuntuBox_BE.WishlistPage.WishlistManagement();
             //Retrieve the products belonging to the user's wishlist. //
 
             List<ProductWithImages> products = wishlistManagement.GetWishlist(userID);
