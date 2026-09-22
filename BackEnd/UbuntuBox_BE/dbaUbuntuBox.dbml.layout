@@ -92,50 +92,43 @@
         <classShapeMoniker Id="42856fa9-dbdc-473e-8b37-16c1aae61940" />
       </nodes>
     </associationConnector>
-    <classShape Id="723e59be-9f1a-4d15-9f4a-b2b392885bb4" absoluteBounds="10.75, 3, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/dbaUbuntuBoxDataContext/Cart" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e98b07e0-9016-4cad-8c3f-e758b3e7a222" absoluteBounds="10.765, 3.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(1.75 : 6.625); (1.75 : 3.46875); (10.75 : 3.46875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/dbaUbuntuBoxDataContext/User/User_Cart" />
-      <nodes>
-        <classShapeMoniker Id="8ec9161a-7a79-418d-8df5-b945f4e32098" />
-        <classShapeMoniker Id="723e59be-9f1a-4d15-9f4a-b2b392885bb4" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="6596bc6d-19c6-4fc1-94cf-a68654783f9c" absoluteBounds="11.25, 6.375, 2, 1.7708968098958331">
-      <DataClassMoniker Name="/dbaUbuntuBoxDataContext/CartItem" />
-      <nestedChildShapes>
-        <elementListCompartment Id="4748e978-ff95-425b-86ab-d010308b77c0" absoluteBounds="11.265, 6.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(12 : 4.57859537760417); (12 : 6.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Cart/Cart_CartItem" />
-      <nodes>
-        <classShapeMoniker Id="723e59be-9f1a-4d15-9f4a-b2b392885bb4" />
-        <classShapeMoniker Id="6596bc6d-19c6-4fc1-94cf-a68654783f9c" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(12.125 : 9.125); (12.125 : 8.14589680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Product/Product_CartItem" />
-      <nodes>
-        <classShapeMoniker Id="42856fa9-dbdc-473e-8b37-16c1aae61940" />
-        <classShapeMoniker Id="6596bc6d-19c6-4fc1-94cf-a68654783f9c" />
-      </nodes>
-    </associationConnector>
     <classShape Id="efccb4ab-41c3-4aa3-84f3-b13998c45aae" absoluteBounds="12.75, 12.375, 2, 1.3862939453125">
       <DataClassMoniker Name="/dbaUbuntuBoxDataContext/ProductImage" />
       <nestedChildShapes>
         <elementListCompartment Id="20317741-fba5-489e-b8a1-f46c12c57e65" absoluteBounds="12.765, 12.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11.8749995 : 11.4728011067708); (11.8749995 : 13.0681469726562); (12.75 : 13.0681469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.8749995 : 11.4728011067708); (11.8749995 : 13.0681469726562); (12.75 : 13.0681469726562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Product/Product_ProductImage" />
       <nodes>
         <classShapeMoniker Id="42856fa9-dbdc-473e-8b37-16c1aae61940" />
         <classShapeMoniker Id="efccb4ab-41c3-4aa3-84f3-b13998c45aae" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="adea7ab8-e8dd-4bd6-aa1d-bd36640fb9ee" absoluteBounds="9, 4.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbaUbuntuBoxDataContext/Cart" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db591eff-bd87-4ff1-b76b-4d389879ae7d" absoluteBounds="9.015, 4.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 6.625); (1.75 : 5.67234537760417); (4.41666666666667 : 5.67234537760417 : JumpStart); (4.58333333333333 : 5.67234537760417 : JumpEnd); (9 : 5.67234537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbaUbuntuBoxDataContext/User/User_Cart" />
+      <nodes>
+        <classShapeMoniker Id="8ec9161a-7a79-418d-8df5-b945f4e32098" />
+        <classShapeMoniker Id="adea7ab8-e8dd-4bd6-aa1d-bd36640fb9ee" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c75188b7-2cc8-405f-8e6b-6e079e951103" absoluteBounds="11.25, 6.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbaUbuntuBoxDataContext/CartItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d322be86-5420-4004-b497-b687b13c1749" absoluteBounds="11.265, 6.5850000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11 : 5.70359537760417); (11.25 : 6.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Cart/Cart_CartItem" />
+      <nodes>
+        <classShapeMoniker Id="adea7ab8-e8dd-4bd6-aa1d-bd36640fb9ee" />
+        <classShapeMoniker Id="c75188b7-2cc8-405f-8e6b-6e079e951103" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

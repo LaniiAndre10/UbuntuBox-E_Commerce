@@ -521,5 +521,52 @@ namespace UbuntuBox_BE
             return count;
         }
 
+        public bool CheckoutCart(int userID)
+        {
+            //@Laniiandre10: Checkout Cart//
+            
+            bool isOrdered = false;
+
+            try
+            {
+                Checkout.Checkout checkout = new Checkout.Checkout();
+
+                isOrdered = checkout.CheckoutCart(userID);
+
+                isOrdered = true;
+                return isOrdered;
+            }
+            catch
+            {
+                return isOrdered;
+            }
+
+        }
+
+        public string GenerateTillSlip(int orderID)
+        {
+            //@LaniiAndre10: Generate invoice//
+
+            Checkout.Checkout checkout = new Checkout.Checkout();
+
+            String Receipt = checkout.GenerateTillSlip(orderID);
+
+            return Receipt;
+
+        }
+
+
+        public Order GetLatestOrder(int userID)
+        {
+            dbaUbuntuBox.DeferredLoadingEnabled = false; //for socketException //
+            
+            //@LaniiAndre10: get the latest order in the order table, we will use it for the ID//
+            return dbaUbuntuBox.Orders
+                     .Where(o => o.UserID == userID)
+                     .OrderByDescending(o => o.OrderDate)
+                     .FirstOrDefault();
+
+        }
+
     }
 }

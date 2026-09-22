@@ -15,8 +15,7 @@
                 <span class="number">1</span> Delivery Details
             </div>
             <div class="delivery-info">
-                <div class="label">Send to</div>
-                <div class="name">Thabo Molefe</div>
+                <div class="label">Ship to</div>
                 <div class="address">
                     123 Ocean Drive, Plettenberg Bay<br />
                     Western Cape, 6600<br />
@@ -33,7 +32,7 @@
             <div class="payment-info">
                 <div class="label">Pay Now</div>
                 <div class="pay-now">Capitec Pay</div>
-                <div class="card-number">•••• 4242</div>
+                <div class="card-number">•••••••242</div>
             </div>
         </div>
 
@@ -41,53 +40,26 @@
             <div class="secure-label"><i class="fa-solid fa-lock"></i> Secure Payment with Capitec Pay</div>
             <div class="capitec-brand">
                 <span class="logo-box">CAPITEC</span>
-                <span class="card-number-display">•••• 4242</span>
+                <span class="card-number-display">•••••••242</span>
             </div>
             <div class="amount-row">
-                <span class="label">Amount to pay</span>
-                <span class="amount">R 3,695.00</span>
+                <span class="label">    🔔If Invoice Downloads, Your purchase was successful.✅</span>
             </div>
-            <button class="btn-approve"><i class="fa-solid fa-check-circle"></i> Approve Payment</button>
+
+            <div class="amount-row">
+                <span class="label">    🔔If not, Your purchase was Unsuccessful.❌</span>
+            </div>
+
+            <asp:Button ID="BtnApprove" CssClass="btn-approve" runat="server" Text="Approve Payment" OnClick="BtnApprove_Click" />
+
         </div>
 
     </div>
 
     <div class="order-summary">
-        <h2>Order Summary</h2>
+        <h2>Other Payment Methods.</h2>
 
-        <div class="order-item">
-            <span class="name">Garden Route Deluxe Box</span>
-            <span class="price">R 899.00</span>
-        </div>
-
-        <div class="order-item">
-            <span class="name">Zulu Heritage Box</span>
-            <span class="price">R 899.00</span>
-        </div>
-
-        <div class="order-item">
-            <span class="name">Mystery Box - Premium <span class="qty">(x2)</span></span>
-            <span class="price">R 1,998.00</span>
-        </div>
-
-        <hr class="summary-divider" />
-
-        <div class="summary-row">
-            <span class="label">Subtotal</span>
-            <span class="value">R 3,596.00</span>
-        </div>
-
-        <div class="summary-row">
-            <span class="label">Shipping</span>
-            <span class="value">R 99.00</span>
-        </div>
-
-        <div class="summary-row total">
-            <span>Total</span>
-            <span class="value">R 3,695.00</span>
-        </div>
-
-        <button class="btn-pay-now"><i class="fa-solid fa-credit-card"></i> Pay Now</button>
+        <button disabled="disabled" class="btn-pay-now"><i class="fa-solid fa-credit-card"></i>Other Payment Method.</button>
 
         <div class="payment-icons">
             <span class="label">We accept</span>
@@ -97,7 +69,7 @@
         </div>
 
         <div class="secure-checkout">
-            <i class="fa-solid fa-lock"></i> Secure Checkout — Your payment information is safe with us.
+            <i class="fa-solid fa-lock"></i> Secure Checkout: Your payment information is safe with us.
         </div>
     </div>
 

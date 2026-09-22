@@ -60,21 +60,7 @@
         </div>
     </div>
 
-    <div class="about-section">
-        <h2>About this box</h2>
-        <p>
-            The UbuntuBox Mystery Box is all about the thrill of discovery. Each box is carefully curated with authentic South African treasures from handcrafted jewelry to cultural keepsakes.<br />
-            You never know what you'll get, but we guarantee every item tells a story.
-        </p>
-    </div>
-
-    <div class="attraction-location">
-        <h2>Attraction Location</h2>
-        <div class="location-name"><i class="fa-solid fa-location-dot"></i> Drakensberg, South Africa</div>
-        <div class="map-placeholder">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Drakensberg_AMSL.jpg/1280px-Drakensberg_AMSL.jpg" alt="Drakensberg, South Africa" />
-        </div>
-    </div>
+    
 
     <div class="whats-inside">
         <h2>Description</h2>

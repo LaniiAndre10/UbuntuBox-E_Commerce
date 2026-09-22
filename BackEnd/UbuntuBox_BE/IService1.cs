@@ -179,6 +179,17 @@ namespace UbuntuBox_BE
         [OperationContract]
         public int GetCartItemCount(int UserID);
 
+        //Checkout - Push items from cart to order: @LaniiAndre10.//
+        [OperationContract]
+        public bool CheckoutCart(int userID);
+
+        //checkout - Generate a textfile as the order slip: @LaniiAndre10.//
+        [OperationContract]
+        public string GenerateTillSlip(int orderID);
+
+        //checkout -  A function to get the latest order.//
+        [OperationContract]
+        public Order GetLatestOrder(int userID);
     }
 
     //Add a datacontract for Product + ProductImages to tackle the Socket/Communication Exception issue//

@@ -254,6 +254,24 @@
   <wsdl:message name="IService1_GetCartItemCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCartItemCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_CheckoutCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckoutCart" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckoutCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckoutCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GenerateTillSlip_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateTillSlip" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GenerateTillSlip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateTillSlipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetLatestOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatestOrder" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetLatestOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLatestOrderResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegisterUser" message="tns:IService1_RegisterUser_InputMessage" />
@@ -418,6 +436,18 @@
     <wsdl:operation name="GetCartItemCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCartItemCount" message="tns:IService1_GetCartItemCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCartItemCountResponse" message="tns:IService1_GetCartItemCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckoutCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CheckoutCart" message="tns:IService1_CheckoutCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CheckoutCartResponse" message="tns:IService1_CheckoutCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateTillSlip">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GenerateTillSlip" message="tns:IService1_GenerateTillSlip_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GenerateTillSlipResponse" message="tns:IService1_GenerateTillSlip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetLatestOrder" message="tns:IService1_GetLatestOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetLatestOrderResponse" message="tns:IService1_GetLatestOrder_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -784,6 +814,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetCartItemCount">
       <soap:operation soapAction="http://tempuri.org/IService1/GetCartItemCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckoutCart">
+      <soap:operation soapAction="http://tempuri.org/IService1/CheckoutCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateTillSlip">
+      <soap:operation soapAction="http://tempuri.org/IService1/GenerateTillSlip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestOrder">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetLatestOrder" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

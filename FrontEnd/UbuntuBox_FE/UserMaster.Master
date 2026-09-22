@@ -43,9 +43,8 @@
                 <div class="searchbox">
                     <input type="search" placeholder="Search gifts..." style="background-color: rgba(255,255,255,0.1); border: none; padding: 10px; border-radius: 20px; color: white;">
                 </div>
-                 <a href="../Authentication/SignUp.aspx">SignUp</a>
-                 <a href="../Authentication/Login.aspx">Login</a>
-                <a href="#"><i class="fa-regular fa-user"></i> Account</a>
+
+                 <a href="../Authentication/Login.aspx"><i class="fa-regular fa-user"></i> Account</a>
                 <a href="cart.aspx" class="cart-box"><i class="fa-solid fa-cart-shopping"></i> Cart  <asp:Label ID="lblCartCount" CssClass="cart-count" runat="server" Text="0" ></asp:Label></a>
             </div>
         </div>
