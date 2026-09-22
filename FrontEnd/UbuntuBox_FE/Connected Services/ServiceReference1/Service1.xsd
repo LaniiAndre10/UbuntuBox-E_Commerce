@@ -51,10 +51,11 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="imglink" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="imglink2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AttractionID" type="xs:int" />
         <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="ProductCategory" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="productDescription" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="ProductPrice" type="xs:double" />
+        <xs:element minOccurs="0" name="productDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ProductCategory" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

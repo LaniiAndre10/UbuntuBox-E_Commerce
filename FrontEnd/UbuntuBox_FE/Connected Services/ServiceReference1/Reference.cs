@@ -2465,10 +2465,10 @@ namespace UbuntuBox_FE.ServiceReference1 {
         System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> viewProductsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
-        bool AddProduct(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice);
+        bool AddProduct(string imglink, string imglink2, int AttractionID, string ProductName, double ProductPrice, string productDescription, string ProductCategory);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
-        System.Threading.Tasks.Task<bool> AddProductAsync(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice);
+        System.Threading.Tasks.Task<bool> AddProductAsync(string imglink, string imglink2, int AttractionID, string ProductName, double ProductPrice, string productDescription, string ProductCategory);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProduct", ReplyAction="http://tempuri.org/IService1/UpdateProductResponse")]
         bool UpdateProduct(string ProductID, string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice);
@@ -2744,12 +2744,12 @@ namespace UbuntuBox_FE.ServiceReference1 {
             return base.Channel.viewProductsAsync();
         }
         
-        public bool AddProduct(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice) {
-            return base.Channel.AddProduct(imglink, imglink2, ProductName, ProductCategory, productDescription, ProductPrice);
+        public bool AddProduct(string imglink, string imglink2, int AttractionID, string ProductName, double ProductPrice, string productDescription, string ProductCategory) {
+            return base.Channel.AddProduct(imglink, imglink2, AttractionID, ProductName, ProductPrice, productDescription, ProductCategory);
         }
         
-        public System.Threading.Tasks.Task<bool> AddProductAsync(string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice) {
-            return base.Channel.AddProductAsync(imglink, imglink2, ProductName, ProductCategory, productDescription, ProductPrice);
+        public System.Threading.Tasks.Task<bool> AddProductAsync(string imglink, string imglink2, int AttractionID, string ProductName, double ProductPrice, string productDescription, string ProductCategory) {
+            return base.Channel.AddProductAsync(imglink, imglink2, AttractionID, ProductName, ProductPrice, productDescription, ProductCategory);
         }
         
         public bool UpdateProduct(string ProductID, string imglink, string imglink2, string ProductName, string ProductCategory, string productDescription, double ProductPrice) {
