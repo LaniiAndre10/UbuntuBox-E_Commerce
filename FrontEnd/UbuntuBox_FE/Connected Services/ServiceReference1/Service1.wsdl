@@ -206,7 +206,6 @@
   <wsdl:message name="IService1_GetProductsByDestination_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductsByDestinationResponse" />
   </wsdl:message>
-<<<<<<< HEAD
   <wsdl:message name="IService1_GetStandardProducts_InputMessage">
     <wsdl:part name="parameters" element="tns:GetStandardProducts" />
   </wsdl:message>
@@ -242,7 +241,7 @@
   </wsdl:message>
   <wsdl:message name="IService1_SortProductsbyLatestDate_OutputMessage">
     <wsdl:part name="parameters" element="tns:SortProductsbyLatestDateResponse" />
-=======
+  </wsdl:message>
   <wsdl:message name="IService1_GetCartItems_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCartItems" />
   </wsdl:message>
@@ -254,7 +253,6 @@
   </wsdl:message>
   <wsdl:message name="IService1_GetCartItemCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCartItemCountResponse" />
->>>>>>> e604389edd7623b8e37e1c890322aced1ab7c1f0
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="RegisterUser">
@@ -389,7 +387,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetProductsByDestination" message="tns:IService1_GetProductsByDestination_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetProductsByDestinationResponse" message="tns:IService1_GetProductsByDestination_OutputMessage" />
     </wsdl:operation>
-<<<<<<< HEAD
     <wsdl:operation name="GetStandardProducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetStandardProducts" message="tns:IService1_GetStandardProducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetStandardProductsResponse" message="tns:IService1_GetStandardProducts_OutputMessage" />
@@ -413,7 +410,7 @@
     <wsdl:operation name="SortProductsbyLatestDate">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SortProductsbyLatestDate" message="tns:IService1_SortProductsbyLatestDate_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/SortProductsbyLatestDateResponse" message="tns:IService1_SortProductsbyLatestDate_OutputMessage" />
-=======
+    </wsdl:operation>
     <wsdl:operation name="GetCartItems">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCartItems" message="tns:IService1_GetCartItems_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCartItemsResponse" message="tns:IService1_GetCartItems_OutputMessage" />
@@ -421,7 +418,6 @@
     <wsdl:operation name="GetCartItemCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCartItemCount" message="tns:IService1_GetCartItemCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCartItemCountResponse" message="tns:IService1_GetCartItemCount_OutputMessage" />
->>>>>>> e604389edd7623b8e37e1c890322aced1ab7c1f0
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -723,13 +719,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-<<<<<<< HEAD
     <wsdl:operation name="GetStandardProducts">
       <soap:operation soapAction="http://tempuri.org/IService1/GetStandardProducts" style="document" />
-=======
-    <wsdl:operation name="GetCartItems">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetCartItems" style="document" />
->>>>>>> e604389edd7623b8e37e1c890322aced1ab7c1f0
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -737,7 +728,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-<<<<<<< HEAD
     <wsdl:operation name="GetPremiumProducts">
       <soap:operation soapAction="http://tempuri.org/IService1/GetPremiumProducts" style="document" />
       <wsdl:input>
@@ -776,10 +766,24 @@
     </wsdl:operation>
     <wsdl:operation name="SortProductsbyLatestDate">
       <soap:operation soapAction="http://tempuri.org/IService1/SortProductsbyLatestDate" style="document" />
-=======
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCartItems">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetCartItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetCartItemCount">
       <soap:operation soapAction="http://tempuri.org/IService1/GetCartItemCount" style="document" />
->>>>>>> e604389edd7623b8e37e1c890322aced1ab7c1f0
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

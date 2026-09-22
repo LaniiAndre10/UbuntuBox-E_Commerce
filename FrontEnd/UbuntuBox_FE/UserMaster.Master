@@ -32,19 +32,11 @@
     
             <div class="nav-links">
                 <a href="Landing.aspx" class="active">Home</a>
-<<<<<<< HEAD
                 <a href="Landing.aspx#attractions">Shop</a>
                 <a href="Landing.aspx#about">About Us</a>
                 <a href="Landing.aspx#faqs">FAQs</a>
                 <a href="Landing.aspx#footer">Careers</a>
-=======
-                <a href="Landing.aspx">Shop</a>
-                <a href="index.html#attractions">Attractions</a>
-                <a href="index.html#about">About Us</a>
-                <a href="index.html#faqs">FAQs</a>
-                <a href="index.html#careers">Careers</a>
-                
->>>>>>> e604389edd7623b8e37e1c890322aced1ab7c1f0
+
             </div>
 
             <div class="header-icons">

@@ -2644,7 +2644,6 @@ namespace UbuntuBox_FE.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductsByDestination", ReplyAction="http://tempuri.org/IService1/GetProductsByDestinationResponse")]
         System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> GetProductsByDestinationAsync(int attractionID);
         
-<<<<<<< HEAD
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetStandardProducts", ReplyAction="http://tempuri.org/IService1/GetStandardProductsResponse")]
         UbuntuBox_FE.ServiceReference1.ProductWithImages[] GetStandardProducts(int attractionID);
         
@@ -2680,7 +2679,7 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SortProductsbyLatestDate", ReplyAction="http://tempuri.org/IService1/SortProductsbyLatestDateResponse")]
         System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> SortProductsbyLatestDateAsync(int attractionID);
-=======
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCartItems", ReplyAction="http://tempuri.org/IService1/GetCartItemsResponse")]
         UbuntuBox_FE.ServiceReference1.CartProductDetails[] GetCartItems(int UserId);
         
@@ -2692,7 +2691,6 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCartItemCount", ReplyAction="http://tempuri.org/IService1/GetCartItemCountResponse")]
         System.Threading.Tasks.Task<int> GetCartItemCountAsync(int UserID);
->>>>>>> e604389edd7623b8e37e1c890322aced1ab7c1f0
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2986,7 +2984,6 @@ namespace UbuntuBox_FE.ServiceReference1 {
             return base.Channel.GetProductsByDestinationAsync(attractionID);
         }
         
-<<<<<<< HEAD
         public UbuntuBox_FE.ServiceReference1.ProductWithImages[] GetStandardProducts(int attractionID) {
             return base.Channel.GetStandardProducts(attractionID);
         }
@@ -3033,7 +3030,8 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> SortProductsbyLatestDateAsync(int attractionID) {
             return base.Channel.SortProductsbyLatestDateAsync(attractionID);
-=======
+        }
+        
         public UbuntuBox_FE.ServiceReference1.CartProductDetails[] GetCartItems(int UserId) {
             return base.Channel.GetCartItems(UserId);
         }
@@ -3048,7 +3046,6 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         public System.Threading.Tasks.Task<int> GetCartItemCountAsync(int UserID) {
             return base.Channel.GetCartItemCountAsync(UserID);
->>>>>>> e604389edd7623b8e37e1c890322aced1ab7c1f0
         }
     }
 }
