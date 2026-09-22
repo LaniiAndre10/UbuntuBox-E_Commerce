@@ -14,7 +14,148 @@ namespace UbuntuBox_BE.ProductPage
                             select u).ToList();
 
             return products;
+
         }
+
+        //Product Management - Filter by Standard box: @LaniiAndre10.//
+        public List<ProductWithImages> GetStandardProducts(int attractionID)
+        {
+            dbaUbuntuBox.DeferredLoadingEnabled = false;
+
+            var Standardproducts = (from u in dbaUbuntuBox.Products
+                                    where u.BoxCategory.Equals("Standard")
+                                       && u.AttractionID == attractionID
+                                    select new ProductWithImages
+                                    {
+                                        ProductID = u.ProductID,
+                                        AttractionID = u.AttractionID,
+                                        ProductName = u.ProductName,
+                                        ProductDescription = u.Description,
+                                        ProductPrice = u.Price,
+                                        BoxCategory = u.BoxCategory,
+                                        ProductStatus = u.ProductStatus,
+                                        DateAdded = u.ProductDateAdded
+                                    }).ToList();
+
+            return Standardproducts;
+        }
+
+        //Product Management - Filter by Premium box: @LaniiAndre10.//
+        public List<ProductWithImages> GetPremiumProducts(int attractionID)
+        {
+            dbaUbuntuBox.DeferredLoadingEnabled = false;
+
+            var Premiumproducts = (from u in dbaUbuntuBox.Products
+                                   where u.BoxCategory.Equals("Premium")
+                                      && u.AttractionID == attractionID
+                                   select new ProductWithImages
+                                   {
+                                       ProductID = u.ProductID,
+                                       AttractionID = u.AttractionID,
+                                       ProductName = u.ProductName,
+                                       ProductDescription = u.Description,
+                                       ProductPrice = u.Price,
+                                       BoxCategory = u.BoxCategory,
+                                       ProductStatus = u.ProductStatus,
+                                       DateAdded = u.ProductDateAdded
+                                   }).ToList();
+
+            return Premiumproducts;
+        }
+
+        //Product Management - Filter by Mystery box: @LaniiAndre10.//
+        public List<ProductWithImages> GetMysteryProducts(int attractionID)
+        {
+            dbaUbuntuBox.DeferredLoadingEnabled = false;
+
+            var Mysteryproducts = (from u in dbaUbuntuBox.Products
+                                   where u.BoxCategory.Equals("Mystery")
+                                      && u.AttractionID == attractionID
+                                   select new ProductWithImages
+                                   {
+                                       ProductID = u.ProductID,
+                                       AttractionID = u.AttractionID,
+                                       ProductName = u.ProductName,
+                                       ProductDescription = u.Description,
+                                       ProductPrice = u.Price,
+                                       BoxCategory = u.BoxCategory,
+                                       ProductStatus = u.ProductStatus,
+                                       DateAdded = u.ProductDateAdded
+                                   }).ToList();
+
+            return Mysteryproducts;
+        }
+
+        //Product Management - Sort by Ascending Price: @LaniiAndre10.//
+        public List<ProductWithImages> SortProductsbyAscPrice(int attractionID)
+        {
+            dbaUbuntuBox.DeferredLoadingEnabled = false;
+
+            var products = (from u in dbaUbuntuBox.Products
+                            where u.AttractionID == attractionID
+                            orderby u.Price ascending
+                            select new ProductWithImages
+                            {
+                                ProductID = u.ProductID,
+                                AttractionID = u.AttractionID,
+                                ProductName = u.ProductName,
+                                ProductDescription = u.Description,
+                                ProductPrice = u.Price,
+                                BoxCategory = u.BoxCategory,
+                                ProductStatus = u.ProductStatus,
+                                DateAdded = u.ProductDateAdded
+                            }).ToList();
+
+            return products;
+        }
+
+        //Product Management - Sort by Descending Price: @LaniiAndre10.//
+        public List<ProductWithImages> SortProductsbyDescPrice(int attractionID)
+        {
+            dbaUbuntuBox.DeferredLoadingEnabled = false;
+
+            var products = (from u in dbaUbuntuBox.Products
+                            where u.AttractionID == attractionID
+                            orderby u.Price descending
+                            select new ProductWithImages
+                            {
+                                ProductID = u.ProductID,
+                                AttractionID = u.AttractionID,
+                                ProductName = u.ProductName,
+                                ProductDescription = u.Description,
+                                ProductPrice = u.Price,
+                                BoxCategory = u.BoxCategory,
+                                ProductStatus = u.ProductStatus,
+                                DateAdded = u.ProductDateAdded
+                            }).ToList();
+
+            return products;
+        }
+
+        //Product Management - Sort by Latest Date: @LaniiAndre10.//
+        public List<ProductWithImages> SortProductsbyLatestDate(int attractionID)
+        {
+            dbaUbuntuBox.DeferredLoadingEnabled = false;
+
+            var products = (from u in dbaUbuntuBox.Products
+                            where u.AttractionID == attractionID
+                            orderby u.ProductDateAdded descending
+                            select new ProductWithImages
+                            {
+                                ProductID = u.ProductID,
+                                AttractionID = u.AttractionID,
+                                ProductName = u.ProductName,
+                                ProductDescription = u.Description,
+                                ProductPrice = u.Price,
+                                BoxCategory = u.BoxCategory,
+                                ProductStatus = u.ProductStatus,
+                                DateAdded = u.ProductDateAdded
+                            }).ToList();
+
+            return products;
+        }
+
+
 
         public ProductWithImages GetProductId(int productID)
         {

@@ -41,23 +41,27 @@
 <section class="categories">
 
     <div class="sort-options">
-        <p>Box Filter: <select runat="server">
-            <option runat="server">All Boxes</option>
-            <option runat="server">Standard Box</option>
-            <option runat="server">Premium Box</option>
-            <option runat="server">Mystery Box</option>
+        <p>Box Filter: <select id="BoxFilter" runat="server" onserverchange="BoxFilter_SelectedIndexChanged" onchange="this.form.submit();">
+            <option value="All">All Boxes</option>
+            <option value="Standard">Standard Box</option>
+            <option value="Premium">Premium Box</option>
+            <option value="Mystery">Mystery Box</option>
         </select></p>
     </div>
+
     
     <div class="sort-options">
-        <p>Sort By: <select runat="server">
-            <option runat="server">Price: Low to High</option>
-            <option runat="server">Price: High to Low</option>
-            <option runat="server">Top Rated</option>
-            <option runat="server">Newest Arrivals</option>
-        </select></p>
-        <i class="fa-solid fa-table-cells-large"></i>
-    </div>
+    <p>Sort By: 
+        <select id="ProductSorter" runat="server" 
+                onserverchange="ProductSort_SelectedIndexChanged" 
+                onchange="this.form.submit();">
+            <option value="PriceAsc">Price: Low to High</option>
+            <option value="PriceDesc">Price: High to Low</option>
+            <option value="DateDesc">Newest Arrivals</option>
+        </select>
+    </p>
+</div>
+
 
 </section>
 

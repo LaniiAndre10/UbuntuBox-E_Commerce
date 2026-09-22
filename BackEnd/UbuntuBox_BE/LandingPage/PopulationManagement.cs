@@ -23,6 +23,7 @@ namespace UbuntuBox_BE.LandingPage
 
 
             return attractions.ToList();
+
         }
 
         public AttractionDetails GetAttractionId(int attractionID)

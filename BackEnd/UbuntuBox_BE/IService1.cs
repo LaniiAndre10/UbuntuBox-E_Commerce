@@ -146,6 +146,33 @@ namespace UbuntuBox_BE
         //Products - Product Management --> Get product associated with a certain attraction: @TLethabo. //
         [OperationContract]
         public List<ProductWithImages> GetProductsByDestination(int attractionID);
+
+        //Product Management - Filter by Standard box: @LaniiAndre10.//
+        [OperationContract]
+        public List<ProductWithImages> GetStandardProducts(int attractionID);
+
+        //Product Management - Filter by Premium box: @LaniiAndre10.//
+        [OperationContract]
+        public List<ProductWithImages> GetPremiumProducts(int attractionID);
+
+        //Product Management - Filter by Mystery Box: @LaniiAndre10.//
+        [OperationContract]
+        public List<ProductWithImages> GetMysteryProducts(int attractionID);
+
+        //Product Management - Sort by Ascending Price: @LaniiAndre10.//
+        [OperationContract]
+        public List<ProductWithImages> SortProductsbyAscPrice(int attractionID);
+
+        //Product Management - Sort by Descending Price: @LaniiAndre10.//
+        [OperationContract]
+        public List<ProductWithImages> SortProductsbyDescPrice(int attractionID);
+
+        //Product Management - Sort by the latest added Date: @LaniiAndre10.//
+        [OperationContract]
+        public List<ProductWithImages> SortProductsbyLatestDate(int attractionID);
+
+
+
     }
 
     //Add a datacontract for Product + ProductImages to tackle the Socket/Communication Exception issue//

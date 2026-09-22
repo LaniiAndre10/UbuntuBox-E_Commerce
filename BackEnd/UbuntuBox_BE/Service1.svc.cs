@@ -454,5 +454,54 @@ namespace UbuntuBox_BE
 
             return products;
         }
+
+        //Product Management - Filter by Standard box: @LaniiAndre10.//
+        public List<ProductWithImages> GetStandardProducts(int attractionID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+            List<ProductWithImages> products = productManagement.GetStandardProducts(attractionID);
+            return products;
+        }
+
+        //Product Management - Filter by Premium box: @LaniiAndre10.//
+        public List<ProductWithImages> GetPremiumProducts(int attractionID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+            List<ProductWithImages> products = productManagement.GetPremiumProducts(attractionID);
+            return products;
+        }
+
+        //Product Management - Filter by Mystery box: @LaniiAndre10.//
+        public List<ProductWithImages> GetMysteryProducts(int attractionID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+            List<ProductWithImages> products = productManagement.GetMysteryProducts(attractionID);
+            return products;
+        }
+
+        //Product Management - Sort by Ascending Price: @LaniiAndre10.//
+        public List<ProductWithImages> SortProductsbyAscPrice(int attractionID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+            List<ProductWithImages> products = productManagement.SortProductsbyAscPrice(attractionID);
+            return products;
+        }
+
+        //Product Management - Sort by Descending Price: @LaniiAndre10.//
+        public List<ProductWithImages> SortProductsbyDescPrice(int attractionID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+            List<ProductWithImages> products = productManagement.SortProductsbyDescPrice(attractionID);
+            return products;
+        }
+
+        //Product Management - Sort by Latest Date: @LaniiAndre10.//
+        public List<ProductWithImages> SortProductsbyLatestDate(int attractionID)
+        {
+            ProductPage.ProductManage productManagement = new ProductPage.ProductManage();
+            List<ProductWithImages> products = productManagement.SortProductsbyLatestDate(attractionID);
+            return products;
+        }
+
     }
 }
