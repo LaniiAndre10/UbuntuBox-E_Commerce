@@ -54,15 +54,15 @@ namespace UbuntuBox_BE
     partial void InsertAttraction(Attraction instance);
     partial void UpdateAttraction(Attraction instance);
     partial void DeleteAttraction(Attraction instance);
+    partial void InsertProduct(Product instance);
+    partial void UpdateProduct(Product instance);
+    partial void DeleteProduct(Product instance);
     partial void InsertCart(Cart instance);
     partial void UpdateCart(Cart instance);
     partial void DeleteCart(Cart instance);
     partial void InsertCartItem(CartItem instance);
     partial void UpdateCartItem(CartItem instance);
     partial void DeleteCartItem(CartItem instance);
-    partial void InsertProduct(Product instance);
-    partial void UpdateProduct(Product instance);
-    partial void DeleteProduct(Product instance);
     #endregion
 		
 		public dbaUbuntuBoxDataContext() : 
@@ -151,13 +151,19 @@ namespace UbuntuBox_BE
 			}
 		}
 		
-		
-		
 		public System.Data.Linq.Table<Attraction> Attractions
 		{
 			get
 			{
 				return this.GetTable<Attraction>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Product> Products
+		{
+			get
+			{
+				return this.GetTable<Product>();
 			}
 		}
 		
@@ -174,14 +180,6 @@ namespace UbuntuBox_BE
 			get
 			{
 				return this.GetTable<CartItem>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Product> Products
-		{
-			get
-			{
-				return this.GetTable<Product>();
 			}
 		}
 	}
@@ -282,7 +280,7 @@ namespace UbuntuBox_BE
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product1_ProductImage", Storage="_Product", ThisKey="ProductID", OtherKey="ProductID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_ProductImage", Storage="_Product", ThisKey="ProductID", OtherKey="ProductID", IsForeignKey=true)]
 		public Product Product
 		{
 			get
@@ -1942,7 +1940,7 @@ namespace UbuntuBox_BE
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Attraction_Product1", Storage="_Products", ThisKey="AttractionID", OtherKey="AttractionID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Attraction_Product", Storage="_Products", ThisKey="AttractionID", OtherKey="AttractionID")]
 		public EntitySet<Product> Products
 		{
 			get
@@ -1985,401 +1983,6 @@ namespace UbuntuBox_BE
 		{
 			this.SendPropertyChanging();
 			entity.Attraction = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cart")]
-	public partial class Cart : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _CartID;
-		
-		private int _UserID;
-		
-		private System.Nullable<System.DateTime> _CartDate;
-		
-		private EntitySet<CartItem> _CartItems;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCartIDChanging(int value);
-    partial void OnCartIDChanged();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnCartDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnCartDateChanged();
-    #endregion
-		
-		public Cart()
-		{
-			this._CartItems = new EntitySet<CartItem>(new Action<CartItem>(this.attach_CartItems), new Action<CartItem>(this.detach_CartItems));
-			this._User = default(EntityRef<User>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int CartID
-		{
-			get
-			{
-				return this._CartID;
-			}
-			set
-			{
-				if ((this._CartID != value))
-				{
-					this.OnCartIDChanging(value);
-					this.SendPropertyChanging();
-					this._CartID = value;
-					this.SendPropertyChanged("CartID");
-					this.OnCartIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CartDate
-		{
-			get
-			{
-				return this._CartDate;
-			}
-			set
-			{
-				if ((this._CartDate != value))
-				{
-					this.OnCartDateChanging(value);
-					this.SendPropertyChanging();
-					this._CartDate = value;
-					this.SendPropertyChanged("CartDate");
-					this.OnCartDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cart_CartItem", Storage="_CartItems", ThisKey="CartID", OtherKey="CartID")]
-		public EntitySet<CartItem> CartItems
-		{
-			get
-			{
-				return this._CartItems;
-			}
-			set
-			{
-				this._CartItems.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Cart", Storage="_User", ThisKey="UserID", OtherKey="UserID", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.Carts.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.Carts.Add(this);
-						this._UserID = value.UserID;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_CartItems(CartItem entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cart = this;
-		}
-		
-		private void detach_CartItems(CartItem entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cart = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CartItem")]
-	public partial class CartItem : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _CartItemID;
-		
-		private int _CartID;
-		
-		private int _ProductID;
-		
-		private int _Quantity;
-		
-		private EntityRef<Cart> _Cart;
-		
-		private EntityRef<Product> _Product;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCartItemIDChanging(int value);
-    partial void OnCartItemIDChanged();
-    partial void OnCartIDChanging(int value);
-    partial void OnCartIDChanged();
-    partial void OnProductIDChanging(int value);
-    partial void OnProductIDChanged();
-    partial void OnQuantityChanging(int value);
-    partial void OnQuantityChanged();
-    #endregion
-		
-		public CartItem()
-		{
-			this._Cart = default(EntityRef<Cart>);
-			this._Product = default(EntityRef<Product>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartItemID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int CartItemID
-		{
-			get
-			{
-				return this._CartItemID;
-			}
-			set
-			{
-				if ((this._CartItemID != value))
-				{
-					this.OnCartItemIDChanging(value);
-					this.SendPropertyChanging();
-					this._CartItemID = value;
-					this.SendPropertyChanged("CartItemID");
-					this.OnCartItemIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartID", DbType="Int NOT NULL")]
-		public int CartID
-		{
-			get
-			{
-				return this._CartID;
-			}
-			set
-			{
-				if ((this._CartID != value))
-				{
-					if (this._Cart.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCartIDChanging(value);
-					this.SendPropertyChanging();
-					this._CartID = value;
-					this.SendPropertyChanged("CartID");
-					this.OnCartIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int NOT NULL")]
-		public int ProductID
-		{
-			get
-			{
-				return this._ProductID;
-			}
-			set
-			{
-				if ((this._ProductID != value))
-				{
-					if (this._Product.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnProductIDChanging(value);
-					this.SendPropertyChanging();
-					this._ProductID = value;
-					this.SendPropertyChanged("ProductID");
-					this.OnProductIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
-		public int Quantity
-		{
-			get
-			{
-				return this._Quantity;
-			}
-			set
-			{
-				if ((this._Quantity != value))
-				{
-					this.OnQuantityChanging(value);
-					this.SendPropertyChanging();
-					this._Quantity = value;
-					this.SendPropertyChanged("Quantity");
-					this.OnQuantityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cart_CartItem", Storage="_Cart", ThisKey="CartID", OtherKey="CartID", IsForeignKey=true)]
-		public Cart Cart
-		{
-			get
-			{
-				return this._Cart.Entity;
-			}
-			set
-			{
-				Cart previousValue = this._Cart.Entity;
-				if (((previousValue != value) 
-							|| (this._Cart.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Cart.Entity = null;
-						previousValue.CartItems.Remove(this);
-					}
-					this._Cart.Entity = value;
-					if ((value != null))
-					{
-						value.CartItems.Add(this);
-						this._CartID = value.CartID;
-					}
-					else
-					{
-						this._CartID = default(int);
-					}
-					this.SendPropertyChanged("Cart");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product1_CartItem", Storage="_Product", ThisKey="ProductID", OtherKey="ProductID", IsForeignKey=true)]
-		public Product Product
-		{
-			get
-			{
-				return this._Product.Entity;
-			}
-			set
-			{
-				Product previousValue = this._Product.Entity;
-				if (((previousValue != value) 
-							|| (this._Product.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Product.Entity = null;
-						previousValue.CartItems.Remove(this);
-					}
-					this._Product.Entity = value;
-					if ((value != null))
-					{
-						value.CartItems.Add(this);
-						this._ProductID = value.ProductID;
-					}
-					else
-					{
-						this._ProductID = default(int);
-					}
-					this.SendPropertyChanged("Product");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -2605,7 +2208,7 @@ namespace UbuntuBox_BE
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product1_ProductImage", Storage="_ProductImages", ThisKey="ProductID", OtherKey="ProductID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_ProductImage", Storage="_ProductImages", ThisKey="ProductID", OtherKey="ProductID")]
 		public EntitySet<ProductImage> ProductImages
 		{
 			get
@@ -2618,7 +2221,7 @@ namespace UbuntuBox_BE
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product1_CartItem", Storage="_CartItems", ThisKey="ProductID", OtherKey="ProductID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_CartItem", Storage="_CartItems", ThisKey="ProductID", OtherKey="ProductID")]
 		public EntitySet<CartItem> CartItems
 		{
 			get
@@ -2631,7 +2234,7 @@ namespace UbuntuBox_BE
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Attraction_Product1", Storage="_Attraction", ThisKey="AttractionID", OtherKey="AttractionID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Attraction_Product", Storage="_Attraction", ThisKey="AttractionID", OtherKey="AttractionID", IsForeignKey=true)]
 		public Attraction Attraction
 		{
 			get
@@ -2707,6 +2310,449 @@ namespace UbuntuBox_BE
 		{
 			this.SendPropertyChanging();
 			entity.Product = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cart")]
+	public partial class Cart : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CartID;
+		
+		private int _UserID;
+		
+		private System.Nullable<System.DateTime> _CartDate;
+		
+		private decimal _TotalPrice;
+		
+		private EntitySet<CartItem> _CartItems;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCartIDChanging(int value);
+    partial void OnCartIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnCartDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCartDateChanged();
+    partial void OnTotalPriceChanging(decimal value);
+    partial void OnTotalPriceChanged();
+    #endregion
+		
+		public Cart()
+		{
+			this._CartItems = new EntitySet<CartItem>(new Action<CartItem>(this.attach_CartItems), new Action<CartItem>(this.detach_CartItems));
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CartID
+		{
+			get
+			{
+				return this._CartID;
+			}
+			set
+			{
+				if ((this._CartID != value))
+				{
+					this.OnCartIDChanging(value);
+					this.SendPropertyChanging();
+					this._CartID = value;
+					this.SendPropertyChanged("CartID");
+					this.OnCartIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CartDate
+		{
+			get
+			{
+				return this._CartDate;
+			}
+			set
+			{
+				if ((this._CartDate != value))
+				{
+					this.OnCartDateChanging(value);
+					this.SendPropertyChanging();
+					this._CartDate = value;
+					this.SendPropertyChanged("CartDate");
+					this.OnCartDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalPrice", DbType="Decimal(10,2) NOT NULL")]
+		public decimal TotalPrice
+		{
+			get
+			{
+				return this._TotalPrice;
+			}
+			set
+			{
+				if ((this._TotalPrice != value))
+				{
+					this.OnTotalPriceChanging(value);
+					this.SendPropertyChanging();
+					this._TotalPrice = value;
+					this.SendPropertyChanged("TotalPrice");
+					this.OnTotalPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cart_CartItem", Storage="_CartItems", ThisKey="CartID", OtherKey="CartID")]
+		public EntitySet<CartItem> CartItems
+		{
+			get
+			{
+				return this._CartItems;
+			}
+			set
+			{
+				this._CartItems.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Cart", Storage="_User", ThisKey="UserID", OtherKey="UserID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Carts.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Carts.Add(this);
+						this._UserID = value.UserID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CartItems(CartItem entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cart = this;
+		}
+		
+		private void detach_CartItems(CartItem entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cart = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CartItem")]
+	public partial class CartItem : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CartItemID;
+		
+		private int _CartID;
+		
+		private int _ProductID;
+		
+		private int _Quantity;
+		
+		private decimal _ItemPrice;
+		
+		private EntityRef<Cart> _Cart;
+		
+		private EntityRef<Product> _Product;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCartItemIDChanging(int value);
+    partial void OnCartItemIDChanged();
+    partial void OnCartIDChanging(int value);
+    partial void OnCartIDChanged();
+    partial void OnProductIDChanging(int value);
+    partial void OnProductIDChanged();
+    partial void OnQuantityChanging(int value);
+    partial void OnQuantityChanged();
+    partial void OnItemPriceChanging(decimal value);
+    partial void OnItemPriceChanged();
+    #endregion
+		
+		public CartItem()
+		{
+			this._Cart = default(EntityRef<Cart>);
+			this._Product = default(EntityRef<Product>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartItemID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CartItemID
+		{
+			get
+			{
+				return this._CartItemID;
+			}
+			set
+			{
+				if ((this._CartItemID != value))
+				{
+					this.OnCartItemIDChanging(value);
+					this.SendPropertyChanging();
+					this._CartItemID = value;
+					this.SendPropertyChanged("CartItemID");
+					this.OnCartItemIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CartID", DbType="Int NOT NULL")]
+		public int CartID
+		{
+			get
+			{
+				return this._CartID;
+			}
+			set
+			{
+				if ((this._CartID != value))
+				{
+					if (this._Cart.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCartIDChanging(value);
+					this.SendPropertyChanging();
+					this._CartID = value;
+					this.SendPropertyChanged("CartID");
+					this.OnCartIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int NOT NULL")]
+		public int ProductID
+		{
+			get
+			{
+				return this._ProductID;
+			}
+			set
+			{
+				if ((this._ProductID != value))
+				{
+					if (this._Product.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnProductIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProductID = value;
+					this.SendPropertyChanged("ProductID");
+					this.OnProductIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
+		public int Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPrice", DbType="Decimal(10,2) NOT NULL")]
+		public decimal ItemPrice
+		{
+			get
+			{
+				return this._ItemPrice;
+			}
+			set
+			{
+				if ((this._ItemPrice != value))
+				{
+					this.OnItemPriceChanging(value);
+					this.SendPropertyChanging();
+					this._ItemPrice = value;
+					this.SendPropertyChanged("ItemPrice");
+					this.OnItemPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cart_CartItem", Storage="_Cart", ThisKey="CartID", OtherKey="CartID", IsForeignKey=true)]
+		public Cart Cart
+		{
+			get
+			{
+				return this._Cart.Entity;
+			}
+			set
+			{
+				Cart previousValue = this._Cart.Entity;
+				if (((previousValue != value) 
+							|| (this._Cart.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Cart.Entity = null;
+						previousValue.CartItems.Remove(this);
+					}
+					this._Cart.Entity = value;
+					if ((value != null))
+					{
+						value.CartItems.Add(this);
+						this._CartID = value.CartID;
+					}
+					else
+					{
+						this._CartID = default(int);
+					}
+					this.SendPropertyChanged("Cart");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_CartItem", Storage="_Product", ThisKey="ProductID", OtherKey="ProductID", IsForeignKey=true)]
+		public Product Product
+		{
+			get
+			{
+				return this._Product.Entity;
+			}
+			set
+			{
+				Product previousValue = this._Product.Entity;
+				if (((previousValue != value) 
+							|| (this._Product.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Product.Entity = null;
+						previousValue.CartItems.Remove(this);
+					}
+					this._Product.Entity = value;
+					if ((value != null))
+					{
+						value.CartItems.Add(this);
+						this._ProductID = value.ProductID;
+					}
+					else
+					{
+						this._ProductID = default(int);
+					}
+					this.SendPropertyChanged("Product");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

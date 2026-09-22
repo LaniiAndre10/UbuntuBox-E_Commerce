@@ -117,7 +117,7 @@ namespace UbuntuBox_BE
         [OperationContract]
         public bool AddToCart(int userID, int productID);
 
-        //Cart - Population Management --> Remove product from cart: @TLethabo. //
+        //Cart - Cart Management --> Remove product from cart: @TLethabo. //
         [OperationContract]
         public bool RemoveFromCart(int userID, int productID);
 
@@ -146,7 +146,7 @@ namespace UbuntuBox_BE
         //Products - Product Management --> Get product associated with a certain attraction: @TLethabo. //
         [OperationContract]
         public List<ProductWithImages> GetProductsByDestination(int attractionID);
-
+		
         //Product Management - Filter by Standard box: @LaniiAndre10.//
         [OperationContract]
         public List<ProductWithImages> GetStandardProducts(int attractionID);
@@ -171,7 +171,13 @@ namespace UbuntuBox_BE
         [OperationContract]
         public List<ProductWithImages> SortProductsbyLatestDate(int attractionID);
 
+        //CartItems - Cart Management --> Get cart items: @TLethabo. //
+        [OperationContract]
+        public List<CartProductDetails> GetCartItems(int UserId);
 
+        //CartItems - Cart Management -->counts the number of products in cart and returns the value: @TLethabo. //
+        [OperationContract]
+        public int GetCartItemCount(int UserID);
 
     }
 
@@ -203,8 +209,44 @@ namespace UbuntuBox_BE
         [DataMember] public string AttractionImageUrls { get; set; }
     }
 
-        //Add a datacontract for the orders, with product Name, Product ID, Price etc//
-        [DataContract]
+    [DataContract]
+    public class CartDetails
+    {
+        [DataMember] public int CartID { get; set; }
+        [DataMember] public int UserID { get; set; }
+        [DataMember] public decimal TotalPrice { get; set; }
+        [DataMember] public DateTime CartAdded { get; set; }
+
+    }
+
+
+    [DataContract]
+    public class CartItemsDetails
+    {
+        [DataMember] public int CartItemID { get; set; }
+        [DataMember] public int ProductID { get; set; }
+        [DataMember] public int CartID { get; set; }
+        [DataMember] public int Quantity { get; set; }
+        [DataMember] public decimal ItemPrice { get; set; }
+        
+    }
+
+    [DataContract]
+    public class CartProductDetails
+    {
+        [DataMember] public int CartItemID { get; set; }
+        [DataMember] public int ProductID { get; set; }
+        [DataMember] public int Quantity { get; set; }
+        [DataMember] public decimal ItemPrice { get; set; }
+        [DataMember] public string ProductName { get; set; }
+        [DataMember] public string BoxCategory { get; set; }
+        [DataMember] public decimal Price { get; set; }
+
+    }
+
+
+    //Add a datacontract for the orders, with product Name, Product ID, Price etc//
+    [DataContract]
     public class OrderDetails
     {
 

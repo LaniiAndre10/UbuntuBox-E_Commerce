@@ -535,6 +535,9 @@ namespace UbuntuBox_FE.ServiceReference1 {
         private int CartItemIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal ItemPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private UbuntuBox_FE.ServiceReference1.Product ProductField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -588,6 +591,19 @@ namespace UbuntuBox_FE.ServiceReference1 {
                 if ((this.CartItemIDField.Equals(value) != true)) {
                     this.CartItemIDField = value;
                     this.RaisePropertyChanged("CartItemID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal ItemPrice {
+            get {
+                return this.ItemPriceField;
+            }
+            set {
+                if ((this.ItemPriceField.Equals(value) != true)) {
+                    this.ItemPriceField = value;
+                    this.RaisePropertyChanged("ItemPrice");
                 }
             }
         }
@@ -753,6 +769,9 @@ namespace UbuntuBox_FE.ServiceReference1 {
         private UbuntuBox_FE.ServiceReference1.CartItem[] CartItemsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal TotalPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private UbuntuBox_FE.ServiceReference1.User UserField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -803,6 +822,19 @@ namespace UbuntuBox_FE.ServiceReference1 {
                 if ((object.ReferenceEquals(this.CartItemsField, value) != true)) {
                     this.CartItemsField = value;
                     this.RaisePropertyChanged("CartItems");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal TotalPrice {
+            get {
+                return this.TotalPriceField;
+            }
+            set {
+                if ((this.TotalPriceField.Equals(value) != true)) {
+                    this.TotalPriceField = value;
+                    this.RaisePropertyChanged("TotalPrice");
                 }
             }
         }
@@ -2269,6 +2301,147 @@ namespace UbuntuBox_FE.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CartProductDetails", Namespace="http://schemas.datacontract.org/2004/07/UbuntuBox_BE")]
+    [System.SerializableAttribute()]
+    public partial class CartProductDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BoxCategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CartItemIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal ItemPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BoxCategory {
+            get {
+                return this.BoxCategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BoxCategoryField, value) != true)) {
+                    this.BoxCategoryField = value;
+                    this.RaisePropertyChanged("BoxCategory");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CartItemID {
+            get {
+                return this.CartItemIDField;
+            }
+            set {
+                if ((this.CartItemIDField.Equals(value) != true)) {
+                    this.CartItemIDField = value;
+                    this.RaisePropertyChanged("CartItemID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal ItemPrice {
+            get {
+                return this.ItemPriceField;
+            }
+            set {
+                if ((this.ItemPriceField.Equals(value) != true)) {
+                    this.ItemPriceField = value;
+                    this.RaisePropertyChanged("ItemPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((this.ProductIDField.Equals(value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductName {
+            get {
+                return this.ProductNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductNameField, value) != true)) {
+                    this.ProductNameField = value;
+                    this.RaisePropertyChanged("ProductName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
@@ -2471,6 +2644,7 @@ namespace UbuntuBox_FE.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductsByDestination", ReplyAction="http://tempuri.org/IService1/GetProductsByDestinationResponse")]
         System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> GetProductsByDestinationAsync(int attractionID);
         
+<<<<<<< HEAD
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetStandardProducts", ReplyAction="http://tempuri.org/IService1/GetStandardProductsResponse")]
         UbuntuBox_FE.ServiceReference1.ProductWithImages[] GetStandardProducts(int attractionID);
         
@@ -2506,6 +2680,19 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SortProductsbyLatestDate", ReplyAction="http://tempuri.org/IService1/SortProductsbyLatestDateResponse")]
         System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> SortProductsbyLatestDateAsync(int attractionID);
+=======
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCartItems", ReplyAction="http://tempuri.org/IService1/GetCartItemsResponse")]
+        UbuntuBox_FE.ServiceReference1.CartProductDetails[] GetCartItems(int UserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCartItems", ReplyAction="http://tempuri.org/IService1/GetCartItemsResponse")]
+        System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.CartProductDetails[]> GetCartItemsAsync(int UserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCartItemCount", ReplyAction="http://tempuri.org/IService1/GetCartItemCountResponse")]
+        int GetCartItemCount(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCartItemCount", ReplyAction="http://tempuri.org/IService1/GetCartItemCountResponse")]
+        System.Threading.Tasks.Task<int> GetCartItemCountAsync(int UserID);
+>>>>>>> e604389edd7623b8e37e1c890322aced1ab7c1f0
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2799,6 +2986,7 @@ namespace UbuntuBox_FE.ServiceReference1 {
             return base.Channel.GetProductsByDestinationAsync(attractionID);
         }
         
+<<<<<<< HEAD
         public UbuntuBox_FE.ServiceReference1.ProductWithImages[] GetStandardProducts(int attractionID) {
             return base.Channel.GetStandardProducts(attractionID);
         }
@@ -2845,6 +3033,22 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.ProductWithImages[]> SortProductsbyLatestDateAsync(int attractionID) {
             return base.Channel.SortProductsbyLatestDateAsync(attractionID);
+=======
+        public UbuntuBox_FE.ServiceReference1.CartProductDetails[] GetCartItems(int UserId) {
+            return base.Channel.GetCartItems(UserId);
+        }
+        
+        public System.Threading.Tasks.Task<UbuntuBox_FE.ServiceReference1.CartProductDetails[]> GetCartItemsAsync(int UserId) {
+            return base.Channel.GetCartItemsAsync(UserId);
+        }
+        
+        public int GetCartItemCount(int UserID) {
+            return base.Channel.GetCartItemCount(UserID);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetCartItemCountAsync(int UserID) {
+            return base.Channel.GetCartItemCountAsync(UserID);
+>>>>>>> e604389edd7623b8e37e1c890322aced1ab7c1f0
         }
     }
 }

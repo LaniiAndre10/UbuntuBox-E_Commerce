@@ -1,71 +1,50 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="cart.aspx.cs" Inherits="End_USer.cart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="cart.aspx.cs" Inherits="UbuntuBox_FE.End_User.cart" %>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <link rel="stylesheet" href="cart.css" runat="server" />
     </asp:Content>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <section class="cart-section">
 
     <div class="cart-items">
 
+        <h4>Cart</h4>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <asp:Repeater ID="rptCartItems" runat="server">
+        <ItemTemplate>
         <div class="cart-item">
             <div class="cart-item-image">
                 <img src="Logo/Mock Standard.png" alt="Standard Box">
             </div>
             <div class="cart-item-details">
-                <h4>Standard Box</h4>
-                <div class="price">R 320.00</div>
-            </div>
-            <div class="quantity-control">
-                <button>−</button>
-                <span>1</span>
-                <button>+</button>
-            </div>
-            <div class="item-total">R 320.00</div>
-            <!--<button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>-->
-            <asp:LinkButton class="remove-btn" ID="trash" runat="server"><i class="fa-solid fa-trash-can"></i></asp:LinkButton>
-        </div>
-
-        <div class="cart-item">
-            <div class="cart-item-image">
-                <img src="Logo/Mock Premium.png" alt="Premium Box">
-            </div>
-            <div class="cart-item-details">
-                <h4>Premium Box</h4>
-                <div class="price">R 650.00</div>
+                <!--<h4>Standard Box</h4>-->
+                 <h4><%# Eval("ProductName") %></h4>
+                <!--<div class="price">R 320.00</div>-->
+                <div class="price">R <%# Eval("Price") %></div>
             </div>
             <div class="quantity-control">
                 <!--<button>−</button>-->
-                <asp:Button ID="DecreaseQuantity" runat="server" Text="-" OnClick="DecreaseQuantity_Click" />
-                <span>1</span>
+                <asp:Button ID="DecreaseQuantity" runat="server" CommandArgument='<%# Eval("ProductID") %>'  Text="-" OnClick="DecreaseQuantity_Click" />
+                <!--<span>1</span>-->
+                <span><%# Eval("Quantity") %></span>
                 <!--<button>+</button>-->
-                <asp:Button ID="IncreaseQuantity" runat="server" Text="+" OnClick="IncreaseQuantity_Click" />
+                <asp:Button ID="IncreaseQuantity" runat="server" CommandArgument='<%# Eval("ProductID") %>'  Text="+" OnClick="IncreaseQuantity_Click" />
             </div>
-            <div class="item-total">R 650.00</div>
-            <!--<button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>-->
-            <asp:LinkButton class="remove-btn" ID="removeP" runat="server"><i class="fa-solid fa-trash-can"></i></asp:LinkButton>
+            <!--<div class="item-total">R 320.00</div>-->
+             <div class="item-total">R <%# Eval("ItemPrice") %></div>
+            <!--<button class="remove-btn" ><i class="fa-solid fa-trash-can"></i></button>-->
+            <asp:LinkButton class="remove-btn" ID="trash" runat="server" CommandArgument='<%# Eval("ProductID") %>' OnClick="RemoveItem_Click" ><i class="fa-solid fa-trash-can"></i></asp:LinkButton>
         </div>
+      </ItemTemplate>
+      </asp:Repeater>
 
-        <div class="cart-item">
-            <div class="cart-item-image">
-                <img src="Logo/Mock Mystery.png" alt="Mystery Box">
-            </div>
-            <div class="cart-item-details">
-                <h4>Mystery Box</h4>
-                <div class="price">R 450.00</div>
-            </div>
-            <div class="quantity-control">
-                <button>−</button>
-                <span>2</span>
-                <button>+</button>
-            </div>
-            <div class="item-total">R 900.00</div>
-            <button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>
-        </div>
-
-        <a href="shop.aspx" class="continue-shopping">
+        <a href="Landing.aspx" class="continue-shopping">
             <i class="fa-solid fa-arrow-left"></i> Continue Shopping
         </a>
     </div>

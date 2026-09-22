@@ -503,5 +503,23 @@ namespace UbuntuBox_BE
             return products;
         }
 
+        public List<CartProductDetails> GetCartItems(int UserId)
+        {
+            CartPage.CartManagement CartManagement = new CartPage.CartManagement();
+
+            List<CartProductDetails> cartItems = CartManagement.GetCartItems(UserId);
+
+            return cartItems;
+        }
+
+        public int GetCartItemCount(int UserID)
+        {
+            CartPage.CartManagement CartManagement = new CartPage.CartManagement();
+
+            var count = CartManagement.GetCartItemCount(UserID);
+
+            return count;
+        }
+
     }
 }

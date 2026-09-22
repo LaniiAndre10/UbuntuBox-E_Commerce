@@ -54,12 +54,15 @@
             </div>
 
             <div class="product-actions">
-                <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-                
-                <button class="btn-wishlist"><i class="fa-regular fa-heart"></i> Add to Wishlist</button>
+               <!-- <button class="btn-add-to-cart"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>-->
+                <asp:Button class="btn-add-to-cart" ID="tocart" runat="server" Text="Add To Cart" OnClick="tocart_Click" />
+                <!--<button class="btn-wishlist"><i class="fa-regular fa-heart"></i> Add to Wishlist</button>-->
+                <asp:Button class="btn-wishlist" ID="towishlist" runat="server" Text="Add To Wishlist" OnClick="towishlist_Click"/>
             </div>
+                    
         </div>
     </div>
+    
 
     <div class="about-section">
         <h2>About this box</h2>

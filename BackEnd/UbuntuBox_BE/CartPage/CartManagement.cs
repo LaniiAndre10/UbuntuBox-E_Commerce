@@ -68,6 +68,31 @@ namespace UbuntuBox_BE.CartPage
             return true;
         }
 
+
+        public List<CartProductDetails> GetCartItems(int UserId)
+        {
+            var CartItems = (from ci in dbaUbuntuBox.CartItems
+                             join c in dbaUbuntuBox.Carts on
+                             ci.CartID equals c.CartID
+                             join p in dbaUbuntuBox.Products on
+                             ci.ProductID equals p.ProductID
+                             where c.UserID == UserId
+                             select new CartProductDetails
+                             {
+                                 CartItemID = ci.CartItemID,
+                                 ProductID = ci.ProductID,
+                                 ProductName = p.ProductName,
+                                 Price = p.Price,
+                                 BoxCategory = p.BoxCategory,
+                                 Quantity = ci.Quantity,
+                                 ItemPrice = (p.Price)*(ci.Quantity)
+
+                             });
+
+            return CartItems.ToList();
+        
+        }
+
         public bool RemoveFromCart(int userID, int productID)
         {
             try
@@ -92,10 +117,13 @@ namespace UbuntuBox_BE.CartPage
 
                 dbaUbuntuBox.CartItems.DeleteOnSubmit(cartItem);
                 dbaUbuntuBox.SubmitChanges();
-            }catch(Exception)
+
+                return true;
+
+            }
+            catch(Exception)
             { return false; }
 
-            return true;
         }
 
         public bool IncreaseQuantity(int userID, int productID)
@@ -118,13 +146,18 @@ namespace UbuntuBox_BE.CartPage
                 if (cartItem == null)
                 { return false; }
 
+
                 cartItem.Quantity++;
 
                 dbaUbuntuBox.SubmitChanges();
-            }catch(Exception)
+
+                return true;
+
+            }
+            catch(Exception)
             { return false; }
 
-            return true;
+            
         }
 
         public bool DecreaseQuantity(int userID, int productID)
@@ -147,18 +180,39 @@ namespace UbuntuBox_BE.CartPage
                 if (cartItem == null)
                 { return false; }
 
-                if (cartItem.Quantity > 1)
+                if (cartItem.Quantity <= 1)
                 {
-                    cartItem.Quantity--;
-
-                    dbaUbuntuBox.SubmitChanges();
-
-                    return true;
+                    return false;
                 }
-            }catch(Exception)
-            {  }
 
-            return false;
+                cartItem.Quantity--;
+
+                dbaUbuntuBox.SubmitChanges();
+
+                return true;
+
+            }
+            catch(Exception)
+            { return false; }
+
+        }
+
+        public int GetCartItemCount(int UserID)
+        {
+            var cart = (from c in dbaUbuntuBox.Carts where
+                        c.UserID == UserID
+                        select c).SingleOrDefault();
+
+            if (cart == null)
+            { return 0; }
+
+
+            int count = (from ct in dbaUbuntuBox.CartItems where
+                         ct.CartID == cart.CartID select ct).Count();
+
+
+            return count;
+
         }
     }
 }

@@ -473,6 +473,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+<<<<<<< HEAD
   <xs:element name="GetStandardProducts">
     <xs:complexType>
       <xs:sequence>
@@ -554,6 +555,33 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/UbuntuBox_BE" minOccurs="0" name="SortProductsbyLatestDateResult" nillable="true" type="q23:ArrayOfProductWithImages" />
+=======
+  <xs:element name="GetCartItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCartItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/UbuntuBox_BE" minOccurs="0" name="GetCartItemsResult" nillable="true" type="q18:ArrayOfCartProductDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCartItemCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCartItemCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCartItemCountResult" type="xs:int" />
+>>>>>>> e604389edd7623b8e37e1c890322aced1ab7c1f0
       </xs:sequence>
     </xs:complexType>
   </xs:element>

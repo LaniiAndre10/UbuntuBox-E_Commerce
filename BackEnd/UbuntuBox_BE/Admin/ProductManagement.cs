@@ -19,6 +19,7 @@ namespace UbuntuBox_BE.Admin
             Ubuntuboxdatabase.DeferredLoadingEnabled = false;
 
             var ProductWithImages = from u in Ubuntuboxdatabase.Products
+                                    where u.ProductStatus.Equals(0)
                                     select new ProductWithImages
                                     {
 
@@ -28,7 +29,7 @@ namespace UbuntuBox_BE.Admin
                                         ProductPrice = u.Price,
                                         BoxCategory = u.BoxCategory,
                                         DateAdded = u.ProductDateAdded,
-                                        ProductStatus = u.ProductStatus,
+                                        ProductStatus = true,
                                         ImageUrls = u.ProductImages.Select(i => i.ImageURL).ToList()
 
                                     };
