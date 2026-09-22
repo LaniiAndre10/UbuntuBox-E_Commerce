@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.5, 14.125" name="dbaUbuntuBox">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.5, 14.125" name="dbaUbuntuBox">
   <DataContextMoniker Name="/dbaUbuntuBoxDataContext" />
   <nestedChildShapes>
     <classShape Id="c549fb20-bb3b-42e2-a775-e99a3e6313f9" absoluteBounds="10.625, 12.5, 2, 1.3862939453125023">
@@ -56,49 +56,49 @@
         <elementListCompartment Id="04c6ee65-b2ed-43af-a27f-8e43eb9ec3ea" absoluteBounds="11.015, 9.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11.8125 : 11.4728011067708); (11.8125 : 12.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.8125 : 11.4728011067708); (11.8125 : 12.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Product/Product_ProductImage" />
       <nodes>
         <classShapeMoniker Id="42856fa9-dbdc-473e-8b37-16c1aae61940" />
         <classShapeMoniker Id="c549fb20-bb3b-42e2-a775-e99a3e6313f9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 7.35179768880208); (3.5 : 7.35179768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 7.35179768880208); (3.5 : 7.35179768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbaUbuntuBoxDataContext/User/User_Order" />
       <nodes>
         <classShapeMoniker Id="8ec9161a-7a79-418d-8df5-b945f4e32098" />
         <classShapeMoniker Id="d1534136-2d64-4674-be37-6181198e9727" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.5 : 6.5); (4.5 : 4.78929768880208); (6.25 : 4.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.5 : 6.5); (4.5 : 4.78929768880208); (6.25 : 4.78929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Order/Order_OrderCancellation" />
       <nodes>
         <classShapeMoniker Id="d1534136-2d64-4674-be37-6181198e9727" />
         <classShapeMoniker Id="1886cfe2-2d70-4bb4-a546-46aa22330238" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 7.26044840494792); (6.25 : 7.26044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 7.26044840494792); (6.25 : 7.26044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Order/Order_OrderReturn" />
       <nodes>
         <classShapeMoniker Id="d1534136-2d64-4674-be37-6181198e9727" />
         <classShapeMoniker Id="56c2c9e9-4c22-4655-92fd-83559a29eb98" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.5 : 8.07859537760417); (4.5 : 9.76044840494792); (6.25 : 9.76044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.5 : 8.07859537760417); (4.5 : 9.76044840494792); (6.25 : 9.76044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Order/Order_OrderItem" />
       <nodes>
         <classShapeMoniker Id="d1534136-2d64-4674-be37-6181198e9727" />
         <classShapeMoniker Id="4072c68e-131f-4391-afde-b2bc5a91209d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 9.1651025390625); (1.75 : 12.6450512695312); (3.5 : 12.6450512695312)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.75 : 9.1651025390625); (1.75 : 12.6450512695312); (3.5 : 12.6450512695312)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbaUbuntuBoxDataContext/User/User_CustomerStat" />
       <nodes>
         <classShapeMoniker Id="8ec9161a-7a79-418d-8df5-b945f4e32098" />
         <classShapeMoniker Id="9bec2b05-5446-49f5-afeb-97cd819396b3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.34375 : 12.125); (8.34375 : 11.0905989583333); (11 : 11.0905989583333)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.34375 : 12.125); (8.34375 : 11.0905989583333); (11 : 11.0905989583333)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Attraction/Attraction_Product" />
       <nodes>
         <classShapeMoniker Id="f1ab8a25-7944-4f13-aa86-b8bab2effc9f" />
@@ -111,7 +111,7 @@
         <elementListCompartment Id="e98b07e0-9016-4cad-8c3f-e758b3e7a222" absoluteBounds="10.765, 3.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(1.75 : 6.625); (1.75 : 3.46875); (10.75 : 3.46875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.75 : 6.625); (1.75 : 3.46875); (10.75 : 3.46875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbaUbuntuBoxDataContext/User/User_Cart" />
       <nodes>
         <classShapeMoniker Id="8ec9161a-7a79-418d-8df5-b945f4e32098" />
@@ -124,18 +124,38 @@
         <elementListCompartment Id="4748e978-ff95-425b-86ab-d010308b77c0" absoluteBounds="11.265, 6.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(12 : 4.57859537760417); (12 : 6.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(12 : 4.57859537760417); (12 : 6.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Cart/Cart_CartItem" />
       <nodes>
         <classShapeMoniker Id="723e59be-9f1a-4d15-9f4a-b2b392885bb4" />
         <classShapeMoniker Id="6596bc6d-19c6-4fc1-94cf-a68654783f9c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12.125 : 9.125); (12.125 : 8.14589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(12.125 : 9.125); (12.125 : 8.14589680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Product/Product_CartItem" />
       <nodes>
         <classShapeMoniker Id="42856fa9-dbdc-473e-8b37-16c1aae61940" />
         <classShapeMoniker Id="6596bc6d-19c6-4fc1-94cf-a68654783f9c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d9dff11d-ab05-4757-8955-76b2a3f3c634" absoluteBounds="15.25, 7.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/dbaUbuntuBoxDataContext/ProductReview" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb4ba172-308e-49b0-8bb3-767ad2308c33" absoluteBounds="15.265, 8.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(13 : 9.35659912109375); (15.25 : 9.35659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbaUbuntuBoxDataContext/Product/Product_ProductReview" />
+      <nodes>
+        <classShapeMoniker Id="42856fa9-dbdc-473e-8b37-16c1aae61940" />
+        <classShapeMoniker Id="d9dff11d-ab05-4757-8955-76b2a3f3c634" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 8.51044840494792); (4.41666666666667 : 8.51044840494792 : JumpStart); (4.58333333333333 : 8.51044840494792 : JumpEnd); (12.0416666666667 : 8.51044840494792 : JumpStart); (12.2083333333333 : 8.51044840494792 : JumpEnd); (15.25 : 8.51044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbaUbuntuBoxDataContext/User/User_ProductReview" />
+      <nodes>
+        <classShapeMoniker Id="8ec9161a-7a79-418d-8df5-b945f4e32098" />
+        <classShapeMoniker Id="d9dff11d-ab05-4757-8955-76b2a3f3c634" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

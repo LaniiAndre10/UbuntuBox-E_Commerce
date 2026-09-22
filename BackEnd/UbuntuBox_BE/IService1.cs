@@ -154,6 +154,10 @@ namespace UbuntuBox_BE
         //CartItems - Cart Management -->counts the number of products in cart and returns the value: @TLethabo. //
         [OperationContract]
         public int GetCartItemCount(int UserID);
+
+        //Review - Review Management --> adds a review to the database
+        [OperationContract]
+        public bool AddReview(int userID,int productID,int rating,string TextReview);
     }
 
     //Add a datacontract for Product + ProductImages to tackle the Socket/Communication Exception issue//

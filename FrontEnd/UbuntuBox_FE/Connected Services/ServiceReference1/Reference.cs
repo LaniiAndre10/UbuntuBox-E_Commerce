@@ -226,6 +226,9 @@ namespace UbuntuBox_FE.ServiceReference1 {
         private string ProductNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UbuntuBox_FE.ServiceReference1.ProductReview[] ProductReviewsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool ProductStatusField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -364,6 +367,19 @@ namespace UbuntuBox_FE.ServiceReference1 {
                 if ((object.ReferenceEquals(this.ProductNameField, value) != true)) {
                     this.ProductNameField = value;
                     this.RaisePropertyChanged("ProductName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UbuntuBox_FE.ServiceReference1.ProductReview[] ProductReviews {
+            get {
+                return this.ProductReviewsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductReviewsField, value) != true)) {
+                    this.ProductReviewsField = value;
+                    this.RaisePropertyChanged("ProductReviews");
                 }
             }
         }
@@ -752,6 +768,163 @@ namespace UbuntuBox_FE.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductReview", Namespace="http://schemas.datacontract.org/2004/07/UbuntuBox_BE")]
+    [System.SerializableAttribute()]
+    public partial class ProductReview : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UbuntuBox_FE.ServiceReference1.Product ProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RatingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ReviewDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ReviewIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReviewTextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UbuntuBox_FE.ServiceReference1.User UserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UbuntuBox_FE.ServiceReference1.Product Product {
+            get {
+                return this.ProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((this.ProductIDField.Equals(value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Rating {
+            get {
+                return this.RatingField;
+            }
+            set {
+                if ((this.RatingField.Equals(value) != true)) {
+                    this.RatingField = value;
+                    this.RaisePropertyChanged("Rating");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> ReviewDate {
+            get {
+                return this.ReviewDateField;
+            }
+            set {
+                if ((this.ReviewDateField.Equals(value) != true)) {
+                    this.ReviewDateField = value;
+                    this.RaisePropertyChanged("ReviewDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ReviewID {
+            get {
+                return this.ReviewIDField;
+            }
+            set {
+                if ((this.ReviewIDField.Equals(value) != true)) {
+                    this.ReviewIDField = value;
+                    this.RaisePropertyChanged("ReviewID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReviewText {
+            get {
+                return this.ReviewTextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReviewTextField, value) != true)) {
+                    this.ReviewTextField = value;
+                    this.RaisePropertyChanged("ReviewText");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UbuntuBox_FE.ServiceReference1.User User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserID {
+            get {
+                return this.UserIDField;
+            }
+            set {
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Cart", Namespace="http://schemas.datacontract.org/2004/07/UbuntuBox_BE")]
     [System.SerializableAttribute()]
     public partial class Cart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -906,6 +1079,9 @@ namespace UbuntuBox_FE.ServiceReference1 {
         private string PhoneNumField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UbuntuBox_FE.ServiceReference1.ProductReview[] ProductReviewsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProfileImgURLField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1017,6 +1193,19 @@ namespace UbuntuBox_FE.ServiceReference1 {
                 if ((object.ReferenceEquals(this.PhoneNumField, value) != true)) {
                     this.PhoneNumField = value;
                     this.RaisePropertyChanged("PhoneNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UbuntuBox_FE.ServiceReference1.ProductReview[] ProductReviews {
+            get {
+                return this.ProductReviewsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductReviewsField, value) != true)) {
+                    this.ProductReviewsField = value;
+                    this.RaisePropertyChanged("ProductReviews");
                 }
             }
         }
@@ -2655,6 +2844,12 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCartItemCount", ReplyAction="http://tempuri.org/IService1/GetCartItemCountResponse")]
         System.Threading.Tasks.Task<int> GetCartItemCountAsync(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddReview", ReplyAction="http://tempuri.org/IService1/AddReviewResponse")]
+        bool AddReview(int userID, int productID, int rating, string TextReview);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddReview", ReplyAction="http://tempuri.org/IService1/AddReviewResponse")]
+        System.Threading.Tasks.Task<bool> AddReviewAsync(int userID, int productID, int rating, string TextReview);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2962,6 +3157,14 @@ namespace UbuntuBox_FE.ServiceReference1 {
         
         public System.Threading.Tasks.Task<int> GetCartItemCountAsync(int UserID) {
             return base.Channel.GetCartItemCountAsync(UserID);
+        }
+        
+        public bool AddReview(int userID, int productID, int rating, string TextReview) {
+            return base.Channel.AddReview(userID, productID, rating, TextReview);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddReviewAsync(int userID, int productID, int rating, string TextReview) {
+            return base.Channel.AddReviewAsync(userID, productID, rating, TextReview);
         }
     }
 }

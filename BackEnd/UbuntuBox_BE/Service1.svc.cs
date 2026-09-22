@@ -472,5 +472,14 @@ namespace UbuntuBox_BE
 
             return count;
         }
+
+        public bool AddReview(int userID, int productID, int rating, string TextReview)
+        {
+            Review.ReviewManagement ReviewManagement = new Review.ReviewManagement();
+
+            var review  = ReviewManagement.AddReview(userID,productID,rating,TextReview);
+
+            return review;
+        }
     }
 }
