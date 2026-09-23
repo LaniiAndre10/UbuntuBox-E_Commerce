@@ -100,18 +100,18 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\UbuntuBox_BE.dll.config" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\UbuntuBox_BE.csproj.AssemblyReference.cache" />
+    <Content Include="obj\Debug\UbuntuBox_BE.csproj.CoreCompileInputs.cache" />
     <Content Include="dbaUbuntuBox.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>dbaUbuntuBox.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="bin\UbuntuBox_BE.dll.config" />
     <None Include="dbaUbuntuBox.dbml.layout">
       <DependentUpon>dbaUbuntuBox.dbml</DependentUpon>
     </None>
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Debug\UbuntuBox_BE.csproj.AssemblyReference.cache" />
-    <Content Include="obj\Debug\UbuntuBox_BE.csproj.CoreCompileInputs.cache" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

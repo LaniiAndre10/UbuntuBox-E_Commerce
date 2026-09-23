@@ -20,7 +20,10 @@
         <ItemTemplate>
         <div class="cart-item">
             <div class="cart-item-image">
-                <img src="Logo/Mock Standard.png" alt="Standard Box">
+                <!--<img src="Logo/Mock Standard.png" alt="Standard Box">-->
+                 <img class="image" src= '<%# ((string[])Eval("ImageUrls")).Length > 0
+                             ? ((string[])Eval("ImageUrls"))[0]
+                             :"https://th.bing.com/th?q=Shien+Art+South+Africa" %>'/>
             </div>
             <div class="cart-item-details">
                 <!--<h4>Standard Box</h4>-->

@@ -200,7 +200,7 @@ namespace UbuntuBox_BE
         [DataMember] public bool ProductStatus { get; set; }
 
         //add the list of images from the product Image table//
-        [DataMember] public List<string> ImageUrls { get; set; }
+        [DataMember] public List<string> ImageUrls { get; set; } = new List<string>();
 
     }
 
@@ -246,6 +246,7 @@ namespace UbuntuBox_BE
         [DataMember] public string ProductName { get; set; }
         [DataMember] public string BoxCategory { get; set; }
         [DataMember] public decimal Price { get; set; }
+        [DataMember] public List<string> ImageUrls { get; set; } = new List<string>();
 
     }
 

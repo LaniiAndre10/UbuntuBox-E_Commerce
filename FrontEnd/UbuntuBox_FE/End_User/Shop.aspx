@@ -40,14 +40,14 @@
 
 <section class="categories">
 
-    <div class="sort-options">
+    <!--<div class="sort-options">
         <p>Box Filter: <select id="BoxFilter" runat="server" onserverchange="BoxFilter_SelectedIndexChanged" onchange="this.form.submit();">
             <option value="All">All Boxes</option>
             <option value="Standard">Standard Box</option>
             <option value="Premium">Premium Box</option>
             <option value="Mystery">Mystery Box</option>
         </select></p>
-    </div>
+    </div>-->
 
     
     <div class="sort-options">
@@ -75,9 +75,11 @@
             <ItemTemplate>
                 
                 <div class="attraction-card">
-                    
-                    <img class="image" src="Logo/Mock Standard.png" alt="Table Mountain" />
-                     
+                
+                     <img class="image" src= '<%# ((string[])Eval("ImageUrls")).Length > 0
+                             ? ((string[])Eval("ImageUrls"))[0]
+                             :"https://th.bing.com/th?q=Shien+Art+South+Africa" %>'/>
+     
                     <div class="attr-info">
                         <h5><%# Eval("ProductName") %></h5>
                         
@@ -101,8 +103,6 @@
     </div>
 
 </section>
-
-
 
 </asp:Content>
 

@@ -28,6 +28,7 @@
       <xs:element minOccurs="0" name="BoxCategory" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CartItems" nillable="true" type="tns:ArrayOfCartItem" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderItems" nillable="true" type="tns:ArrayOfOrderItem" />
       <xs:element minOccurs="0" name="Price" type="xs:decimal" />
       <xs:element minOccurs="0" name="ProductDateAdded" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ProductID" type="xs:int" />
@@ -35,6 +36,7 @@
       <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductReviews" nillable="true" type="tns:ArrayOfProductReview" />
       <xs:element minOccurs="0" name="ProductStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Wishlists" nillable="true" type="tns:ArrayOfWishlist" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Product" nillable="true" type="tns:Product" />
@@ -99,6 +101,7 @@
       <xs:element minOccurs="0" name="UserID" type="xs:int" />
       <xs:element minOccurs="0" name="UserStatus" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Usernames" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Wishlists" nillable="true" type="tns:ArrayOfWishlist" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="User" nillable="true" type="tns:User" />
@@ -175,6 +178,7 @@
       <xs:element minOccurs="0" name="ItemID" type="xs:int" />
       <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Order" />
       <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
       <xs:element minOccurs="0" name="ProductID" type="xs:int" />
       <xs:element minOccurs="0" name="Quantity" type="xs:int" />
       <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
@@ -217,6 +221,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProductReview" nillable="true" type="tns:ProductReview" />
+  <xs:complexType name="ArrayOfWishlist">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Wishlist" nillable="true" type="tns:Wishlist" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWishlist" nillable="true" type="tns:ArrayOfWishlist" />
+  <xs:complexType name="Wishlist">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="WishlistID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Wishlist" nillable="true" type="tns:Wishlist" />
   <xs:complexType name="ArrayOfProductImage">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductImage" nillable="true" type="tns:ProductImage" />
@@ -316,6 +336,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="BoxCategory" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CartItemID" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ImageUrls" nillable="true" type="q2:ArrayOfstring" />
       <xs:element minOccurs="0" name="ItemPrice" type="xs:decimal" />
       <xs:element minOccurs="0" name="Price" type="xs:decimal" />
       <xs:element minOccurs="0" name="ProductID" type="xs:int" />

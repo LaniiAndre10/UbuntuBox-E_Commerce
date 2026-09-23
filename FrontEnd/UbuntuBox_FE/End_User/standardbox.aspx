@@ -22,15 +22,15 @@
 
         <div class="product-image-section">
             <div class="main-image">
-                <img src="Logo/Mock Standard.png" alt="Standard Box">
-                <!--<asp:Image ID="ProductImage" runat="server" />-->
+                <!--<img src="Logo/Mock Standard.png" alt="Standard Box">-->
+                <asp:Image ID="ProductImage" runat="server" />
             </div>
         </div>
 
         <div class="product-info-section">
             <!--<h1 class="product-title">Standard Box</h1>-->
             <h1 class="product-title">
-                <asp:Label ID="lblCategory" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblProductName" runat="server" Text="Label"></asp:Label>
             </h1>
             
             <div class="rating">

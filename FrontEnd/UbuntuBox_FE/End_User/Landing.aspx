@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="Landing.aspx.cs" Inherits="UbuntuBox_FE.End_User.Landing" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="Landing.aspx.cs" Inherits="UbuntuBox_FE.End_User.Landing" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

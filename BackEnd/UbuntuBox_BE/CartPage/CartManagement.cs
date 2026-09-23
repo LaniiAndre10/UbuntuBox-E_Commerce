@@ -85,8 +85,10 @@ namespace UbuntuBox_BE.CartPage
                                  Price = p.Price,
                                  BoxCategory = p.BoxCategory,
                                  Quantity = ci.Quantity,
-                                 ItemPrice = (p.Price)*(ci.Quantity)
-
+                                 ItemPrice = (p.Price)*(ci.Quantity),
+                                 ImageUrls = dbaUbuntuBox.ProductImages
+                                 .Where(i => i.ProductID == ci.ProductID)
+                                 .Select(i => i.ImageURL).ToList()
                              });
 
             return CartItems.ToList();

@@ -34,8 +34,12 @@ namespace UbuntuBox_BE.ProductPage
                                         ProductPrice = u.Price,
                                         BoxCategory = u.BoxCategory,
                                         ProductStatus = u.ProductStatus,
-                                        DateAdded = u.ProductDateAdded
+                                        DateAdded = u.ProductDateAdded,
+                                        ImageUrls = dbaUbuntuBox.ProductImages
+                                        .Where(i => i.ProductID == u.ProductID)
+                                        .Select(i => i.ImageURL).ToList()
                                     }).ToList();
+
 
             return Standardproducts;
         }
@@ -57,7 +61,10 @@ namespace UbuntuBox_BE.ProductPage
                                        ProductPrice = u.Price,
                                        BoxCategory = u.BoxCategory,
                                        ProductStatus = u.ProductStatus,
-                                       DateAdded = u.ProductDateAdded
+                                       DateAdded = u.ProductDateAdded,
+                                        ImageUrls = dbaUbuntuBox.ProductImages
+                               .Where(i => i.ProductID == u.ProductID)
+                               .Select(i => i.ImageURL).ToList()
                                    }).ToList();
 
             return Premiumproducts;
@@ -80,7 +87,10 @@ namespace UbuntuBox_BE.ProductPage
                                        ProductPrice = u.Price,
                                        BoxCategory = u.BoxCategory,
                                        ProductStatus = u.ProductStatus,
-                                       DateAdded = u.ProductDateAdded
+                                       DateAdded = u.ProductDateAdded,
+                                        ImageUrls = dbaUbuntuBox.ProductImages
+                               .Where(i => i.ProductID == u.ProductID)
+                               .Select(i => i.ImageURL).ToList()
                                    }).ToList();
 
             return Mysteryproducts;
@@ -93,8 +103,7 @@ namespace UbuntuBox_BE.ProductPage
 
             var products = (from u in dbaUbuntuBox.Products
                             where u.AttractionID == attractionID
-                            orderby u.Price ascending
-                            select new ProductWithImages
+                            orderby u.Price select new ProductWithImages
                             {
                                 ProductID = u.ProductID,
                                 AttractionID = u.AttractionID,
@@ -103,7 +112,10 @@ namespace UbuntuBox_BE.ProductPage
                                 ProductPrice = u.Price,
                                 BoxCategory = u.BoxCategory,
                                 ProductStatus = u.ProductStatus,
-                                DateAdded = u.ProductDateAdded
+                                DateAdded = u.ProductDateAdded,
+                                 ImageUrls = dbaUbuntuBox.ProductImages
+                               .Where(i => i.ProductID == u.ProductID)
+                               .Select(i => i.ImageURL).ToList()
                             }).ToList();
 
             return products;
@@ -126,7 +138,10 @@ namespace UbuntuBox_BE.ProductPage
                                 ProductPrice = u.Price,
                                 BoxCategory = u.BoxCategory,
                                 ProductStatus = u.ProductStatus,
-                                DateAdded = u.ProductDateAdded
+                                DateAdded = u.ProductDateAdded,
+                                 ImageUrls = dbaUbuntuBox.ProductImages
+                               .Where(i => i.ProductID == u.ProductID)
+                               .Select(i => i.ImageURL).ToList()
                             }).ToList();
 
             return products;
@@ -149,79 +164,91 @@ namespace UbuntuBox_BE.ProductPage
                                 ProductPrice = u.Price,
                                 BoxCategory = u.BoxCategory,
                                 ProductStatus = u.ProductStatus,
-                                DateAdded = u.ProductDateAdded
+                                DateAdded = u.ProductDateAdded,
+                                ImageUrls = dbaUbuntuBox.ProductImages
+                               .Where(i => i.ProductID == u.ProductID)
+                               .Select(i => i.ImageURL).ToList()
                             }).ToList();
 
             return products;
-        }
+    }    
 
 
 
-        public ProductWithImages GetProductId(int productID)
-        {
 
-            var product = (from p in dbaUbuntuBox.Products where
-                            p.ProductID == productID select p).SingleOrDefault();
+    public ProductWithImages GetProductId(int productID)
+    {
 
-            if (product == null)
-            { return null; }
+        var product = (from p in dbaUbuntuBox.Products where
+                        p.ProductID == productID select p).SingleOrDefault();
 
-            ProductWithImages result = new ProductWithImages();
+        if (product == null)
+        { return null; }
 
-            result.ProductID = product.ProductID;
-            result.ProductName = product.ProductName;
-            result.ProductDescription = product.Description;
-            result.ProductPrice = product.Price;
-            result.BoxCategory = product.BoxCategory;
-            result.ProductStatus = product.ProductStatus;
-            result.DateAdded = product.ProductDateAdded;
-            
+        ProductWithImages result = new ProductWithImages();
 
-            return result;
-        
-        }
+        result.ProductID = product.ProductID;
+        result.ProductName = product.ProductName;
+        result.ProductDescription = product.Description;
+        result.ProductPrice = product.Price;
+        result.BoxCategory = product.BoxCategory;
+        result.ProductStatus = product.ProductStatus;
+        result.DateAdded = product.ProductDateAdded;
 
-        public List<ProductWithImages> GetProductsByDestination(int attractionID)
-        {
-
-            
-            var products = (from p in dbaUbuntuBox.Products where
-                            p.AttractionID == attractionID select new ProductWithImages
-                            {
-
-                                ProductID = p.ProductID,
-                                AttractionID = p.AttractionID,
-                                ProductName = p.ProductName,
-                                ProductDescription = p.Description,
-                                ProductPrice = p.Price,
-                                BoxCategory = p.BoxCategory,
-                                ProductStatus = p.ProductStatus,
-                                DateAdded = p.ProductDateAdded
-
-                              });
+        result.ImageUrls = dbaUbuntuBox.ProductImages
+            .Where(i => i.ProductID == product.ProductID)
+            .Select(i => i.ImageURL).ToList();
 
 
-            return products.ToList();
-        
-        }
+        return result;
 
-
-        public List<AttractionDetails> getAttractionList()
-        {
-            var attractions = (from u in dbaUbuntuBox.Attractions
-                               select new AttractionDetails
-                               {
-
-                                   AttractionID = u.AttractionID,
-                                   AttractionName = u.AttractionName,
-                                   AttractionDescription = u.AttractionDescription,
-                                   Province = u.Province,
-                                   AttractionImageUrls = u.AttractionImageURL
-
-                               });
-
-
-            return attractions.ToList();
-        }
     }
+
+    public List<ProductWithImages> GetProductsByDestination(int attractionID)
+    {
+
+
+        var products = (from p in dbaUbuntuBox.Products
+                        where p.AttractionID == attractionID
+                        select new ProductWithImages
+                        {
+
+                            ProductID = p.ProductID,
+                            AttractionID = p.AttractionID,
+                            ProductName = p.ProductName,
+                            ProductDescription = p.Description,
+                            ProductPrice = p.Price,
+                            BoxCategory = p.BoxCategory,
+                            ProductStatus = p.ProductStatus,
+                            DateAdded = p.ProductDateAdded,
+                            ImageUrls = dbaUbuntuBox.ProductImages
+                            .Where(i => i.ProductID == p.ProductID)
+                            .Select(i => i.ImageURL).ToList()
+
+                        });
+
+
+        return products.ToList();
+
+    }
+
+
+    public List<AttractionDetails> getAttractionList()
+    {
+        var attractions = (from u in dbaUbuntuBox.Attractions
+                           select new AttractionDetails
+                           {
+
+                               AttractionID = u.AttractionID,
+                               AttractionName = u.AttractionName,
+                               AttractionDescription = u.AttractionDescription,
+                               Province = u.Province,
+                               AttractionImageUrls = u.AttractionImageURL
+
+                           });
+
+
+        return attractions.ToList();
+    }
+  }
 }

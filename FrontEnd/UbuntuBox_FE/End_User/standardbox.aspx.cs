@@ -18,12 +18,20 @@ namespace UbuntuBox_FE.End_User
 
             if (selectedProduct != null)
             {
-                lblCategory.Text = selectedProduct.BoxCategory;
+                lblProductName.Text = selectedProduct.ProductName;
                 lblPrice.Text = selectedProduct.ProductPrice.ToString();
                 lblDes.Text = selectedProduct.ProductDescription;
                 tocart.CommandArgument = selectedProduct.ProductID.ToString();
                 towishlist.CommandArgument = selectedProduct.ProductID.ToString();
                 
+            }
+
+            if (selectedProduct.ImageUrls != null && selectedProduct.ImageUrls.Length > 0)
+            {
+                ProductImage.ImageUrl = selectedProduct.ImageUrls.Length > 0
+                                        ? selectedProduct.ImageUrls[0]
+                                        : "";
+
             }
 
         }
