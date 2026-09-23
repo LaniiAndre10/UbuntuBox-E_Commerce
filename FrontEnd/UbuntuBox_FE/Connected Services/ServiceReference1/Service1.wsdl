@@ -254,13 +254,12 @@
   <wsdl:message name="IService1_GetCartItemCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCartItemCountResponse" />
   </wsdl:message>
-<<<<<<< HEAD
   <wsdl:message name="IService1_AddReview_InputMessage">
     <wsdl:part name="parameters" element="tns:AddReview" />
   </wsdl:message>
   <wsdl:message name="IService1_AddReview_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddReviewResponse" />
-=======
+  </wsdl:message>
   <wsdl:message name="IService1_CheckoutCart_InputMessage">
     <wsdl:part name="parameters" element="tns:CheckoutCart" />
   </wsdl:message>
@@ -278,7 +277,6 @@
   </wsdl:message>
   <wsdl:message name="IService1_GetLatestOrder_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetLatestOrderResponse" />
->>>>>>> main
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="RegisterUser">
@@ -445,11 +443,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCartItemCount" message="tns:IService1_GetCartItemCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCartItemCountResponse" message="tns:IService1_GetCartItemCount_OutputMessage" />
     </wsdl:operation>
-<<<<<<< HEAD
     <wsdl:operation name="AddReview">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddReview" message="tns:IService1_AddReview_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddReviewResponse" message="tns:IService1_AddReview_OutputMessage" />
-=======
+    </wsdl:operation>
     <wsdl:operation name="CheckoutCart">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/CheckoutCart" message="tns:IService1_CheckoutCart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/CheckoutCartResponse" message="tns:IService1_CheckoutCart_OutputMessage" />
@@ -461,7 +458,6 @@
     <wsdl:operation name="GetLatestOrder">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetLatestOrder" message="tns:IService1_GetLatestOrder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetLatestOrderResponse" message="tns:IService1_GetLatestOrder_OutputMessage" />
->>>>>>> main
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -835,10 +831,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-<<<<<<< HEAD
     <wsdl:operation name="AddReview">
       <soap:operation soapAction="http://tempuri.org/IService1/AddReview" style="document" />
-=======
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CheckoutCart">
       <soap:operation soapAction="http://tempuri.org/IService1/CheckoutCart" style="document" />
       <wsdl:input>
@@ -859,7 +860,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetLatestOrder">
       <soap:operation soapAction="http://tempuri.org/IService1/GetLatestOrder" style="document" />
->>>>>>> main
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
