@@ -29,7 +29,7 @@
                 <!--<h4>Standard Box</h4>-->
                  <h4><%# Eval("ProductName") %></h4>
                 <!--<div class="price">R 320.00</div>-->
-                <div class="price">R <%# Eval("Price") %></div>
+                <div class="price">R <%# ((decimal)Eval("Price")).ToString("F2") %></div>
             </div>
             <div class="quantity-control">
                 <!--<button>−</button>-->
@@ -40,7 +40,7 @@
                 <asp:Button ID="IncreaseQuantity" runat="server" CommandArgument='<%# Eval("ProductID") %>'  Text="+" OnClick="IncreaseQuantity_Click" />
             </div>
             <!--<div class="item-total">R 320.00</div>-->
-             <div class="item-total">R <%# Eval("ItemPrice") %></div>
+            <div class="item-total">R<%# ((decimal)Eval("ItemPrice")).ToString("F2") %></div>
             <!--<button class="remove-btn" ><i class="fa-solid fa-trash-can"></i></button>-->
             <asp:LinkButton class="remove-btn" ID="trash" runat="server" CommandArgument='<%# Eval("ProductID") %>' OnClick="RemoveItem_Click" ><i class="fa-solid fa-trash-can"></i></asp:LinkButton>
         </div>
@@ -57,7 +57,7 @@
 
         <div class="summary-row">
             <span>Subtotal</span>
-            <span>R 1,870.00</span>
+            <span>R****</span>
         </div>
 
         <div class="summary-row">
@@ -67,7 +67,7 @@
 
         <div class="summary-row total">
             <span>Total</span>
-            <span class="amount">R 1,969.00</span>
+            <span class="amount">R *****</span>
         </div>
 
         <div class="free-shipping">

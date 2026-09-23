@@ -80,6 +80,7 @@
     <Compile Include="Admin\OrderManagement.cs" />
     <Compile Include="Admin\ProductManagement.cs" />
     <Compile Include="CartPage\CartManagement.cs" />
+    <Compile Include="Checkout\Checkout.cs" />
     <Compile Include="dbaUbuntuBox.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -180,9 +180,23 @@ namespace UbuntuBox_BE
         public int GetCartItemCount(int UserID);
 
 
+
         //Review - Review Management --> adds a review to the database
         [OperationContract]
         public bool AddReview(int userID,int productID,int rating,string TextReview);
+
+
+        //Checkout - Push items from cart to order: @LaniiAndre10.//
+        [OperationContract]
+        public bool CheckoutCart(int userID);
+
+        //checkout - Generate a textfile as the order slip: @LaniiAndre10.//
+        [OperationContract]
+        public string GenerateTillSlip(int orderID);
+
+        //checkout -  A function to get the latest order.//
+        [OperationContract]
+        public Order GetLatestOrder(int userID);
 
     }
 

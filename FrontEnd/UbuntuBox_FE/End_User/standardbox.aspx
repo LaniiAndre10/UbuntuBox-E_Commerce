@@ -62,23 +62,6 @@
                     
         </div>
     </div>
-    
-
-    <div class="about-section">
-        <h2>About this box</h2>
-        <p>
-            The UbuntuBox Standard Box is your gateway to South African culture. Each box is thoughtfully curated with handcrafted items that tell a story from traditional beadwork to locally made treasures.<br />
-            Perfect for gifts, celebrations, or treating yourself.
-        </p>
-    </div>
-
-    <div class="attraction-location">
-        <h2>Attraction Location</h2>
-        <div class="location-name"><i class="fa-solid fa-location-dot"></i> Cape Town, South Africa</div>
-        <div class="map-placeholder">
-            <img src="Logo/TMAC-Table_Mountain_Aerial_Cableway.jpg" alt="Cape Town, South Africa" />
-        </div>
-    </div>
 
     <div class="whats-inside">
         <h2>Description</h2>
